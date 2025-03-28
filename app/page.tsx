@@ -5,6 +5,7 @@ export default function Home() {
           <p>Kijken hoe snel dit upload</p>
           <p>Kijken of het nu goed werkt</p>
           <p>naar bitbucket</p>
+          <p>een test met commit webstorm</p>
       </>
   )
 }
