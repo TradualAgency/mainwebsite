@@ -1,15 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geologica } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import localFont from 'next/font/local'
+const duneFont = localFont({
+    src: '../public/fonts/Dune_Rise.otf',
+    variable: '--font-dune',
+})
+const interstellarFont = localFont({
+    src: '../public/fonts/Interstellar.otf',
+    variable: '--font-interstellar',
+})
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const geologica = Geologica({
+    subsets: ['latin'],
+    variable: '--font-geologica',
+    weight: '400',
 });
 
 export const metadata: Metadata = {
@@ -25,9 +33,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${duneFont.className} ${geologica.className} ${interstellarFont.className} antialiased`}
       >
+      <Header />
+      <main className="h-screen">
         {children}
+      </main>
+      <Footer />
       </body>
     </html>
   );

@@ -1,12 +1,9 @@
+import HeroSection from "@/containers/home-page/hero-section";
+
 export default function Home() {
   return (
       <>
-        <h1>dit is een test push! test1234</h1>
-          <p>Kijken hoe snel dit upload</p>
-          <p>Kijken of het nu goed werkt</p>
-          <p>naar bitbucket</p>
-          <p>een test met commit webstorm</p>
-          <p>veranderd er iets op mijn site</p>
+        <HeroSection />
       </>
   )
 }
