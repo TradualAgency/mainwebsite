@@ -9,8 +9,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-dune: var(--font-dune);
-  --font-geologica: "Geologica", sans-serif;
-  --font-interstellar: "Optibodoni-Antiqua", sans-serif;
+  --font-geologica: var(--font-geologica);
+  --font-interstellar: var(--font-interstellar);
 }
 @theme {
   --color-primary: #1A1A1A;
