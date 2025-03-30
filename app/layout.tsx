@@ -8,10 +8,14 @@ import localFont from 'next/font/local'
 const duneFont = localFont({
     src: './fonts/dunerise.woff2',
     variable: '--font-dune',
+    display: 'swap',
+    weight: '400',
 })
 const interstellarFont = localFont({
     src: './fonts/interstellar.woff2',
     variable: '--font-interstellar',
+    display: 'swap',
+    weight: '400',
 })
 
 const geologica = Geologica({
