@@ -1,6 +1,6 @@
+import "./globals.css";
 import type { Metadata } from "next";
 import { Geologica } from "next/font/google";
-import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -36,7 +36,7 @@ export default function RootLayout({
         className={`${duneFont.className} ${geologica.className} ${interstellarFont.className} antialiased`}
       >
       <Header />
-      <main className="h-screen">
+      <main className="min-h-screen">
         {children}
       </main>
       <Footer />
