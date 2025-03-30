@@ -6,11 +6,11 @@ import Footer from "@/components/Footer";
 
 import localFont from 'next/font/local'
 const duneFont = localFont({
-    src: '../public/fonts/dunerise.woff2',
+    src: './fonts/dunerise.woff2',
     variable: '--font-dune',
 })
 const interstellarFont = localFont({
-    src: '../public/fonts/interstellar.woff2',
+    src: './fonts/interstellar.woff2',
     variable: '--font-interstellar',
 })
 
