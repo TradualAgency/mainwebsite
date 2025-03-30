@@ -6,16 +6,14 @@ import Footer from "@/components/Footer";
 
 import localFont from 'next/font/local'
 const duneFont = localFont({
-    src: './fonts/dunerise.woff2',
+    src: '../public/fonts/dunerise.woff2',
     variable: '--font-dune',
     display: 'swap',
-    weight: '400',
 })
 const interstellarFont = localFont({
-    src: './fonts/interstellar.woff2',
+    src: '../public/fonts/interstellar.woff2',
     variable: '--font-interstellar',
     display: 'swap',
-    weight: '400',
 })
 
 const geologica = Geologica({
@@ -37,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${duneFont.className} ${geologica.className} ${interstellarFont.className} antialiased`}
+        className={`${duneFont.variable} ${geologica.variable} ${interstellarFont.variable} antialiased`}
       >
       <Header />
       <main className="min-h-screen">

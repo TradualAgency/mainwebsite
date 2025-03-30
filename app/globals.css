@@ -8,14 +8,14 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --font-dune: var(--font-dune);
+  --font-geologica: "Geologica", sans-serif;
+  --font-interstellar: "Optibodoni-Antiqua", sans-serif;
 }
 @theme {
   --color-primary: #1A1A1A;
   --color-secondary: #85D5C8;
   --color-tertiary: #C392EC;
-  --font-dune: "Dune Rise", sans-serif;
-  --font-geologica: "Geologica", sans-serif;
-  --font-interstellar: "Optibodoni-Antiqua", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
