@@ -7,6 +7,7 @@ type ButtonProps = {
     onclick?: () => void;
     className?: string;
     type?: "button" | "submit" | "reset";
+    justify?: "start" | "center" | "end";
 }
 
 export default function PrimaryButton({
@@ -15,9 +16,11 @@ export default function PrimaryButton({
     onclick,
     className,
     type = "button",
+    justify = "start",
 }: ButtonProps) {
+    const justifyClass = `justify-self-${justify}`;
     const baseClasses =
-        'text-white bg-secondary hover:bg-tertiary px-4 py-2 rounded-md transition';
+        `text-xl font-geologica lg:text-lg bg-secondary px-4 py-2 rounded-md hover:bg-tertiary ${justifyClass}`;
 
     if (href) {
         return (
