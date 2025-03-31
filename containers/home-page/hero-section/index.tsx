@@ -8,7 +8,8 @@ export default function HeroSection() {
                 <p className="font-geologica text-xl w-full lg:w-4/5">Met een passie voor schone code en innovatief ontwerp, zetten wij uw unieke ideeën om in boeiende digitale ervaringen die inspireren en verbinden.</p>
                 <PrimaryButton
                     href="/contact"
-                    className=""
+                    justify="center"
+                    className="justify-self-start"
                 >Let's talk</PrimaryButton>
                 <video
                     autoPlay
