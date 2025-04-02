@@ -13,7 +13,7 @@ export default function Header() {
                         <Link href="/over-ons" className="hover:text-secondary">
                             Over ons
                         </Link>
-                        <Link href="/projecten" className="hover:text-secondary">
+                        <Link href="/projects" className="hover:text-secondary">
                             Projecten
                         </Link>
                     </nav>
