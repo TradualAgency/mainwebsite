@@ -30,3 +30,25 @@ body {
   color: var(--foreground);
 }
 
+.swiper{
+  overflow: visible !important;
+  overflow-x: clip !important;
+}
+.swiper-button-next{
+  color: #85D5C8 !important;
+  top: -20px !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+.swiper-button-prev{
+  color: #85D5C8 !important;
+  top: -20px !important;
+  width: 20px !important;
+  height: 20px !important;
+  left: auto !important;
+  right: 60px !important;
+}
+.swiper-button-prev:after, .swiper-button-next:after{
+  font-size: 30px !important;
+}
+
