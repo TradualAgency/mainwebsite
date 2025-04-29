@@ -7,7 +7,8 @@ export default function Header() {
             <div className="max-w-7xl mx-auto my-8 flex items-center justify-between">
                 {/* Logo & Navigation */}
                 <div className="flex items-center gap-8">
-                    <Link href="/">
+                    <Link href="/" className="flex items-center gap-2">
+                        <img src="/images/logo-tradual.png" alt="logo" className="w-10" />
                         <h2 className="text-2xl font-dune">Tradual</h2>
                     </Link>
                     <nav className="hidden md:flex gap-6 text-white font-geologica">
