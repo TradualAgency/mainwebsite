@@ -20,7 +20,7 @@ export default function PrimaryButton({
 }: ButtonProps) {
     const justifyClass = `justify-self-${justify}`;
     const baseClasses =
-        `text-xl font-geologica lg:text-lg bg-secondary px-4 py-2 rounded-md hover:bg-tertiary ${justifyClass}`;
+        `text-xl font-geologica lg:text-lg bg-secondary px-6 py-3 rounded-md hover:bg-tertiary ${justifyClass}`;
 
     if (href) {
         return (

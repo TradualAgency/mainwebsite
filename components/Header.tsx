@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PrimaryButton from "@/components/buttons/Primary-button";
 
 export default function Header() {
     return (
@@ -21,11 +22,11 @@ export default function Header() {
 
                 {/* Contact button */}
                 <div>
-                    <Link href="/contact">
-                        <button className="bg-secondary text-white px-5 py-2 rounded-lg hover:bg-tertiary transition">
-                            Contact
-                        </button>
-                    </Link>
+                    <PrimaryButton
+                    href="/contact"
+                    justify="center"
+                    className="justify-self-start"
+                    >Contact</PrimaryButton>
                 </div>
             </div>
         </header>

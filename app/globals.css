@@ -14,8 +14,10 @@
 }
 @theme {
   --color-primary: #1A1A1A;
-  --color-secondary: #85D5C8;
-  --color-tertiary: #C392EC;
+  /*--color-secondary: #85D5C8;*/
+  --color-secondary: #2D3B37;
+  /*--color-tertiary: #C392EC;*/
+  --color-tertiary: #4F4353;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -35,18 +37,19 @@ body {
   overflow-x: clip !important;
 }
 .swiper-button-next{
-  color: #85D5C8 !important;
+  color: #fff !important;
   top: -20px !important;
   width: 20px !important;
   height: 20px !important;
+  right: 40px !important;
 }
 .swiper-button-prev{
-  color: #85D5C8 !important;
+  color: #fff !important;
   top: -20px !important;
   width: 20px !important;
   height: 20px !important;
   left: auto !important;
-  right: 60px !important;
+  right: 100px !important;
 }
 .swiper-button-prev:after, .swiper-button-next:after{
   font-size: 30px !important;

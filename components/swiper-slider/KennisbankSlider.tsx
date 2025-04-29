@@ -23,8 +23,22 @@ export default function KennisbankSlider({posts} : { posts: Post[]  }) {
             <Swiper
                 modules={[Navigation]}
                 spaceBetween={50}
-                slidesPerView={3}
+                slidesPerView={3.5}
                 navigation
+                breakpoints={{
+                    320: {
+                        slidesPerView: 1.2,
+                        spaceBetween: 20
+                    },
+                    768: {
+                        slidesPerView: 2.2,
+                        spaceBetween: 40
+                    },
+                    1024: {
+                        slidesPerView: 3.2,
+                        spaceBetween: 50
+                    }
+                }}
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log(swiper)}
             >

@@ -2,12 +2,7 @@ import Link from "next/link"
 
 export default function Diensten() {
     return (
-        <section className="info-section relative mt-20 px-8 py-20">    
-            {/* Blurred test-ellipse overlay */}
-            <div
-              className="absolute inset-0 bg-[url('/images/test-ellipse.png')] bg-contain bg-center bg-no-repeat blur-3xl opacity-30 z-1"
-              aria-hidden="true"
-            ></div>        
+        <section className="info-section relative mt-20 px-8 py-20 bg-[#2D3B37]">
             <div className=" relative max-w-7xl mx-auto z-10">
               <div>
                 <h2 className="font-geologica text-8xl pb-5">Diensten</h2>
