@@ -44,7 +44,7 @@ export default async function OverOns() {
                 </div>
                 <div className="mt-10 flex flex-col md:grid md:grid-cols-3">
                     <div className="col-span-1">
-                        <h2 className="text-2xl">Tekst voor bij de werknemers</h2>
+                        <h2 className="text-2xl">Tekst voor bij de werknemers die komt hier</h2>
                     </div>
                     <div className="col-span-2">
                         <EmployeesSwiper serializedEmployees={JSON.stringify(employees)} />
