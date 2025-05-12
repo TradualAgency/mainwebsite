@@ -1,9 +1,9 @@
 // app/over-ons/page.jsx
-import Link from 'next/link'
 import {CenterLayout} from "@/components/layout";
 import {getEmployees} from "@/sanity/lib/getEmployees";
 import EmployeesSwiper from "@/components/swiper-slider/EmployeesSwiper";
-import OverOnsAnimation from "@/components/animejs-gsap/over-ons-animation";
+import PrimaryButton from "@/components/buttons/Primary-button";
+import OverOnsTextBox from "@/containers/over-ons/OverOnsTextBox";
 
 export const metadata = {
     title: 'Over Ons | Bedrijfsnaam',
@@ -21,19 +21,13 @@ export default async function OverOns() {
                 <p className="font-light text-xl w-full lg:w-4/5 mb-12">
                     Bij Tradual combineren we technische excellentie met commercieel inzicht. Onze focus ligt op het bouwen van razendsnel ladende en robuuste online winkels met Next.js en Shopify als onze beproefde tech stack. We gaan verder dan alleen mooi design - we creëren e-commerce ervaringen die niet alleen indrukwekkend zijn voor bezoekers, maar ook meetbare resultaten leveren voor jouw bedrijf. Snelheid, prestaties en gebruiksvriendelijkheid staan bij ons centraal.
                 </p>
-                <Link
-                    href="/contact"
-                    className="bg-white px-7 py-5 rounded-4xl text-black font-geologica text-lg"
-                >
+                <PrimaryButton href="/contact">
                     Contact ons
-                </Link>
+                </PrimaryButton>
             </CenterLayout>
 
-            {/*Animation animejs*/}
             <CenterLayout className="">
-                <div>
-                    <OverOnsAnimation />
-                </div>
+                <OverOnsTextBox />
             </CenterLayout>
 
             {/*Our Team*/}
@@ -51,8 +45,6 @@ export default async function OverOns() {
                     </div>
                 </div>
             </CenterLayout>
-
-            
         </main>
     );
 }
