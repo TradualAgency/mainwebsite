@@ -1,8 +1,13 @@
 import { getProjects } from "@/database/projecten/projects";
 import ProjectCard from "@/components/projecten/ProjectCard";
+import LottieScroll from "@/components/animejs-gsap/lottie/LottieScroll";
 
 export default function ProjectPage() {
     return (
+    <>
+        <section>
+            <LottieScroll />
+        </section>
         <section className="my-20 px-8">
             <div className="projecten grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-7xl mx-auto">
                 {getProjects.map((project) => (
@@ -16,5 +21,6 @@ export default function ProjectPage() {
                 ))}
             </div>
         </section>
+    </>
     );
 }
