@@ -27,10 +27,12 @@ export default function ContactSwiper() {
                             src="/vercel.svg"
                             alt=""
                             className="w-20 bg-black/20 rounded-2xl p-5"
+                            width={100}
+                            height={100}
                         />
                     </div>
                     <div className="flex-grow flex items-center justify-center">
-                        <p className="text-2xl italic">"Vercel kreeg meer bezoekers en een 30% conversie groei door snellere laadtijden"</p>
+                        <p className="text-2xl italic">&quot;Vercel kreeg meer bezoekers en een 30% conversie groei door snellere laadtijden&quot;</p>
                     </div>
                     <div className="h-[20px]"></div> {/* Empty spacer at bottom for balance */}
                 </section>
@@ -44,10 +46,12 @@ export default function ContactSwiper() {
                             src="/vercel.svg"
                             alt=""
                             className="w-20 bg-black/20 rounded-2xl p-5"
+                            width={100}
+                            height={100}
                         />
                     </div>
                     <div className="flex-grow flex items-center justify-center">
-                        <p className="text-2xl italic">"Vercel kreeg meer bezoekers en een 30% conversie groei door snellere laadtijden"</p>
+                        <p className="text-2xl italic">&quot;Vercel kreeg meer bezoekers en een 30% conversie groei door snellere laadtijden&quot;</p>
                     </div>
                     <div className="h-[20px]"></div> {/* Empty spacer at bottom for balance */}
                 </section>
