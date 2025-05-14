@@ -27,7 +27,7 @@ export default function ContactPageCTABlock() {
                 </div>
                 
                 {/* Afbeeldingskolom */}
-                <div className="w-full overflow-hidden rounded-xl">
+                <div className="w-full overflow-hidden rounded-xl hidden md:block">
                     <Image
                         alt="App screenshot"
                         src="/images/contactpagecta.png"

@@ -5,7 +5,7 @@ export default function Diensten() {
         <section className="info-section relative mt-20 px-8 py-20 bg-[#2D3B37]">
             <div className=" relative max-w-7xl mx-auto z-10">
               <div>
-                <h2 className="font-geologica text-8xl pb-5">Diensten</h2>
+                <h2 className="font-geologica text-5xl md:text-8xl pb-5">Diensten</h2>
               </div>
               <div className="grid grid-cols-1 grid-rows-3 md:grid-cols-3 md:grid-rows-1 gap-8 mt-5">
                 <div className="flex flex-col gap-5">

@@ -5,11 +5,11 @@ export default function USPSection(){
     <section className="usp-section my-20 px-8 mt-96">
       <div className="max-w-7xl mx-auto grid grid-cols-1 gap-20 relative">
         <h2 className="font-geologica text-4xl md:text-8xl">Snelheid x schaalbaarheid = Groei</h2>
-        <div className="absolute top-[-100px] ml-30 z-0 sm:top-[-200px] md:ml-50">
+        <div className="absolute top-[-100px] ml-0 z-0 sm:top-[-200px] md:ml-50">
           <Image src="/images/test-ellipse.png" width={100} height={100} className="w-[400px] opacity-50 blur-md lg:w-[500px]" alt=""/>
         </div>
       </div>            
-      <div className="w-3/4 lg:w-1/2 ml-auto mt-10 flex flex-col gap-10">
+      <div className="w-full md:w-3/4 ml-0 md:ml-50 mt-10 flex flex-col gap-10">
         <div className="flex flex-col gap-5">
           <h2 className="font-geologica text-2xl font-bold"># Razendsnelle en SEO-geoptimaliseerde webshops</h2>
           <p>Wij ontwikkelen supersnelle e-commerce websites die direct klaar zijn voor groei. Dankzij geoptimaliseerde prestaties en een soepele gebruikerservaring laden pagina’s razendsnel, verbeteren ze je Google-ranking en verhogen ze de conversies. Meer snelheid, meer zichtbaarheid, meer omzet.</p>

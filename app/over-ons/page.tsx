@@ -37,10 +37,10 @@ export default async function OverOns() {
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-geologica">Een gepassioneerd team van technische experts en datagedreven professionals</h2>
                 </div>
                 <div className="mt-10 flex flex-col md:grid md:grid-cols-3">
-                    <div className="col-span-1">
-                        <h2 className="text-2xl">Tekst voor bij de werknemers die komt hier</h2>
+                    <div className="col-span-1 content-center">
+                        <p className="leading-8">Bij Tradual zijn onze mensen ons grootste kapitaal. Ons team bestaat uit gedreven professionals die elke dag met passie en expertise aan het werk gaan. Met hun diverse talenten en onvermoeibare inzet zorgen zij ervoor dat we niet alleen onze doelen bereiken, maar deze vaak overtreffen. Wat ons team zo bijzonder maakt? Hun combinatie van vakkennis, creativiteit en toewijding aan zowel elkaar als onze klanten. Samen bouwen we niet alleen aan een succesvol bedrijf, maar ook aan duurzame relaties die ertoe doen.</p>
                     </div>
-                    <div className="col-span-2">
+                    <div className="col-span-2 mt-10">
                         <EmployeesSwiper serializedEmployees={JSON.stringify(employees)} />
                     </div>
                 </div>

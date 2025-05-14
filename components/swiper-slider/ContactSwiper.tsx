@@ -1,6 +1,7 @@
 'use client';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import Image from 'next/image';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -22,7 +23,7 @@ export default function ContactSwiper() {
             >
                 <section className="flex flex-col justify-between h-full">
                     <div>
-                        <img
+                        <Image
                             src="/vercel.svg"
                             alt=""
                             className="w-20 bg-black/20 rounded-2xl p-5"
@@ -39,7 +40,7 @@ export default function ContactSwiper() {
             >
                 <section className="flex flex-col justify-between h-full">
                     <div>
-                        <img
+                        <Image
                             src="/vercel.svg"
                             alt=""
                             className="w-20 bg-black/20 rounded-2xl p-5"
