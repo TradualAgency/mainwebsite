@@ -1,6 +1,5 @@
 'use client'
 import Link from "next/link";
-import PrimaryButton from "@/components/buttons/Primary-button";
 import {useEffect, useState} from "react";
 import { usePathname } from 'next/navigation';
 
