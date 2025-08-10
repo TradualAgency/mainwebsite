@@ -26,15 +26,19 @@ export default function Header() {
     }, [pathname]);
 
     return (
-        <header className="w-full text-white px-8">
-            <div className="max-w-7xl mx-auto my-8 flex items-center justify-between">
+        <header className="w-full text-[#727272] px-8 bg-white sticky top-0 z-50 shadow-md py-4">
+            <div className="max-w-7xl mx-auto flex items-center justify-between">
                 {/* Logo & Navigation */}
                 <div className="flex items-center gap-8">
                     <Link href="/" className="flex items-center gap-2">
-                        <img src="/images/logo-tradual.png" alt="logo" className="w-10" />
-                        <h2 className="text-2xl font-dune">Tradual</h2>
+                        <img
+                            src="/images/logo-tradual.svg"
+                            alt="Tradual Logo"
+                            className="w-10 h-10 object-cover"
+                        />
+                        <h2 className="text-lg uppercase font-bold text-secondary">Tradual</h2>
                     </Link>
-                    <nav className="hidden lg:flex gap-6 text-white font-geologica">
+                    <nav className="hidden lg:flex gap-6 text-[#727272] font-geologica">
                         <Link href="/over-ons" className="hover:text-secondary">
                             Over ons
                         </Link>
@@ -84,25 +88,20 @@ export default function Header() {
                                 <Link href="/projects" className="hover:text-secondary">
                                     Projecten
                                 </Link>
-                                <PrimaryButton
-                                    href="/contact"
-                                    justify="center"
-                                    className="mt-2"
-                                >
+                                <Link href="/contact" className="bg-black text-white px-4 py-2 rounded hover:bg-secondary transition-colors">
                                     Contact
-                                </PrimaryButton>
+                                </Link>
                             </nav>
                         </div>
                     </div>
                 ) : (
                     <div className="hidden lg:flex">
-                        <PrimaryButton
-                            href="/contact"
-                            justify="center"
-                            className="justify-self-start"
+                        <Link href="/contact"
+                            className="bg-black text-white px-4 py-2 rounded hover:bg-secondary transition-colors font-geologica"
                         >
                             Contact
-                        </PrimaryButton>
+                        </Link>
+
                     </div>
                 )}
             </div>

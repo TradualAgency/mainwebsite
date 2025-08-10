@@ -12,7 +12,6 @@ export default function LottieSection() {
     return (
         <section>
             <LottieScroll />
-            <p>Kijken of de upload nog werkt</p>
         </section>
     )
 }

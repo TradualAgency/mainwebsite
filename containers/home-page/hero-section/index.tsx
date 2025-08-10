@@ -1,16 +1,15 @@
 import {Heading1} from "@/components/lettertypes/HeaderTypes";
-import PrimaryButton from "@/components/buttons/Primary-button";
+import Link from "next/link";
 export default function HeroSection() {
     return (
-        <section className="hero-section my-20 px-8">
+        <section className="hero-section py-40 px-8 bg-[#91a9a2]">
             <div className="max-w-7xl mx-auto grid grid-cols-1 gap-8">
-                <Heading1 className="">Uw ideeën transformeren in naadloze digitale ervaringen</Heading1>
-                <p className="font-geologica text-xl w-full lg:w-4/5">Met een passie voor schone code en innovatief ontwerp, zetten wij uw unieke ideeën om in boeiende digitale ervaringen die inspireren en verbinden.</p>
-                <PrimaryButton
-                    href="/contact"
-                    justify="start"
-                    className=""
-                >Let's talk</PrimaryButton>
+                <Heading1 className="text-center text-secondary">Where commerce grows</Heading1>
+                <p className="font-geologica text-xl w-full lg:w-4/5 text-center mx-auto text-secondary">Connect brands to growth and craft high-converting e-commerce experiences.</p>
+                <Link href="/contact"
+                    className="text-center mx-auto w-fit bg-secondary text-white py-4 px-8 rounded-4xl">
+                    Contact us
+                </Link>
                 <video
                     autoPlay
                     muted
