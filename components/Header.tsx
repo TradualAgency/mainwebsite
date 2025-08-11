@@ -25,7 +25,7 @@ export default function Header() {
     }, [pathname]);
 
     return (
-        <header className="w-full text-[#727272] px-8 bg-white sticky top-0 z-50 shadow-md py-4">
+        <header className="w-full text-[#727272] px-8 bg-white sticky top-0 z-50 py-4">
             <div className="max-w-7xl mx-auto flex items-center justify-between">
                 {/* Logo & Navigation */}
                 <div className="flex items-center gap-8">

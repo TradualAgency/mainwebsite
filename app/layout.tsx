@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Geologica } from "next/font/google";
+import { Inter } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -19,7 +20,15 @@ const interstellarFont = localFont({
 const geologica = Geologica({
     subsets: ['latin'],
     variable: '--font-geologica',
-    weight: '400',
+    weight: ['400', '500', '600', '700'],
+    display: 'swap',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -35,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${duneFont.variable} ${geologica.variable} ${interstellarFont.variable} antialiased`}
+        className={`${duneFont.variable} ${geologica.variable} ${interstellarFont.variable} ${inter.className} antialiased`}
       >
       <Header />
       <main className="min-h-screen">

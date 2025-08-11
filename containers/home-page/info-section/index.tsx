@@ -1,26 +1,40 @@
-import PrimaryButton from "@/components/buttons/Primary-button";
-import Image from "next/image";
-import {Heading2} from "@/components/lettertypes/HeaderTypes";
-
+import Image from 'next/image';
+// components/InfoSection.jsx
 export default function InfoSection() {
     return (
-        <section className="info-section my-20 px-8">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 gap-8 justify-items-center relative">
-                <Heading2>Wie is Tradual Agency</Heading2>
-                <p className="text-center w-full z-20 font-geologica lg:w-2/3">Web Agency specialiseert zich in grafisch ontwerp en codering binnen een designbedrijf, met een sterke focus op e-commerce websites. Wij implementeren oplossingen die functionaliteit en visuele aantrekkingskracht in balans brengen voor een optimale online winkelervaring.</p>
-                <PrimaryButton
-                    href="/contact"
-                    type="button"
-                    onclick={() => {alert('Hallo wereld')}}
-                    justify="center"
-                    className="z-20"
-                >
-                    Meer over ons
-                </PrimaryButton>
-                <div className="absolute top-[-100px] ml-30 z-0 sm:top-[-200px] md:ml-50">
-                    <Image src="/images/test-ellipse.png" width={100} height={100} className="w-[400px] opacity-50 blur-md lg:w-[500px]" alt=""/>
+        <section className="bg-white py-20">
+            <div className="max-w-7xl lg:mx-auto flex flex-col lg:flex-row lg:items-center justify-between gap-6 px-6">
+
+                {/* Tekst links */}
+                <h2 className="text-xl font-regular md:text-2xl text-gray-800 max-w-lg">
+                    E-commerce technologie waar de grootste merken op vertrouwen.
+                </h2>
+
+                {/* Logo's rechts */}
+                <div className="flex items-center gap-10">
+                    <Image
+                        src="/images/gymshark-logo.png"
+                        alt="gymshark"
+                        className="h-12 w-40 object-contain"
+                        width={200}
+                        height={100}
+                    />
+                    <Image
+                        src="/images/louis-vuitton-logo-png_seeklogo-85807.png"
+                        alt="Next.js"
+                        className="h-12 w-auto object-contain"
+                        width={200}
+                        height={100}
+                    />
+                    <Image
+                        src="/images/002-nike-logos-swoosh-white.jpg"
+                        alt="Tailwind CSS"
+                        className="h-12 w-auto object-contain hidden sm:block"
+                        width={100}
+                        height={50}
+                    />
                 </div>
             </div>
         </section>
-    )
+    );
 }
