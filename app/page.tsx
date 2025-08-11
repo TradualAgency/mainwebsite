@@ -14,7 +14,7 @@ export default function Home() {
         <USPSection />
         <TradualSection />
         <GrowthSection />
-          <CaseStudies />
+        <CaseStudies />
         <Kennisbank />
       </>
   )
