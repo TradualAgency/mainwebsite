@@ -5,6 +5,8 @@ import TradualSection from "@/containers/home-page/diensten";
 import Kennisbank from "@/containers/home-page/kennisbank";
 import GrowthSection from "@/containers/home-page/growth-section";
 import CaseStudies from "@/containers/home-page/review-section";
+import GetStartedSection from "@/containers/home-page/get-started-section";
+import FinalCTA from "@/containers/home-page/final-cta-section";
 
 export default function Home() {
   return (
@@ -15,7 +17,9 @@ export default function Home() {
         <TradualSection />
         <GrowthSection />
         <CaseStudies />
+        <GetStartedSection />
         <Kennisbank />
+        <FinalCTA />
       </>
   )
 }
