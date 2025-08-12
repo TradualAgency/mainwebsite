@@ -49,8 +49,8 @@ export default function EmployeeSlider({ serializedEmployees }: EmployeeSliderPr
                             />
                         </div>
                         <div className="mt-5">
-                            <p className="text-xl font-geologica">{employee.name}</p>
-                            <p className="font-geologica">{employee.functie}</p>
+                            <p className="text-xl font-geologica text-secondary">{employee.name}</p>
+                            <p className="font-geologica text-secondary">{employee.functie}</p>
                         </div>
                     </div>
                 </SwiperSlide>
