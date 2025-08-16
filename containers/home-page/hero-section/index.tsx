@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+
 export default function HeroSection() {
     return (
         <section className="hero-section py-30 px-8 bg-[#defff6]">
@@ -9,37 +11,23 @@ export default function HeroSection() {
                     className="text-center mx-auto w-fit bg-secondary text-white py-4 px-8 rounded-4xl mb-10">
                     Contact us
                 </Link>
-                <VideoSection />
             </div>
+            <div className="bg-secondary rounded-2xl h-[500px] sm:h-[600px] px-12 py-12 grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
+                <Image
+                    src="/images/pexels-mart-production-7679865.jpg"
+                    alt="alt"
+                    width={600}
+                    height={500}
+                    className="w-full h-[200px] sm:h-[500px] object-cover rounded-2xl"
+                />
+                <Image
+                    src="/images/Scherm­afbeelding 2025-08-16 om 11.22.32.png"
+                    alt="alt"
+                    width={600}
+                    height={500}
+                    className="w-full h-[200px] sm:h-[500px] object-cover rounded-2xl"
+                />
+                </div>
         </section>
     )
 }
-
-export function VideoSection() {
-        return (
-            <section className="bg-[#2d3b37] max-w-7xl mx-auto rounded-3xl p-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {/* Titel links */}
-                    <div className="relative md:col-span-1 md:mt-20">
-                        <h2 className="text-white text-4xl font-bold mb-4 italic font-interstellar">
-                            From struggle to success
-                        </h2>
-                    </div>
-
-                    {/* Video rechts */}
-                    <div className="aspect-w-16 aspect-h-9 relative md:col-span-2">
-                        <video
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
-                            className="w-full h-full lg:h-[500px] object-cover rounded-lg z-20"
-                        >
-                            <source src="/images/hero-section-video.mp4" type="video/mp4" />
-                            Je browser ondersteunt deze video niet.
-                        </video>
-                    </div>
-                </div>
-            </section>
-        );
-    }

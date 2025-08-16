@@ -1,24 +1,17 @@
-import { getProjects } from "@/database/projecten/projects";
-import ProjectCard from "@/components/projecten/ProjectCard";
-import LottieSection from "@/containers/projecten/LottieSection";
+import ProjectsHero from "@/containers/projecten/HeroSection";
+import {ProjectsScene} from "@/containers/projecten/projects-scene";
+import FiveStepsSection from "@/containers/projecten/FiveStepsSection";
+import ProjectUSPSection from "@/containers/projecten/ProjectUSPSection";
+import ProjectFAQSection from "@/containers/projecten/ProjectFAQSection";
 
 export default function ProjectPage() {
     return (
     <>
-        <LottieSection />
-        <section className="my-20 px-8">
-            <div className="projecten grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-7xl mx-auto">
-                {getProjects.map((project) => (
-                    <ProjectCard
-                        id={project.id}
-                        key={project.id}
-                        title={project.title}
-                        description={project.description}
-                        image={project.image}
-                    />
-                ))}
-            </div>
-        </section>
+        <ProjectsHero />
+        <ProjectsScene />
+        <FiveStepsSection />
+        <ProjectUSPSection />
+        <ProjectFAQSection />
     </>
     );
 }

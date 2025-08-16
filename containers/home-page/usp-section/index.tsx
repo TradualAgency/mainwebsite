@@ -6,7 +6,7 @@ const tabs = [
   {
     id: 'snelheid',
     title: 'Snelheid',
-    text: 'Headless Next.js webshops laden tot 3x sneller, verbeteren je SEO en verhogen conversies.',
+    text: 'Met onze headless Next.js-stack laad je webshop razendsnel. Doordat frontend en backend losgekoppeld zijn, worden pagina’s direct opgebouwd en geoptimaliseerd voor maximale performance. Dit betekent tot wel 3x snellere laadtijden dan traditionele webshops. Het resultaat: bezoekers haken niet af, je conversies stijgen en je webshop voelt altijd soepel en modern aan – op elk apparaat.',
     image: '/images/ChatGPT Image 11 aug 2025, 20_41_21.png',
   },
   {
