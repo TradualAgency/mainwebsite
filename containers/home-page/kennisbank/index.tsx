@@ -16,7 +16,7 @@ export default async function Kennisbank() {
   return (
     <section className="info-section my-20 pl-8 bg-secondary py-30">
       <div className="pl-[calc((100vw-1360px)/2)] pr-0">
-        <h2 className="font-geologica text-4xl md:text-8xl pb-5 text-[#defff6] w-[50%]">E-commerce academy</h2>
+        <h2 className="font-geologica text-4xl pb-5 text-[#defff6] w-[50%]">E-commerce academy</h2>
         <div className="mt-20">
           <KennisbankSlider posts={posts as Post[]}/>
         </div>
