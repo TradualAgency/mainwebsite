@@ -54,12 +54,10 @@ export function ProjectsScene() {
           // Update progress bar
           if (progressBar) {
             gsap.set(progressBar, { scaleX: self.progress })
-          }
-        },
-        onComplete: () => {
-          // Hide progress bar when animation completes
-          if (progressBar) {
-            gsap.to(progressBar, { opacity: 0, duration: 0.5 })
+            // Hide progress bar when animation is near completion
+            if (self.progress > 0.95) {
+              gsap.to(progressBar, { opacity: 0, duration: 0.5 })
+            }
           }
         },
       },
