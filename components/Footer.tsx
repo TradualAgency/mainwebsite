@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Footer() {
     return (
-        <footer className="bg-secondary text-[#defff6] py-30">
+        <footer className="bg-secondary text-[#defff6] py-16 md:py-20 lg:py-24">
             <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
                 {/* Logo & beschrijving */}
                 <div>
@@ -58,7 +58,7 @@ export default function Footer() {
                                 <Link
                                     key={social.name}
                                     href={social.href}
-                                    className="p-2 bg-[#defff6] rounded-full hover:opacity-80 transition"
+                                    className="p-2 bg-secondary/10 rounded-full hover:opacity-80 transition"
                                     aria-label={`Volg ons op ${social.name}`}
                                     title={social.name}
                                     prefetch={false}

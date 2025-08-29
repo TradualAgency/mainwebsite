@@ -2,7 +2,7 @@ import Link from "next/link";
 // components/GetStarted.tsx
 export default function GetStarted() {
     return (
-        <section className="bg-[#FAFAFA] rounded-2xl px-6 py-20 my-20 mx-6">
+        <section className="bg-[#FAFAFA] rounded-2xl py-6 sm:py-20 my-20 mx-6">
             <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
 
                 {/* Linker kolom */}

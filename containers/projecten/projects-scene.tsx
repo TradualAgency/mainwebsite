@@ -4,14 +4,18 @@ import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { ProjectCard } from "@/components/project-card"
-import { projects } from "@/lib/projects"
+import { type Project } from "@/sanity/lib/getProjects"
 
 // Register ScrollTrigger plugin
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)
 }
 
-export function ProjectsScene() {
+interface ProjectsSceneProps {
+  projects: Project[]
+}
+
+export function ProjectsScene({ projects }: ProjectsSceneProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const cardsRef = useRef<HTMLDivElement>(null)
   const progressRef = useRef<HTMLDivElement>(null)
@@ -47,9 +51,9 @@ export function ProjectsScene() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container,
-        start: "top center",
-        end: "bottom center",
-        scrub: 1,
+        start: "top 85%",  // Start earlier but not too aggressive
+        end: "top 50%",   // Give more time for the animation
+        scrub: 1.5,       // Slower, smoother scrub
         onUpdate: (self) => {
           // Update progress bar
           if (progressBar) {
@@ -80,17 +84,17 @@ export function ProjectsScene() {
   }, [])
 
   return (
-    <section id="projects-scene" className="relative pt-0 pb-32 px-8">
+    <section id="projects-scene" className="relative pt-0 pb-16 md:pb-24 lg:pb-32 px-4 sm:px-6 md:px-8">
       {/* Progress indicator */}
       <div className="fixed top-0 left-0 w-full h-1 bg-gray-200 z-50">
         <div ref={progressRef} className="h-full bg-gray-900 origin-left scale-x-0" />
       </div>
 
-      <div ref={containerRef} className="min-h-screen">
+      <div ref={containerRef} className="min-h-[60vh] md:min-h-screen">
         <div className="max-w-7xl mx-auto">
-          <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {projects.map((project, index) => (
-              <ProjectCard key={project.id} project={project} index={index} />
+              <ProjectCard key={project._id} project={project} index={index} />
             ))}
           </div>
         </div>

@@ -39,7 +39,7 @@ export default function ProjectsHero({
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <Button asChild size="lg" className="bg-secondary text-white hover:bg-secondary/60">
+            <Button asChild size="lg" className="bg-secondary text-white hover:opacity-90">
               <Link href={primaryCta.href}>{primaryCta.text}</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-secondary text-secondary hover:bg-secondary/10">

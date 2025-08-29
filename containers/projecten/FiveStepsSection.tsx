@@ -13,45 +13,45 @@ export default function FiveStepsSection() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Contact Card */}
-          <div className="bg-white rounded-3xl p-8 shadow-lg">
+          <div className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
             <div className="relative aspect-[4/3] mb-6 overflow-hidden rounded-2xl">
               <Image
                 src="/images/ChatGPT Image 16 aug 2025, 11_37_31.png"
                 alt="Contact opnemen"
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 400px"
               />
             </div>
-            <h3 className="text-xl font-semibold text-secondary mb-3">
+            <h3 className="text-xl font-semibold text-secondary mb-3 group-hover:text-secondary/80 transition-colors">
               Contact opnemen
             </h3>
             <p className="text-secondary/80 mb-6 leading-relaxed">
               Klaar om jouw ecommerce droom werkelijkheid te maken? Neem contact op en ontdek hoe wij jouw online winkel naar een hoger niveau tillen.
             </p>
-            <Button asChild size="lg" className="w-full bg-secondary text-white hover:bg-secondary/90">
+            <Button asChild size="lg" className="w-full bg-secondary text-white hover:opacity-90 transition">
               <Link href="/contact">Contact opnemen</Link>
             </Button>
           </div>
 
           {/* About Us Card */}
-          <div className="bg-white rounded-3xl p-8 shadow-lg">
+          <div className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
             <div className="relative aspect-[4/3] mb-6 overflow-hidden rounded-2xl">
               <Image
                 src="/images/ChatGPT Image 16 aug 2025, 11_37_31.png"
                 alt="Meer weten over ons"
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 400px"
               />
             </div>
-            <h3 className="text-xl font-semibold text-secondary mb-3">
+            <h3 className="text-xl font-semibold text-secondary mb-3 group-hover:text-secondary/80 transition-colors">
               Meer weten over ons
             </h3>
             <p className="text-secondary/80 mb-6 leading-relaxed">
               Ontdek hoe Tradual werkt, wat onze visie is en waarom wij de perfecte partner zijn voor jouw ecommerce project.
             </p>
-            <Button asChild variant="outline" size="lg" className="w-full border-secondary text-secondary hover:bg-secondary/10">
+            <Button asChild size="lg" className="w-full bg-secondary text-white hover:opacity-90 transition">
               <Link href="/over-ons">Meer over ons</Link>
             </Button>
           </div>

@@ -1,6 +1,6 @@
 export function Heading1({children, className}: {children: React.ReactNode, className?: string}) {
     return (
-        <h1 className={`text-4xl font-geologica uppercase md:text-5xl lg:text-7xl ${className}`}>
+        <h1 className={`text-3xl sm:text-4xl font-geologica uppercase md:text-5xl lg:text-6xl xl:text-7xl ${className}`}>
             {children}
         </h1>
     )
@@ -8,7 +8,7 @@ export function Heading1({children, className}: {children: React.ReactNode, clas
 
 export function Heading2({children, className}: {children: React.ReactNode, className?: string}) {
     return (
-        <h2 className={`text-4xl md:text-5xl lg:text-7xl z-20 text-center font-geologica ${className}`}>
+        <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl z-20 text-center font-geologica ${className}`}>
             {children}
         </h2>
     )

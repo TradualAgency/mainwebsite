@@ -11,7 +11,7 @@ export default function InfoSection() {
                 </h2>
 
                 {/* Logo's rechts */}
-                <div className="flex items-center gap-10">
+                <div className="flex flex-wrap items-center gap-6 sm:gap-8 md:gap-10 justify-center sm:justify-start">
                     <Image
                         src="/images/gymshark-logo.png"
                         alt="gymshark"
@@ -29,7 +29,7 @@ export default function InfoSection() {
                     <Image
                         src="/images/002-nike-logos-swoosh-white.jpg"
                         alt="Tailwind CSS"
-                        className="h-12 w-auto object-contain hidden sm:block"
+                        className="h-12 w-auto object-contain"
                         width={100}
                         height={50}
                     />

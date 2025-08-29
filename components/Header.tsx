@@ -56,17 +56,17 @@ export default function Header() {
                         >
                             {/* Hamburger icon die naar kruisje transformeert */}
                             <span 
-                                className={`block absolute h-0.5 w-6 bg-white transition-transform duration-300 ease-in-out ${
+                                className={`block absolute h-0.5 w-6 bg-secondary transition-transform duration-300 ease-in-out ${
                                     isOpen ? 'top-3 rotate-45' : 'top-1'
                                 }`}
                             ></span>
                             <span 
-                                className={`block absolute h-0.5 w-6 bg-white top-3 transition-opacity duration-300 ease-in-out ${
+                                className={`block absolute h-0.5 w-6 bg-secondary top-3 transition-opacity duration-300 ease-in-out ${
                                     isOpen ? 'opacity-0' : 'opacity-100'
                                 }`}
                             ></span>
                             <span 
-                                className={`block absolute h-0.5 w-6 bg-white transition-transform duration-300 ease-in-out ${
+                                className={`block absolute h-0.5 w-6 bg-secondary transition-transform duration-300 ease-in-out ${
                                     isOpen ? 'top-3 -rotate-45' : 'top-5'
                                 }`}
                             ></span>
@@ -87,7 +87,7 @@ export default function Header() {
                                 <Link href="/projects" className="hover:text-secondary">
                                     Projecten
                                 </Link>
-                                <Link href="/contact" className="bg-black text-white px-4 py-2 rounded hover:bg-secondary transition-colors">
+                                <Link href="/contact" className="bg-secondary text-white px-4 py-2 rounded-lg font-medium hover:opacity-90 transition">
                                     Contact
                                 </Link>
                             </nav>
@@ -96,7 +96,7 @@ export default function Header() {
                 ) : (
                     <div className="hidden lg:flex">
                         <Link href="/contact"
-                            className="bg-black text-white px-4 py-2 rounded hover:bg-secondary transition-colors font-geologica"
+                            className="bg-secondary text-white px-6 py-2 rounded-lg font-medium hover:opacity-90 transition font-geologica"
                         >
                             Contact
                         </Link>

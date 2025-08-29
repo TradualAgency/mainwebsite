@@ -3,7 +3,7 @@ import React from "react";
 export default function ProjectUSPSection() {
   return (
     <section className="w-full px-8 py-16 md:py-24">
-      <div className="mx-auto max-w-7xl rounded-xl p-8 md:p-12 lg:p-16" style={{ backgroundColor: '#defff6' }}>
+      <div className="mx-auto max-w-7xl rounded-xl p-8 md:p-12 lg:p-16 bg-secondary/10">
         <h2 className="text-3xl font-semibold text-secondary mb-20 md:text-4xl">
           Waarom kiezen voor Tradual projecten?
         </h2>

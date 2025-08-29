@@ -14,7 +14,7 @@ export default function CenterText({
     return (
         <section
             id="centerText"
-            className="bg-white py-16"
+            className="bg-white py-8 md:py-12 lg:py-16"
             aria-label="Center text section"
         >
             <div className="max-w-3xl mx-auto px-6 text-center ">

@@ -26,17 +26,17 @@ export default function AboutHero({
                 <p className="mb-3 inline-block text-sm uppercase tracking-widest text-neutral-300">
                     {label}
                 </p>
-                <h1 className="max-w-7xl text-3xl font-semibold leading-tight text-white sm:text-4xl md:text-6xl">
+                <h1 className="max-w-7xl text-2xl font-semibold leading-tight text-white sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
                     {title}
                 </h1>
-                <p className="mt-4 max-w-2xl text-base leading-relaxed font-bold sm:text-lg">
+                <p className="mt-4 max-w-2xl text-base leading-relaxed font-bold sm:text-lg text-white">
                     {subtitle}
                 </p>
 
                 <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
                     <Link
                         href={ctaHref}
-                        className="rounded-2xl bg-white px-5 py-3 text-sm font-medium text-neutral-900 shadow-sm transition hover:shadow"
+                        className="bg-secondary text-white px-6 py-2 rounded-lg font-medium hover:opacity-90 transition"
                     >
                         {ctaText}
                     </Link>

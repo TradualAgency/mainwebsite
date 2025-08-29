@@ -8,7 +8,7 @@ type OurTeamProps = {
 
 export default function OurTeam({ employees }: OurTeamProps) {
     return (
-        <section className="py-12 ml-6 px-6 my-20 bg-[#defff6] rounded-lg">
+        <section className="py-12 ml-6 px-6 my-20 bg-secondary/10 rounded-lg">
             <div className="max-w-7xl mx-auto">
                 <div>
                     <p className="text-secondary font-geologica text-xl mb-6">Ons Team</p>

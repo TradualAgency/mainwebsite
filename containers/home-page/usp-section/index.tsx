@@ -33,10 +33,10 @@ export default function UspSection() {
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
   return (
-      <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-12 md:py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* Titel: links uitgelijnd, md:w-1/3, anders full */}
-          <h2 className="text-4xl font-bold text-gray-900 md:w-2/3 w-full mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 md:w-2/3 w-full mb-8 md:mb-12">
             Bekijk hoe onze e‑commerce agency strategie, creatie en groei verbindt
           </h2>
 
@@ -45,7 +45,6 @@ export default function UspSection() {
               role="tablist"
               aria-label="USP tabs"
               className="
-            -mx-6 px-6            /* edge-to-edge touch area op mobiel */
             flex gap-3 md:gap-4
             overflow-x-auto md:overflow-visible
             whitespace-nowrap md:whitespace-normal

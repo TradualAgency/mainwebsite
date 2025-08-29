@@ -42,8 +42,8 @@ export default function CaseStudies() {
     return (
         <section className="max-w-7xl mx-auto py-12 px-6 my-20">
             {/* Titel + button */}
-            <div className="w-[50%] mb-10">
-                <h2 className="text-4xl font-semibold mb-4 text-secondary">
+            <div className="w-full md:w-[50%] mb-10">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4 text-secondary">
                     Klanten die met ons groeien
                 </h2>
                 <button className="bg-secondary text-white px-6 py-2 rounded-lg font-medium hover:opacity-90 transition">
@@ -108,7 +108,7 @@ function CaseStudySlider() {
                     </div>
 
                     {/* Rechterkolom: quote */}
-                    <div className="bg-[#defff6] p-8 md:p-12 relative flex flex-col justify-between">
+                    <div className="bg-secondary/10 p-8 md:p-12 relative flex flex-col justify-between">
                         <div>
                             <div className="text-5xl text-secondary/70 leading-none mb-4">“</div>
                             <p className="text-xl md:text-2xl text-[#243B6B] leading-relaxed">

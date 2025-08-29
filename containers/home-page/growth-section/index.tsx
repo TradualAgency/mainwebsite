@@ -3,8 +3,8 @@ export default function Index() {
     return (
         <section className="max-w-7xl mx-auto py-12 px-6 my-20">
             {/* Tekst en button */}
-            <div className="mb-12 w-[50%]">
-                <h3 className="text-4xl font-semibold mb-4 text-secondary">
+            <div className="mb-12 w-full md:w-[50%]">
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4 text-secondary">
                     Van conversieoptimalisatie tot marketingautomatisering
                 </h3>
                 <p className="text-gray-700 mb-6">
