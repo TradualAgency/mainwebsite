@@ -114,6 +114,7 @@ const sanityProjects = [
     tags: ['Healthcare', 'Accessibility', 'Privacy', 'Portal'],
     featured: false,
     client: 'MedCare Group',
+    projectUrl: 'https://medcare-portal.com',
     completedAt: '2023-12-10',
     content: [
       {
