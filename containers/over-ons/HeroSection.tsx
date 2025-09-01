@@ -1,6 +1,7 @@
 // components/AboutHero.tsx
 import React from "react";
 import Link from "next/link";
+import {Button} from "@/components/ui/button";
 
 type AboutHeroProps = {
     label?: string;
@@ -34,18 +35,25 @@ export default function AboutHero({
                 </p>
 
                 <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-                    <Link
-                        href={ctaHref}
-                        className="bg-secondary text-white px-6 py-2 rounded-lg font-medium hover:opacity-90 transition"
+                    <Button 
+                        asChild 
+                        variant="default" 
+                        size="lg"
                     >
-                        {ctaText}
-                    </Link>
-                    <Link
-                        href="/projects"
-                        className="text-sm font-medium text-white/80 underline-offset-4 hover:underline"
+                        <Link href={ctaHref}>
+                            {ctaText}
+                        </Link>
+                    </Button>
+                    <Button 
+                        asChild 
+                        variant="outline" 
+                        size="lg" 
+                        className="text-white/80 border-white/20 hover:bg-white/5 bg-transparent"
                     >
-                        Bekijk cases
-                    </Link>
+                        <Link href="/projects">
+                            Bekijk cases
+                        </Link>
+                    </Button>
                 </div>
             </div>
 
