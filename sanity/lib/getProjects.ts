@@ -1,6 +1,6 @@
 // lib/sanity/getProjects.ts
 import { client } from '@/sanity/lib/client';
-import { type SanityDocument } from 'next-sanity';
+import { type SanityDocument } from '@sanity/client';
 
 // Query voor alle projecten
 const PROJECTS_QUERY = `*[

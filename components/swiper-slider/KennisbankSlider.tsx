@@ -2,7 +2,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import {urlFor} from "@/sanity/lib/image";
 import Link from "next/link";
-import {SanityDocument} from "next-sanity";
+import {type SanityDocument} from "@sanity/client";
 
 import 'swiper/css';
 import 'swiper/css/navigation'

@@ -1,6 +1,6 @@
 'use client';
 // components/EmployeeSlider.tsx
-import { type SanityDocument } from 'next-sanity';
+import { type SanityDocument } from '@sanity/client';
 import { urlFor } from '@/sanity/lib/image';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";

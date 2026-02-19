@@ -1,4 +1,4 @@
-import { type SanityDocument } from "next-sanity";
+import { type SanityDocument } from "@sanity/client";
 import {Post} from "@/components/swiper-slider/KennisbankSlider"
 import KennisbankSlider from "@/components/swiper-slider/KennisbankSlider";
 
