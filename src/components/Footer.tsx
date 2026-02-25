@@ -1,85 +1,75 @@
-// components/Footer.tsx
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Footer() {
-    return (
-        <footer className="bg-secondary text-[#defff6] py-16 md:py-20 lg:py-24">
-            <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
-                {/* Logo & beschrijving */}
-                <div>
-                    <Link href="/" className="flex items-center gap-2">
-                        <img
-                            src="/images/logo-tradual-aqua.svg"
-                            alt="Tradual Logo"
-                            className="w-10 h-10 object-cover"
-                        />
-                        <h2 className="text-lg uppercase font-bold text-[#defff6]">Tradual</h2>
-                    </Link>
-                    <p className="text-sm leading-relaxed mt-2">
-                        Wij bouwen schaalbare, snelle en conversiegerichte webshops
-                        die jouw merk laten groeien. Van ontwerp tot optimalisatie.
-                    </p>
-                </div>
+  return (
+    <footer className="bg-surface text-primary">
+      <div className="max-w-7xl mx-auto px-8 py-16 md:py-20 grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+        <div>
+          <Link href="/" className="inline-flex items-center gap-3">
+            <Image
+              src="/images/logo-tradual-aqua.svg"
+              alt="Tradual logo"
+              width={44}
+              height={44}
+              className="w-11 h-11 object-contain"
+            />
+            <span className="font-heading text-2xl">Tradual</span>
+          </Link>
+          <p className="mt-3 text-xs text-primary/75 font-heading tracking-[0.08em] uppercase">
+            Digital agency for modern luxury
+          </p>
+        </div>
 
-                {/* Navigatie */}
-                <div>
-                    <h3 className="text-lg font-semibold mb-4">Navigatie</h3>
-                    <ul className="space-y-2 text-sm">
-                        <li><Link href="/" className="hover:underline">Home</Link></li>
-                        <li><Link href="/diensten" className="hover:underline">Diensten</Link></li>
-                        <li><Link href="/cases" className="hover:underline">Cases</Link></li>
-                        <li><Link href="/contact" className="hover:underline">Contact</Link></li>
-                    </ul>
-                </div>
+        <nav className="justify-self-start md:justify-self-center">
+          <ul className="space-y-3 text-sm md:text-base text-primary/90">
+            <li>
+              <Link href="/" className="hover:text-accent transition">Home</Link>
+            </li>
+            <li>
+              <Link href="/over-ons" className="hover:text-accent transition">Over Ons</Link>
+            </li>
+            <li>
+              <Link href="/projects" className="hover:text-accent transition">Projecten</Link>
+            </li>
+            <li>
+              <Link href="/contact" className="hover:text-accent transition">Contact</Link>
+            </li>
+          </ul>
+        </nav>
 
-                {/* Diensten */}
-                <div>
-                    <h3 className="text-lg font-semibold mb-4">Diensten</h3>
-                    <ul className="space-y-2 text-sm">
-                        <li><Link href="/webshop-ontwikkeling" className="hover:underline">Webshop Ontwikkeling</Link></li>
-                        <li><Link href="/optimalisatie" className="hover:underline">Conversie Optimalisatie</Link></li>
-                        <li><Link href="/automatisering" className="hover:underline">Marketing Automatisering</Link></li>
-                        <li><Link href="/seo" className="hover:underline">SEO & Strategie</Link></li>
-                    </ul>
-                </div>
+        <div className="justify-self-start md:justify-self-end">
+          <div className="flex items-center gap-3">
+            {[
+              { name: "Instagram", href: "#", icon: "/images/instagram-brands-solid-full.svg" },
+              { name: "Facebook", href: "#", icon: "/images/facebook-brands-solid-full.svg" },
+              { name: "LinkedIn", href: "#", icon: "/images/linkedin-brands-solid-full.svg" },
+            ].map((social) => (
+              <Link
+                key={social.name}
+                href={social.href}
+                aria-label={`Volg ons op ${social.name}`}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-accent hover:bg-accent/10 transition"
+              >
+                <Image
+                  src={social.icon}
+                  alt={`${social.name} icon`}
+                  width={18}
+                  height={18}
+                  className="object-contain brightness-0 saturate-100"
+                  style={{ filter: "brightness(0) saturate(100%) invert(76%) sepia(21%) saturate(572%) hue-rotate(357deg) brightness(86%) contrast(86%)" }}
+                />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
 
-                {/* Social media */}
-                <div>
-                    <h3 className="text-lg font-semibold mb-4">Volg ons</h3>
-                    <div className="flex gap-4">
-                        {[
-                            { name: "Instagram", href: "#", icon: "/images/instagram-brands-solid-full.svg" },
-                            { name: "Facebook",  href: "#", icon: "/images/facebook-brands-solid-full.svg" },
-                            { name: "LinkedIn",  href: "#", icon: "/images/linkedin-brands-solid-full.svg" },
-                        ]
-                            .filter(s => typeof s.icon === "string" && s.icon.trim().length > 0)
-                            .map((social) => (
-                                <Link
-                                    key={social.name}
-                                    href={social.href}
-                                    className="p-2 bg-secondary/10 rounded-full hover:opacity-80 transition"
-                                    aria-label={`Volg ons op ${social.name}`}
-                                    title={social.name}
-                                    prefetch={false}
-                                >
-                                    <Image
-                                        src={social.icon}
-                                        alt={`${social.name} icon`}
-                                        width={20}
-                                        height={20}
-                                        className="object-contain"
-                                    />
-                                </Link>
-                            ))}
-                    </div>
-                </div>
-            </div>
-
-            {/* Copyright */}
-            <div className="mt-12 border-t border-[#defff6]/20 pt-6 text-center text-sm">
-                © {new Date().getFullYear()} Tradual. Alle rechten voorbehouden.
-            </div>
-        </footer>
-    );
+      <div className="border-t border-primary/15">
+        <div className="max-w-7xl mx-auto px-8 py-5 text-center text-xs text-primary/70">
+          © {new Date().getFullYear()} Tradual. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  );
 }

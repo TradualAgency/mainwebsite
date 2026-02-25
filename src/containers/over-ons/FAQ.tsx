@@ -1,33 +1,39 @@
-// components/FAQ.tsx
 import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
 } from "@/components/ui/accordion";
-import React from "react";
 
 type FAQItem = {
-    question: string;
-    answer: string;
+  question: string;
+  answer: string;
 };
 
 type FAQProps = {
-    items: FAQItem[];
+  items: FAQItem[];
 };
 
 export default function FAQ({ items }: FAQProps) {
-    return (
-        <section className="max-w-4xl mx-auto my-16 md:my-20 lg:my-24 px-4 sm:px-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-center mb-8 text-secondary">Veelgestelde vragen</h2>
-            <Accordion type="single" collapsible className="w-full">
-                {items.map((item, idx) => (
-                    <AccordionItem className="text-secondary" key={idx} value={`item-${idx}`}>
-                        <AccordionTrigger className="text-lg sm:text-xl md:text-2xl">{item.question}</AccordionTrigger>
-                        <AccordionContent className="text-sm sm:text-base">{item.answer}</AccordionContent>
-                    </AccordionItem>
-                ))}
-            </Accordion>
-        </section>
-    );
+  return (
+    <section className="max-w-5xl mx-auto my-20 py-20 px-8">
+      <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent text-center mb-4">Chapter Four</p>
+      <h2 className="font-heading text-primary text-[38px] leading-[1.05] md:text-[60px] text-center mb-10">
+        Veelgestelde vragen
+      </h2>
+
+      <Accordion type="single" collapsible className="w-full">
+        {items.map((item, idx) => (
+          <AccordionItem className="text-primary border-primary/15" key={idx} value={`item-${idx}`}>
+            <AccordionTrigger className="text-left text-base md:text-xl font-heading">
+              {item.question}
+            </AccordionTrigger>
+            <AccordionContent className="text-body text-sm md:text-base leading-relaxed">
+              {item.answer}
+            </AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
+    </section>
+  );
 }

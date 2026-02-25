@@ -1,7 +1,5 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 
 type ProjectsHeroProps = {
   label?: string;
@@ -15,42 +13,40 @@ type ProjectsHeroProps = {
 };
 
 export default function ProjectsHero({
-  label = "Projecten",
-  title = "Cases die groei en resultaat opleveren",
+  label = "Chapter One",
+  title = "Projects Curated for Measurable Growth",
   subtitle =
-    "We ontwerpen en bouwen performante Shopify & Next.js oplossingen die conversie verhogen. Bekijk een selectie van ons werk.",
-  primaryCta = { href: "/contact", text: "Plan een call" },
-  secondaryCta = { href: "/over-ons", text: "Over ons" },
+    "Een selectie van high-performance Shopify en Next.js trajecten waarin merkbeleving en conversie elkaar versterken.",
+  primaryCta = { href: "/contact", text: "Plan een gesprek" },
+  secondaryCta = { href: "/over-ons", text: "Meer over Tradual" },
   imageSrc = "/images/Design-websites.png",
   imageAlt = "Project showcase",
   className = "",
 }: ProjectsHeroProps) {
   return (
-    <section className={`relative text-secondary bg-white ${className} px-8`} aria-label="Projecten hero">
+    <section className={`bg-surface ${className} px-8 py-20`} aria-label="Projecten hero">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 py-16 md:py-24 lg:grid-cols-2">
-        {/* Left copy */}
         <div className="order-1">
-          <p className="mb-3 text-sm uppercase tracking-widest text-secondary/70">{label}</p>
-          <h1 className="whitespace-pre-line text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl">
+          <p className="mb-4 font-heading text-[10px] uppercase tracking-[0.18em] text-accent">{label}</p>
+          <h1 className="font-heading whitespace-pre-line text-primary text-[38px] leading-[1.05] md:text-[60px]">
             {title}
           </h1>
-          <p className="mt-4 max-w-2xl text-base font-medium leading-relaxed text-secondary/90 sm:text-lg">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-body sm:text-lg">
             {subtitle}
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <Button asChild size="lg" className="bg-secondary text-white hover:opacity-90">
-              <Link href={primaryCta.href}>{primaryCta.text}</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="border-secondary text-secondary hover:bg-secondary/10">
-              <Link href={secondaryCta.href}>{secondaryCta.text}</Link>
-            </Button>
+            <Link href={primaryCta.href} className="bg-accent text-primary px-8 py-3 rounded-md font-medium hover:opacity-90 transition">
+              {primaryCta.text}
+            </Link>
+            <Link href={secondaryCta.href} className="bg-transparent border border-accent text-accent px-8 py-3 rounded-md font-medium hover:bg-accent/10 transition">
+              {secondaryCta.text}
+            </Link>
           </div>
         </div>
 
-        {/* Right image */}
         <div className="order-2 flex justify-center">
-          <div className="relative aspect-[4/3] h-[400px] lg:h-[600px] w-full overflow-hidden rounded-3xl shadow-2xl ring-1 ring-white/10">
+          <div className="relative h-[400px] lg:h-[700px] w-full overflow-hidden">
             <Image
               src={imageSrc}
               alt={imageAlt}
@@ -62,9 +58,6 @@ export default function ProjectsHero({
           </div>
         </div>
       </div>
-
-      {/* Subtle gradient background */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-neutral-900 via-neutral-900 to-black" />
     </section>
   );
 }

@@ -1,60 +1,55 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 
 export default function FiveStepsSection() {
   return (
-    <section className="w-full bg-secondary px-8 py-24 md:py-32">
-      <div className="mx-auto max-w-7xl">
-        <h2 className="text-left text-3xl font-semibold text-white mb-12 md:text-4xl">
-          Jouw ecom site in 5 stappen
+    <section className="py-20 px-8 bg-surface">
+      <div className="max-w-7xl mx-auto">
+        <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent mb-4">Chapter Three</p>
+        <h2 className="font-heading text-primary text-[38px] leading-[1.05] md:text-[60px] mb-12">
+          Hoe we samenwerken
         </h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Contact Card */}
-          <div className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-            <div className="relative aspect-[4/3] mb-6 overflow-hidden rounded-2xl">
-              <Image
-                src="/images/ChatGPT Image 16 aug 2025, 11_37_31.png"
-                alt="Contact opnemen"
-                fill
-                className="object-cover transition-transform duration-300 group-hover:scale-105"
-                sizes="(max-width: 768px) 100vw, 400px"
-              />
-            </div>
-            <h3 className="text-xl font-semibold text-secondary mb-3 group-hover:text-secondary/80 transition-colors">
-              Contact opnemen
-            </h3>
-            <p className="text-secondary/80 mb-6 leading-relaxed">
-              Klaar om jouw ecommerce droom werkelijkheid te maken? Neem contact op en ontdek hoe wij jouw online winkel naar een hoger niveau tillen.
-            </p>
-            <Button asChild size="lg" className="w-full bg-secondary text-white hover:opacity-90 transition">
-              <Link href="/contact">Contact opnemen</Link>
-            </Button>
-          </div>
 
-          {/* About Us Card */}
-          <div className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-            <div className="relative aspect-[4/3] mb-6 overflow-hidden rounded-2xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <article className="bg-[#f9f9f9] p-8">
+            <div className="relative w-full h-[260px] mb-6 overflow-hidden">
               <Image
                 src="/images/ChatGPT Image 16 aug 2025, 11_37_31.png"
-                alt="Meer weten over ons"
+                alt="Intake en strategie"
                 fill
-                className="object-cover transition-transform duration-300 group-hover:scale-105"
-                sizes="(max-width: 768px) 100vw, 400px"
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
-            <h3 className="text-xl font-semibold text-secondary mb-3 group-hover:text-secondary/80 transition-colors">
-              Meer weten over ons
-            </h3>
-            <p className="text-secondary/80 mb-6 leading-relaxed">
-              Ontdek hoe Tradual werkt, wat onze visie is en waarom wij de perfecte partner zijn voor jouw ecommerce project.
+            <h3 className="font-heading text-primary text-[32px] leading-tight mb-3">01. Intake en Strategie</h3>
+            <p className="text-body leading-relaxed mb-6">
+              We starten met een scherpe analyse van je merk, doelgroep en commerciële doelen. Zo bouwen we
+              gericht aan een roadmap die design en performance direct koppelt aan groei.
             </p>
-            <Button asChild size="lg" className="w-full bg-secondary text-white hover:opacity-90 transition">
-              <Link href="/over-ons">Meer over ons</Link>
-            </Button>
-          </div>
+            <Link href="/contact" className="text-primary underline decoration-accent decoration-2 underline-offset-4 hover:opacity-80 transition">
+              Plan een gesprek
+            </Link>
+          </article>
+
+          <article className="bg-[#f9f9f9] p-8">
+            <div className="relative w-full h-[260px] mb-6 overflow-hidden">
+              <Image
+                src="/images/Scherm­afbeelding 2025-08-16 om 11.22.32.png"
+                alt="Design en uitvoering"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+            <h3 className="font-heading text-primary text-[32px] leading-tight mb-3">02. Design en Uitvoering</h3>
+            <p className="text-body leading-relaxed mb-6">
+              Daarna vertalen we de strategie naar een premium digitale ervaring met duidelijke user flows,
+              snelle performance en continue optimalisatie op conversie.
+            </p>
+            <Link href="/over-ons" className="text-primary underline decoration-accent decoration-2 underline-offset-4 hover:opacity-80 transition">
+              Lees meer over onze aanpak
+            </Link>
+          </article>
         </div>
       </div>
     </section>

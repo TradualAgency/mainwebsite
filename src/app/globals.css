@@ -1,14 +1,19 @@
 @import "tailwindcss";
-/*---break---*/
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+  --font-geologica: var(--font-heading);
+  --font-inter: var(--font-body);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-dune: var(--font-dune);
-  --font-geologica: var(--font-geologica);
-  --font-interstellar: var(--font-interstellar);
-  --font-inter: var(--font-inter);
+  --color-body: var(--body);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -43,112 +48,121 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 }
-@theme {
-  --color-primary: #1A1A1A;
-  /*--color-secondary: #85D5C8;*/
-  --color-secondary: #2D3B37;
-  /*--color-tertiary: #C392EC;*/
-  --color-tertiary: #4F4353;
+
+:root {
+  --radius: 0.625rem;
+
+  --surface: #ffffff;
+  --surface-muted: #f9f9f9;
+  --body: #475569;
+
+  --background: var(--surface);
+  --foreground: var(--body);
+  --card: var(--surface);
+  --card-foreground: var(--body);
+  --popover: var(--surface);
+  --popover-foreground: var(--body);
+
+  --primary: #0a2f23;
+  --primary-foreground: #ffffff;
+
+  --secondary: var(--body);
+  --secondary-foreground: #ffffff;
+
+  --muted: var(--surface-muted);
+  --muted-foreground: var(--body);
+
+  --accent: #c5a96f;
+  --accent-foreground: #0a2f23;
+
+  --destructive: #b91c1c;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #c5a96f;
+
+  --chart-1: #0a2f23;
+  --chart-2: #c5a96f;
+  --chart-3: #475569;
+  --chart-4: #f9f9f9;
+  --chart-5: #f1f5f9;
+
+  --sidebar: var(--surface);
+  --sidebar-foreground: var(--body);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: #0a2f23;
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
 }
 
-.swiper{
+.dark {
+  --surface: #0f172a;
+  --surface-muted: #1e293b;
+  --body: #cbd5e1;
+
+  --background: var(--surface);
+  --foreground: var(--body);
+  --card: #111827;
+  --card-foreground: var(--body);
+  --popover: #111827;
+  --popover-foreground: var(--body);
+
+  --primary: #c5a96f;
+  --primary-foreground: #0a2f23;
+  --secondary: var(--body);
+  --secondary-foreground: #0f172a;
+  --muted: var(--surface-muted);
+  --muted-foreground: #94a3b8;
+  --accent: #c5a96f;
+  --accent-foreground: #0a2f23;
+  --destructive: #f87171;
+  --border: #334155;
+  --input: #334155;
+  --ring: #c5a96f;
+}
+
+body {
+  font-family: var(--font-body), sans-serif;
+  background: var(--surface);
+  color: var(--body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-heading), serif;
+  color: var(--primary);
+}
+
+.swiper {
   overflow: visible !important;
   overflow-x: clip !important;
 }
-.swiper-button-next{
-  color: #fff !important;
+
+.swiper-button-next {
+  color: var(--surface) !important;
   top: -20px !important;
   width: 20px !important;
   height: 20px !important;
   right: 40px !important;
 }
-.swiper-button-prev{
-  color: #fff !important;
+
+.swiper-button-prev {
+  color: var(--surface) !important;
   top: -20px !important;
   width: 20px !important;
   height: 20px !important;
   left: auto !important;
   right: 100px !important;
 }
-.swiper-button-prev:after, .swiper-button-next:after{
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
   font-size: 30px !important;
 }
-/*---break---*/
-:root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
-/*---break---*/
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
-}
-body{
-  background: #fff;
-  color: var(--secondary);
-}
-
-/* globals.css */
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
 

@@ -1,34 +1,21 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Geologica } from "next/font/google";
-import { Inter } from "next/font/google";
+import { Noto_Sans, Noto_Serif } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-import localFont from 'next/font/local'
-const duneFont = localFont({
-    src: '../public/fonts/dunerise.woff2',
-    variable: '--font-dune',
-    display: 'swap',
-})
-const interstellarFont = localFont({
-    src: '../public/fonts/interstellar.woff2',
-    variable: '--font-interstellar',
-    display: 'swap',
-})
-
-const geologica = Geologica({
-    subsets: ['latin'],
-    variable: '--font-geologica',
-    weight: ['400', '500', '600', '700'],
-    display: 'swap',
+const notoSerif = Noto_Serif({
+    subsets: ["latin"],
+    variable: "--font-heading",
+    weight: ["400", "500", "600", "700"],
+    display: "swap",
 });
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  weight: ['400', '500', '600', '700'],
-  display: 'swap',
+const notoSans = Noto_Sans({
+  subsets: ["latin"],
+  variable: "--font-body",
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -44,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${duneFont.variable} ${geologica.variable} ${interstellarFont.variable} ${inter.className} antialiased`}
+        className={`${notoSerif.variable} ${notoSans.variable} antialiased`}
       >
       <Header />
       <main className="min-h-screen">

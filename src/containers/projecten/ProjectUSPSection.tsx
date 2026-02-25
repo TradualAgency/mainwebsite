@@ -1,58 +1,31 @@
-import React from "react";
-
 export default function ProjectUSPSection() {
   return (
-    <section className="w-full px-8 py-16 md:py-24">
-      <div className="mx-auto max-w-7xl rounded-xl p-8 md:p-12 lg:p-16 bg-secondary/10">
-        <h2 className="text-3xl font-semibold text-secondary mb-20 md:text-4xl">
-          Waarom kiezen voor Tradual projecten?
+    <section className="bg-[#f9f9f9] my-20 py-20 px-8">
+      <div className="max-w-7xl mx-auto text-center">
+        <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent mb-4">Chapter Four</p>
+        <h2 className="font-heading text-primary text-[38px] leading-[1.05] md:text-[60px] mb-8">
+          Waarom onze projecten presteren
         </h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-          {/* USP 1 */}
-          <div className="text-left">
-            <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-secondary">
-              <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
-            <h3 className="text-xl font-semibold text-secondary mb-3">
-              Lightning Fast Performance
-            </h3>
-            <p className="text-secondary/80 leading-relaxed">
-              Onze projecten laden razendsnel en bieden een uitstekende gebruikerservaring die conversies verhoogt.
-            </p>
-          </div>
+        <p className="max-w-3xl mx-auto text-body text-base md:text-lg leading-relaxed mb-12">
+          Elk project wordt gebouwd met een balans tussen merkbeleving, technische performance en commerciële
+          doelstellingen, zodat resultaten duurzaam schaalbaar zijn.
+        </p>
 
-          {/* USP 2 */}
-          <div className="text-left">
-            <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-secondary">
-              <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <h3 className="text-xl font-semibold text-secondary mb-3">
-              Bewezen Resultaten
-            </h3>
-            <p className="text-secondary/80 leading-relaxed">
-              Al onze projecten zijn geoptimaliseerd voor conversie en hebben bewezen hun waarde in de praktijk.
-            </p>
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <article className="bg-white p-8 text-center">
+            <h3 className="font-heading text-primary text-[30px] leading-none mb-4">+38%</h3>
+            <p className="font-heading text-[10px] text-accent uppercase tracking-[0.08em]">Average Conversion Lift</p>
+          </article>
 
-          {/* USP 3 */}
-          <div className="text-left">
-            <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-secondary">
-              <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-              </svg>
-            </div>
-            <h3 className="text-xl font-semibold text-secondary mb-3">
-              Perfecte UX/UI Design
-            </h3>
-            <p className="text-secondary/80 leading-relaxed">
-              Elk project is zorgvuldig ontworpen met focus op gebruiksvriendelijkheid en visuele aantrekkingskracht.
-            </p>
-          </div>
+          <article className="bg-white p-8 text-center">
+            <h3 className="font-heading text-primary text-[30px] leading-none mb-4">-52%</h3>
+            <p className="font-heading text-[10px] text-accent uppercase tracking-[0.08em]">Faster Page Load Times</p>
+          </article>
+
+          <article className="bg-white p-8 text-center">
+            <h3 className="font-heading text-primary text-[30px] leading-none mb-4">3.1x</h3>
+            <p className="font-heading text-[10px] text-accent uppercase tracking-[0.08em]">ROAS Potential</p>
+          </article>
         </div>
       </div>
     </section>

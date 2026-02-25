@@ -18,14 +18,12 @@ interface ProjectsSceneProps {
 export function ProjectsScene({ projects }: ProjectsSceneProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const cardsRef = useRef<HTMLDivElement>(null)
-  const progressRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (!containerRef.current || !cardsRef.current) return
 
     const container = containerRef.current
     const cards = cardsRef.current
-    const progressBar = progressRef.current
 
     // Check for reduced motion preference
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
@@ -54,16 +52,6 @@ export function ProjectsScene({ projects }: ProjectsSceneProps) {
         start: "top 85%",  // Start earlier but not too aggressive
         end: "top 50%",   // Give more time for the animation
         scrub: 1.5,       // Slower, smoother scrub
-        onUpdate: (self) => {
-          // Update progress bar
-          if (progressBar) {
-            gsap.set(progressBar, { scaleX: self.progress })
-            // Hide progress bar when animation is near completion
-            if (self.progress > 0.95) {
-              gsap.to(progressBar, { opacity: 0, duration: 0.5 })
-            }
-          }
-        },
       },
     })
 
@@ -84,10 +72,16 @@ export function ProjectsScene({ projects }: ProjectsSceneProps) {
   }, [])
 
   return (
-    <section id="projects-scene" className="relative pt-0 pb-16 md:pb-24 lg:pb-32 px-4 sm:px-6 md:px-8">
-      {/* Progress indicator */}
-      <div className="fixed top-0 left-0 w-full h-1 bg-gray-200 z-50">
-        <div ref={progressRef} className="h-full bg-gray-900 origin-left scale-x-0" />
+    <section id="projects-scene" className="relative py-20 px-8 bg-[#f9f9f9]">
+      <div className="max-w-7xl mx-auto mb-10">
+        <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent mb-4">Chapter Two</p>
+        <h2 className="font-heading text-primary text-[38px] leading-[1.05] md:text-[60px] mb-6">
+          Selected Work
+        </h2>
+        <p className="max-w-3xl text-body text-base md:text-lg leading-relaxed">
+          Een overzicht van projecten waarin strategie, performance en esthetiek samenkomen in een digitale
+          ervaring die verkoopt.
+        </p>
       </div>
 
       <div ref={containerRef} className="min-h-[60vh] md:min-h-screen">

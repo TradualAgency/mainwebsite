@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Accordion,
   AccordionContent,
@@ -6,81 +5,49 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+const faqItems = [
+  {
+    question: "Wat biedt Tradual binnen een projecttraject?",
+    answer:
+      "Van positionering en UX tot development en CRO. We leveren een volledige digitale basis die esthetisch sterk is en commercieel presteert.",
+  },
+  {
+    question: "Hoe lang duurt een gemiddeld project?",
+    answer:
+      "Afhankelijk van scope en complexiteit ligt de doorlooptijd gemiddeld tussen 4 en 10 weken. Vooraf stellen we een heldere planning op met concrete mijlpalen.",
+  },
+  {
+    question: "Kunnen jullie bestaande websites optimaliseren?",
+    answer:
+      "Ja. We verbeteren bestaande shops op performance, UX en conversie. Dat kan variëren van gerichte verbeteringen tot een volledige herbouw.",
+  },
+  {
+    question: "Bieden jullie support na livegang?",
+    answer:
+      "Zeker. We bieden onderhoud en groeibegeleiding met periodieke analyses en optimalisaties om je platform blijvend te laten presteren.",
+  },
+];
+
 export default function ProjectFAQSection() {
   return (
-    <section className="w-full px-8 py-16 md:py-24">
-      <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Left side - Title */}
-          <div>
-            <h2 className="text-3xl font-semibold text-secondary md:text-4xl lg:text-5xl">
-              Veelgestelde vragen
-            </h2>
-            <p className="mt-4 text-lg text-secondary/80">
-              Hier vind je antwoorden op de meest gestelde vragen over onze projecten en diensten.
-            </p>
-          </div>
+    <section className="max-w-5xl mx-auto my-20 py-20 px-8">
+      <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent text-center mb-4">Chapter Five</p>
+      <h2 className="font-heading text-primary text-[38px] leading-[1.05] md:text-[60px] text-center mb-10">
+        Veelgestelde vragen
+      </h2>
 
-          {/* Right side - FAQ Accordion */}
-          <div>
-            <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="item-1">
-                <AccordionTrigger className="text-left text-2xl font-bold text-secondary">
-                  Wat biedt Tradual?
-                </AccordionTrigger>
-                <AccordionContent className="text-secondary/80">
-                  Tradual biedt complete ecommerce oplossingen, van ontwerp tot ontwikkeling. We specialiseren ons in Shopify en Next.js projecten die conversie verhogen en resultaat opleveren voor jouw business.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-2">
-                <AccordionTrigger className="text-left text-2xl font-bold text-secondary">
-                  Hoe lang duurt een project?
-                </AccordionTrigger>
-                <AccordionContent className="text-secondary/80">
-                  De doorlooptijd hangt af van de complexiteit van het project. Een standaard Shopify website duurt gemiddeld 4-6 weken, terwijl complexere Next.js projecten 8-12 weken kunnen duren. We bespreken altijd een realistische planning tijdens de intake.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-3">
-                <AccordionTrigger className="text-left text-2xl font-bold text-secondary">
-                  Welke technologieën gebruiken jullie?
-                </AccordionTrigger>
-                <AccordionContent className="text-secondary/80">
-                  We werken voornamelijk met Shopify voor ecommerce projecten en Next.js voor custom webapplicaties. Daarnaast gebruiken we moderne tools zoals TypeScript, Tailwind CSS, en verschillende headless CMS oplossingen afhankelijk van de projecteisen.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-4">
-                <AccordionTrigger className="text-left text-2xl font-bold text-secondary">
-                  Bieden jullie onderhoud na oplevering?
-                </AccordionTrigger>
-                <AccordionContent className="text-secondary/80">
-                  Ja, we bieden verschillende onderhoudscontracten aan. Van basic technisch onderhoud tot complete growth partnerships waar we continu optimaliseren voor betere conversies en prestaties.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-5">
-                <AccordionTrigger className="text-left text-2xl font-bold text-secondary">
-                  Wat zijn jullie tarieven?
-                </AccordionTrigger>
-                <AccordionContent className="text-secondary/80">
-                  Onze tarieven zijn projectafhankelijk en worden bepaald op basis van de scope, complexiteit en gewenste functionaliteiten. We bieden altijd een gratis intake gesprek aan waar we een offerte op maat maken.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-6">
-                <AccordionTrigger className="text-left text-2xl font-bold text-secondary">
-                  Kunnen jullie bestaande websites optimaliseren?
-                </AccordionTrigger>
-                <AccordionContent className="text-secondary/80">
-                  Absoluut! We helpen graag bij het optimaliseren van bestaande websites. Dit kan variëren van performance verbeteringen en SEO optimalisaties tot complete redesigns en functionaliteit uitbreidingen.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </div>
-        </div>
-      </div>
+      <Accordion type="single" collapsible className="w-full">
+        {faqItems.map((item, idx) => (
+          <AccordionItem className="text-primary border-primary/15" key={idx} value={`item-${idx}`}>
+            <AccordionTrigger className="text-left text-base md:text-xl font-heading">
+              {item.question}
+            </AccordionTrigger>
+            <AccordionContent className="text-body text-sm md:text-base leading-relaxed">
+              {item.answer}
+            </AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
     </section>
   );
 }

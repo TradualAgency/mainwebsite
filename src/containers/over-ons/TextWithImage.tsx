@@ -1,61 +1,45 @@
-// components/ImageWithText.tsx
 import Image from "next/image";
-import React from "react";
 
 type ImageWithTextProps = {
-    title: string;
-    text: string;
-    imageUrl: string;
-    imageAlt?: string;
-    imagePosition?: "left" | "right";
+  title: string;
+  text: string;
+  imageUrl: string;
+  imageAlt?: string;
+  imagePosition?: "left" | "right";
 };
 
 export default function ImageWithText({
-                                          title,
-                                          text,
-                                          imageUrl,
-                                          imageAlt = "",
-                                          imagePosition = "left",
-                                      }: ImageWithTextProps) {
-    const isImageLeft = imagePosition === "left";
+  title,
+  text,
+  imageUrl,
+  imageAlt = "",
+  imagePosition = "left",
+}: ImageWithTextProps) {
+  const isImageLeft = imagePosition === "left";
 
-    return (
-        <section className="bg-white">
-            <div className="mx-auto max-w-7xl flex flex-col md:flex-row">
-                {/* Afbeelding - altijd eerst op mobiel */}
-                <div
-                    className={`relative w-full md:w-1/2 h-64 sm:h-80 md:h-auto ${
-                        isImageLeft ? "md:order-1" : "md:order-2"
-                    }`}
-                >
-                    <Image
-                        src={imageUrl}
-                        alt={imageAlt}
-                        width={800}
-                        height={600}
-                        className={`object-cover w-full h-full md:min-h-[600px] ${
-                            isImageLeft 
-                                ? "md:rounded-r-lg" 
-                                : "md:rounded-l-lg"
-                        }`}
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                </div>
+  return (
+    <section className="py-20 px-8 bg-surface">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className={isImageLeft ? "order-1" : "order-1 lg:order-2"}>
+          <Image
+            src={imageUrl}
+            alt={imageAlt}
+            width={900}
+            height={700}
+            className="w-full h-[400px] md:h-[700px] object-cover"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
+        </div>
 
-                {/* Tekst - altijd tweede op mobiel */}
-                <div
-                    className={`w-full md:w-1/2 flex items-center justify-center px-4 sm:px-6 py-8 sm:py-12 md:py-16 ${
-                        isImageLeft ? "md:order-2" : "md:order-1"
-                    }`}
-                >
-                    <div className="max-w-lg text-left">
-                        <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-semibold text-secondary mb-4">
-                            {title}
-                        </h2>
-                        <p className="text-sm sm:text-base leading-relaxed text-secondary">{text}</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+        <div className={isImageLeft ? "order-2 flex items-center" : "order-2 lg:order-1 flex items-center"}>
+          <div className="max-w-xl mx-auto">
+            <h2 className="font-heading text-primary text-[38px] leading-[1.05] md:text-[60px] mb-8">
+              {title}
+            </h2>
+            <p className="text-body text-base md:text-lg leading-relaxed whitespace-pre-line">{text}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
