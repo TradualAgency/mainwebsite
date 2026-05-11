@@ -96,7 +96,7 @@ export default function Header() {
                 ) : (
                     <div className="hidden lg:flex">
                         <Link href="/contact"
-                            className="bg-secondary text-white px-6 py-2 rounded-lg font-medium hover:opacity-90 transition font-geologica"
+                            className="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:opacity-90 transition font-geologica"
                         >
                             Contact
                         </Link>
