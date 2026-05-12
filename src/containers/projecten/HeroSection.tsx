@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
+import Link from "next/link"
 
 type ProjectsHeroProps = {
   label?: string;
@@ -19,7 +19,7 @@ export default function ProjectsHero({
     "Een selectie van high-performance Shopify en Next.js trajecten waarin merkbeleving en conversie elkaar versterken.",
   primaryCta = { href: "/contact", text: "Plan een gesprek" },
   secondaryCta = { href: "/over-ons", text: "Meer over Tradual" },
-  imageSrc = "/images/Design-websites.png",
+  imageSrc = "/images/arch-without-limits.png",
   imageAlt = "Project showcase",
   className = "",
 }: ProjectsHeroProps) {
@@ -59,5 +59,5 @@ export default function ProjectsHero({
         </div>
       </div>
     </section>
-  );
+  )
 }

@@ -2,8 +2,6 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
 import { urlFor } from "@/sanity/lib/image"
 import type { Project } from "@/sanity/lib/getProjects"
 
@@ -14,41 +12,47 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   const imageUrl = project.mainImage ? urlFor(project.mainImage).url() : "/placeholder.svg"
-  
+  const eyebrow = project.tags?.[0] ?? ""
+  const remainingTags = project.tags?.slice(1) ?? []
+
   return (
     <Link href={`/projects/${project.slug.current}`} className="block h-full">
-      <article className="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
-        <div className="aspect-[4/3] relative overflow-hidden">
+      <article className="group bg-surface flex flex-col h-full">
+        <div className="relative overflow-hidden" style={{ aspectRatio: "4/5" }}>
           <Image
             src={imageUrl}
             alt={project.mainImage?.alt || project.title}
             fill
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             loading="lazy"
           />
+          <div className="absolute inset-0 bg-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
         </div>
 
-        <div className="p-6 flex flex-col flex-grow">
-          <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-gray-700 transition-colors">
+        <div className="p-6 flex flex-col flex-grow border-b border-primary/10">
+          {eyebrow && (
+            <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-2">
+              {eyebrow}
+            </p>
+          )}
+
+          <h3 className="font-heading text-primary text-[26px] leading-tight mt-1">
             {project.title}
           </h3>
 
-          <p className="text-gray-600 mb-4 leading-relaxed flex-grow">{project.description}</p>
+          <p className="text-body text-sm leading-relaxed mt-2 flex-grow">{project.description}</p>
 
-          <div className="flex flex-wrap gap-2 mb-4">
-            {project.tags.map((tag) => (
-              <Badge key={tag} variant="secondary" className="text-xs text-white">
-                {tag}
-              </Badge>
-            ))}
-          </div>
+          {remainingTags.length > 0 && (
+            <p className="mt-3 text-accent text-[11px] uppercase tracking-[0.18em]">
+              {remainingTags.join(" · ")}
+            </p>
+          )}
 
-          <Button
-            className="w-full bg-secondary text-white font-medium group-hover:opacity-90 transition pointer-events-none mt-auto"
-          >
-            Bekijk case
-          </Button>
+          <span className="mt-4 inline-flex items-center gap-1 text-primary underline decoration-accent decoration-2 underline-offset-[6px] text-sm font-medium">
+            Lees de case
+            <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+          </span>
         </div>
       </article>
     </Link>

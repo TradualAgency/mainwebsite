@@ -33,33 +33,6 @@ export default async function OverOns() {
   return (
     <main>
       <AboutHero />
-
-      <section className="py-20 px-8 bg-surface">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Image
-            src="/images/Gemini_Generated_Image_7kvdl7kvdl7kvdl7.png"
-            alt="Tradual team visual 1"
-            width={700}
-            height={500}
-            className="w-full h-[260px] md:h-[320px] object-cover"
-          />
-          <Image
-            src="/images/over-ons-img.png"
-            alt="Tradual team visual 2"
-            width={700}
-            height={500}
-            className="w-full h-[260px] md:h-[320px] object-cover"
-          />
-          <Image
-            src="/images/Gemini_Generated_Image_j3u6fpj3u6fpj3u6.png"
-            alt="Tradual team visual 3"
-            width={700}
-            height={500}
-            className="w-full h-[260px] md:h-[320px] object-cover"
-          />
-        </div>
-      </section>
-
       <TextWithImage
         title="Where it all began"
         text="Tradual was founded on a single belief: e-commerce should feel as fast as it looks. We combine deep technical expertise with a sharp eye for design and conversion — so your store doesn't just make an impression, it performs.
