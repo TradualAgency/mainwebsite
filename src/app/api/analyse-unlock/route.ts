@@ -18,9 +18,21 @@ export async function POST(req: NextRequest) {
   }
 
   const { slug, password } = parsed.data
-  const scan = await getProspectScanAuthBySlug(slug)
+  let scan
+  try {
+    scan = await getProspectScanAuthBySlug(slug)
+  } catch (error) {
+    console.error('[analyse-unlock] Failed to fetch prospect scan auth', { slug, error })
+    return NextResponse.json({ error: 'Analyse kon niet worden geladen' }, { status: 500 })
+  }
+
   if (!scan) {
     return NextResponse.json({ error: 'Pagina niet gevonden' }, { status: 404 })
+  }
+
+  if (!scan.password) {
+    console.error('[analyse-unlock] Prospect scan is missing a password', { slug, scanId: scan._id })
+    return NextResponse.json({ error: 'Server configuratie fout — neem contact op.' }, { status: 500 })
   }
 
   if (!checkPassword(password, scan.password)) {
@@ -30,7 +42,8 @@ export async function POST(req: NextRequest) {
   let token: string
   try {
     token = signToken(slug, scan._id)
-  } catch {
+  } catch (error) {
+    console.error('[analyse-unlock] Failed to sign auth token', { slug, scanId: scan._id, error })
     return NextResponse.json({ error: 'Server configuratie fout — neem contact op.' }, { status: 500 })
   }
 
