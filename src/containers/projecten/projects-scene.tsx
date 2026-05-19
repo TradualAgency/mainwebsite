@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { ProjectCard } from "@/components/project-card"
 import { type Project } from "@/sanity/lib/getProjects"
 
-// Register ScrollTrigger plugin
+// Registreer de ScrollTrigger plugin.
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)
 }
@@ -25,17 +25,17 @@ export function ProjectsScene({ projects }: ProjectsSceneProps) {
     const container = containerRef.current
     const cards = cardsRef.current
 
-    // Check for reduced motion preference
+    // Respecteer gebruikers die minder animatie willen.
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
 
     if (prefersReducedMotion) {
-      // Skip animations for users who prefer reduced motion
+      // Sla animaties over voor reduced motion.
       cards.style.transform = "none"
       cards.style.filter = "none"
       return
     }
 
-    // Initial state: flat lay perspective
+    // Beginpositie: plat perspectief.
     gsap.set(cards, {
       rotationX: 75,
       rotationY: -15,
@@ -45,17 +45,17 @@ export function ProjectsScene({ projects }: ProjectsSceneProps) {
       transformStyle: "preserve-3d",
     })
 
-    // Create the main animation timeline
+    // Hoofdanimatie.
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container,
-        start: "top 85%",  // Start earlier but not too aggressive
-        end: "top 50%",   // Give more time for the animation
-        scrub: 1.5,       // Slower, smoother scrub
+        start: "top 85%",
+        end: "top 50%",
+        scrub: 1.5,
       },
     })
 
-    // Animate from flat lay to upright
+    // Animeer van plat naar rechtop.
     tl.to(cards, {
       rotationX: 0,
       rotationY: 0,
@@ -65,7 +65,7 @@ export function ProjectsScene({ projects }: ProjectsSceneProps) {
       ease: "power2.out",
     })
 
-    // Cleanup function
+    // Opruimen bij unmount.
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
     }
@@ -74,9 +74,9 @@ export function ProjectsScene({ projects }: ProjectsSceneProps) {
   return (
     <section id="projects-scene" className="relative py-20 px-8 bg-[#f9f9f9]">
       <div className="max-w-7xl mx-auto mb-10">
-        <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent mb-4">Chapter Two</p>
+        <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent mb-4">Hoofdstuk twee</p>
         <h2 className="font-heading text-primary text-[38px] leading-[1.05] md:text-[60px] mb-6">
-          Selected Work
+          Geselecteerd werk
         </h2>
         <p className="max-w-3xl text-body text-base md:text-lg leading-relaxed">
           Een overzicht van projecten waarin strategie, performance en esthetiek samenkomen in een digitale

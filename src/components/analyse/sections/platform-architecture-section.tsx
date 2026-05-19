@@ -7,7 +7,7 @@ export function PlatformArchitectureSection({ platform }: { platform: NonNullabl
   return (
     <section className="bg-primary py-24 px-8">
       <div className="max-w-7xl mx-auto">
-        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Platform & Architecture</p>
+        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Platform & architectuur</p>
         <h2 className="font-heading text-surface text-[38px] leading-[1.05] md:text-[56px] mb-12">
           De technische fundering.
         </h2>
@@ -42,13 +42,13 @@ export function PlatformArchitectureSection({ platform }: { platform: NonNullabl
               )}
               {platform.serverLocation && (
                 <div>
-                  <p className="text-surface/50 text-xs uppercase tracking-[0.12em] font-heading mb-0.5">Server Location</p>
+                  <p className="text-surface/50 text-xs uppercase tracking-[0.12em] font-heading mb-0.5">Serverlocatie</p>
                   <p className="text-surface text-sm">{platform.serverLocation}</p>
                 </div>
               )}
               {platform.themeOrFramework && (
                 <div>
-                  <p className="text-surface/50 text-xs uppercase tracking-[0.12em] font-heading mb-0.5">Theme / Framework</p>
+                  <p className="text-surface/50 text-xs uppercase tracking-[0.12em] font-heading mb-0.5">Thema / framework</p>
                   <p className="text-surface text-sm">{platform.themeOrFramework}</p>
                 </div>
               )}

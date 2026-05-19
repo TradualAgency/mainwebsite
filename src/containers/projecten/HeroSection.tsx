@@ -13,14 +13,14 @@ type ProjectsHeroProps = {
 };
 
 export default function ProjectsHero({
-  label = "Chapter One",
-  title = "Projects Curated for Measurable Growth",
+  label = "Hoofdstuk een",
+  title = "Projecten gebouwd voor meetbare groei",
   subtitle =
-    "Een selectie van high-performance Shopify en Next.js trajecten waarin merkbeleving en conversie elkaar versterken.",
+    "Een selectie van high-performance Shopify en e-commerce infrastructuurtrajecten waarin merkbeleving en conversie elkaar versterken.",
   primaryCta = { href: "/contact", text: "Plan een gesprek" },
   secondaryCta = { href: "/over-ons", text: "Meer over Tradual" },
   imageSrc = "/images/arch-without-limits.png",
-  imageAlt = "Project showcase",
+  imageAlt = "Projectoverzicht",
   className = "",
 }: ProjectsHeroProps) {
   return (

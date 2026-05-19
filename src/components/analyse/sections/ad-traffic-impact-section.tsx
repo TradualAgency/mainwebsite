@@ -29,7 +29,7 @@ export function AdTrafficImpactSection({ data }: { data: AdTrafficImpact }) {
     <section className="py-16 px-8 bg-[var(--surface)] border-t border-primary/8">
       <div className="max-w-7xl mx-auto">
         <h3 className="font-heading text-primary text-2xl md:text-4xl mb-2">
-          Ad Traffic Impact
+          Impact van betaald verkeer
         </h3>
         <p className="text-body/60 text-sm mb-10">
           Hoeveel van je betaald verkeer bereikt de conversie?
@@ -47,14 +47,14 @@ export function AdTrafficImpactSection({ data }: { data: AdTrafficImpact }) {
             {estWastedAdSpendPct != null && (
               <StatCard
                 value={fmt(estWastedAdSpendPct, '%')}
-                label="Verspild ad budget"
+                label="Verspild advertentiebudget"
                 sublabel="Geen conversie-kans"
               />
             )}
             {estDropOffPer1000Clicks != null && estDropOffPer1000Clicks > 0 && (
               <StatCard
                 value={fmt(estDropOffPer1000Clicks)}
-                label="Drop-off per 1.000 clicks"
+                label="Afhakers per 1.000 clicks"
                 sublabel="Bezoekers bereiken nooit content"
               />
             )}
@@ -75,7 +75,7 @@ export function AdTrafficImpactSection({ data }: { data: AdTrafficImpact }) {
         {bounceDrivers && bounceDrivers.length > 0 && (
           <div className="border border-primary/10 p-6 mb-6">
             <p className="font-heading text-[10px] uppercase tracking-[0.15em] text-primary/40 mb-3">
-              Bounce drivers
+              Bounce-oorzaken
             </p>
             <ul className="space-y-2">
               {bounceDrivers.map((driver, i) => (

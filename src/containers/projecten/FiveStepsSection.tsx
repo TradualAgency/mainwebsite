@@ -11,7 +11,7 @@ const steps = [
   },
   {
     number: "03",
-    title: "Build & Performance",
+    title: "Bouw & performance",
     body: "Onze engineers vertalen het design naar snelle, schaalbare code. Elke pagina wordt geoptimaliseerd op Core Web Vitals, zodat snelheid nooit ten koste gaat van beleving.",
   },
   {
@@ -25,7 +25,7 @@ export default function FiveStepsSection() {
   return (
     <section className="py-20 px-8 bg-surface">
       <div className="max-w-7xl mx-auto">
-        <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent mb-4">Chapter Three</p>
+        <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent mb-4">Hoofdstuk drie</p>
         <h2 className="font-heading text-primary text-[38px] leading-[1.05] md:text-[60px] mb-16">
           Hoe we samenwerken
         </h2>

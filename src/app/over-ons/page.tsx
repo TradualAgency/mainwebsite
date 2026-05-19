@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { getEmployees } from "@/sanity/lib/getEmployees";
 import AboutHero from "@/containers/over-ons/HeroSection";
 import TextWithImage from "@/containers/over-ons/TextWithImage";
@@ -16,7 +15,7 @@ export default async function OverOns() {
     {
       question: "Werken jullie alleen met Shopify?",
       answer:
-        "Nee, we werken ook met Next.js en andere headless oplossingen, afhankelijk van de behoeften van je merk.",
+        "Shopify is vaak de basis, maar ons werk draait om de volledige infrastructuur rondom je e-commerce store: performance, tracking, conversie, data en schaalbaarheid.",
     },
     {
       question: "Hoe lang duurt een gemiddeld project?",
@@ -34,9 +33,9 @@ export default async function OverOns() {
     <main>
       <AboutHero />
       <TextWithImage
-        title="Where it all began"
-        text="Tradual was founded on a single belief: e-commerce should feel as fast as it looks. We combine deep technical expertise with a sharp eye for design and conversion — so your store doesn't just make an impression, it performs.
-We build scalable Shopify and Next.js experiences that grow alongside your brand, without ever compromising on identity or speed."
+        title="Waar het begon"
+        text="Tradual is gebouwd op een simpele overtuiging: e-commerce moet net zo snel aanvoelen als het eruitziet. We combineren diepe technische expertise met een scherp oog voor design en conversie, zodat je webshop niet alleen indruk maakt, maar ook presteert.
+We bouwen schaalbare Shopify-ervaringen en e-commerce infrastructuur die meegroeien met je merk, zonder ooit in te leveren op identiteit of snelheid."
         imageUrl="/images/the-start.png"
         imageAlt="Tradual verhaal"
         imagePosition="left"

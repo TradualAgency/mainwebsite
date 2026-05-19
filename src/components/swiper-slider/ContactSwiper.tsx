@@ -1,7 +1,6 @@
 'use client';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import Image from 'next/image';
 import styles from '../../app/styles/Contact-swiper.module.css';
 
 // Import Swiper styles
@@ -20,41 +19,25 @@ export default function ContactSwiper() {
             className={`h-full w-full ${styles.contactSwiper}`}
         >
             <SwiperSlide
-                className="p-6 rounded-xl bg-white/5 backdrop-blur-md shadow-lg w-full"
+                className="border border-surface/10 bg-surface/5 p-6 w-full"
             >
                 <section className="flex flex-col justify-between h-full">
-                    <div>
-                        <Image
-                            src="/vercel.svg"
-                            alt=""
-                            className="w-20 bg-black/20 rounded-2xl p-5"
-                            width={100}
-                            height={100}
-                        />
-                    </div>
+                    <p className="font-heading text-[10px] uppercase tracking-[0.16em] text-accent">Performance</p>
                     <div className="flex-grow flex items-center justify-center">
-                        <p className="text-2xl italic">&quot;Vercel kreeg meer bezoekers en een 30% conversie groei door snellere laadtijden&quot;</p>
+                        <p className="text-2xl italic text-surface leading-snug">&quot;Snellere laadtijden, betere tracking en een stabielere Shopify-basis zorgen direct voor meer rendement uit hetzelfde verkeer.&quot;</p>
                     </div>
-                    <div className="h-[20px]"></div> {/* Empty spacer at bottom for balance */}
+                    <p className="font-heading text-[10px] uppercase tracking-[0.16em] text-surface/40">Tradual infrastructuur</p>
                 </section>
             </SwiperSlide>
             <SwiperSlide
-                className="p-6 rounded-xl bg-white/5 backdrop-blur-md shadow-lg w-full"
+                className="border border-surface/10 bg-surface/5 p-6 w-full"
             >
                 <section className="flex flex-col justify-between h-full">
-                    <div>
-                        <Image
-                            src="/vercel.svg"
-                            alt=""
-                            className="w-20 bg-black/20 rounded-2xl p-5"
-                            width={100}
-                            height={100}
-                        />
-                    </div>
+                    <p className="font-heading text-[10px] uppercase tracking-[0.16em] text-accent">Shopify</p>
                     <div className="flex-grow flex items-center justify-center">
-                        <p className="text-2xl italic">&quot;Vercel kreeg meer bezoekers en een 30% conversie groei door snellere laadtijden&quot;</p>
+                        <p className="text-2xl italic text-surface leading-snug">&quot;We kijken naar de volledige store: checkout, data, apps, performance en de technische keuzes die groei mogelijk maken.&quot;</p>
                     </div>
-                    <div className="h-[20px]"></div> {/* Empty spacer at bottom for balance */}
+                    <p className="font-heading text-[10px] uppercase tracking-[0.16em] text-surface/40">E-commerce stack</p>
                 </section>
             </SwiperSlide>
         </Swiper>

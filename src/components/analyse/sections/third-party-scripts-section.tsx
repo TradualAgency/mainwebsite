@@ -6,7 +6,7 @@ export function ThirdPartyScriptsSection({ scripts }: { scripts: NonNullable<Pro
   return (
     <section className="bg-primary py-24 px-8">
       <div className="max-w-7xl mx-auto">
-        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Third-Party Scripts</p>
+        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Third-party scripts</p>
         <h2 className="font-heading text-surface text-[38px] leading-[1.05] md:text-[56px] mb-12">
           Externe scripts & hun impact.
         </h2>
@@ -28,7 +28,7 @@ export function ThirdPartyScriptsSection({ scripts }: { scripts: NonNullable<Pro
             {scripts.totalThirdPartyBlockingMs != null && (
               <div className="border border-surface/10 p-6">
                 <p className="font-heading text-accent text-[52px] leading-none mb-1">{scripts.totalThirdPartyBlockingMs}ms</p>
-                <p className="text-sm text-surface/70">Main thread blocking time</p>
+                <p className="text-sm text-surface/70">Main-thread blocking time</p>
               </div>
             )}
           </div>
@@ -41,8 +41,8 @@ export function ThirdPartyScriptsSection({ scripts }: { scripts: NonNullable<Pro
                 <tr className="border-b border-surface/10">
                   <th className="text-left py-3 pr-4 font-heading text-[10px] uppercase tracking-[0.15em] text-accent">Script</th>
                   <th className="text-left py-3 pr-4 font-heading text-[10px] uppercase tracking-[0.15em] text-accent">Doel</th>
-                  <th className="text-right py-3 pr-4 font-heading text-[10px] uppercase tracking-[0.15em] text-accent">Size</th>
-                  <th className="text-right py-3 pr-4 font-heading text-[10px] uppercase tracking-[0.15em] text-accent">Blocking</th>
+                  <th className="text-right py-3 pr-4 font-heading text-[10px] uppercase tracking-[0.15em] text-accent">Grootte</th>
+                  <th className="text-right py-3 pr-4 font-heading text-[10px] uppercase tracking-[0.15em] text-accent">Blokkering</th>
                   <th className="text-left py-3 pr-4 font-heading text-[10px] uppercase tracking-[0.15em] text-accent">Noodzaak</th>
                   <th className="text-right py-3 font-heading text-[10px] uppercase tracking-[0.15em] text-accent">€/mo</th>
                 </tr>

@@ -21,7 +21,7 @@ export function RevenueLeakSection({ data }: { data: RevenueLeak }) {
       <div className="bg-[var(--primary)] py-16 px-8">
         <div className="max-w-7xl mx-auto">
           <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-6">
-            Revenue Leak Analyse
+            Revenue Leak-analyse
           </p>
           <h2 className="font-heading text-white text-[32px] md:text-[56px] leading-[1.05] mb-10">
             Hoeveel kost het je?
@@ -45,7 +45,7 @@ export function RevenueLeakSection({ data }: { data: RevenueLeak }) {
             {roi?.yearOneNetReturnEur != null && (
               <StatCard
                 value={fmt(roi.yearOneNetReturnEur)}
-                label="Year 1 netto rendement"
+                label="Netto rendement jaar 1"
                 tone="dark"
               />
             )}
@@ -170,7 +170,7 @@ export function RevenueLeakSection({ data }: { data: RevenueLeak }) {
                                   Signaal
                                 </th>
                                 <th className="px-4 py-2.5 text-left font-heading text-[9px] uppercase tracking-[0.14em] text-primary/40 font-normal">
-                                  Priority
+                                  Prioriteit
                                 </th>
                                 <th className="px-4 py-2.5 text-right font-heading text-[9px] uppercase tracking-[0.14em] text-primary/40 font-normal">
                                   /mnd
@@ -214,18 +214,18 @@ export function RevenueLeakSection({ data }: { data: RevenueLeak }) {
         </div>
       )}
 
-      {/* ── CEO Triggers ────────────────────────────────────────────── */}
+      {/* ── CEO-signalen ────────────────────────────────────────────── */}
       {ceoTriggers.length > 0 && (
         <div className="bg-[var(--surface)] py-16 px-8 border-t border-primary/8">
           <div className="max-w-7xl mx-auto">
             <h3 className="font-heading text-primary text-2xl md:text-4xl mb-2">
-              CEO Signalen
+              CEO-signalen
             </h3>
             <p className="text-body/60 text-sm mb-10">
               Herken jij deze patronen in je business?
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-              {/* Triggered items first */}
+              {/* Getriggerde items eerst */}
               {triggeredItems.map((trigger) => (
                 <div
                   key={trigger._key}
@@ -250,7 +250,7 @@ export function RevenueLeakSection({ data }: { data: RevenueLeak }) {
                   )}
                 </div>
               ))}
-              {/* Dimmed items */}
+              {/* Gedimde items */}
               {dimmedItems.map((trigger) => (
                 <div
                   key={trigger._key}
@@ -267,7 +267,7 @@ export function RevenueLeakSection({ data }: { data: RevenueLeak }) {
         </div>
       )}
 
-      {/* ── Methodology note ────────────────────────────────────────── */}
+      {/* ── Methodologienotitie ─────────────────────────────────────── */}
       {methodologyNote && (
         <div className="bg-[var(--surface-muted)] px-8 py-4 border-t border-primary/5">
           <p className="max-w-7xl mx-auto text-xs text-body/40 italic">{methodologyNote}</p>

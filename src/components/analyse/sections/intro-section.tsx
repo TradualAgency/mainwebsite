@@ -4,7 +4,7 @@ import { urlFor } from '@/sanity/lib/image'
 import type { ProspectScan } from '@/sanity/lib/getProspectScans'
 import { ScanLevelBadge } from '@/components/analyse/scan-level-badge'
 
-// Old documents store `intro` as PortableText blocks; new documents store it as plain text.
+// Oude documenten bewaren `intro` als PortableText; nieuwe documenten als platte tekst.
 function IntroBody({ intro }: { intro: unknown }) {
   if (!intro) return null
   if (typeof intro === 'string') {
@@ -33,7 +33,7 @@ export function IntroSection({ scan }: { scan: ProspectScan }) {
           )}
           {scanLevel && <ScanLevelBadge level={scanLevel} />}
         </div>
-        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Store Scan</p>
+        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Winkelanalyse</p>
         <h1 className="font-heading text-primary text-[38px] leading-[1.05] md:text-[72px] mb-6">
           {clientInfo.companyName}
         </h1>

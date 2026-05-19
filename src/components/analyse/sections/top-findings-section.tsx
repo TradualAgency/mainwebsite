@@ -12,7 +12,7 @@ export function TopFindingsSection({ scan }: { scan: ProspectScan }) {
   return (
     <section className="py-20 px-8 bg-surface">
       <div className="max-w-7xl mx-auto">
-        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Headline Numbers</p>
+        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Belangrijkste cijfers</p>
         <h2 className="font-heading text-primary text-[32px] leading-[1.05] md:text-[48px] mb-10">
           Wat we gevonden hebben.
         </h2>
@@ -21,21 +21,21 @@ export function TopFindingsSection({ scan }: { scan: ProspectScan }) {
             {estPerformanceLiftPercent != null && (
               <StatCard
                 value={`+${estPerformanceLiftPercent}%`}
-                label="Est. Conversie-lift via Speed"
+                label="Geschatte conversielift via snelheid"
                 sublabel="puur uit performance-optimalisatie"
               />
             )}
             {costAnalysis?.estMonthlySavingsEur != null && (
               <StatCard
                 value={`€${costAnalysis.estMonthlySavingsEur.toLocaleString('nl-NL')}/mo`}
-                label="Est. Maandelijkse Besparing"
+                label="Geschatte maandelijkse besparing"
                 sublabel="na stack rationalisatie"
               />
             )}
             {thirdPartyScripts?.totalThirdPartyDomains != null && (
               <StatCard
                 value={`${thirdPartyScripts.totalThirdPartyDomains}`}
-                label="Third-Party Domeinen"
+                label="Third-party domeinen"
                 sublabel="extern geladen scripts & trackers"
               />
             )}

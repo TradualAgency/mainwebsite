@@ -8,7 +8,7 @@ export default function GetStarted() {
                 {/* Linker kolom */}
                 <div>
                     <h2 className="text-4xl font-semibold text-secondary mb-4">
-                        Get started with Tradual
+                        Start met Tradual
                     </h2>
                     <p className="text-lg text-gray-700">
                         Begin vandaag nog met het laten groeien van je e-commerce business.

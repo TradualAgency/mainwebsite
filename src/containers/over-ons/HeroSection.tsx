@@ -9,11 +9,11 @@ type AboutHeroProps = {
 };
 
 export default function AboutHero({
-  label = "About Us",
-  title = "Crafted for brands that value timeless growth",
-  subtitle = "Wij helpen ambitieuze merken groeien met razendsnelle Shopify en Next.js webshops. Van strategie en design tot development en CRO leveren we ervaringen die premium aanvoelen en aantoonbaar converteren.",
+  label = "Over ons",
+  title = "Gemaakt voor merken die duurzame groei waarderen",
+  subtitle = "Wij helpen ambitieuze merken groeien met de volledige infrastructuur rondom hun e-commerce store en Shopify. Van strategie en design tot development, CRO en performance leveren we ervaringen die premium aanvoelen en aantoonbaar converteren.",
   ctaHref = "/contact",
-  ctaText = "Start a Conversation",
+  ctaText = "Start een gesprek",
 }: AboutHeroProps) {
   return (
     <section className="py-20 px-8 bg-surface" aria-label="Over ons hero">

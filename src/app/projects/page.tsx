@@ -11,8 +11,8 @@ export default async function ProjectPage() {
     return (
     <>
         <ProjectsHero />
-        <ProjectsScene projects={projects} />
-        <FiveStepsSection />
+        {/* <ProjectsScene projects={projects} /> */}
+        {/* <FiveStepsSection /> */}
         <ProjectUSPSection />
         <ProjectFAQSection />
     </>

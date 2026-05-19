@@ -7,7 +7,7 @@ export function CostAnalysisSection({ cost }: { cost: NonNullable<ProspectScan['
   return (
     <section className="bg-primary py-24 px-8">
       <div className="max-w-7xl mx-auto">
-        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Cost Analysis</p>
+        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Kostenanalyse</p>
         <h2 className="font-heading text-surface text-[38px] leading-[1.05] md:text-[56px] mb-12">
           Wat kost het nu, en wat kan het kosten.
         </h2>

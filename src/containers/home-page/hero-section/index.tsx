@@ -1,17 +1,16 @@
 import Link from "next/link";
-import Image from "next/image";
 
 export default function HeroSection() {
     return (
         <section className="hero-section my-16 md:my-20 lg:my-24 px-8 bg-surface">
             <div className="max-w-7xl mx-auto grid grid-cols-1 gap-8">
-                <h6 className="text-center uppercase text-accent">A vision for founders</h6>
-                <h1 className="text-center mx-auto font-medium text-5xl md:text-7xl lg:text-8xl">The New Standard of Digital Elegance</h1>
+                <h6 className="text-center uppercase text-accent">Een visie voor founders</h6>
+                <h1 className="text-center mx-auto font-medium text-5xl md:text-7xl lg:text-8xl">De nieuwe standaard voor digitale elegantie</h1>
                 <div className="w-px justify-self-center h-10 bg-gray-300" />
-                <p className="max-w-[640px] mx-auto text-center">For the discerning founder, growth isn't just a number. It's the seamless fusion of heritage, technology, and a relentless pursuit of perfection.</p>
+                <p className="max-w-[640px] mx-auto text-center">Voor ambitieuze founders is groei meer dan een cijfer. Het is de samensmelting van merkwaarde, technologie en een compromisloze standaard voor perfectie.</p>
                 <Link href="/contact"
                     className="text-center mx-auto w-fit text-body underline hover:text-accent">
-                    Contact us
+                    Neem contact op
                 </Link>
             </div>
 

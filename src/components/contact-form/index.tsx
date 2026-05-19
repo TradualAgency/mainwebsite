@@ -92,20 +92,20 @@ export default function ContactForm() {
 
     return(
             <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-7 text-surface">
                     <FormField
                         control={form.control}
                         name="name"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Naam</FormLabel>
+                                <FormLabel className="font-heading text-[10px] uppercase tracking-[0.14em] text-accent">Naam</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="" {...field} />
+                                    <Input className="h-12 border-surface/20 bg-surface/5 text-surface placeholder:text-surface/40 focus-visible:border-accent focus-visible:ring-accent/30" placeholder="" {...field} />
                                 </FormControl>
-                                <FormDescription>
+                                <FormDescription className="text-surface/50">
                                     Voer hier uw volledige naam in
                                 </FormDescription>
-                                <FormMessage />
+                                <FormMessage className="text-red-300" />
                             </FormItem>
                         )}
                     />
@@ -114,14 +114,14 @@ export default function ContactForm() {
                         name="email"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>E-mail</FormLabel>
+                                <FormLabel className="font-heading text-[10px] uppercase tracking-[0.14em] text-accent">E-mail</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="" {...field} />
+                                    <Input className="h-12 border-surface/20 bg-surface/5 text-surface placeholder:text-surface/40 focus-visible:border-accent focus-visible:ring-accent/30" placeholder="" {...field} />
                                 </FormControl>
-                                <FormDescription>
+                                <FormDescription className="text-surface/50">
                                     Voer hier uw e-mailadres in
                                 </FormDescription>
-                                <FormMessage />
+                                <FormMessage className="text-red-300" />
                             </FormItem>
                         )}
                     />
@@ -130,14 +130,14 @@ export default function ContactForm() {
                         name="contactNumber"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Telefoonnummer</FormLabel>
+                                <FormLabel className="font-heading text-[10px] uppercase tracking-[0.14em] text-accent">Telefoonnummer</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="" {...field} />
+                                    <Input className="h-12 border-surface/20 bg-surface/5 text-surface placeholder:text-surface/40 focus-visible:border-accent focus-visible:ring-accent/30" placeholder="" {...field} />
                                 </FormControl>
-                                <FormDescription>
+                                <FormDescription className="text-surface/50">
                                     Voer hier uw telefoonnummer in
                                 </FormDescription>
-                                <FormMessage />
+                                <FormMessage className="text-red-300" />
                             </FormItem>
                         )}
                     />
@@ -146,22 +146,22 @@ export default function ContactForm() {
                         name="bericht"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Bericht</FormLabel>
+                                <FormLabel className="font-heading text-[10px] uppercase tracking-[0.14em] text-accent">Bericht</FormLabel>
                                 <FormControl>
                                     <Textarea
                                         placeholder=""
-                                        className="resize-none"
+                                        className="min-h-32 resize-none border-surface/20 bg-surface/5 text-surface placeholder:text-surface/40 focus-visible:border-accent focus-visible:ring-accent/30"
                                         {...field}
                                     />
                                 </FormControl>
-                                <FormDescription>
+                                <FormDescription className="text-surface/50">
                                     Voer hier uw bericht in
                                 </FormDescription>
-                                <FormMessage />
+                                <FormMessage className="text-red-300" />
                             </FormItem>
                         )}
                     />
-                    <Button variant="default" size="lg" type="submit">Verzenden</Button>
+                    <Button className="bg-accent text-primary hover:bg-accent/90" variant="default" size="lg" type="submit">Verzenden</Button>
                 </form>
             </Form>
     )

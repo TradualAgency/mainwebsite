@@ -7,7 +7,7 @@ export function TrackingDataQualitySection({ tracking }: { tracking: NonNullable
   return (
     <section className="py-20 px-8 bg-surface">
       <div className="max-w-7xl mx-auto">
-        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Tracking & Data Quality</p>
+        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Tracking & datakwaliteit</p>
         <h2 className="font-heading text-primary text-[32px] leading-[1.05] md:text-[48px] mb-10">
           Hoe goed wordt data gemeten?
         </h2>
@@ -23,14 +23,14 @@ export function TrackingDataQualitySection({ tracking }: { tracking: NonNullable
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           {tracking.analyticsStack && (
             <div>
-              <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-1">Analytics Stack</p>
+              <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-1">Analytics-stack</p>
               <p className="text-primary text-sm">{tracking.analyticsStack}</p>
               {tracking.detectionEvidence && <EvidenceCollapsible evidence={tracking.detectionEvidence} label="Detectie-bewijs" />}
             </div>
           )}
           {tracking.cmpProvider && (
             <div>
-              <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-1">CMP Provider</p>
+              <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-1">CMP-provider</p>
               <p className="text-primary text-sm">{tracking.cmpProvider}</p>
             </div>
           )}
@@ -39,13 +39,13 @@ export function TrackingDataQualitySection({ tracking }: { tracking: NonNullable
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10">
           {tracking.pixelsHealth && (
             <div className="border border-primary/10 p-4">
-              <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-2">Pixels Health</p>
+              <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-2">Pixelstatus</p>
               <StatusPill status={tracking.pixelsHealth} />
             </div>
           )}
           {tracking.capiStatus && (
             <div className="border border-primary/10 p-4">
-              <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-2">CAPI Status</p>
+              <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-2">CAPI-status</p>
               <StatusPill status={tracking.capiStatus} />
             </div>
           )}
@@ -57,13 +57,13 @@ export function TrackingDataQualitySection({ tracking }: { tracking: NonNullable
           )}
           {tracking.serverSideTagging && (
             <div className="border border-primary/10 p-4">
-              <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-2">Server-Side Tagging</p>
+              <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-2">Server-side tagging</p>
               <StatusPill status={tracking.serverSideTagging} />
             </div>
           )}
           {tracking.duplicateTrackingDetected != null && (
             <div className="border border-primary/10 p-4">
-              <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-2">Duplicate Tracking</p>
+              <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-2">Dubbele tracking</p>
               <StatusPill status={tracking.duplicateTrackingDetected ? 'issues' : 'valid'} />
               <p className="text-xs text-body mt-1">{tracking.duplicateTrackingDetected ? 'Gedetecteerd' : 'Niet gedetecteerd'}</p>
             </div>

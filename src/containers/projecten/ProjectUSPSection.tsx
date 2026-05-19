@@ -9,21 +9,21 @@ const stats = [
     value: 38,
     prefix: "+",
     suffix: "%",
-    label: "Average Conversion Lift",
+    label: "Gemiddelde conversielift",
   },
   {
     icon: Zap,
     value: 52,
     prefix: "-",
     suffix: "%",
-    label: "Faster Page Load Times",
+    label: "Snellere laadtijden",
   },
   {
     icon: Target,
     value: 3.1,
     prefix: "",
     suffix: "x",
-    label: "ROAS Potential",
+    label: "ROAS-potentieel",
   },
 ]
 
@@ -55,14 +55,12 @@ function StatCard({
   label,
   triggered,
 }: (typeof stats)[0] & { triggered: boolean }) {
-  const count = useCountUp(value, 1800, triggered)
-  const prefersReduced = useRef(false)
+  const [prefersReduced] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  )
+  const count = useCountUp(value, 1800, triggered && !prefersReduced)
 
-  useEffect(() => {
-    prefersReduced.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches
-  }, [])
-
-  const display = prefersReduced.current ? value : count
+  const display = prefersReduced ? value : count
 
   return (
     <div className="flex flex-col items-center py-10 px-8">
@@ -100,7 +98,7 @@ export default function ProjectUSPSection() {
   return (
     <section className="bg-primary my-20 py-20 px-8">
       <div className="max-w-7xl mx-auto text-center">
-        <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent mb-4">Chapter Four</p>
+        <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent mb-4">Hoofdstuk vier</p>
         <h2 className="font-heading text-surface text-[38px] leading-[1.05] md:text-[60px] mb-4">
           Waarom onze projecten presteren
         </h2>

@@ -6,7 +6,7 @@ export function SecurityComplianceSection({ sec }: { sec: NonNullable<ProspectSc
   return (
     <section className="py-20 px-8 bg-surface">
       <div className="max-w-7xl mx-auto">
-        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Security & Compliance</p>
+        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Security & compliance</p>
         <h2 className="font-heading text-primary text-[32px] leading-[1.05] md:text-[40px] mb-10">
           Beveiliging & privacy.
         </h2>
@@ -14,14 +14,14 @@ export function SecurityComplianceSection({ sec }: { sec: NonNullable<ProspectSc
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           {sec.sslStatus && (
             <div className="border border-primary/10 p-4">
-              <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-2">SSL Status</p>
+              <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-2">SSL-status</p>
               <StatusPill status={sec.sslStatus} />
               {sec.sslDetails && <p className="text-xs text-body mt-2">{sec.sslDetails}</p>}
             </div>
           )}
           {sec.pciCompliance && (
             <div className="border border-primary/10 p-4">
-              <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-2">PCI Compliance</p>
+              <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-2">PCI-compliance</p>
               <StatusPill status={sec.pciCompliance} />
             </div>
           )}

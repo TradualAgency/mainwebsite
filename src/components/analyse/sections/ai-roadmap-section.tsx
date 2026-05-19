@@ -60,11 +60,11 @@ export function AiRoadmapSection({ roadmap }: { roadmap: AiRoadmap }) {
 
   return (
     <section className="border-t border-primary/8">
-      {/* Hero — executive summary */}
+      {/* Hero: managementsamenvatting */}
       <div className="bg-[var(--primary)] py-16 px-8">
         <div className="max-w-7xl mx-auto">
           <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-6">
-            Strategisch Roadmap
+            Strategische roadmap
           </p>
           <div className="flex flex-wrap gap-3 mb-8">
             {totalTimeline && (
@@ -81,7 +81,7 @@ export function AiRoadmapSection({ roadmap }: { roadmap: AiRoadmap }) {
           {northStarMetric && (
             <div className="border-l-4 border-accent pl-6 max-w-3xl">
               <p className="font-heading text-[9px] uppercase tracking-[0.14em] text-accent/60 mb-1">
-                North Star Metric
+                North Star metric
               </p>
               <p className="text-white/70 text-sm leading-relaxed italic">{northStarMetric}</p>
             </div>
@@ -89,13 +89,13 @@ export function AiRoadmapSection({ roadmap }: { roadmap: AiRoadmap }) {
         </div>
       </div>
 
-      {/* Top priorities + Quick wins */}
+      {/* Topprioriteiten + quick wins */}
       {((topPriorities && topPriorities.length > 0) || (quickWins && quickWins.length > 0)) && (
         <div className="bg-[var(--surface-muted)] py-16 px-8 border-t border-primary/8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
             {topPriorities && topPriorities.length > 0 && (
               <div>
-                <h4 className="font-heading text-primary text-xl mb-6">Top Prioriteiten</h4>
+                <h4 className="font-heading text-primary text-xl mb-6">Topprioriteiten</h4>
                 <ol className="space-y-3">
                   {topPriorities.map((p, i) => (
                     <li key={i} className="flex gap-4 text-sm text-body/80 leading-relaxed">
@@ -110,7 +110,7 @@ export function AiRoadmapSection({ roadmap }: { roadmap: AiRoadmap }) {
             )}
             {quickWins && quickWins.length > 0 && (
               <div>
-                <h4 className="font-heading text-primary text-xl mb-6">Quick Wins</h4>
+                <h4 className="font-heading text-primary text-xl mb-6">Quick wins</h4>
                 <ul className="space-y-3">
                   {quickWins.map((win, i) => (
                     <li key={i} className="flex gap-3 text-sm text-body/80 leading-relaxed">

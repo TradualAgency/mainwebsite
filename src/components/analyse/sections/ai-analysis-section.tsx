@@ -57,7 +57,7 @@ function ShopifyCard({ data }: { data: ShopifyMigrationAnalysis }) {
         <p className="text-body text-sm leading-relaxed">{data.summary}</p>
       )}
 
-      {/* Key Wins + Risks */}
+      {/* Voordelen + risico's */}
       {((data.keyWins && data.keyWins.length > 0) || (data.keyRisks && data.keyRisks.length > 0)) && (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {data.keyWins && data.keyWins.length > 0 && (
@@ -134,9 +134,9 @@ export function AiAnalysisSection({ data }: { data: AiAnalysis }) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           {cro && <BlockCard title="CRO" data={cro} />}
-          {deliverability && <BlockCard title="Deliverability" data={deliverability} />}
-          {adBounceRevenue && <BlockCard title="Ad Bounce & Revenue" data={adBounceRevenue} />}
-          {techArchitecture && <BlockCard title="Tech Architecture" data={techArchitecture} />}
+          {deliverability && <BlockCard title="E-maildeliverability" data={deliverability} />}
+          {adBounceRevenue && <BlockCard title="Ad-bounce & omzet" data={adBounceRevenue} />}
+          {techArchitecture && <BlockCard title="Technische architectuur" data={techArchitecture} />}
           {shopifyMigration && <ShopifyCard data={shopifyMigration} />}
         </div>
       </div>

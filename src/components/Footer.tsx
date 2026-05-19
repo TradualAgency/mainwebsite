@@ -6,14 +6,7 @@ export default function Footer() {
     <footer className="bg-surface text-primary">
       <div className="max-w-7xl mx-auto px-8 py-16 md:py-20 grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
         <div>
-          <Link href="/" className="inline-flex items-center gap-3">
-            <Image
-              src="/images/logo-tradual-aqua.svg"
-              alt="Tradual logo"
-              width={44}
-              height={44}
-              className="w-11 h-11 object-contain"
-            />
+          <Link href="/" className="inline-flex items-center">
             <span className="font-heading text-2xl">Tradual</span>
           </Link>
           <p className="mt-3 text-xs text-primary/75 font-heading tracking-[0.08em] uppercase">

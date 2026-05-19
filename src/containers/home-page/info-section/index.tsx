@@ -3,21 +3,21 @@ export default function InfoSection() {
         <section className="bg-white my-20 px-8">
             <div className="max-w-7xl mx-auto">
                 <blockquote className="text-2xl md:text-4xl font-heading leading-tight">
-                    "Luxury is not about features; it's about the feeling of effortless performance. We build the silent engines that power global desire"
+                    &ldquo;Luxe draait niet om features, maar om het gevoel van moeiteloze performance. Wij bouwen de stille motoren achter merken die wereldwijd verlangen oproepen.&rdquo;
                 </blockquote>
 
                 <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                     <p className="text-base md:text-lg leading-relaxed text-body">
-                        We've observed the limitations of monolithic
-commerce. The friction. The slowdowns. For a
-brand that values excellence, these aren't just
-technical hurdles—they are barriers to the
-brand's soul.                    </p>
+                        We kennen de beperkingen van monolithische
+commerce. De frictie. De vertraging. Voor een
+merk dat excellentie belangrijk vindt, zijn dit geen
+technische details maar obstakels voor de
+merkervaring.                    </p>
                     <p className="text-base md:text-lg leading-relaxed text-body">
-                        Our methodology revolves around 'Headless'—
-a separation of concerns that allows your
-brand's story to be told without compromise,
-on any screen, at any speed.                    </p>
+                        Onze methode draait om Headless:
+een scheiding tussen frontend en backend waardoor je
+merkverhaal zonder compromis verteld kan worden,
+op elk scherm en met elke snelheid.                    </p>
                 </div>
             </div>
         </section>

@@ -6,7 +6,7 @@ export function SeoHealthSection({ seo }: { seo: NonNullable<ProspectScan['seoHe
   return (
     <section className="py-20 px-8 bg-[#f9f9f9]">
       <div className="max-w-7xl mx-auto">
-        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">SEO Health</p>
+        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">SEO-gezondheid</p>
         <h2 className="font-heading text-primary text-[32px] leading-[1.05] md:text-[48px] mb-10">
           Organische vindbaarheid.
         </h2>
@@ -15,7 +15,7 @@ export function SeoHealthSection({ seo }: { seo: NonNullable<ProspectScan['seoHe
           <div className="space-y-6">
             {seo.organicTrafficTrend && (
               <div>
-                <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-2">Traffic trend</p>
+                <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-2">Traffictrend</p>
                 <div className="flex items-center gap-3">
                   <StatusPill status={seo.organicTrafficTrend} />
                   {seo.organicTrafficSource && <span className="text-xs text-body/60">{seo.organicTrafficSource}</span>}
@@ -24,7 +24,7 @@ export function SeoHealthSection({ seo }: { seo: NonNullable<ProspectScan['seoHe
             )}
             {seo.brandedVsNonBrandedRatio && (
               <div>
-                <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-1">Branded vs non-branded</p>
+                <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-1">Branded vs. non-branded</p>
                 <p className="text-primary text-sm">{seo.brandedVsNonBrandedRatio}</p>
               </div>
             )}
@@ -39,7 +39,7 @@ export function SeoHealthSection({ seo }: { seo: NonNullable<ProspectScan['seoHe
             )}
             {seo.programmaticPagesDetected != null && (
               <div className="flex items-center justify-between border-b border-primary/10 pb-3">
-                <span className="text-sm text-body">Programmatic pages</span>
+                <span className="text-sm text-body">Programmatic pagina&apos;s</span>
                 <StatusPill status={seo.programmaticPagesDetected ? 'confirmed' : 'unknown'} />
               </div>
             )}
@@ -56,13 +56,13 @@ export function SeoHealthSection({ seo }: { seo: NonNullable<ProspectScan['seoHe
           <div className="space-y-4 mb-8 max-w-3xl">
             {seo.schemaIssues && (
               <div>
-                <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-1">Schema issues</p>
+                <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-1">Schema-issues</p>
                 <p className="text-body text-sm whitespace-pre-line">{seo.schemaIssues}</p>
               </div>
             )}
             {seo.programmaticQuality && (
               <div>
-                <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-1">Programmatic quality</p>
+                <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-1">Programmatic kwaliteit</p>
                 <p className="text-body text-sm whitespace-pre-line">{seo.programmaticQuality}</p>
               </div>
             )}

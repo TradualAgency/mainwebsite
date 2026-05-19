@@ -11,7 +11,7 @@ export function PrioritizedRoadmapSection({ roadmap }: { roadmap: NonNullable<Pr
   return (
     <section className="py-20 px-8 bg-[#f9f9f9]">
       <div className="max-w-7xl mx-auto">
-        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Prioritized Roadmap</p>
+        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Geprioriteerde roadmap</p>
         <h2 className="font-heading text-primary text-[32px] leading-[1.05] md:text-[48px] mb-10">
           Hoe we dit aanpakken.
         </h2>
