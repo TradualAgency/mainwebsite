@@ -1,0 +1,417 @@
+{
+  "slug": {
+    "_type": "slug",
+    "current": "studiewinkelnl"
+  },
+  "intro": [
+    {
+      "_key": "1b94359bbbf9",
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_key": "cbd2ca1338cd",
+          "text": "Studiewinkel.nl draait op een monolithische Magento 2-stack en verkoopt educatieve producten aan een publiek dat bij uitstek vergelijkt, beoordeelt en afhaakt bij de minste frictie. De meest urgente pijn is drieledig: een verplichte logingate in de checkout zonder gastoptie, een Lighthouse performance score van 52 op desktop met een Time to Interactive van ruim 33 seconden, en een geschat attributieverlies van 45% door ontbrekende server-side tracking. Samen ondermijnen deze drie factoren zowel de conversie als het vermogen om die conversie betrouwbaar te meten.",
+          "_type": "span",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_key": "ce8fb5719973",
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_key": "d2b1e1f0e186",
+          "text": "De financiële inzet is concreet. Elke orderlaag die afhaakt door de geforceerde accountaanmaak vertegenwoordigt circa 35% extra abandonment ten opzichte van een setup met gastafrekenen — een verlies dat dagelijks oploopt zonder dat het zichtbaar is in de huidige analytics. Bovendien ontbreken AggregateRating en Product schema volledig, waardoor Studiewinkel.nl in de zoekresultaten zonder sterren verschijnt terwijl concurrenten wel rich snippets tonen. Dat kost klikken vóórdat een bezoeker de site ooit bereikt.",
+          "_type": "span",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_key": "3d942dc2be72",
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_key": "ceb6a62ea896",
+          "text": "De technische schuld is reëel maar niet onoplosbaar. De mobiele Core Web Vitals zijn opvallend goed — LCP van 820 ms, CLS van 0.0 — wat aangeeft dat de codebase niet fundamenteel gebroken is, maar dat gerichte ingrepen op architectuur, checkout en tracking een directe, meetbare omzetimpact kunnen realiseren.",
+          "_type": "span",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    }
+  ],
+  "title": "Studiewinkel.nl — Audit",
+  "password": "d73a9465",
+  "scanDate": "2026-05-14T11:02:15.723839+00:00",
+  "scanLevel": "outside-only",
+  "seoHealth": {
+    "notes": [
+      {
+        "_key": "d81d6a50cfc0",
+        "_type": "block",
+        "style": "normal",
+        "children": [
+          {
+            "_key": "dc855e0ffa1f",
+            "text": "De SEO-situatie van Studiewinkel.nl heeft een concreet, snel oplosbaar probleem: er is geen enkel JSON-LD schema markup gedetecteerd. Geen Product schema, geen AggregateRating, geen BreadcrumbList. Het praktische gevolg is dat productpagina's niet in aanmerking komen voor rich snippets in Google — geen sterren, geen prijs, geen broodkruimelnavigatie in de SERP. Terwijl Trustpilot-reviews aanwezig zijn (via externe link detecteerbaar), worden die beoordelingen niet als AggregateRating getoond in zoekresultaten. Het toevoegen van AggregateRating schema is een technische ingreep van enkele uren met een directe, meetbare CTR-impact.",
+            "_type": "span",
+            "marks": []
+          }
+        ],
+        "markDefs": []
+      }
+    ],
+    "schemaIssues": "No JSON-LD schema markup detected",
+    "hreflangSetup": "n-a",
+    "hasSchemaMarkup": false,
+    "organicTrafficTrend": "onbekend",
+    "programmaticQuality": null,
+    "organicTrafficSource": "Not available without GSC access",
+    "brandedVsNonbrandedRatio": null,
+    "programmaticPagesDetected": false
+  },
+  "clientInfo": {
+    "industry": "Education",
+    "storeUrl": "https://studiewinkel.nl/",
+    "companyName": "Studiewinkel.nl",
+    "contactEmail": null,
+    "contactPerson": null
+  },
+  "coreThesis": "De technische schuld is zichtbaar en meetbaar — aanpakken levert directe, aantoonbare conversiewinst.",
+  "ctaSection": {
+    "body": "Met een attributieverlies van 45%, een checkout zonder gastoptie en productpagina's zonder schema markup loopt Studiewinkel.nl dagelijks meetbare omzet mis die niet zichtbaar is in de huidige analytics. Tradual identificeert in een gerichte sessie precies welke ingrepen het snelste rendement opleveren — plan een gesprek in.",
+    "heading": "Stop het lek voordat de klant het merkt",
+    "primaryButtonUrl": "https://tradual.nl/contact",
+    "primaryButtonLabel": "Plan een gesprek"
+  },
+  "performance": {
+    "mobileCLS": 0,
+    "mobileFCP": 0.82,
+    "mobileINP": 126,
+    "mobileLCP": 0.82,
+    "desktopLCP": 2.63,
+    "mobileTTFB": 384,
+    "lighthouseSEO": 83,
+    "mobileCLSRating": "good",
+    "mobileINPRating": "good",
+    "mobileLCPRating": "good",
+    "numberOfRequests": 75,
+    "notesAndDiagnosis": [
+      {
+        "_key": "df9be7ee3b23",
+        "_type": "block",
+        "style": "normal",
+        "children": [
+          {
+            "_key": "531b0f8d9af7",
+            "text": "De mobiele Core Web Vitals van Studiewinkel.nl zijn verrassend sterk: LCP van 820 ms (goed), INP van 126 ms (goed) en een CLS van 0.0. Op desktop kantelt het beeld volledig: een Lighthouse performance score van 52, een Speed Index van 8,8 seconden en een Time to Interactive van 33,5 seconden. Die discrepantie wijst op server-side renderingproblematiek die op snelle mobiele netwerken minder zichtbaar is, maar op desktop en bij terugkerende bezoekers met hogere verwachtingen direct aanvoelt als traagheid. Onderzoek toont consistent dat elke seconde laadtijdverbetering op e-commerce desktop-sessies 1–3% conversiewinst oplevert; bij een huidige score van 52 liggen meerdere van die seconden binnen bereik.",
+            "_type": "span",
+            "marks": []
+          }
+        ],
+        "markDefs": []
+      }
+    ],
+    "totalPageWeightKb": 8607.5,
+    "unusedJavaScriptKb": 0.7,
+    "lighthousePerformance": 52,
+    "largeImagesUncompressed": [],
+    "lighthouseAccessibility": 69,
+    "lighthouseBestPractices": 96,
+    "renderBlockingResources": []
+  },
+  "publishedAt": "2026-05-14T11:02:15.723839+00:00",
+  "auditSummary": "Geautomatiseerde outside-only scan van Magento 2 store (https://studiewinkel.nl/). 2 technische risicos en 2 kansen geïdentificeerd.",
+  "checkoutFlow": {
+    "notes": [
+      {
+        "_key": "d91029e7086b",
+        "_type": "block",
+        "style": "normal",
+        "children": [
+          {
+            "_key": "9d64fdfb200f",
+            "text": "De checkoutflow van Studiewinkel.nl heeft één dominant obstakel: er is geen gastafrekenen beschikbaar. Bezoekers worden gedwongen een account aan te maken vóór de aankoop, wat volgens sectorbenchmarks leidt tot circa 35% extra abandonment ten opzichte van een checkout met gastoptie. Dit is de hoogste-impact, laagstdrempelige ingreep die beschikbaar is in de huidige stack — de implementatie vereist geen architectuurwijziging maar een configuratieaanpassing in Magento 2. De checkout-URL gaf bij geautomatiseerde test een 404 terug, wat kan wijzen op een cart-vereiste, maar de logingate was wel detecteerbaar als structureel patroon.",
+            "_type": "span",
+            "marks": []
+          }
+        ],
+        "markDefs": []
+      }
+    ],
+    "testedAsMobile": false,
+    "observedFriction": [
+      {
+        "_key": "77c00ea6df69",
+        "step": "Login gate",
+        "issue": "No guest checkout option detected.",
+        "estImpact": "High — forced account creation increases abandonment by ~35%."
+      }
+    ],
+    "errorsEncountered": [
+      "Checkout page returned 404 — may require items in cart"
+    ],
+    "fieldsInAddressForm": null,
+    "paymentMethodsOrder": [],
+    "guestCheckoutAvailable": false,
+    "redirectsBeforePayment": 0,
+    "postPurchaseObservations": null,
+    "totalCheckoutTimeSeconds": 1
+  },
+  "costAnalysis": null,
+  "ownedChannels": {
+    "notes": [
+      {
+        "_key": "07aa3708c3dc",
+        "_type": "block",
+        "style": "normal",
+        "children": [
+          {
+            "_key": "a593d057df42",
+            "text": "Op basis van publiek waarneembare signalen is er geen ESP gedetecteerd en zijn actieve e-mailautomatiseringsflows — welcome serie, abandoned cart, post-purchase — niet verifieerbaar. De DNS-infrastructuur wijst op gebruik van Flowmailer als verzendplatform (aanwezig in SPF-record), maar of dit ook transactionele of marketing-automatisering omvat is van buitenaf niet vast te stellen. De sectorsbenchmark voor e-mailomzet als aandeel van totale omzet ligt op 30%; als Studiewinkel.nl geen actieve flows heeft, laat het structureel een derde van zijn potentiële herhalingsomzet liggen.",
+            "_type": "span",
+            "marks": []
+          }
+        ],
+        "markDefs": []
+      }
+    ],
+    "smsActive": null,
+    "espDetected": null,
+    "welcomeFlowObserved": null,
+    "winBackFlowObserved": null,
+    "espDetectionEvidence": null,
+    "estEmailRevenuePercent": null,
+    "newsletterSignupTested": true,
+    "postPurchaseFlowObserved": null,
+    "abandonedCartFlowObserved": null,
+    "benchmarkEmailRevenuePercent": 30
+  },
+  "biggestTechRisk": "45% geschatte attribution loss door tracking-gaps",
+  "bloatWhatMustGo": [],
+  "croObservations": [],
+  "methodologyNote": "Automated outside-only scan. Alle bevindingen zijn gebaseerd op publiek toegankelijke signalen: HTTP headers, DOM analyse, PageSpeed Insights API, en third-party script catalogus. Geen admin-toegang gebruikt.",
+  "migrationApproach": [
+    {
+      "_key": "936207ef913b",
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_key": "84ca5a27db99",
+          "text": "Een volledige herarchitectuur naar headless is de juiste richting op middellange termijn, maar niet de eerste stap. De meest impactvolle en snelst uitvoerbare acties liggen in drie gebieden die onafhankelijk van elkaar aangepakt kunnen worden: gastafrekenen activeren in Magento 2 (configuratie, geen migratie), schema markup toevoegen op productpagina's (technisch eenvoudig, SEO-impact direct), en server-side tagging opzetten via sGTM gecombineerd met Meta CAPI om het attributieverlies van 45% te dichten. Deze drie ingrepen samen adresseren de grootste omzetlekken zonder de architectuur aan te raken.",
+          "_type": "span",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    },
+    {
+      "_key": "1b39f029e662",
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_key": "26d86dda74bd",
+          "text": "Pas als die quick wins zijn geïmplementeerd en gemeten, is het moment om de CDN-laag toe te voegen en de haalbaarheid van een headless frontend te beoordelen. Een Vue Storefront of Next.js commerce-laag bovenop de bestaande Magento 2 backend lost de TTI-problematiek structureel op, maar vergt een serieuze investering die pas rendabel is als de trackingdata betrouwbaar genoeg is om de impact te meten. Stap één is dus niet bouwen — stap één is meten.",
+          "_type": "span",
+          "marks": []
+        }
+      ],
+      "markDefs": []
+    }
+  ],
+  "thirdPartyScripts": {
+    "notes": [
+      {
+        "_key": "7c5db5376a7c",
+        "_type": "block",
+        "style": "normal",
+        "children": [
+          {
+            "_key": "06d0338f00a3",
+            "text": "De third-party scriptbelasting van Studiewinkel.nl is opvallend beperkt: slechts 2 externe domeinen (YouTube nocookie en Google Tag Manager) met een gezamenlijk gewicht van 35 KB en een totale blocking time van 0 milliseconden. Er is geen sprake van script bloat, overbodige advertentietechnologie of redundante analytics-lagen. De performance-schuld zit daarmee niet in third-party scripts maar primair in de Magento-architectuur zelf en het ontbreken van CDN-caching — wat het tegelijkertijd eenvoudiger én duurder maakt om op te lossen, omdat de wortel architectureel is.",
+            "_type": "span",
+            "marks": []
+          }
+        ],
+        "markDefs": []
+      }
+    ],
+    "detectedScripts": [
+      {
+        "_key": "61b34102ebfc",
+        "name": "youtube-nocookie.com",
+        "domain": "youtube-nocookie.com",
+        "sizeKb": 20,
+        "purpose": "Unknown third-party resource",
+        "necessity": "useful",
+        "blockingTimeMs": null,
+        "monthlyCostEur": null,
+        "recommendation": null
+      },
+      {
+        "_key": "35f5381a6718",
+        "name": "Google Tag Manager",
+        "domain": "googletagmanager.com",
+        "sizeKb": 15,
+        "purpose": "Tag management container",
+        "necessity": "critical",
+        "blockingTimeMs": null,
+        "monthlyCostEur": null,
+        "recommendation": null
+      }
+    ],
+    "dangerousPatterns": [],
+    "totalThirdPartyKb": 35,
+    "totalThirdPartyDomains": 2,
+    "totalThirdPartyBlockingMs": 0
+  },
+  "prioritizedRoadmap": [
+    {
+      "_key": "42d60054305f",
+      "items": [
+        "Audit en configuratie-advies voor gastcheckout in Magento 2 met implementatiehandleiding",
+        "JSON-LD schema implementatie: Product, AggregateRating en BreadcrumbList op productpagina's",
+        "Consent Mode v2 configuratie in Google Tag Manager met cookiebanner-aanbeveling",
+        "Baseline-rapport: huidige checkout abandonment, SERP CTR en Lighthouse scores als nulmeting"
+      ],
+      "phase": "Fase 1 — Conversieblokkers verwijderen",
+      "outcome": "Gastafrekenen actief, schema markup live op PDP's, gedocumenteerde baseline-metrics voor conversie en CTR",
+      "duration": "2 weken",
+      "tradualProduct": "speed-audit",
+      "estInvestmentEur": 2500
+    },
+    {
+      "_key": "e828e9b64417",
+      "items": [
+        "Google Tag Manager Server-Side (sGTM) setup op eigen subdomein",
+        "Meta Conversions API integratie via sGTM voor browser-onafhankelijke event-registratie",
+        "Google Enhanced Conversions configuratie",
+        "Tracking-validatierapport: event coverage voor/na, attributie-delta per kanaal"
+      ],
+      "phase": "Fase 2 — Tracking herstellen",
+      "outcome": "Attributieverlies teruggebracht van 45% naar onder 15%, server-side tracking operationeel voor alle key conversie-events",
+      "duration": "3 weken",
+      "tradualProduct": "speed-audit",
+      "estInvestmentEur": 4500
+    },
+    {
+      "_key": "6a02dec8e70b",
+      "items": [
+        "CDN-implementatie (Cloudflare of Fastly) voor Apache-origin inclusief cache-strategie",
+        "Image-optimalisatie pipeline en lazy loading audit op hoog-traffic pagina's",
+        "Core Web Vitals monitoring dashboard (wekelijkse rapportage)",
+        "Aanbevelingsrapport voor headless-migratiescenario met kosten-batenanalyse"
+      ],
+      "phase": "Fase 3 — Performance-architectuur",
+      "outcome": "Lighthouse desktop score boven 75, TTI onder 8 seconden, CDN actief met gemeten TTFB-reductie",
+      "duration": "6 weken",
+      "tradualProduct": "performance-retainer",
+      "estInvestmentEur": 6500
+    },
+    {
+      "_key": "4df42b95141c",
+      "items": [
+        "ESP-selectie en configuratieadvies op basis van Magento 2-integratie",
+        "Abandoned cart flow implementatie (3-staps sequentie met timing-benchmark)",
+        "Welcome serie en post-purchase flow configuratie",
+        "DMARC-upgrade naar p=reject na validatie verzendstromen, BIMI-implementatieadvies"
+      ],
+      "phase": "Fase 4 — E-mailkanaal activeren",
+      "outcome": "Actieve welcome flow, abandoned cart flow en post-purchase flow live; DMARC upgrade naar reject-beleid",
+      "duration": "4 weken",
+      "tradualProduct": "performance-retainer",
+      "estInvestmentEur": 3500
+    }
+  ],
+  "securityCompliance": {
+    "notes": [
+      {
+        "_key": "eb09450eda6d",
+        "_type": "block",
+        "style": "normal",
+        "children": [
+          {
+            "_key": "fbdb44aa8127",
+            "text": "De basisbeveiliging van Studiewinkel.nl is op orde: SSL is geldig tot september 2026, HSTS is ingeschakeld met een max-age van 730 dagen inclusief subdomein-preloading en HTTPS-redirect is actief. Op e-maildomeinniveau is DMARC geconfigureerd op 'quarantine' — functioneel maar niet maximaal; upgrade naar 'reject' is de volgende stap zodra rapportagedata alle verzendstromen bevestigt. Het ontbreken van een detecteerbare cookiebanner is een serieus GDPR-aandachtspunt: Google Tag Manager laadt zonder zichtbare consent, wat bij handhaving door de Autoriteit Persoonsgegevens een risico vormt. PCI-compliance vereist handmatige verificatie van de betaalflow.",
+            "_type": "span",
+            "marks": []
+          }
+        ],
+        "markDefs": []
+      }
+    ],
+    "sslStatus": "valid",
+    "sslDetails": "Valid SSL, expires Sep 23 23:59:59 2026 GMT (132 days)",
+    "gdprConcerns": [],
+    "pciCompliance": "concerns",
+    "cookieBannerBehavior": "No standard cookie banner detected"
+  },
+  "trackingDataQuality": {
+    "notes": [
+      {
+        "_key": "d8bae8b377cc",
+        "_type": "block",
+        "style": "normal",
+        "children": [
+          {
+            "_key": "4add04384554",
+            "text": "De trackingopzet van Studiewinkel.nl is functioneel maar structureel kwetsbaar. Google Tag Manager is aanwezig, maar er is geen server-side tagging (geen sGTM-endpoint), geen Meta Conversions API en geen Google Enhanced Conversions gedetecteerd. Consent Mode is afwezig en er is geen cookiebanner waargenomen — wat zowel een GDPR-risico als een tracking-dekkingsprobleem is. Het geschatte attributieverlies van 45% is realistisch bij deze configuratie: browser-only tracking verliest bij adblockers, Safari ITP en niet-geconsenteerde sessies structureel conversie-events. Dat betekent dat het managementteam momenteel beslissingen neemt op basis van data die minder dan 60% van de werkelijkheid weergeeft.",
+            "_type": "span",
+            "marks": []
+          }
+        ],
+        "markDefs": []
+      }
+    ],
+    "capiStatus": "to-validate",
+    "cmpProvider": null,
+    "pixelsHealth": "missing",
+    "analyticsStack": "Google Tag Manager",
+    "consentModeStatus": "none",
+    "detectionEvidence": "Google Tag Manager: googletagmanager.com/ns.html?id=GTM-",
+    "serverSideTagging": "no",
+    "duplicateTrackingDetected": false,
+    "estAttributionLossPercent": 45
+  },
+  "platformArchitecture": {
+    "hosting": "Apache",
+    "cdnDetected": null,
+    "cdnEvidence": null,
+    "serverLocation": null,
+    "architectureType": "monolith",
+    "detectedPlatform": "Magento 2",
+    "themeOrFramework": null,
+    "detectionEvidence": "RequireJS: mage/",
+    "detectionConfidence": "probable",
+    "architectureRationale": "Monolithic rendering assumed (server-renders HTML directly).",
+    "architectureAssessment": [
+      {
+        "_key": "02080286be73",
+        "_type": "block",
+        "style": "normal",
+        "children": [
+          {
+            "_key": "6cbb4fd13726",
+            "text": "Studiewinkel.nl leunt op een monolithische Magento 2-installatie op Apache zonder aantoonbaar CDN of edge-caching laag. Dat verklaart direct de kloof tussen de acceptabele mobiele prestaties en de alarmerend trage desktop-metrics: een Speed Index van 8,8 seconden en een TTI van 33,5 seconden zijn geen content-problemen maar architectuurproblemen. Zonder CDN heeft de origin-server geen buffer bij traffic-pieken — relevant voor een educatieve webshop die pieken kent rondom schooljaarstarten en examenperiodes — en mist de stack de edge-caching winst die TTI en TTFB structureel kan halveren. Een headless frontend bovenop de bestaande Magento 2 backend is de aanbevolen richting op middellange termijn, maar kortetermijnwinst is haalbaar via CDN-implementatie en server-side tagging zonder de hele architectuur aan te raken.",
+            "_type": "span",
+            "marks": []
+          }
+        ],
+        "markDefs": []
+      }
+    ],
+    "recommendedArchitecture": "headless",
+    "hostingDetectionEvidence": "server: Apache"
+  },
+  "biggestTechOpportunity": "Geen AggregateRating schema — sterren ontbreken in Google SERP, directe CTR-winst",
+  "estPerformanceLiftPercent": 28
+}

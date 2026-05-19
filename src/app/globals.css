@@ -128,13 +128,15 @@ body {
   color: var(--body);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: var(--font-heading), serif;
-  color: var(--primary);
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: var(--font-heading), serif;
+    color: var(--primary);
+  }
 }
 
 .swiper {
