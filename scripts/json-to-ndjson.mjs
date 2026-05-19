@@ -7,7 +7,6 @@
  */
 
 import { readFileSync, writeFileSync } from 'fs'
-import { randomBytes } from 'crypto'
 
 const [,, inputPath, outputPath] = process.argv
 if (!inputPath || !outputPath) {
@@ -39,10 +38,28 @@ function renameNotes(obj) {
   return notes !== undefined ? { ...rest, notesAndDiagnosis: notes } : rest
 }
 
+function stableDocumentId(raw) {
+  const slug = raw.slug?.current
+  if (!slug) {
+    throw new Error('Input JSON must include slug.current to create a stable Sanity document id')
+  }
+
+  const safeSlug = slug
+    .toLowerCase()
+    .replace(/[^a-z0-9._-]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+
+  if (!safeSlug) {
+    throw new Error(`Could not create a stable Sanity document id from slug.current: ${slug}`)
+  }
+
+  return `prospect-scan-${safeSlug}`
+}
+
 const doc = {
-  _id: raw._id ?? `prospect-scan-${randomBytes(6).toString('hex')}`,
-  _type: 'prospectScan',
   ...raw,
+  _id: stableDocumentId(raw),
+  _type: 'prospectScan',
 
   seoHealth: raw.seoHealth ? stripNulls({
     ...renameNotes(raw.seoHealth),
@@ -76,4 +93,4 @@ console.log('  slug     :', clean.slug?.current)
 console.log('  scanLevel:', clean.scanLevel)
 console.log()
 console.log('Importeer met:')
-console.log(`  npx sanity datasets import ${outputPath} production`)
+console.log(`  npx sanity dataset import ${outputPath} production`)

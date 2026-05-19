@@ -14,7 +14,9 @@ node scripts/json-to-ndjson.mjs scripts/studiewinkel-scan.json scripts/studiewin
 
 Het script normaliseert veldnamen (o.a. `notes` → `notesAndDiagnosis`) en
 enum-waarden zodat het document voldoet aan de v2 schema van `prospectScan`.
-De uitvoer is één JSON-regel per document (NDJSON-formaat).
+De uitvoer is één JSON-regel per document (NDJSON-formaat), met een stabiele
+document-ID op basis van `slug.current` zodat herimports geen duplicate scan
+voor dezelfde slug aanmaken.
 
 ---
 
@@ -42,5 +44,5 @@ merge) — kies `prefer new` om te overschrijven.
 SANITY_API_TOKEN=<token> node scripts/import-scan.mjs <input.json>
 ```
 
-Dit script schrijft het document rechtstreeks via de Sanity client en
-print de Studio-link en frontend-URL na import.
+Dit script schrijft het document rechtstreeks via de Sanity client met
+`createOrReplace` en print de Studio-link en frontend-URL na import.

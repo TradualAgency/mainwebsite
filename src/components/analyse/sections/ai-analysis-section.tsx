@@ -1,4 +1,3 @@
-import { StatusPill } from '@/components/analyse/status-pill'
 import type { AiAnalysis, AiAnalysisBlock, ShopifyMigrationAnalysis } from '@/sanity/lib/getProspectScans'
 
 interface BlockCardProps {
@@ -38,19 +37,6 @@ function ShopifyCard({ data }: { data: ShopifyMigrationAnalysis }) {
         <h4 className="font-heading text-[10px] uppercase tracking-[0.15em] text-accent">
           Shopify Migratie
         </h4>
-        <div className="flex flex-wrap gap-2">
-          {data.recommendation && <StatusPill status={data.recommendation} />}
-          {data.migrationComplexity && (
-            <span className="font-heading text-[9px] uppercase tracking-[0.12em] text-primary/40 border border-primary/10 px-2 py-0.5">
-              Complexiteit: {data.migrationComplexity}
-            </span>
-          )}
-          {data.estimatedTimeline && (
-            <span className="font-heading text-[9px] uppercase tracking-[0.12em] text-primary/40 border border-primary/10 px-2 py-0.5">
-              {data.estimatedTimeline}
-            </span>
-          )}
-        </div>
       </div>
 
       {data.summary && (

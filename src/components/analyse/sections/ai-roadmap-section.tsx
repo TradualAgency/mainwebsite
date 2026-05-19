@@ -11,11 +11,6 @@ function PhaseCard({ phase }: { phase: AiRoadmapPhase }) {
           </p>
           <h4 className="font-heading text-white text-xl leading-tight">{phase.name}</h4>
         </div>
-        {phase.timeframe && (
-          <span className="font-heading text-[9px] uppercase tracking-[0.14em] text-white/40 border border-white/15 px-2 py-1 shrink-0">
-            {phase.timeframe}
-          </span>
-        )}
       </div>
 
       <div className="px-6 py-5 flex flex-col gap-5 flex-1">

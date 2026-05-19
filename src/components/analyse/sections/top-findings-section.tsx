@@ -2,12 +2,10 @@ import type { ProspectScan } from '@/sanity/lib/getProspectScans'
 import { StatCard } from '@/components/analyse/stat-card'
 
 export function TopFindingsSection({ scan }: { scan: ProspectScan }) {
-  const { estPerformanceLiftPercent, costAnalysis, thirdPartyScripts, auditSummary, methodologyNote } = scan
+  const { estPerformanceLiftPercent, costAnalysis } = scan
 
-  const hasStats = estPerformanceLiftPercent != null || costAnalysis?.estMonthlySavingsEur != null || thirdPartyScripts?.totalThirdPartyDomains != null
-  const hasCopy = (typeof auditSummary === 'string' && auditSummary) || (typeof methodologyNote === 'string' && methodologyNote)
-
-  if (!hasStats && !hasCopy) return null
+  const hasStats = estPerformanceLiftPercent != null || costAnalysis?.estMonthlySavingsEur != null
+  if (!hasStats) return null
 
   return (
     <section className="py-20 px-8 bg-surface">
@@ -31,23 +29,6 @@ export function TopFindingsSection({ scan }: { scan: ProspectScan }) {
                 label="Geschatte maandelijkse besparing"
                 sublabel="na stack rationalisatie"
               />
-            )}
-            {thirdPartyScripts?.totalThirdPartyDomains != null && (
-              <StatCard
-                value={`${thirdPartyScripts.totalThirdPartyDomains}`}
-                label="Third-party domeinen"
-                sublabel="extern geladen scripts & trackers"
-              />
-            )}
-          </div>
-        )}
-        {(typeof auditSummary === 'string' || typeof methodologyNote === 'string') && (
-          <div className="max-w-3xl">
-            {typeof auditSummary === 'string' && auditSummary && (
-              <p className="text-body text-base leading-relaxed whitespace-pre-line mb-4">{auditSummary}</p>
-            )}
-            {typeof methodologyNote === 'string' && methodologyNote && (
-              <p className="text-body/60 text-sm italic">{methodologyNote}</p>
             )}
           </div>
         )}

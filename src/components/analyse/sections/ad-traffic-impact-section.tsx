@@ -19,7 +19,6 @@ export function AdTrafficImpactSection({ data }: { data: AdTrafficImpact }) {
     estMonthlyLostRevenueEurLow,
     estMonthlyLostRevenueEurHigh,
     bounceDrivers,
-    methodologyNote,
   } = data
 
   const hasStats = estPostClickBouncePct != null || estWastedAdSpendPct != null || estDropOffPer1000Clicks != null
@@ -86,10 +85,6 @@ export function AdTrafficImpactSection({ data }: { data: AdTrafficImpact }) {
               ))}
             </ul>
           </div>
-        )}
-
-        {methodologyNote && (
-          <p className="text-xs text-body/40 italic">{methodologyNote}</p>
         )}
       </div>
     </section>

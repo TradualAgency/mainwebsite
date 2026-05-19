@@ -1,5 +1,5 @@
 /**
- * Import a prospect scan JSON as a new Sanity document.
+ * Import a prospect scan JSON as a stable Sanity document.
  * Normalises field-name mismatches between the JSON export format and the v2 schema.
  *
  * Usage:
@@ -53,11 +53,30 @@ function renameNotes(obj) {
   return notes !== undefined ? { ...rest, notesAndDiagnosis: notes } : rest
 }
 
+function stableDocumentId(raw) {
+  const slug = raw.slug?.current
+  if (!slug) {
+    throw new Error('Input JSON must include slug.current to create a stable Sanity document id')
+  }
+
+  const safeSlug = slug
+    .toLowerCase()
+    .replace(/[^a-z0-9._-]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+
+  if (!safeSlug) {
+    throw new Error(`Could not create a stable Sanity document id from slug.current: ${slug}`)
+  }
+
+  return `prospect-scan-${safeSlug}`
+}
+
 // ── Build normalised document ─────────────────────────────────────────────────
 
 const doc = stripNulls({
-  _type: 'prospectScan',
   ...raw,
+  _id: stableDocumentId(raw),
+  _type: 'prospectScan',
 
   seoHealth: raw.seoHealth ? {
     ...renameNotes(raw.seoHealth),
@@ -92,7 +111,7 @@ console.log('  slug  :', clean.slug?.current)
 console.log('  scanLevel:', clean.scanLevel)
 console.log()
 
-const result = await client.create(clean)
-console.log('✓ Document created:', result._id)
+const result = await client.createOrReplace(clean)
+console.log('✓ Document created or replaced:', result._id)
 console.log(`  Open: https://tradual.sanity.studio/structure/prospectScan;${result._id}`)
 console.log(`  Frontend: /analyse/${clean.slug?.current}`)

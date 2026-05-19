@@ -2,7 +2,7 @@ import { client, clientFresh } from './client'
 import type { PortableTextBlock } from '@portabletext/types'
 import type { SanityImageSource } from '@sanity/image-url'
 
-const SCAN_BY_SLUG_QUERY = `*[_type == "prospectScan" && slug.current == $slug][0]{
+const SCAN_BY_SLUG_QUERY = `*[_type == "prospectScan" && slug.current == $slug] | order(scanDate desc, _updatedAt desc)[0]{
   _id, title, slug, scanLevel, scanDate, publishedAt,
   clientInfo{ "companyName": coalesce(companyName, name), storeUrl, industry, estAnnualRevenueEur, contactPerson, contactEmail, logo },
   intro, coreThesis, auditSummary, biggestTechRisk, biggestTechOpportunity,
@@ -88,7 +88,7 @@ const SCAN_BY_SLUG_QUERY = `*[_type == "prospectScan" && slug.current == $slug][
   ctaSection{ heading, body, primaryButtonLabel, primaryButtonUrl, secondaryButtonLabel, secondaryButtonUrl }
 }`
 
-const SCAN_AUTH_QUERY = `*[_type == "prospectScan" && slug.current == $slug][0]{
+const SCAN_AUTH_QUERY = `*[_type == "prospectScan" && slug.current == $slug] | order(scanDate desc, _updatedAt desc)[0]{
   _id, "password": password
 }`
 

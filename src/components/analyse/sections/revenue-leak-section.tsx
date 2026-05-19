@@ -8,12 +8,30 @@ function fmt(n: number | null | undefined): string {
   return `€${n.toLocaleString('nl-NL')}`
 }
 
+function sumDefinedNumbers(values: Array<number | null | undefined>): number | undefined {
+  let hasValue = false
+  const total = values.reduce<number>((sum, value) => {
+    if (typeof value !== 'number' || !Number.isFinite(value)) return sum
+    hasValue = true
+    return sum + value
+  }, 0)
+
+  return hasValue ? total : undefined
+}
+
 export function RevenueLeakSection({ data }: { data: RevenueLeak }) {
-  const { roi, layers = [], ceoTriggers = [], totalMonthlyLossEur, totalAnnualLossEur, methodologyNote } = data
+  const { roi, layers = [], ceoTriggers = [], totalMonthlyLossEur, totalAnnualLossEur } = data
+  const displayMonthlyLossEur =
+    totalMonthlyLossEur ??
+    roi?.monthlyLeakEur ??
+    sumDefinedNumbers(layers.map(layer => layer.estMonthlyLossEur))
+  const displayAnnualLossEur =
+    totalAnnualLossEur ??
+    roi?.annualLeakEur ??
+    sumDefinedNumbers(layers.map(layer => layer.estAnnualLossEur))
 
   const maxMonthly = Math.max(...layers.map(l => l.estMonthlyLossEur ?? 0), 1)
   const triggeredItems = ceoTriggers.filter(t => t.triggered)
-  const dimmedItems = ceoTriggers.filter(t => !t.triggered)
 
   return (
     <section>
@@ -29,19 +47,12 @@ export function RevenueLeakSection({ data }: { data: RevenueLeak }) {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="col-span-2">
               <StatCard
-                value={`${fmt(totalMonthlyLossEur)}/mnd`}
+                value={`${fmt(displayMonthlyLossEur)}/mnd`}
                 label="Geschat omzetverlies"
-                sublabel={`${fmt(totalAnnualLossEur)} per jaar`}
+                sublabel={`${fmt(displayAnnualLossEur)} per jaar`}
                 tone="dark"
               />
             </div>
-            {roi?.stackRebuildCostEur != null && (
-              <StatCard
-                value={fmt(roi.stackRebuildCostEur)}
-                label="Stack Rebuild investering"
-                tone="dark"
-              />
-            )}
             {roi?.yearOneNetReturnEur != null && (
               <StatCard
                 value={fmt(roi.yearOneNetReturnEur)}
@@ -215,7 +226,7 @@ export function RevenueLeakSection({ data }: { data: RevenueLeak }) {
       )}
 
       {/* ── CEO-signalen ────────────────────────────────────────────── */}
-      {ceoTriggers.length > 0 && (
+      {triggeredItems.length > 0 && (
         <div className="bg-[var(--surface)] py-16 px-8 border-t border-primary/8">
           <div className="max-w-7xl mx-auto">
             <h3 className="font-heading text-primary text-2xl md:text-4xl mb-2">
@@ -225,7 +236,6 @@ export function RevenueLeakSection({ data }: { data: RevenueLeak }) {
               Herken jij deze patronen in je business?
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-              {/* Getriggerde items eerst */}
               {triggeredItems.map((trigger) => (
                 <div
                   key={trigger._key}
@@ -250,29 +260,11 @@ export function RevenueLeakSection({ data }: { data: RevenueLeak }) {
                   )}
                 </div>
               ))}
-              {/* Gedimde items */}
-              {dimmedItems.map((trigger) => (
-                <div
-                  key={trigger._key}
-                  className="p-5 border border-primary/8 opacity-40 flex flex-col gap-2"
-                >
-                  <p className="font-heading text-primary text-sm leading-snug">{trigger.kpi}</p>
-                  {trigger.whatCeoSees && (
-                    <p className="text-body/60 text-xs leading-relaxed">{trigger.whatCeoSees}</p>
-                  )}
-                </div>
-              ))}
             </div>
           </div>
         </div>
       )}
 
-      {/* ── Methodologienotitie ─────────────────────────────────────── */}
-      {methodologyNote && (
-        <div className="bg-[var(--surface-muted)] px-8 py-4 border-t border-primary/5">
-          <p className="max-w-7xl mx-auto text-xs text-body/40 italic">{methodologyNote}</p>
-        </div>
-      )}
     </section>
   )
 }
