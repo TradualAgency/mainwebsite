@@ -7,7 +7,7 @@ import type { ContactFormBlock } from "@/sanity/lib/getLandingPages";
 
 const FALLBACK_IMAGE = {
   src: "/images/Chapter-Two.png",
-  alt: "Shopify storefront and code editor side by side",
+  alt: "Abstract architectural interior in dark green marble with gold edges",
 };
 
 export function LandingContactForm({
