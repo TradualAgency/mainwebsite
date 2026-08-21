@@ -10,7 +10,7 @@ export async function POST(request: Request) {
         const formData = await request.json();
         console.log("Ontvangen formulier data:", formData);
 
-        const { firstName, email, mobileNumber, message } = formData;
+        const { firstName, email, mobileNumber, message, revenueRange } = formData;
 
         try {
             // Gebruik het standaard Resend domein voor de afzender
@@ -22,7 +22,8 @@ export async function POST(request: Request) {
                     firstName,
                     email,
                     mobileNumber,
-                    message
+                    message,
+                    revenueRange
                 }),
             });
 

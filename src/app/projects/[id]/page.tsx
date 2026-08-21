@@ -1,3 +1,5 @@
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 import { getProjectBySlug } from "@/sanity/lib/getProjects";
 import { urlFor } from "@/sanity/lib/image";
 import { PortableText } from '@portabletext/react'
@@ -11,9 +13,9 @@ export default async function ProjectPage({ params }: { params: Params }) {
 
     if (!project) {
         return (
-            <div className="max-w-7xl mx-auto px-4 py-16 text-center">
-                <h1 className="text-2xl font-bold text-gray-900 mb-4">Project niet gevonden</h1>
-                <p className="text-gray-600">Het project dat je zoekt bestaat niet of is verwijderd.</p>
+            <div className="max-w-7xl mx-auto px-8 py-24 text-center">
+                <h1 className="font-heading text-primary text-3xl mb-4">Project niet gevonden</h1>
+                <p className="text-body">Het project dat je zoekt bestaat niet of is verwijderd.</p>
             </div>
         );
     }
@@ -21,27 +23,30 @@ export default async function ProjectPage({ params }: { params: Params }) {
     const imageUrl = project.mainImage ? urlFor(project.mainImage).url() : "/placeholder.svg";
 
     return (
-        <div className="max-w-7xl mx-auto px-4 py-16">
-            <div className="mb-8">
-                <img 
-                    src={imageUrl} 
+        <div className="max-w-5xl mx-auto px-8 py-16 md:py-24">
+            <div className="mb-10 relative w-full h-64 md:h-[480px]">
+                <Image
+                    src={imageUrl}
                     alt={project.mainImage?.alt || project.title}
-                    className="w-full h-64 md:h-96 object-cover rounded-lg shadow-lg"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 1024px"
+                    className="object-cover"
+                    priority
                 />
             </div>
-            <div className="prose max-w-none">
-                <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{project.title}</h1>
+            <div>
+                <h1 className="font-heading text-primary text-3xl md:text-5xl mb-4">{project.title}</h1>
                 {project.client && (
-                    <p className="text-lg font-semibold text-gray-800 mb-2">Client: {project.client}</p>
+                    <p className="text-body font-medium mb-2">Client: {project.client}</p>
                 )}
-                <p className="text-lg text-gray-600 mb-6">{project.description}</p>
-                
+                <p className="text-body text-lg mb-6">{project.description}</p>
+
                 {project.tags && project.tags.length > 0 && (
                     <div className="flex flex-wrap gap-2 mb-8">
                         {project.tags.map((tag) => (
-                            <span 
+                            <span
                                 key={tag}
-                                className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
+                                className="px-3 py-1 bg-surface-muted text-body text-sm"
                             >
                                 {tag}
                             </span>
@@ -50,23 +55,21 @@ export default async function ProjectPage({ params }: { params: Params }) {
                 )}
 
                 {project.content && (
-                    <div className="prose prose-lg max-w-none">
+                    <div className="prose prose-lg max-w-none text-body">
                         <PortableText value={project.content} />
                     </div>
                 )}
 
                 {project.projectUrl && (
                     <div className="mt-8">
-                        <a 
-                            href={project.projectUrl} 
-                            target="_blank" 
+                        <a
+                            href={project.projectUrl}
+                            target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center bg-secondary text-white px-6 py-2 rounded-lg font-medium hover:opacity-90 transition"
+                            className="inline-flex items-center gap-2 bg-accent text-primary px-6 py-3 font-medium hover:opacity-90 transition"
                         >
-                            Bekijk Live Project
-                            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
+                            Bekijk live project
+                            <ArrowUpRight size={16} strokeWidth={2} />
                         </a>
                     </div>
                 )}

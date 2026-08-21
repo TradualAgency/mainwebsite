@@ -6,10 +6,11 @@ interface ContactTemplateProps {
     email: string,
     mobileNumber: string,
     message: string,
+    revenueRange?: string,
 }
 
 export default function ContactEmailTemplate(props: Readonly<ContactTemplateProps>)  {
-    const { firstName, email, mobileNumber, message } = props;
+    const { firstName, email, mobileNumber, message, revenueRange } = props;
 
     return (
         <Html>
@@ -17,6 +18,7 @@ export default function ContactEmailTemplate(props: Readonly<ContactTemplateProp
                 <Heading className="text-center">Contact aanvraag, {firstName}</Heading>
                 <Text>Email: {email}</Text>
                 <Text>Telefoonnummer: {mobileNumber}</Text>
+                {revenueRange && <Text>Online omzet: {revenueRange}</Text>}
                 <Text>Bericht: {message}</Text>
             </Section>
         </Html>

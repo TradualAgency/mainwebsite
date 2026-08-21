@@ -1,33 +1,34 @@
-import Link from "next/link";
+import { CtaButton } from "@/components/marketing/cta-button";
+import { HeroVideoLoop } from "@/components/marketing/hero-video-loop";
 
 export default function HeroSection() {
     return (
-        <section className="hero-section my-16 md:my-20 lg:my-24 px-8 bg-surface">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 gap-8">
-                <h6 className="text-center uppercase text-accent">Een visie voor founders</h6>
-                <h1 className="text-center mx-auto font-medium text-5xl md:text-7xl lg:text-8xl">De nieuwe standaard voor digitale elegantie</h1>
-                <div className="w-px justify-self-center h-10 bg-gray-300" />
-                <p className="max-w-[640px] mx-auto text-center">Voor ambitieuze founders is groei meer dan een cijfer. Het is de samensmelting van merkwaarde, technologie en een compromisloze standaard voor perfectie.</p>
-                <Link href="/contact"
-                    className="text-center mx-auto w-fit text-body underline hover:text-accent">
-                    Neem contact op
-                </Link>
-            </div>
+        <section className="hero-section relative overflow-hidden -mt-24 py-24 md:py-32 lg:py-40 px-8">
+            <HeroVideoLoop />
 
-            <div className="mt-10 w-full">
-                <video
-                    className="w-full h-[700px] aspect-video object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                >
-                    <source
-                        src="/images/jordytje12_moody_cinematic_scene_inspired_by_Death_Stranding__e9d5012a-99cc-448d-b6b8-ccc055f1a012_0.mp4"
-                        type="video/mp4"
-                    />
-                </video>
+            <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 gap-8">
+                <h6 className="text-center uppercase text-accent font-heading text-[10px] tracking-[0.18em]">
+                    The E-commerce Performance Company
+                </h6>
+                <h1 className="text-center mx-auto font-heading font-medium text-white text-5xl md:text-7xl lg:text-8xl max-w-5xl leading-[1.05]">
+                    Meer omzet uit het verkeer dat je al hebt.
+                </h1>
+                <div className="w-px justify-self-center h-10 bg-accent" />
+                <p className="max-w-[640px] mx-auto text-center text-white/80 text-base md:text-lg leading-relaxed">
+                    Je betaalt al voor de vraag. Maar tussen de klik en de betaling lekt er omzet weg — via snelheid,
+                    mobiele UX, checkout en tracking. Wij maken zichtbaar hoeveel dat je kost, en bouwen het weg.
+                </p>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <CtaButton href="/diensten/revenue-leak-audit" variant="gold">
+                        Vraag een Revenue Leak Audit aan
+                    </CtaButton>
+                    <CtaButton href="/revenue-leak" variant="ghost-dark">
+                        Zo werkt Revenue Leak
+                    </CtaButton>
+                </div>
+                <p className="text-center text-white/60 text-xs md:text-sm">
+                    Voor Nederlandse DTC-merken op Shopify met €1–10M online omzet.
+                </p>
             </div>
         </section>
     )

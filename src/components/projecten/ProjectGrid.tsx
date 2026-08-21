@@ -1,6 +1,6 @@
 import { ProjectCard } from "@/components/project-card";
 import { getProjects, getFeaturedProjects } from "@/sanity/lib/getProjects";
-import PrimaryButton from "@/components/buttons/Primary-button";
+import { CtaButton } from "@/components/marketing/cta-button";
 
 interface ProjectGridProps {
     featured?: boolean;
@@ -10,6 +10,10 @@ interface ProjectGridProps {
 export default async function ProjectGrid({ featured = false, limit }: ProjectGridProps) {
     const projects = featured ? await getFeaturedProjects() : await getProjects();
     const displayProjects = limit ? projects.slice(0, limit) : projects;
+
+    if (displayProjects.length === 0) {
+        return null;
+    }
 
     return (
         <>
@@ -23,14 +27,9 @@ export default async function ProjectGrid({ featured = false, limit }: ProjectGr
                 ))}
             </div>
             <div className="text-center mt-8">
-                <PrimaryButton
-                    href={`/projects/`}
-                    type="button"
-                    justify="center"
-                    className="z-20"
-                >
+                <CtaButton href="/projects" variant="ghost-light">
                     Bekijk alle projecten
-                </PrimaryButton>
+                </CtaButton>
             </div>
         </>
 

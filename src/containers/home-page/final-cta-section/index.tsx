@@ -1,34 +1,13 @@
+import { CtaBand } from "@/components/marketing/cta-band";
+
 export default function FinalCTA() {
   return (
-    <section className="bg-primary mt-20 py-20 px-8">
-      <div className="max-w-7xl mx-auto text-center">
-        <h2 className="font-heading !text-white text-[42px] leading-[1.05] md:text-[72px] mb-6">
-          Je volgende hoofdstuk
-          <br />
-          begint hier
-        </h2>
-
-        <p className="max-w-3xl mx-auto text-white/90 text-base md:text-lg leading-relaxed mb-10">
-          Klaar om boven het gemiddelde uit te stijgen? Laten we een digitale roadmap bespreken die past bij
-          je merk.
-        </p>
-
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button
-            type="button"
-            className="bg-accent text-primary px-8 py-3 font-medium hover:opacity-90 transition"
-          >
-            Plan een gesprek
-          </button>
-
-          <button
-            type="button"
-            className="bg-transparent border border-accent text-accent px-8 py-3 font-medium hover:bg-accent/10 transition"
-          >
-            Bekijk diensten
-          </button>
-        </div>
-      </div>
-    </section>
+    <CtaBand
+      heading="Weet je waar je omzet lekt?"
+      body="In een paar weken weet je het. Met bedragen erbij, per laag, en een roadmap die op volgorde van impact staat."
+      primary={{ label: "Vraag een Revenue Leak Audit aan", href: "/diensten/revenue-leak-audit" }}
+      secondary={{ label: "Plan een kennismaking", href: "/contact" }}
+      tone="dark"
+    />
   );
 }

@@ -17,7 +17,7 @@ type FAQProps = {
 export default function FAQ({ items }: FAQProps) {
   return (
     <section className="max-w-5xl mx-auto my-20 py-20 px-8">
-      <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent text-center mb-4">Hoofdstuk vier</p>
+      <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent text-center mb-4">Vragen</p>
       <h2 className="font-heading text-primary text-[38px] leading-[1.05] md:text-[60px] text-center mb-10">
         Veelgestelde vragen
       </h2>

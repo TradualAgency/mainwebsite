@@ -1,20 +1,23 @@
 import HeroSection from "@/containers/home-page/hero-section";
-import InfoSection from "@/containers/home-page/info-section";
-import USPSection from "@/containers/home-page/usp-section";
-import TradualSection from "@/containers/home-page/diensten";
-import GrowthSection from "@/containers/home-page/growth-section";
-import CaseStudies from "@/containers/home-page/review-section";
+import ProblemSection from "@/containers/home-page/problem-section";
+import LeakLayersSection from "@/containers/home-page/leak-layers-section";
+import PositioningSection from "@/containers/home-page/positioning-section";
+import FunnelSection from "@/containers/home-page/funnel-section";
+import ProofSection from "@/containers/home-page/review-section";
+import SelfTestSection from "@/containers/home-page/self-test-section";
 import FinalCTA from "@/containers/home-page/final-cta-section";
 
 export default function Home() {
   return (
       <>
         <HeroSection />
-        <InfoSection />
-        <USPSection />
-        <TradualSection />
-        <GrowthSection />
-        <CaseStudies />
+        <ProblemSection />
+        <div id="header-dark-zone-end" />
+        <LeakLayersSection />
+        <PositioningSection />
+        <FunnelSection />
+        <ProofSection />
+        <SelfTestSection />
         <FinalCTA />
       </>
   )

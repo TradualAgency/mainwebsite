@@ -1,6 +1,8 @@
 // lib/sanity/getProjects.ts
 import { client } from '@/sanity/lib/client';
-import { type SanityDocument } from '@sanity/client';
+import { type Image, type PortableTextBlock } from '@sanity/types';
+
+type ProjectImage = Image & { alt?: string };
 
 // Query voor alle projecten
 const PROJECTS_QUERY = `*[
@@ -43,14 +45,14 @@ export interface Project {
   title: string;
   slug: { current: string };
   description: string;
-  mainImage: any;
+  mainImage: ProjectImage;
   tags: string[];
   featured: boolean;
   completedAt: string;
   client: string;
   projectUrl: string;
-  content?: any;
-  gallery?: any[];
+  content?: PortableTextBlock[];
+  gallery?: ProjectImage[];
 }
 
 export async function getProjects(): Promise<Project[]> {
