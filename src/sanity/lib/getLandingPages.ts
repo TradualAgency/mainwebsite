@@ -79,6 +79,7 @@ export type ContactFormBlock = {
   _key: string
   heading: string
   intro?: string
+  image?: SeoImage
 }
 
 export type RichTextBlock = {
@@ -89,8 +90,18 @@ export type RichTextBlock = {
   body: PortableTextBlock[]
 }
 
+export type F1StoryBlock = {
+  _type: 'f1Story'
+  _key: string
+  eyebrow?: string
+  heading: string
+  body: string
+  quote?: string
+}
+
 export type PageBuilderBlock =
   | HeroBlock
+  | F1StoryBlock
   | AudienceBlock
   | ChecklistBlock
   | ProcessBlock

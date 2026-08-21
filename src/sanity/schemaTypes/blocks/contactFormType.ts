@@ -19,6 +19,20 @@ export const contactFormType = defineType({
       type: 'text',
       rows: 3,
     }),
+    defineField({
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+      description: 'Shown to the right of the form. Falls back to a brand photo if empty.',
+      options: { hotspot: true },
+      fields: [
+        defineField({
+          name: 'alt',
+          title: 'Alternative text',
+          type: 'string',
+        }),
+      ],
+    }),
   ],
   preview: {
     select: { title: 'heading' },

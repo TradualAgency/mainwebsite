@@ -9,6 +9,7 @@ import {projectType} from "./projectType";
 import {prospectScanType} from "./prospectScanType";
 import {ctaLinkType} from './objects/ctaLinkType'
 import {heroType} from './blocks/heroType'
+import {f1StoryType} from './blocks/f1StoryType'
 import {audienceType} from './blocks/audienceType'
 import {checklistType} from './blocks/checklistType'
 import {processType} from './blocks/processType'
@@ -31,6 +32,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     prospectScanType,
     ctaLinkType,
     heroType,
+    f1StoryType,
     audienceType,
     checklistType,
     processType,
