@@ -103,7 +103,7 @@ export default function GSAPScrollAnimation() {
                     alt=""
                     className="w-10 h-10 object-cover rounded-2xl"
                 />
-                <p className="">Sta buiten in het veld. Jouw e-commerce merk verdient meer dan een kant-en-klare template.</p>
+                <p className="">Stand outside in the field. Your e-commerce brand deserves more than an off-the-shelf template.</p>
             </div>
         </>
     );

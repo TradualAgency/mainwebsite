@@ -12,7 +12,7 @@ interface QualifierColumnsProps {
 
 // Toont voor wie een dienst wel/niet is. Een expliciete "niet voor jou"-lijst
 // kwalificeert net zo hard als de "wel voor jou"-lijst.
-export function QualifierColumns({ eyebrow = "Voor wie", title, forWho, notForWho, tone = "muted" }: QualifierColumnsProps) {
+export function QualifierColumns({ eyebrow = "Who it's for", title, forWho, notForWho, tone = "muted" }: QualifierColumnsProps) {
   return (
     <Section tone={tone}>
       <SectionHeading eyebrow={eyebrow} title={title} className="mb-10" />

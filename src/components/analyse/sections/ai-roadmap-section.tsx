@@ -7,7 +7,7 @@ function PhaseCard({ phase }: { phase: AiRoadmapPhase }) {
       <div className="bg-[var(--primary)] px-6 py-5 flex items-start justify-between gap-4">
         <div>
           <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent/70 mb-1">
-            Fase {phase.phase}
+            Phase {phase.phase}
           </p>
           <h4 className="font-heading text-white text-xl leading-tight">{phase.name}</h4>
         </div>
@@ -23,7 +23,7 @@ function PhaseCard({ phase }: { phase: AiRoadmapPhase }) {
         {phase.actions && phase.actions.length > 0 && (
           <div>
             <p className="font-heading text-[9px] uppercase tracking-[0.14em] text-primary/40 mb-3">
-              Acties
+              Actions
             </p>
             <ol className="space-y-2.5">
               {phase.actions.map((action, i) => (
@@ -40,7 +40,7 @@ function PhaseCard({ phase }: { phase: AiRoadmapPhase }) {
         {phase.expectedOutcome && (
           <div className="border-l-4 border-accent/40 pl-4 mt-auto pt-4">
             <p className="font-heading text-[9px] uppercase tracking-[0.14em] text-accent/50 mb-1">
-              Verwacht resultaat
+              Expected result
             </p>
             <p className="text-xs text-body/70 leading-relaxed italic">{phase.expectedOutcome}</p>
           </div>
@@ -59,7 +59,7 @@ export function AiRoadmapSection({ roadmap }: { roadmap: AiRoadmap }) {
       <div className="bg-[var(--primary)] py-16 px-8">
         <div className="max-w-7xl mx-auto">
           <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-6">
-            Strategische roadmap
+            Strategic roadmap
           </p>
           <div className="flex flex-wrap gap-3 mb-8">
             {totalTimeline && (
@@ -90,7 +90,7 @@ export function AiRoadmapSection({ roadmap }: { roadmap: AiRoadmap }) {
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
             {topPriorities && topPriorities.length > 0 && (
               <div>
-                <h4 className="font-heading text-primary text-xl mb-6">Topprioriteiten</h4>
+                <h4 className="font-heading text-primary text-xl mb-6">Top priorities</h4>
                 <ol className="space-y-3">
                   {topPriorities.map((p, i) => (
                     <li key={i} className="flex gap-4 text-sm text-body/80 leading-relaxed">
@@ -124,8 +124,8 @@ export function AiRoadmapSection({ roadmap }: { roadmap: AiRoadmap }) {
       {phases && phases.length > 0 && (
         <div className="bg-[var(--surface)] py-16 px-8 border-t border-primary/8">
           <div className="max-w-7xl mx-auto">
-            <h3 className="font-heading text-primary text-2xl md:text-4xl mb-2">Implementatieplan</h3>
-            <p className="text-body/60 text-sm mb-10">Stap voor stap naar een stabiel en schaalbaar platform</p>
+            <h3 className="font-heading text-primary text-2xl md:text-4xl mb-2">Implementation plan</h3>
+            <p className="text-body/60 text-sm mb-10">Step by step toward a stable and scalable platform</p>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
               {phases.map((phase) => (
                 <PhaseCard key={phase._key} phase={phase} />

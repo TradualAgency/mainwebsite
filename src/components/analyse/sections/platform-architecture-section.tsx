@@ -7,15 +7,15 @@ export function PlatformArchitectureSection({ platform }: { platform: NonNullabl
   return (
     <section className="bg-primary py-24 px-8">
       <div className="max-w-7xl mx-auto">
-        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Platform & architectuur</p>
+        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Platform & architecture</p>
         <h2 className="font-heading text-surface text-[38px] leading-[1.05] md:text-[56px] mb-12">
-          De technische fundering.
+          The technical foundation.
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
           {/* Current stack */}
           <div>
-            <p className="font-heading text-[10px] uppercase tracking-[0.15em] text-surface/50 mb-6">Huidige situatie</p>
+            <p className="font-heading text-[10px] uppercase tracking-[0.15em] text-surface/50 mb-6">Current situation</p>
             <div className="space-y-4">
               {platform.detectedPlatform && (
                 <div>
@@ -42,19 +42,19 @@ export function PlatformArchitectureSection({ platform }: { platform: NonNullabl
               )}
               {platform.serverLocation && (
                 <div>
-                  <p className="text-surface/50 text-xs uppercase tracking-[0.12em] font-heading mb-0.5">Serverlocatie</p>
+                  <p className="text-surface/50 text-xs uppercase tracking-[0.12em] font-heading mb-0.5">Server location</p>
                   <p className="text-surface text-sm">{platform.serverLocation}</p>
                 </div>
               )}
               {platform.themeOrFramework && (
                 <div>
-                  <p className="text-surface/50 text-xs uppercase tracking-[0.12em] font-heading mb-0.5">Thema / framework</p>
+                  <p className="text-surface/50 text-xs uppercase tracking-[0.12em] font-heading mb-0.5">Theme / framework</p>
                   <p className="text-surface text-sm">{platform.themeOrFramework}</p>
                 </div>
               )}
               {platform.architectureType && (
                 <div>
-                  <p className="text-surface/50 text-xs uppercase tracking-[0.12em] font-heading mb-1">Architectuur</p>
+                  <p className="text-surface/50 text-xs uppercase tracking-[0.12em] font-heading mb-1">Architecture</p>
                   <StatusPill status={platform.architectureType} dark />
                   {platform.architectureRationale && (
                     <p className="text-surface/60 text-xs mt-1 leading-relaxed">{platform.architectureRationale}</p>
@@ -67,9 +67,9 @@ export function PlatformArchitectureSection({ platform }: { platform: NonNullabl
           {/* Recommended */}
           {platform.recommendedArchitecture && (
             <div>
-              <p className="font-heading text-[10px] uppercase tracking-[0.15em] text-surface/50 mb-6">Aanbeveling</p>
+              <p className="font-heading text-[10px] uppercase tracking-[0.15em] text-surface/50 mb-6">Recommendation</p>
               <div className="border border-accent/30 p-6">
-                <p className="text-surface/50 text-xs uppercase tracking-[0.12em] font-heading mb-2">Aanbevolen architectuur</p>
+                <p className="text-surface/50 text-xs uppercase tracking-[0.12em] font-heading mb-2">Recommended architecture</p>
                 <p className="text-accent font-heading text-[28px] capitalize mb-4">{platform.recommendedArchitecture}</p>
               </div>
             </div>

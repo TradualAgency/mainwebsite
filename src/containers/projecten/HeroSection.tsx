@@ -13,18 +13,18 @@ type ProjectsHeroProps = {
 };
 
 export default function ProjectsHero({
-  label = "Hoofdstuk een",
-  title = "Projecten gebouwd voor meetbare groei",
+  label = "Chapter one",
+  title = "Projects built for measurable growth",
   subtitle =
-    "Een selectie van high-performance Shopify en e-commerce infrastructuurtrajecten waarin merkbeleving en conversie elkaar versterken.",
-  primaryCta = { href: "/contact", text: "Plan een gesprek" },
-  secondaryCta = { href: "/over-ons", text: "Meer over Tradual" },
+    "A selection of high-performance Shopify and e-commerce infrastructure engagements where brand experience and conversion reinforce each other.",
+  primaryCta = { href: "/contact", text: "Book a call" },
+  secondaryCta = { href: "/about", text: "More about Tradual" },
   imageSrc = "/images/arch-without-limits.png",
-  imageAlt = "Projectoverzicht",
+  imageAlt = "Project overview",
   className = "",
 }: ProjectsHeroProps) {
   return (
-    <section className={`bg-surface ${className} px-8 py-20`} aria-label="Projecten hero">
+    <section className={`bg-surface ${className} px-8 py-20`} aria-label="Projects hero">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 py-16 md:py-24 lg:grid-cols-2">
         <div className="order-1">
           <p className="mb-4 font-heading text-[10px] uppercase tracking-[0.18em] text-accent">{label}</p>

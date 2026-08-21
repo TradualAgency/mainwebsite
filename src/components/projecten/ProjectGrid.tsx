@@ -28,7 +28,7 @@ export default async function ProjectGrid({ featured = false, limit }: ProjectGr
             </div>
             <div className="text-center mt-8">
                 <CtaButton href="/projects" variant="ghost-light">
-                    Bekijk alle projecten
+                    View all cases
                 </CtaButton>
             </div>
         </>

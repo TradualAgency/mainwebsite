@@ -14,7 +14,7 @@ interface FaqSectionProps {
   tone?: "light" | "muted" | "dark";
 }
 
-export function FaqSection({ eyebrow = "Veelgestelde vragen", title = "Vragen die vooraf gaan", items, tone = "light" }: FaqSectionProps) {
+export function FaqSection({ eyebrow = "Frequently asked questions", title = "Questions that come first", items, tone = "light" }: FaqSectionProps) {
   const headingTone = tone === "dark" ? "dark" : "light";
 
   // Radix' AccordionContent unmount't gesloten content, dus die staat niet in de

@@ -1,48 +1,48 @@
-# Scan importeren naar Sanity
+# Import a scan into Sanity
 
-## Stap 1 — JSON omzetten naar NDJSON
+## Step 1 — Convert JSON to NDJSON
 
 ```bash
 node scripts/json-to-ndjson.mjs <input.json> <output.ndjson>
 ```
 
-**Voorbeeld:**
+**Example:**
 
 ```bash
 node scripts/json-to-ndjson.mjs scripts/studiewinkel-scan.json scripts/studiewinkel-scan.ndjson
 ```
 
-Het script normaliseert veldnamen (o.a. `notes` → `notesAndDiagnosis`) en
-enum-waarden zodat het document voldoet aan de v2 schema van `prospectScan`.
-De uitvoer is één JSON-regel per document (NDJSON-formaat), met een stabiele
-document-ID op basis van `slug.current` zodat herimports geen duplicate scan
-voor dezelfde slug aanmaken.
+The script normalizes field names (including `notes` → `notesAndDiagnosis`) and
+enum values so the document matches the v2 `prospectScan` schema.
+The output is one JSON line per document (NDJSON format), with a stable
+document ID based on `slug.current` so re-imports do not create a duplicate scan
+for the same slug.
 
 ---
 
-## Stap 2 — NDJSON importeren in Sanity
+## Step 2 — Import NDJSON into Sanity
 
 ```bash
 npx sanity dataset import <output.ndjson> production
 ```
 
-**Voorbeeld:**
+**Example:**
 
 ```bash
 npx sanity dataset import scripts/studiewinkel-scan.ndjson production
 ```
 
-Voer dit commando uit vanuit de root van het project. Bij een bestaand
-document met hetzelfde `_id` vraagt Sanity wat te doen (overwrite / skip /
-merge) — kies `prefer new` om te overschrijven.
+Run this command from the project root. If a document with the same
+`_id` already exists, Sanity will ask what to do (overwrite / skip /
+merge) — choose `prefer new` to overwrite.
 
 ---
 
-## Alternatief — direct via de API (zonder NDJSON tussenstap)
+## Alternative — import directly via the API (no NDJSON step)
 
 ```bash
 SANITY_API_TOKEN=<token> node scripts/import-scan.mjs <input.json>
 ```
 
-Dit script schrijft het document rechtstreeks via de Sanity client met
-`createOrReplace` en print de Studio-link en frontend-URL na import.
+This script writes the document directly via the Sanity client with
+`createOrReplace` and prints the Studio link and frontend URL after import.

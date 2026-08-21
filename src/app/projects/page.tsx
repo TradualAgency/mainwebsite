@@ -6,7 +6,7 @@ import { Section } from "@/components/marketing/section";
 
 export const metadata: Metadata = {
     title: "Cases",
-    description: "Wat er gebeurt als de foundation klopt: trajecten waarin we een Revenue Leak hebben blootgelegd en gedicht.",
+    description: "What happens when the foundation is right: engagements where we uncovered a Revenue Leak and closed it.",
 };
 
 export default function ProjectPage() {
@@ -14,10 +14,10 @@ export default function ProjectPage() {
     <>
         <ProjectsHero
             label="Cases"
-            title="Wat er gebeurt als de foundation klopt."
-            subtitle="Trajecten waarin we hebben blootgelegd waar omzet weglekte, en de technische fundering hebben hersteld."
-            primaryCta={{ href: "/diensten/revenue-leak-audit", text: "Vraag een audit aan" }}
-            secondaryCta={{ href: "/over-ons", text: "Meer over Tradual" }}
+            title="What happens when the foundation is right."
+            subtitle="Engagements where we uncovered where revenue was leaking, and restored the technical foundation."
+            primaryCta={{ href: "/services/revenue-leak-audit", text: "Request an audit" }}
+            secondaryCta={{ href: "/about", text: "More about Tradual" }}
         />
         <Section tone="muted">
             <ProjectGrid />

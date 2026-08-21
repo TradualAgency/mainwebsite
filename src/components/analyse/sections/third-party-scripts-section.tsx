@@ -8,7 +8,7 @@ export function ThirdPartyScriptsSection({ scripts }: { scripts: NonNullable<Pro
       <div className="max-w-7xl mx-auto">
         <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Third-party scripts</p>
         <h2 className="font-heading text-surface text-[38px] leading-[1.05] md:text-[56px] mb-12">
-          Externe scripts & hun impact.
+          External scripts & their impact.
         </h2>
 
         {(scripts.totalThirdPartyDomains != null || scripts.totalThirdPartyKb != null || scripts.totalThirdPartyBlockingMs != null) && (
@@ -16,13 +16,13 @@ export function ThirdPartyScriptsSection({ scripts }: { scripts: NonNullable<Pro
             {scripts.totalThirdPartyDomains != null && (
               <div className="border border-surface/10 p-6">
                 <p className="font-heading text-accent text-[52px] leading-none mb-1">{scripts.totalThirdPartyDomains}</p>
-                <p className="text-sm text-surface/70">Third-party domeinen</p>
+                <p className="text-sm text-surface/70">Third-party domains</p>
               </div>
             )}
             {scripts.totalThirdPartyKb != null && (
               <div className="border border-surface/10 p-6">
                 <p className="font-heading text-accent text-[52px] leading-none mb-1">{scripts.totalThirdPartyKb}KB</p>
-                <p className="text-sm text-surface/70">Totale externe payload</p>
+                <p className="text-sm text-surface/70">Total external payload</p>
               </div>
             )}
             {scripts.totalThirdPartyBlockingMs != null && (
@@ -40,10 +40,10 @@ export function ThirdPartyScriptsSection({ scripts }: { scripts: NonNullable<Pro
               <thead>
                 <tr className="border-b border-surface/10">
                   <th className="text-left py-3 pr-4 font-heading text-[10px] uppercase tracking-[0.15em] text-accent">Script</th>
-                  <th className="text-left py-3 pr-4 font-heading text-[10px] uppercase tracking-[0.15em] text-accent">Doel</th>
-                  <th className="text-right py-3 pr-4 font-heading text-[10px] uppercase tracking-[0.15em] text-accent">Grootte</th>
-                  <th className="text-right py-3 pr-4 font-heading text-[10px] uppercase tracking-[0.15em] text-accent">Blokkering</th>
-                  <th className="text-left py-3 pr-4 font-heading text-[10px] uppercase tracking-[0.15em] text-accent">Noodzaak</th>
+                  <th className="text-left py-3 pr-4 font-heading text-[10px] uppercase tracking-[0.15em] text-accent">Purpose</th>
+                  <th className="text-right py-3 pr-4 font-heading text-[10px] uppercase tracking-[0.15em] text-accent">Size</th>
+                  <th className="text-right py-3 pr-4 font-heading text-[10px] uppercase tracking-[0.15em] text-accent">Blocking</th>
+                  <th className="text-left py-3 pr-4 font-heading text-[10px] uppercase tracking-[0.15em] text-accent">Necessity</th>
                   <th className="text-right py-3 font-heading text-[10px] uppercase tracking-[0.15em] text-accent">€/mo</th>
                 </tr>
               </thead>
@@ -71,7 +71,7 @@ export function ThirdPartyScriptsSection({ scripts }: { scripts: NonNullable<Pro
 
         {scripts.dangerousPatterns && scripts.dangerousPatterns.length > 0 && (
           <div className="mb-10">
-            <p className="font-heading text-[10px] uppercase tracking-[0.15em] text-red-400 mb-3">Gevaarlijke patronen</p>
+            <p className="font-heading text-[10px] uppercase tracking-[0.15em] text-red-400 mb-3">Dangerous patterns</p>
             <ul className="space-y-2">
               {scripts.dangerousPatterns.map((p, i) => (
                 <li key={i} className="flex items-start gap-3 text-sm text-surface/80 border-l-2 border-red-500/50 pl-4 py-1">

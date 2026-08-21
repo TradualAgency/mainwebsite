@@ -35,7 +35,7 @@ function ShopifyCard({ data }: { data: ShopifyMigrationAnalysis }) {
     <div className="border border-primary/10 bg-[var(--surface)] p-6 flex flex-col gap-4 md:col-span-2">
       <div className="flex flex-wrap items-center gap-3">
         <h4 className="font-heading text-[10px] uppercase tracking-[0.15em] text-accent">
-          Shopify Migratie
+          Shopify migration
         </h4>
       </div>
 
@@ -49,7 +49,7 @@ function ShopifyCard({ data }: { data: ShopifyMigrationAnalysis }) {
           {data.keyWins && data.keyWins.length > 0 && (
             <div>
               <p className="font-heading text-[9px] uppercase tracking-[0.14em] text-emerald-600 mb-2">
-                Voordelen
+                Benefits
               </p>
               <ul className="space-y-1.5">
                 {data.keyWins.map((win, i) => (
@@ -64,7 +64,7 @@ function ShopifyCard({ data }: { data: ShopifyMigrationAnalysis }) {
           {data.keyRisks && data.keyRisks.length > 0 && (
             <div>
               <p className="font-heading text-[9px] uppercase tracking-[0.14em] text-amber-600 mb-2">
-                Risico&apos;s
+                Risks
               </p>
               <ul className="space-y-1.5">
                 {data.keyRisks.map((risk, i) => (
@@ -82,7 +82,7 @@ function ShopifyCard({ data }: { data: ShopifyMigrationAnalysis }) {
       {data.topActions && data.topActions.length > 0 && (
         <div className="border-t border-primary/8 pt-4">
           <p className="font-heading text-[9px] uppercase tracking-[0.14em] text-primary/40 mb-2">
-            Top acties
+            Top actions
           </p>
           <ol className="space-y-2">
             {data.topActions.map((action, i) => (
@@ -107,8 +107,8 @@ export function AiAnalysisSection({ data }: { data: AiAnalysis }) {
   return (
     <section className="py-16 px-8 bg-[var(--surface-muted)] border-t border-primary/8">
       <div className="max-w-7xl mx-auto">
-        <h3 className="font-heading text-primary text-2xl md:text-4xl mb-2">Analyse</h3>
-        <p className="text-body/60 text-sm mb-10">Strategische aanbevelingen per domein</p>
+        <h3 className="font-heading text-primary text-2xl md:text-4xl mb-2">Analysis</h3>
+        <p className="text-body/60 text-sm mb-10">Strategic recommendations per domain</p>
 
         {crossSectionThesis && (
           <blockquote className="border-l-4 border-accent pl-6 mb-10 max-w-3xl">
@@ -120,9 +120,9 @@ export function AiAnalysisSection({ data }: { data: AiAnalysis }) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           {cro && <BlockCard title="CRO" data={cro} />}
-          {deliverability && <BlockCard title="E-maildeliverability" data={deliverability} />}
-          {adBounceRevenue && <BlockCard title="Ad-bounce & omzet" data={adBounceRevenue} />}
-          {techArchitecture && <BlockCard title="Technische architectuur" data={techArchitecture} />}
+          {deliverability && <BlockCard title="Email deliverability" data={deliverability} />}
+          {adBounceRevenue && <BlockCard title="Ad bounce & revenue" data={adBounceRevenue} />}
+          {techArchitecture && <BlockCard title="Technical architecture" data={techArchitecture} />}
           {shopifyMigration && <ShopifyCard data={shopifyMigration} />}
         </div>
       </div>

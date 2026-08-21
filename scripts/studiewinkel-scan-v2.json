@@ -21,11 +21,11 @@
   },
   "aiAnalysis": {
     "cro": {
-      "summary": "De technische audit toont een matige Lighthouse performance score (49) en ontbrekende structured data, wat directe impact heeft op organisch bereik en vertrouwen in zoekresultaten. Er zijn geen productschema's, AggregateRating of breadcrumbs gedetecteerd, waardoor de winkel kansen op gratis Google Shopping-weergave en sterren in SERP's misloopt. De checkout kon niet volledig worden geprobed door een 404-fout, wat zelf al een serieus risicosignaal is.",
+      "summary": "The technical audit shows a moderate Lighthouse performance score (49) and missing structured data, which has a direct impact on organic reach and trust in search results. No product schemas, AggregateRating, or breadcrumbs were detected, so the store is missing opportunities for free Google Shopping appearance and stars in SERPs. Checkout could not be fully probed due to a 404 error, which is itself a serious risk signal.",
       "topActions": [
-        "Voeg Product- en AggregateRating-schema toe op alle PDP's zodat sterren zichtbaar worden in Google-zoekresultaten en de winkel in aanmerking komt voor Google Shopping",
-        "Onderzoek en herstel de 404 op de checkoutpagina — een niet-toegankelijke checkout is een harde conversieblokkade die omzet kost",
-        "Verbeter de Lighthouse performance score van 49 naar minimaal 70 door laadtijd-optimalisaties (afbeeldingscompressie, render-blocking scripts verwijderen) om bounces door trage paginaopbouw te reduceren"
+        "Add Product and AggregateRating schema on all PDPs so stars become visible in Google search results and the store qualifies for Google Shopping",
+        "Investigate and fix the 404 on the checkout page — an inaccessible checkout is a hard conversion blocker that costs revenue",
+        "Improve the Lighthouse performance score from 49 to at least 70 through load-time optimisations (image compression, remove render-blocking scripts) to reduce bounces caused by slow page construction"
       ],
       "signalsUsed": [
         "checkout_flow",
@@ -41,16 +41,16 @@
           "name": "Foundation Fix",
           "phase": 1,
           "actions": [
-            "Onderzoek en herstel de 404 op de checkoutpagina: controleer Magento 2 router-config, URL rewrites en eventuele custom checkout-module; zet een testbestelling door op mobiel en desktop om te bevestigen dat het volledige checkout-pad werkt",
-            "Implementeer Consent Mode v2 via GTM: voeg google_consent_defaults toe met analytics_storage en ad_storage op 'denied', koppel aan bestaande CMP of implementeer een eenvoudige cookiebanner — dit herstelt gemodelleerde conversiedata voor Google-campagnes bij gebruikers zonder toestemming",
-            "Activeer Meta Conversions API (CAPI) server-side naast de browser-pixel: koppel via Magento 2 backend-events op purchase, add_to_cart en initiate_checkout zodat iOS-geblokkeerde en ad-blocker-gemiste conversies alsnog doorgegeven worden",
-            "Voer een pixels-audit uit via GTM Preview Mode en Meta Events Manager: bevestig welke conversie-events daadwerkelijk vuren op de bedankpagina en los gaten op in de purchase-event-implementatie",
-            "Verhoog DMARC-policy van 'quarantine' naar 'reject' zodra Flowmailer-rapporten bevestigen dat alle legitieme mailstromen correct authenticeren — elimineert resterende spoofing-risico en verhoogt domeinvertrouwen bij Gmail en Microsoft 365"
+            "Investigate and fix the 404 on the checkout page: check Magento 2 router config, URL rewrites, and any custom checkout module; place a test order on mobile and desktop to confirm the full checkout path works",
+            "Implement Consent Mode v2 via GTM: add google_consent_defaults with analytics_storage and ad_storage set to 'denied', connect to the existing CMP or implement a simple cookie banner — this restores modelled conversion data for Google campaigns from users without consent",
+            "Activate Meta Conversions API (CAPI) server-side alongside the browser pixel: connect via Magento 2 backend events on purchase, add_to_cart, and initiate_checkout so iOS-blocked and ad-blocker-missed conversions are still passed through",
+            "Run a pixels audit via GTM Preview Mode and Meta Events Manager: confirm which conversion events actually fire on the thank-you page and close gaps in the purchase-event implementation",
+            "Raise the DMARC policy from 'quarantine' to 'reject' once Flowmailer reports confirm that all legitimate mail streams authenticate correctly — eliminates remaining spoofing risk and increases domain trust with Gmail and Microsoft 365"
           ],
-          "objective": "Sluit de drie harde blockers — kapotte checkout, ontbrekende trackingdata en missende ad-signalen — zodat het platform weer stuurbaar is en geen omzet verliest door technische gaten",
-          "timeframe": "Maand 1",
+          "objective": "Close the three hard blockers — broken checkout, missing tracking data, and missing ad signals — so the platform is steerable again and no longer loses revenue through technical gaps",
+          "timeframe": "Month 1",
           "dependencies": [],
-          "expectedOutcome": "Checkout-404 opgelost en testbaar, attribution loss teruggebracht van 45% naar onder 20%, Google- en Meta-campagnes ontvangen volledige conversiesignalen, ROAS-rapportage accuraat",
+          "expectedOutcome": "Checkout 404 resolved and testable, attribution loss reduced from 45% to under 20%, Google and Meta campaigns receive full conversion signals, ROAS reporting accurate",
           "estMonthlyRevenueImpactEur": 4500
         },
         {
@@ -58,19 +58,19 @@
           "name": "Acceleration",
           "phase": 2,
           "actions": [
-            "Implementeer Product schema (JSON-LD) op alle PDP's inclusief prijs, beschikbaarheid en SKU — dit maakt de winkel eligible voor Google Shopping free listings en rijke productresultaten",
-            "Voeg AggregateRating schema toe op PDP's op basis van bestaande reviews — sterren verschijnen in organische zoekresultaten, directe CTR-uplift verwacht van 15-30% op product-landingspagina's",
-            "Voeg BreadcrumbList schema toe site-breed voor betere SERP-navigatieweergave en intern linkgewicht",
-            "Implementeer server-side Google Tag Manager (sGTM) endpoint: verhoogt cookie-levensduur, vermindert browser-side blocking en verlengt attributievensters voor alle aangesloten kanalen inclusief Google Ads en GA4",
-            "Voer een Lighthouse-optimalisatieslag uit gericht op score van 49 naar 70+: prioriteer render-blocking JavaScript via RequireJS-audit, afbeeldingscompressie naar WebP en lazy loading — de Speed Index van 14s en TTI van 35s zijn de voornaamste dragers",
-            "Implementeer een CDN (Cloudflare Free of Pro) vóór de Apache-origin: adresseert de 384ms TTFB, distribueert statische assets via edge-nodes en verlaagt Time to Interactive structureel"
+            "Implement Product schema (JSON-LD) on all PDPs including price, availability, and SKU — this makes the store eligible for Google Shopping free listings and rich product results",
+            "Add AggregateRating schema on PDPs based on existing reviews — stars appear in organic search results, with an expected direct CTR uplift of 15–30% on product landing pages",
+            "Add BreadcrumbList schema site-wide for better SERP navigation display and internal link equity",
+            "Implement a server-side Google Tag Manager (sGTM) endpoint: increases cookie lifetime, reduces browser-side blocking, and extends attribution windows for all connected channels including Google Ads and GA4",
+            "Run a Lighthouse optimisation pass aimed at lifting the score from 49 to 70+: prioritise render-blocking JavaScript via a RequireJS audit, image compression to WebP, and lazy loading — the Speed Index of 14s and TTI of 35s are the main drivers",
+            "Implement a CDN (Cloudflare Free or Pro) in front of the Apache origin: addresses the 384ms TTFB, distributes static assets via edge nodes, and structurally lowers Time to Interactive"
           ],
-          "objective": "Verhoog de organische zichtbaarheid en conversieratio door structured data, server-side tracking en Lighthouse-score-verbetering — ontsluit SERP-sterren, Google Shopping en betere ad-stuurdata",
-          "timeframe": "Maand 2-3",
+          "objective": "Increase organic visibility and conversion rate through structured data, server-side tracking, and Lighthouse score improvement — unlock SERP stars, Google Shopping, and better ad steering data",
+          "timeframe": "Months 2–3",
           "dependencies": [
-            "Fase 1 afgerond: checkout werkt en tracking-baseline is schoon"
+            "Phase 1 complete: checkout works and the tracking baseline is clean"
           ],
-          "expectedOutcome": "Lighthouse performance boven 70, Product- en AggregateRating-schema actief en gecrawld, sterren zichtbaar in Google SERP, sGTM operationeel met volledige data-pipeline, attribution loss onder 15%",
+          "expectedOutcome": "Lighthouse performance above 70, Product and AggregateRating schema active and crawled, stars visible in Google SERP, sGTM operational with a full data pipeline, attribution loss under 15%",
           "estMonthlyRevenueImpactEur": 3900
         },
         {
@@ -78,26 +78,26 @@
           "name": "Platform Rebuild",
           "phase": 3,
           "actions": [
-            "Start Shopify-migratieverkenning: breng Magento 2-maatwerk, ERP/PIM-koppelingen en integraties in kaart om migratiecomplexiteit te bepalen — het lage aantal third-party scripts (2 domeinen) wijst op beperkte integratie-complexiteit",
-            "Migreer naar Shopify met Shopify Checkout als vervanging van de huidige instabiele custom checkout — elimineert de 404-kwetsbaarheid structureel en levert een geoptimaliseerd, mobiel-first checkout-pad",
-            "Activeer Shopify Customer Events voor tracking als vervanging van GTM-only setup: lost consent mode, attribution en pixel-health structureel op zonder afhankelijkheid van browser-side scripts",
-            "Bouw e-mailautomations op in de gekozen ESP: activeer welkomstflow, abandoned cart-flow en post-purchase flow — sectorbenchmark is 30% omzetbijdrage uit e-mail; huidige bijdrage is onbekend maar vermoedelijk onderbenut",
-            "Implementeer AI-gereedheid: voeg FAQ schema toe, completeer alle 5 AI-agent datapunten (prijs, specs, reviews, verzending, beschikbaarheid) en zorg dat Google Merchant Center feed actief en foutvrij is",
-            "Voeg DKIM-selectors toe voor alle afzonderlijke verzendende bronnen in het SPF-record (sqr.nl, Flowmailer, Exclaimer, Microsoft 365) zodat alle mailpaden cryptografisch geïdentificeerd zijn"
+            "Start a Shopify migration exploration: map Magento 2 customisations, ERP/PIM connections, and integrations to determine migration complexity — the low number of third-party scripts (2 domains) points to limited integration complexity",
+            "Migrate to Shopify with Shopify Checkout as a replacement for the current unstable custom checkout — structurally eliminates the 404 vulnerability and delivers an optimised, mobile-first checkout path",
+            "Activate Shopify Customer Events for tracking as a replacement for the GTM-only setup: structurally solves consent mode, attribution, and pixel health without depending on browser-side scripts",
+            "Build email automations in the chosen ESP: activate welcome flow, abandoned cart flow, and post-purchase flow — industry benchmark is 30% revenue contribution from email; current contribution is unknown but likely underused",
+            "Implement AI readiness: add FAQ schema, complete all 5 AI-agent data points (price, specs, reviews, shipping, availability), and ensure the Google Merchant Center feed is active and error-free",
+            "Add DKIM selectors for all separate sending sources in the SPF record (sqr.nl, Flowmailer, Exclaimer, Microsoft 365) so all mail paths are cryptographically identified"
           ],
-          "objective": "Migreer van Magento 2 monoliet naar Shopify om structurele platform-schuld op te lossen, checkout-stabiliteit te garanderen en owned channel-automation te activeren",
-          "timeframe": "Maand 3-6",
+          "objective": "Migrate from the Magento 2 monolith to Shopify to resolve structural platform debt, guarantee checkout stability, and activate owned-channel automation",
+          "timeframe": "Months 3–6",
           "dependencies": [
-            "Fase 1 afgerond: checkout en tracking baseline operationeel",
-            "Fase 2 afgerond: CDN, sGTM en structured data actief zodat migratie geen regressie veroorzaakt op behaalde wins"
+            "Phase 1 complete: checkout and tracking baseline operational",
+            "Phase 2 complete: CDN, sGTM, and structured data active so migration does not regress the wins already achieved"
           ],
-          "expectedOutcome": "Shopify live met stabiele checkout, Lighthouse boven 80, e-mailautomations actief met meetbare omzetbijdrage, Google Merchant Center feed zonder fouten, AI-datapunten compleet, totale attribution loss onder 10%",
+          "expectedOutcome": "Shopify live with a stable checkout, Lighthouse above 80, email automations active with measurable revenue contribution, Google Merchant Center feed without errors, AI data points complete, total attribution loss under 10%",
           "estMonthlyRevenueImpactEur": 3000
         }
       ],
       "quickWins": [
-        "Consent Mode v2 implementeren via bestaande GTM-container: 1 werkdag, directe impact op Google-campagne-optimalisatie en gemodelleerde conversiedata",
-        "Product schema + AggregateRating toevoegen op PDP's via JSON-LD in Magento 2-template: 1-2 werkdagen, sterren in SERP binnen 2-4 weken na crawl"
+        "Implement Consent Mode v2 via the existing GTM container: 1 working day, direct impact on Google campaign optimisation and modelled conversion data",
+        "Add Product schema + AggregateRating on PDPs via JSON-LD in the Magento 2 template: 1–2 working days, stars in SERP within 2–4 weeks after crawl"
       ],
       "signalsUsed": [
         "tracking_data_quality",
@@ -117,22 +117,22 @@
         "synthesis"
       ],
       "topPriorities": [
-        "Herstel de 404 op de checkoutpagina — een kapotte checkout blokkeert alle omzet uit paid traffic",
-        "Implementeer Consent Mode v2 + Meta CAPI om de 45% attribution loss te reduceren en ad-algoritmen te herstellen",
-        "Voeg Product schema + AggregateRating toe op PDP's voor directe CTR-winst in Google SERP en Google Shopping eligibility",
-        "Activeer server-side tagging (sGTM) als structurele trackingfix voor alle kanalen",
-        "Evalueer en start Shopify-migratie om Magento 2-schuld, CDN-afwezigheid en checkout-instabiliteit structureel op te lossen"
+        "Fix the 404 on the checkout page — a broken checkout blocks all revenue from paid traffic",
+        "Implement Consent Mode v2 + Meta CAPI to reduce the 45% attribution loss and restore ad algorithms",
+        "Add Product schema + AggregateRating on PDPs for direct CTR gain in Google SERP and Google Shopping eligibility",
+        "Activate server-side tagging (sGTM) as a structural tracking fix for all channels",
+        "Evaluate and start a Shopify migration to structurally resolve Magento 2 debt, CDN absence, and checkout instability"
       ],
-      "totalTimeline": "6 maanden",
-      "northStarMetric": "Maandelijkse omzet uit betaalde kanalen (ROAS x ad spend) — stijgt alleen als tracking klopt, checkout converteert en het platform stabiel is",
-      "executiveSummary": "Studiewinkel lekt structureel ~€11.400/maand door één dominante oorzaak: 45% attribution loss in de trackinglaag. Ad-algoritmen sturen op halve data, ROAS-rapportage is vertekend, en de checkout geeft een 404. Daarnaast mist alle structured data waardoor Google sterren én Shopping-eligibility wegvallen. Het pad voorwaarts: dicht eerst de tracking- en checkout-gaten zodat het platform weet wat werkt, versnel daarna conversie via schema en CRO, en bouw tot slot het platform structureel om naar Shopify om de Magento 2-schuld en CDN-afwezigheid structureel op te lossen."
+      "totalTimeline": "6 months",
+      "northStarMetric": "Monthly revenue from paid channels (ROAS x ad spend) — only rises if tracking is correct, checkout converts, and the platform is stable",
+      "executiveSummary": "Studiewinkel structurally leaks ~€11,400/month from one dominant cause: 45% attribution loss in the tracking layer. Ad algorithms steer on half the data, ROAS reporting is distorted, and checkout returns a 404. In addition, all structured data is missing, so Google drops both stars and Shopping eligibility. The path forward: first close the tracking and checkout gaps so the platform knows what works, then accelerate conversion via schema and CRO, and finally rebuild the platform onto Shopify to structurally resolve Magento 2 debt and CDN absence."
     },
     "deliverability": {
-      "summary": "De e-mailauthenticatie van studiewinkel.nl staat op een solide basis: SPF is geldig met meerdere geautoriseerde verzendende bronnen, DKIM is geconfigureerd en DMARC staat op 'quarantine' met forensische rapportage actief via Flowmailer. Het grootste resterende risico is dat DMARC nog niet op 'reject' staat, waardoor spoofingpogingen deels nog door kunnen komen. Aan de ESP-kant ontbreekt externe bevestiging van actieve e-mailflows, wat een blinde vlek vormt voor de gezondheid van het owned channel.",
+      "summary": "Email authentication for studiewinkel.nl sits on a solid base: SPF is valid with multiple authorised sending sources, DKIM is configured, and DMARC is set to 'quarantine' with forensic reporting active via Flowmailer. The largest remaining risk is that DMARC is not yet on 'reject', so spoofing attempts can still partially get through. On the ESP side, there is no external confirmation of active email flows, which is a blind spot for owned-channel health.",
       "topActions": [
-        "Verhoog het DMARC-beleid van 'quarantine' naar 'reject' zodra de DMARC-rapporten via dmarc@inbound.flowmailer.net bevestigen dat alle legitieme mailstromen correct authenticeren — dit elimineert het resterende spoofingrisico en verhoogt het domeinvertrouwen bij grote mailboxproviders zoals Gmail en Microsoft.",
-        "Voeg een DKIM-selector toe voor elke afzonderlijke verzendende bron in het SPF-record (sqr.nl, Flowmailer, Exclaimer, Microsoft 365) en verifieer dat alle selectors actief tekenen — momenteel is alleen de 'mail'-selector aangetroffen, wat betekent dat niet alle verzendpaden cryptografisch geïdentificeerd zijn.",
-        "Bepaal welke ESP de transactionele en commerciële e-mailflows beheert en valideer dat welkomstflow, abandoned cart en post-purchase automations actief zijn — het ontbreken van deze data van buitenaf is een signaal dat het owned channel mogelijk onderbenut wordt ten opzichte van de sectorstandaard van 30% e-mailomzetbijdrage."
+        "Raise the DMARC policy from 'quarantine' to 'reject' once the DMARC reports via dmarc@inbound.flowmailer.net confirm that all legitimate mail streams authenticate correctly — this eliminates remaining spoofing risk and increases domain trust with major mailbox providers such as Gmail and Microsoft.",
+        "Add a DKIM selector for each separate sending source in the SPF record (sqr.nl, Flowmailer, Exclaimer, Microsoft 365) and verify that all selectors are actively signing — currently only the 'mail' selector was found, which means not all sending paths are cryptographically identified.",
+        "Determine which ESP manages transactional and commercial email flows and validate that welcome flow, abandoned cart, and post-purchase automations are active — the absence of this data from the outside is a signal that the owned channel may be underused versus the industry standard of 30% email revenue contribution."
       ],
       "signalsUsed": [
         "dns_email",
@@ -142,12 +142,12 @@
       ]
     },
     "adBounceRevenue": {
-      "summary": "De post-click bounce ligt op de basislijn van 45% — er is geen technisch-gedreven bounce-uplift meetbaar en de mobiele paginaprestaties zijn goed (LCP 814ms, INP 128ms, CLS 0.0). Het grootste risico zit in de trackinglaag: met 45% geschatte attribution loss, geen Consent Mode, geen server-side tagging en ontbrekende pixels ontvangt het advertentie-algoritme voor bijna de helft van de klikken geen conversiesignaal, wat leidt tot structureel onderstuurde campagnes en verspild budget.",
+      "summary": "Post-click bounce sits at the 45% baseline — there is no technically driven bounce uplift measurable, and mobile page performance is good (LCP 814ms, INP 128ms, CLS 0.0). The largest risk sits in the tracking layer: with 45% estimated attribution loss, no Consent Mode, no server-side tagging, and missing pixels, the ad algorithm receives no conversion signal for nearly half of clicks, which leads to structurally under-steered campaigns and wasted budget.",
       "topActions": [
-        "Implementeer Consent Mode v2 (via Google Tag Manager) zodat het Google-algoritme ook van gebruikers zonder toestemming gemodelleerde conversiedata ontvangt — dit is de snelste stap om de 45% attribution loss te reduceren en campagne-optimalisatie te herstellen.",
-        "Activeer Meta Conversions API (CAPI) server-side naast de browser-pixel: hiermee worden conversies die door ad-blockers of iOS-restrictions worden gemist alsnog doorgegeven, wat directe impact heeft op Meta-campagneperformance en ROAS-rapportage.",
-        "Voer een pixels-audit uit via GTM Preview en Meta Events Manager om te bevestigen welke conversie-events daadwerkelijk vuren op de bedankpagina — de 'missing' pixels-health-status wijst op een gat tussen het tracking-plan en de live implementatie.",
-        "Evalueer server-side tagging (sGTM) als structurele fix: dit verhoogt datakwaliteit platform-breed, vermindert afhankelijkheid van browser-cookies en verlengt de attributievensters voor alle aangesloten kanalen."
+        "Implement Consent Mode v2 (via Google Tag Manager) so the Google algorithm also receives modelled conversion data from users without consent — this is the fastest step to reduce the 45% attribution loss and restore campaign optimisation.",
+        "Activate Meta Conversions API (CAPI) server-side alongside the browser pixel: this still passes through conversions missed by ad blockers or iOS restrictions, with a direct impact on Meta campaign performance and ROAS reporting.",
+        "Run a pixels audit via GTM Preview and Meta Events Manager to confirm which conversion events actually fire on the thank-you page — the 'missing' pixels-health status points to a gap between the tracking plan and the live implementation.",
+        "Evaluate server-side tagging (sGTM) as a structural fix: this raises data quality platform-wide, reduces dependence on browser cookies, and extends attribution windows for all connected channels."
       ],
       "signalsUsed": [
         "ad_traffic_impact",
@@ -159,21 +159,21 @@
     },
     "shopifyMigration": {
       "keyWins": [
-        "Vervanging van Magento 2 monoliet door Shopify Liquid pakt de lage Lighthouse-score (49) structureel aan via betere script-architectuur",
-        "Shopify Checkout vervangt de huidige gebroken of custom checkout (404-response) en verhoogt conversieratio door native payment methods en one-page checkout",
-        "Shopify Customer Events + server-side tagging via Shopify reduceren het geschatte attributieverlies van 45% aanzienlijk",
-        "Geen CDN op huidig platform — Shopify's global CDN geeft directe performance- en TTFB-verbetering (huidig TTFB 384ms)"
+        "Replacing the Magento 2 monolith with Shopify Liquid structurally addresses the low Lighthouse score (49) via better script architecture",
+        "Shopify Checkout replaces the current broken or custom checkout (404 response) and raises conversion rate through native payment methods and one-page checkout",
+        "Shopify Customer Events + server-side tagging via Shopify significantly reduce the estimated 45% attribution loss",
+        "No CDN on the current platform — Shopify's global CDN delivers immediate performance and TTFB improvement (current TTFB 384ms)"
       ],
-      "summary": "De prospect draait vermoedelijk Magento 2 als monoliet zonder CDN, met een opvallend goede mobile CWV-score maar een Lighthouse performance van slechts 49. De tracking-setup heeft aanzienlijke gaten (45% attributieverlies geschat, geen Consent Mode, geen server-side tagging) die op Shopify met Customer Events en Checkout Extensibility direct aanpakbaar zijn.",
+      "summary": "The prospect is likely running Magento 2 as a monolith without a CDN, with a notably strong mobile CWV score but a Lighthouse performance of only 49. The tracking setup has substantial gaps (45% estimated attribution loss, no Consent Mode, no server-side tagging) that are directly addressable on Shopify with Customer Events and Checkout Extensibility.",
       "keyRisks": [
-        "Magento 2-maatwerk (ERP-koppelingen, custom modules, B2B-prijsregels) is niet zichtbaar in de audit maar kan migratie-complexiteit aanzienlijk verhogen",
-        "Checkout-flow kon niet worden getest door een 404-error — onduidelijk of er een complexe custom checkout of betaalprovider-integratie achter zit die moeilijk te migreren is"
+        "Magento 2 custom work (ERP connections, custom modules, B2B pricing rules) is not visible in the audit but can raise migration complexity substantially",
+        "Checkout flow could not be tested due to a 404 error — unclear whether a complex custom checkout or payment-provider integration sits behind it that is hard to migrate"
       ],
-      "rationale": "Magento 2 als monoliet zonder CDN is een platform dat op termijn in schaalbaarheid en onderhoudskosten tekortschiet, maar de mobile CWV-scores zijn verrassend goed (LCP 814ms, INP 128ms, CLS 0.0). De Lighthouse-score van 49 wijst echter op diepere structurele issues (waarschijnlijk render-blocking JS via RequireJS en Magento-eigen script-architectuur) die Shopify Liquid zou oplossen zonder Hydrogen nodig te maken. Het checkout-traject gaf een 404 terug, wat kan betekenen dat de checkout custom of kapot is — een directe migratie-driver richting Shopify's geoptimaliseerde checkout. De tracking-situatie is de sterkste businesscase: geen Consent Mode, geen server-side tagging, en een geschat attributieverlies van 45% zijn problemen die Shopify Customer Events + GTM-integratie significant kunnen verbeteren. Het aantal third-party scripts is minimaal (2 domeinen, 35KB), wat de migratie-complexiteit beperkt. Grote onbekende: de diepte van Magento-maatwerk en ERP/PIM-koppelingen is niet uit de audit af te leiden.",
+      "rationale": "Magento 2 as a monolith without a CDN is a platform that will fall short on scalability and maintenance cost over time, but the mobile CWV scores are surprisingly good (LCP 814ms, INP 128ms, CLS 0.0). The Lighthouse score of 49, however, points to deeper structural issues (likely render-blocking JS via RequireJS and Magento's own script architecture) that Shopify Liquid would solve without needing Hydrogen. The checkout path returned a 404, which may mean checkout is custom or broken — a direct migration driver toward Shopify's optimised checkout. Tracking is the strongest business case: no Consent Mode, no server-side tagging, and an estimated 45% attribution loss are problems that Shopify Customer Events + GTM integration can significantly improve. The number of third-party scripts is minimal (2 domains, 35KB), which limits migration complexity. Major unknown: the depth of Magento custom work and ERP/PIM connections cannot be inferred from the audit.",
       "topActions": [
-        "Voer een technische discovery uit op de Magento 2-installatie: inventariseer custom modules, ERP/PIM-koppelingen en checkout-configuratie om de werkelijke migratie-complexiteit te bepalen",
-        "Repareer of valideer de checkout-flow op het huidige platform om te begrijpen of er een custom of derde-partij checkout actief is die gemigreerd moet worden",
-        "Implementeer direct Consent Mode v2 en server-side tagging (ongeacht migratiebeslissing) om het attributieverlies van 45% terug te dringen — dit is platform-onafhankelijk urgente actie"
+        "Run a technical discovery on the Magento 2 installation: inventory custom modules, ERP/PIM connections, and checkout configuration to determine the real migration complexity",
+        "Repair or validate the checkout flow on the current platform to understand whether a custom or third-party checkout is active that must be migrated",
+        "Implement Consent Mode v2 and server-side tagging immediately (regardless of the migration decision) to push the 45% attribution loss down — this is urgent, platform-independent action"
       ],
       "signalsUsed": [
         "platform_architecture",
@@ -183,15 +183,15 @@
         "tracking_data_quality"
       ],
       "recommendation": "overwegen",
-      "estimatedTimeline": "10-16 weken",
+      "estimatedTimeline": "10–16 weeks",
       "migrationComplexity": "middel"
     },
     "techArchitecture": {
-      "summary": "De webshop draait op een monolithische Magento 2-stack zonder detecteerbaar CDN, wat zich vertaalt in een kritieke Lighthouse performance score van 49 en een extreem hoge Time to Interactive van bijna 35 seconden op mobiel. Hoewel de mobiele Core Web Vitals (LCP, INP, CLS) momenteel goed scoren, wijst de zware paginagrootte van 8,6 MB gecombineerd met 76 requests en een Speed Index van 14 seconden op structurele rendering-schuld. Server-side tracking ontbreekt volledig, wat bij de huidige GTM-only setup leidt tot een hoog attributieverlies.",
+      "summary": "The webshop runs on a monolithic Magento 2 stack with no detectable CDN, which translates into a critical Lighthouse performance score of 49 and an extremely high Time to Interactive of nearly 35 seconds on mobile. Although mobile Core Web Vitals (LCP, INP, CLS) currently score well, the heavy page size of 8.6 MB combined with 76 requests and a Speed Index of 14 seconds points to structural rendering debt. Server-side tracking is completely missing, which with the current GTM-only setup leads to high attribution loss.",
       "topActions": [
-        "Implementeer een CDN (bijv. Cloudflare of Fastly) direct vóór de Apache-origin: de afwezigheid van edge-caching is het meest waarschijnlijke oorzaak van de TTFB van 384ms en het ontbreken van statische asset-distributie, wat de Speed Index van 14s en TTI van 35s structureel drukt.",
-        "Verlaag de totale paginagrootte van 8,6 MB door een JavaScript-bundle-audit uit te voeren op de Magento 2-stack: met slechts 5,9 KB ongebruikt JS is het gewicht vermoedelijk afkomstig van grote afbeeldingen of media — implementeer lazy loading en WebP-conversie om de Lighthouse score boven de kritieke grens van 50 te tillen.",
-        "Implementeer server-side tracking via Google Enhanced Conversions en Meta Conversion API (CAPI): met uitsluitend browser-side GTM en geen sGTM-endpoint is het geschatte attributieverlies hoog, wat directe impact heeft op de stuurdata voor betaalde campagnes en retargeting-audiences."
+        "Implement a CDN (e.g. Cloudflare or Fastly) directly in front of the Apache origin: the absence of edge caching is the most likely cause of the 384ms TTFB and the lack of static asset distribution, which structurally depresses the Speed Index of 14s and TTI of 35s.",
+        "Reduce total page size from 8.6 MB by running a JavaScript bundle audit on the Magento 2 stack: with only 5.9 KB unused JS, the weight is likely coming from large images or media — implement lazy loading and WebP conversion to lift the Lighthouse score above the critical threshold of 50.",
+        "Implement server-side tracking via Google Enhanced Conversions and Meta Conversion API (CAPI): with browser-side GTM only and no sGTM endpoint, estimated attribution loss is high, which has a direct impact on steering data for paid campaigns and retargeting audiences."
       ],
       "signalsUsed": [
         "platform_architecture",
@@ -203,18 +203,18 @@
     "crossSectionThesis": null
   },
   "clientInfo": {
-    "industry": "Educatie",
+    "industry": "Education",
     "storeUrl": "https://studiewinkel.nl/",
     "companyName": "Studiewinkel",
     "contactEmail": null,
     "contactPerson": null
   },
-  "coreThesis": "~45% attribution loss in tracking — ad-algoritmen optimaliseren op incomplete data, ROAS rapportage is structureel te laag. Geschatte lekkage: €11,400/mnd.",
+  "coreThesis": "~45% attribution loss in tracking — ad algorithms optimise on incomplete data, ROAS reporting is structurally too low. Estimated leakage: €11,400/mo.",
   "ctaSection": {
     "body": null,
     "heading": null,
     "primaryButtonUrl": "https://tradual.nl/contact",
-    "primaryButtonLabel": "Plan een gesprek"
+    "primaryButtonLabel": "Book a conversation"
   },
   "performance": {
     "mobileCLS": 0,
@@ -249,85 +249,85 @@
     "layers": [
       {
         "_key": "a5ff3655fc81",
-        "name": "De Deur",
+        "name": "The Door",
         "layer": 1,
-        "leadsTo": "Stack Rebuild™ — Snelheid",
+        "leadsTo": "Stack Rebuild™ — Speed",
         "metrics": [
           {
             "_key": "d22d79dfedc0",
             "metric": "LCP (Largest Contentful Paint)",
-            "signal": "LCP 0.8s — binnen benchmark",
+            "signal": "LCP 0.8s — within benchmark",
             "priority": "high",
             "annualLossEur": 0,
-            "whatWeMeasure": "Tijd tot hoofdcontent zichtbaar is op mobile",
+            "whatWeMeasure": "Time until main content is visible on mobile",
             "monthlyLossEur": 0,
-            "calculationNote": "LCP-delta vs 2.5s benchmark × conversiedaling-factor × benchmark maandomzet"
+            "calculationNote": "LCP delta vs 2.5s benchmark × conversion-drop factor × benchmark monthly revenue"
           },
           {
             "_key": "1123d7f48ad2",
             "metric": "INP (Interaction to Next Paint)",
-            "signal": "TBT 294ms (proxy voor hoge INP)",
+            "signal": "TBT 294ms (proxy for high INP)",
             "priority": "high",
             "annualLossEur": 1200,
-            "whatWeMeasure": "Tijd tot pagina reageert op input — gemeten via Total Blocking Time",
+            "whatWeMeasure": "Time until the page responds to input — measured via Total Blocking Time",
             "monthlyLossEur": 100,
-            "calculationNote": "TBT-overschot boven 200ms × schaalfactor × benchmark sessiewaarde"
+            "calculationNote": "TBT surplus above 200ms × scale factor × benchmark session value"
           },
           {
             "_key": "c90c5b4e97ad",
             "metric": "Bounce-by-load-time",
-            "signal": "45% bounce (basislijn 45%)",
+            "signal": "45% bounce (baseline 45%)",
             "priority": "high",
             "annualLossEur": 0,
-            "whatWeMeasure": "Correlatie laadtijd vs bouncepercentage per traffic-bron",
+            "whatWeMeasure": "Correlation of load time vs bounce rate per traffic source",
             "monthlyLossEur": 0,
-            "calculationNote": "Bounce-delta vs basislijn × sessies × AOV × CR"
+            "calculationNote": "Bounce delta vs baseline × sessions × AOV × CR"
           },
           {
             "_key": "4e4c0e528ea1",
-            "metric": "Ad-spend-verdamping",
-            "signal": "45% van ad budget verdampt vóór LCP",
+            "metric": "Ad-spend evaporation",
+            "signal": "45% of ad budget evaporates before LCP",
             "priority": "critical",
             "annualLossEur": 16800,
-            "whatWeMeasure": "% paid traffic dat vertrekt vóór LCP × gemiddelde CPC",
+            "whatWeMeasure": "% paid traffic that leaves before LCP × average CPC",
             "monthlyLossEur": 1400,
-            "calculationNote": "% bezoekers weg vóór LCP × benchmark ad spend"
+            "calculationNote": "% visitors gone before LCP × benchmark ad spend"
           }
         ],
         "keySignals": [
-          "TBT 294ms (proxy voor hoge INP)",
-          "45% van ad budget verdampt vóór LCP"
+          "TBT 294ms (proxy for high INP)",
+          "45% of ad budget evaporates before LCP"
         ],
         "metricCount": 4,
-        "coreQuestion": "Hoeveel bezoekers verliezen we vóórdat ze iets kunnen doen?",
+        "coreQuestion": "How many visitors do you lose before they can do anything?",
         "estAnnualLossEur": 18000,
         "estMonthlyLossEur": 1500
       },
       {
         "_key": "be7e0a7b46c9",
-        "name": "De Motor",
+        "name": "The Engine",
         "layer": 2,
-        "leadsTo": "Stack Rebuild™ — Architectuur",
+        "leadsTo": "Stack Rebuild™ — Architecture",
         "metrics": [
           {
             "_key": "eb918cefe87a",
-            "metric": "App-impact-analyse",
-            "signal": "2 externe domeinen — binnen benchmark",
+            "metric": "App impact analysis",
+            "signal": "2 external domains — within benchmark",
             "priority": "high",
             "annualLossEur": 0,
-            "whatWeMeasure": "Elke Shopify-app op laadtijd-impact (JS-gewicht, API-calls)",
+            "whatWeMeasure": "Each Shopify app on load-time impact (JS weight, API calls)",
             "monthlyLossEur": 0,
-            "calculationNote": "Externe domeinen boven benchmark × laadtijd-impact × conversieverlies × traffic × AOV"
+            "calculationNote": "External domains above benchmark × load-time impact × conversion loss × traffic × AOV"
           },
           {
             "_key": "11811ef2e42a",
             "metric": "Theme-bloat-ratio",
-            "signal": "6KB ongebruikte code — acceptabel",
+            "signal": "6KB unused code — acceptable",
             "priority": "high",
             "annualLossEur": 0,
-            "whatWeMeasure": "Gewicht theme vs strikt nodig — ongebruikt JS/CSS",
+            "whatWeMeasure": "Theme weight vs strictly needed — unused JS/CSS",
             "monthlyLossEur": 0,
-            "calculationNote": "Overbodig code-gewicht → extra laadtijd → conversieverlies × traffic × AOV"
+            "calculationNote": "Surplus code weight → extra load time → conversion loss × traffic × AOV"
           },
           {
             "_key": "774f607eff83",
@@ -335,161 +335,161 @@
             "signal": null,
             "priority": "medium",
             "annualLossEur": 0,
-            "whatWeMeasure": "Externe scripts (tracking, chat, reviews) op blocking-gedrag",
+            "whatWeMeasure": "External scripts (tracking, chat, reviews) on blocking behaviour",
             "monthlyLossEur": 0,
-            "calculationNote": "Blocking-tijd boven 200ms × schaalfactor → conversie-impact × traffic × AOV"
+            "calculationNote": "Blocking time above 200ms × scale factor → conversion impact × traffic × AOV"
           },
           {
             "_key": "7914a536a1d6",
             "metric": "TTFB (Time to First Byte)",
-            "signal": "TTFB 384ms — binnen benchmark",
+            "signal": "TTFB 384ms — within benchmark",
             "priority": "medium",
             "annualLossEur": 0,
-            "whatWeMeasure": "Server response time vs benchmark Shopify-infra",
+            "whatWeMeasure": "Server response time vs Shopify infrastructure benchmark",
             "monthlyLossEur": 0,
-            "calculationNote": "TTFB-delta vs 600ms benchmark → laadtijdvertraging → conversieverlies × traffic × AOV"
+            "calculationNote": "TTFB delta vs 600ms benchmark → load-time delay → conversion loss × traffic × AOV"
           }
         ],
         "keySignals": [],
         "metricCount": 4,
-        "coreQuestion": "Wat maakt je stack traag en wat kost dat?",
+        "coreQuestion": "What makes your stack slow, and what does that cost?",
         "estAnnualLossEur": 0,
         "estMonthlyLossEur": 0
       },
       {
         "_key": "823c1b2e6d46",
-        "name": "De Lekkage",
+        "name": "The Leak",
         "layer": 3,
         "leadsTo": "Stack Rebuild™ — Checkout & Mobile",
         "metrics": [
           {
             "_key": "702700881b35",
             "metric": "Checkout-latency",
-            "signal": "geen zichtbare checkout-frictie",
+            "signal": "no visible checkout friction",
             "priority": "critical",
             "annualLossEur": 0,
-            "whatWeMeasure": "Tijd & frictie tussen 'toevoegen' en betalingsbevestiging",
+            "whatWeMeasure": "Time & friction between 'add' and payment confirmation",
             "monthlyLossEur": 0,
-            "calculationNote": "Checkout-frictie-punten × €300 + ontbrekende guest checkout × €1.200"
+            "calculationNote": "Checkout friction points × €300 + missing guest checkout × €1,200"
           },
           {
             "_key": "b473982b397b",
             "metric": "CLS (Cumulative Layout Shift)",
-            "signal": "CLS 0.00 — acceptabel",
+            "signal": "CLS 0.00 — acceptable",
             "priority": "medium",
             "annualLossEur": 0,
-            "whatWeMeasure": "Layout-verschuivingen op PDP's en checkout — misclicks, vertrouwensverlies",
+            "whatWeMeasure": "Layout shifts on PDPs and checkout — misclicks, loss of trust",
             "monthlyLossEur": 0,
-            "calculationNote": "CLS-overschot × misclick-factor × sessies op key pagina's × AOV × CR-impact"
+            "calculationNote": "CLS surplus × misclick factor × sessions on key pages × AOV × CR impact"
           },
           {
             "_key": "c569cb277ef7",
             "metric": "Mobile Performance Gap",
-            "signal": "Mobile/desktop gap 0pt — acceptabel",
+            "signal": "Mobile/desktop gap 0pt — acceptable",
             "priority": "critical",
             "annualLossEur": 0,
-            "whatWeMeasure": "Verschil in snelheid en conversie tussen mobiel en desktop",
+            "whatWeMeasure": "Difference in speed and conversion between mobile and desktop",
             "monthlyLossEur": 0,
-            "calculationNote": "(Desktop score − Mobiel score) × €60/pt, gecorrigeerd voor device-inherent verschil"
+            "calculationNote": "(Desktop score − Mobile score) × €60/pt, corrected for inherent device difference"
           },
           {
             "_key": "8b37e005ab84",
-            "metric": "Pagina-specifieke leakage",
-            "signal": "geen kritieke CRO-bevindingen gevonden",
+            "metric": "Page-specific leakage",
+            "signal": "no critical CRO findings found",
             "priority": "high",
             "annualLossEur": 0,
-            "whatWeMeasure": "Performance van PDP, collectie, cart en checkout — waar lekt het meest?",
+            "whatWeMeasure": "Performance of PDP, collection, cart, and checkout — where does it leak most?",
             "monthlyLossEur": 0,
-            "calculationNote": "Hoge-prioriteit CRO-bevindingen × €350/stuk (max €1.500)"
+            "calculationNote": "High-priority CRO findings × €350 each (max €1,500)"
           }
         ],
         "keySignals": [],
         "metricCount": 4,
-        "coreQuestion": "Waar lekt conversie weg door technische frictie?",
+        "coreQuestion": "Where does conversion leak through technical friction?",
         "estAnnualLossEur": 0,
         "estMonthlyLossEur": 0
       },
       {
         "_key": "476c84567d8d",
-        "name": "De Efficiëntie",
+        "name": "Efficiency",
         "layer": 4,
         "leadsTo": "Performance Layer™",
         "metrics": [
           {
             "_key": "78dd8436b43e",
-            "metric": "Theoretische conversieratio",
-            "signal": "Huidige CR-schatting 1.5% (benchmark 3.0%)",
+            "metric": "Theoretical conversion rate",
+            "signal": "Current CR estimate 1.5% (benchmark 3.0%)",
             "priority": "high",
             "annualLossEur": 0,
-            "whatWeMeasure": "Verwachte CR bij benchmark-laadtijden vs huidige CR",
+            "whatWeMeasure": "Expected CR at benchmark load times vs current CR",
             "monthlyLossEur": 0,
-            "calculationNote": "Benchmark CR (peers met <2s LCP) vs huidige CR → delta is het verbeterpotentieel"
+            "calculationNote": "Benchmark CR (peers with <2s LCP) vs current CR → delta is the improvement potential"
           },
           {
             "_key": "5681a1e21143",
             "metric": "Revenue Gap",
-            "signal": "€6,900/mnd onbenut bij benchmark-performance",
+            "signal": "€6,900/mo unused at benchmark performance",
             "priority": "critical",
             "annualLossEur": 82800,
-            "whatWeMeasure": "Verschil huidige vs haalbare omzet bij benchmark-performance",
+            "whatWeMeasure": "Gap between current vs achievable revenue at benchmark performance",
             "monthlyLossEur": 6900,
             "calculationNote": "6000 sessies × (benchmark CR − huidige CR) × €75 AOV"
           },
           {
             "_key": "65792f0a3d97",
-            "metric": "CPA bij optimale performance",
-            "signal": "Huidige CPA ~€34 → optimaal ~€17",
+            "metric": "CPA at optimal performance",
+            "signal": "Current CPA ~€34 → optimal ~€17",
             "priority": "high",
             "annualLossEur": 0,
-            "whatWeMeasure": "Wat de cost per acquisition zou zijn als de funnel niet lekt",
+            "whatWeMeasure": "What cost per acquisition would be if the funnel did not leak",
             "monthlyLossEur": 0,
-            "calculationNote": "Huidige ad spend / haalbare conversies vs huidige CPA → besparing × conversies"
+            "calculationNote": "Current ad spend / achievable conversions vs current CPA → savings × conversions"
           },
           {
             "_key": "cb77e9fbfc7c",
-            "metric": "ROAS-uplift-potentieel",
-            "signal": "ROAS-potentieel +€3,000/mnd extra omzet op zelfde spend",
+            "metric": "ROAS uplift potential",
+            "signal": "ROAS potential +€3,000/mo extra revenue on the same spend",
             "priority": "high",
             "annualLossEur": 36000,
-            "whatWeMeasure": "Hoeveel beter ROAS zou zijn bij benchmark-laadtijden met zelfde ad spend",
+            "whatWeMeasure": "How much better ROAS would be at benchmark load times with the same ad spend",
             "monthlyLossEur": 3000,
-            "calculationNote": "(Haalbare omzet − huidige omzet) × 0.5 (gedeeld met ad ROI-factor)"
+            "calculationNote": "(Achievable revenue − current revenue) × 0.5 (shared with ad ROI factor)"
           }
         ],
         "keySignals": [
-          "€6,900/mnd onbenut bij benchmark-performance",
-          "ROAS-potentieel +€3,000/mnd extra omzet op zelfde spend"
+          "€6,900/mo unused at benchmark performance",
+          "ROAS potential +€3,000/mo extra revenue on the same spend"
         ],
         "metricCount": 4,
-        "coreQuestion": "Hoeveel meer omzet zit er in bestaande traffic?",
+        "coreQuestion": "How much more revenue is sitting in existing traffic?",
         "estAnnualLossEur": 118800,
         "estMonthlyLossEur": 9900
       },
       {
         "_key": "35ca38b185e8",
-        "name": "De Toekomst",
+        "name": "The Future",
         "layer": 5,
         "leadsTo": "Agentic Commerce Readiness™",
         "metrics": [
           {
             "_key": "7d4ac6db9cb6",
             "metric": "Structured Data Score",
-            "signal": "0/3 schema-types aanwezig — ontbreekt: Product schema, AggregateRating, Breadcrumb",
+            "signal": "0/3 schema types present — missing: Product schema, AggregateRating, Breadcrumb",
             "priority": "high",
             "annualLossEur": null,
-            "whatWeMeasure": "Kwaliteit Schema.org, feeds, metadata — per producttype",
+            "whatWeMeasure": "Quality of Schema.org, feeds, metadata — per product type",
             "monthlyLossEur": null,
-            "calculationNote": "Strategische score — niet in euro's uitgedrukt"
+            "calculationNote": "Strategic score — not expressed in euros"
           },
           {
             "_key": "d8d58ac2d8a6",
             "metric": "Storefront API Responsiveness",
-            "signal": "Vereist diepere API-scan (outside-only scope)",
+            "signal": "Requires a deeper API scan (outside-only scope)",
             "priority": "medium",
             "annualLossEur": null,
-            "whatWeMeasure": "Response-snelheid Storefront API bij product- en collectiequeries",
+            "whatWeMeasure": "Storefront API response speed on product and collection queries",
             "monthlyLossEur": null,
-            "calculationNote": "Responstijd vs benchmark in ms — strategisch, niet in €"
+            "calculationNote": "Response time vs benchmark in ms — strategic, not in €"
           },
           {
             "_key": "3b94f7e5b099",
@@ -497,147 +497,147 @@
             "signal": "Accessibility score 69/100",
             "priority": "high",
             "annualLossEur": null,
-            "whatWeMeasure": "Is checkout API-aanroepbaar en accessible voor alle gebruikers?",
+            "whatWeMeasure": "Is checkout API-callable and accessible for all users?",
             "monthlyLossEur": null,
-            "calculationNote": "Binaire score (Ja/Nee) + gap-analyse — strategisch"
+            "calculationNote": "Binary score (Yes/No) + gap analysis — strategic"
           },
           {
             "_key": "1453a59ade0d",
             "metric": "AI-Agent Data Completeness",
-            "signal": "0/5 AI-datapunten compleet — Google Merchant: not-ready",
+            "signal": "0/5 AI data points complete — Google Merchant: not-ready",
             "priority": "high",
             "annualLossEur": null,
-            "whatWeMeasure": "Datapunten aanwezig voor AI-koopbeslissing (prijs, specs, reviews, shipping)",
+            "whatWeMeasure": "Data points present for an AI purchase decision (price, specs, reviews, shipping)",
             "monthlyLossEur": null,
-            "calculationNote": "0/5 datapunten aanwezig voor AI-agents"
+            "calculationNote": "0/5 data points present for AI agents"
           },
           {
             "_key": "6b47d06e6d1b",
             "metric": "MCP/Protocol Readiness",
-            "signal": "MCP-gereedheid: laag",
+            "signal": "MCP readiness: laag",
             "priority": "medium",
             "annualLossEur": null,
-            "whatWeMeasure": "Compatibiliteit Shopify MCP's (Catalog, Storefront, Checkout Kit)",
+            "whatWeMeasure": "Compatibility of Shopify MCPs (Catalog, Storefront, Checkout Kit)",
             "monthlyLossEur": null,
-            "calculationNote": "Readiness-niveau (laag/midden/hoog) — strategisch, niet in €"
+            "calculationNote": "Readiness level (laag/midden/hoog) — strategic, not in €"
           }
         ],
         "keySignals": [
-          "0/3 schema-types aanwezig — ontbreekt: Product schema, AggregateRating, Breadcrumb",
-          "Vereist diepere API-scan (outside-only scope)",
+          "0/3 schema types present — missing: Product schema, AggregateRating, Breadcrumb",
+          "Requires a deeper API scan (outside-only scope)",
           "Accessibility score 69/100",
-          "0/5 AI-datapunten compleet — Google Merchant: not-ready",
-          "MCP-gereedheid: laag"
+          "0/5 AI data points complete — Google Merchant: not-ready",
+          "MCP readiness: laag"
         ],
         "metricCount": 5,
-        "coreQuestion": "Hoe vindbaar en koopbaar ben je voor AI en nieuwe kanalen?",
+        "coreQuestion": "How findable and buyable are you for AI and new channels?",
         "estAnnualLossEur": null,
         "estMonthlyLossEur": null
       }
     ],
     "ceoTriggers": [
       {
-        "kpi": "ROAS daalt terwijl ad spend stijgt",
+        "kpi": "ROAS drops while ad spend rises",
         "_key": "cc5f3dcdb27c",
-        "category": "Omzet & Groei",
+        "category": "Revenue & Growth",
         "benchmark": null,
         "triggered": true,
-        "alarmSignal": "ROAS < 3x bij stijgende spend",
-        "realMeaning": "De store lekt bezoekers vóórdat ze converteren. Meer traffic naar een lekkende funnel versterkt het probleem.",
-        "whatCeoSees": "Elke extra euro in ads levert minder op. Meer budget = niet meer omzet.",
-        "tradualPitch": "Je giet water in een emmer met gaten. Wij dichten de gaten zodat elke euro ad spend meer oplevert.",
+        "alarmSignal": "ROAS < 3x with rising spend",
+        "realMeaning": "The store leaks visitors before they convert. More traffic into a leaking funnel makes the problem worse.",
+        "whatCeoSees": "Every extra euro in ads returns less. More budget ≠ more revenue.",
+        "tradualPitch": "You are pouring water into a bucket with holes. We close the holes so every euro of ad spend returns more.",
         "tradualSolution": "Stack Rebuild™ + Performance Layer™"
       },
       {
-        "kpi": "Mobile converteert dramatisch lager dan desktop",
+        "kpi": "Mobile converts dramatically lower than desktop",
         "_key": "86eb6a63b088",
-        "category": "Conversie & Funnel",
-        "benchmark": "Max 30% lager dan desktop",
+        "category": "Conversion & Funnel",
+        "benchmark": "Max 30% lower than desktop",
         "triggered": false,
-        "alarmSignal": "Mobiel CR < 50% van desktop CR",
-        "realMeaning": "De mobiel-desktop gap is bijna nooit een UX-probleem. Het is een performance-probleem: mobiel is gevoeliger voor laadtijd.",
-        "whatCeoSees": "Desktop converteert 2-3x beter dan mobiel, terwijl 70%+ van het traffic mobiel is.",
-        "tradualPitch": "70% van jullie bezoekers is mobiel. Als die helft zo slecht converteert, laten jullie het meeste geld liggen waar het meeste traffic zit.",
-        "tradualSolution": "Stack Rebuild™ — mobile-first architectuur"
+        "alarmSignal": "Mobile CR < 50% of desktop CR",
+        "realMeaning": "The mobile–desktop gap is almost never a UX problem. It is a performance problem: mobile is more sensitive to load time.",
+        "whatCeoSees": "Desktop converts 2–3x better than mobile, while 70%+ of traffic is mobile.",
+        "tradualPitch": "70% of your visitors are mobile. If that half converts this poorly, you are leaving the most money where the most traffic sits.",
+        "tradualSolution": "Stack Rebuild™ — mobile-first architecture"
       },
       {
-        "kpi": "CPA stijgt structureel",
+        "kpi": "CPA rising structurally",
         "_key": "d5b99b859cc5",
-        "category": "Kosten & Efficiëntie",
+        "category": "Cost & Efficiency",
         "benchmark": null,
         "triggered": true,
-        "alarmSignal": "CPA stijgt >15% YoY",
-        "realMeaning": "Als je funnel lekt, heb je meer klikken nodig per conversie — en elke klik kost geld.",
-        "whatCeoSees": "Het kost steeds meer om een nieuwe klant te werven. Marketing wordt duurder.",
-        "tradualPitch": "Jullie CPA stijgt niet alleen omdat ads duurder worden. Fix de store en je CPA daalt — zonder je ad strategie te veranderen.",
+        "alarmSignal": "CPA rising >15% YoY",
+        "realMeaning": "If your funnel leaks, you need more clicks per conversion — and every click costs money.",
+        "whatCeoSees": "It costs more and more to acquire a new customer. Marketing is getting more expensive.",
+        "tradualPitch": "Your CPA is not rising only because ads are getting more expensive. Fix the store and your CPA drops — without changing your ad strategy.",
         "tradualSolution": "Revenue Leak Audit™ → Stack Rebuild™"
       },
       {
-        "kpi": "Marktaandeel daalt bij vergelijkbaar product",
+        "kpi": "Market share declining against comparable product",
         "_key": "d9695a77faaa",
-        "category": "Concurrentie & Toekomst",
+        "category": "Competition & Future",
         "benchmark": null,
         "triggered": false,
-        "alarmSignal": "Marktaandeel daalt >2% YoY",
-        "realMeaning": "Bij vergelijkbare producten wint de store met de beste koopervaring. Snelheid wordt de differentiator.",
-        "whatCeoSees": "Concurrenten met een vergelijkbaar product groeien sneller.",
-        "tradualPitch": "Jullie product is niet het probleem. Jullie winkelervaring is het probleem. De klant gaat naar de winkel waar het makkelijker en sneller is.",
-        "tradualSolution": "Stack Rebuild™ — volledige commerce-infrastructuur"
+        "alarmSignal": "Market share declining >2% YoY",
+        "realMeaning": "With comparable products, the store with the best buying experience wins. Speed becomes the differentiator.",
+        "whatCeoSees": "Competitors with a comparable product are growing faster.",
+        "tradualPitch": "Your product is not the problem. Your store experience is the problem. The customer goes to the store where it is easier and faster.",
+        "tradualSolution": "Stack Rebuild™ — full commerce infrastructure"
       },
       {
-        "kpi": "Geen organische groei ondanks SEO-investering",
+        "kpi": "No organic growth despite SEO investment",
         "_key": "c36a97312235",
-        "category": "Concurrentie & Toekomst",
+        "category": "Competition & Future",
         "benchmark": null,
         "triggered": true,
-        "alarmSignal": "Geen ranking-groei na 6 maanden SEO",
-        "realMeaning": "Google beloont Core Web Vitals in de ranking. Een trage site verliest van een snelle concurrent.",
-        "whatCeoSees": "SEO-inspanningen leveren niet op. Rankings stagneren of dalen.",
-        "tradualPitch": "Google rankt niet alleen op content. Ze ranken op ervaring. Jullie Core Web Vitals zijn een ranking-factor — en op dit moment werken ze tegen jullie.",
+        "alarmSignal": "No ranking growth after 6 months of SEO",
+        "realMeaning": "Google rewards Core Web Vitals in ranking. A slow site loses to a fast competitor.",
+        "whatCeoSees": "SEO efforts are not paying off. Rankings stagnate or decline.",
+        "tradualPitch": "Google does not rank on content alone. They rank on experience. Your Core Web Vitals are a ranking factor — and right now they are working against you.",
         "tradualSolution": "Stack Rebuild™ — Core Web Vitals"
       },
       {
-        "kpi": "Niet vindbaar via AI-assistenten",
+        "kpi": "Not findable via AI assistants",
         "_key": "decebb35a079",
-        "category": "Concurrentie & Toekomst",
+        "category": "Competition & Future",
         "benchmark": null,
         "triggered": true,
-        "alarmSignal": "Niet genoemd in AI-antwoorden",
-        "realMeaning": "AI-agents vertrouwen op gestructureerde data en API-toegankelijkheid. Zonder dat ben je onzichtbaar.",
-        "whatCeoSees": "Klanten vragen ChatGPT/Gemini om productadvies en jullie merk verschijnt niet.",
-        "tradualPitch": "Over 2 jaar start 30%+ van de productzoektochten bij een AI-agent. Als die agent jullie niet kan vinden, bestaan jullie niet in die wereld.",
+        "alarmSignal": "Not mentioned in AI answers",
+        "realMeaning": "AI agents rely on structured data and API accessibility. Without that, you are invisible.",
+        "whatCeoSees": "Customers ask ChatGPT/Gemini for product advice and your brand does not appear.",
+        "tradualPitch": "In 2 years, 30%+ of product searches will start with an AI agent. If that agent cannot find you, you do not exist in that world.",
         "tradualSolution": "Agentic Commerce Readiness™"
       },
       {
-        "kpi": "Shopify app-kosten stijgen maar resultaat niet",
+        "kpi": "Shopify app costs rise but results don't",
         "_key": "7a7421c5727d",
-        "category": "Kosten & Efficiëntie",
+        "category": "Cost & Efficiency",
         "benchmark": null,
         "triggered": false,
-        "alarmSignal": ">15 apps geïnstalleerd",
-        "realMeaning": "Elke app voegt gewicht toe aan de store. Je betaalt dubbel: de subscription + het conversieverlies dat de app veroorzaakt.",
-        "whatCeoSees": "Elke maand meer apps, meer subscriptions, maar geen meetbaar effect op omzet.",
-        "tradualPitch": "Jullie betalen per maand aan apps die jullie store vertragen. Sommige kosten meer aan conversieverlies dan ze opleveren aan functionaliteit.",
-        "tradualSolution": "Revenue Leak Audit™ — Laag 2: De Motor"
+        "alarmSignal": ">15 apps installed",
+        "realMeaning": "Every app adds weight to the store. You pay twice: the subscription + the conversion loss the app causes.",
+        "whatCeoSees": "Every month more apps, more subscriptions, but no measurable effect on revenue.",
+        "tradualPitch": "You pay monthly for apps that slow your store down. Some cost more in conversion loss than they deliver in functionality.",
+        "tradualSolution": "Revenue Leak Audit™ — Layer 2: The Engine"
       },
       {
-        "kpi": "Cart abandonment boven 75%",
+        "kpi": "Cart abandonment above 75%",
         "_key": "501787358e8d",
-        "category": "Conversie & Funnel",
+        "category": "Conversion & Funnel",
         "benchmark": "65–70%",
         "triggered": false,
         "alarmSignal": "Abandonment > 75%",
-        "realMeaning": "Checkout-latency en layout shifts breken het vertrouwen op het cruciale moment.",
-        "whatCeoSees": "3 van de 4 klanten die iets in hun winkelwagen doen, rekenen niet af.",
-        "tradualPitch": "Jullie hebben de klant al overtuigd — die heeft op 'toevoegen' geklikt. En dan verliezen jullie ze in de checkout. Dat is het duurste verlies dat er is.",
-        "tradualSolution": "Stack Rebuild™ — checkout-optimalisatie"
+        "realMeaning": "Checkout latency and layout shifts break trust at the critical moment.",
+        "whatCeoSees": "3 out of 4 customers who add something to their cart do not check out.",
+        "tradualPitch": "You already convinced the customer — they clicked 'add'. And then you lose them in checkout. That is the most expensive loss there is.",
+        "tradualSolution": "Stack Rebuild™ — checkout optimisation"
       }
     ],
-    "methodologyNote": "Heuristische schatting. Aannames: €9.000/mnd omzet, 6.000 bezoekers/mnd, 3% CVR benchmark, €75 AOV, €3.000/mnd ad-spend. Gebaseerd op publiek meetbare signalen. Gebruik als indicatie, niet als definitieve audit-uitkomst.",
+    "methodologyNote": "Heuristic estimate. Assumptions: €9,000/mo revenue, 6,000 visitors/mo, 3% CVR benchmark, €75 AOV, €3,000/mo ad spend. Based on publicly measurable signals. Use as an indication, not as a definitive audit outcome.",
     "totalAnnualLossEur": 136800,
     "totalMonthlyLossEur": 11400
   },
-  "auditSummary": "Geautomatiseerde outside-only scan van Magento 2 store (https://studiewinkel.nl/). 2 technische risicos en 2 kansen geïdentificeerd.",
+  "auditSummary": "Automated outside-only scan of Magento 2 store (https://studiewinkel.nl/). 2 technical risks and 2 opportunities identified.",
   "checkoutFlow": {
     "testedAsMobile": false,
     "observedFriction": [],
@@ -668,7 +668,7 @@
   },
   "adTrafficImpact": {
     "bounceDrivers": [],
-    "methodologyNote": "Heuristische schatting op basis van Google CrUX-correlaties (LCP/INP → bounce-rate). Omzetbereik aanneemt 3.000–15.000 ad-bezoeken/maand, 2% CVR, €72 AOV. Gebruik als indicatie, niet als gemeten benchmark.",
+    "methodologyNote": "Heuristic estimate based on Google CrUX correlations (LCP/INP → bounce rate). Revenue range assumes 3,000–15,000 ad visits/month, 2% CVR, €72 AOV. Use as an indication, not as a measured benchmark.",
     "bounceBaselinePct": 45,
     "estWastedAdSpendPct": 45,
     "estPostClickBouncePct": 45,
@@ -676,53 +676,53 @@
     "estMonthlyLostRevenueEurLow": null,
     "estMonthlyLostRevenueEurHigh": null
   },
-  "biggestTechRisk": "45% geschatte attribution loss door tracking-gaps",
+  "biggestTechRisk": "45% estimated attribution loss due to tracking gaps",
   "bloatWhatMustGo": [],
   "croObservations": [
     {
       "_key": "4ec1a648b919",
       "page": "Checkout",
       "severity": "high",
-      "estImpact": "Elke gebruiker die de checkout niet kan bereiken converteert niet. Afhankelijk van het aandeel directe checkout-traffic kan dit 5-15% van de potentiële bestellingen blokkeren. Directe fix vereist.",
-      "observation": "De checkoutpagina retourneert een 404-fout bij directe toegang. Dit is een harde conversieblokkade: bezoekers die via een directe link, retargeting-advertentie of verlaten-winkelwagen-e-mail naar de checkout worden gestuurd, stuiten op een dode pagina en verlaten de sessie zonder aankoop."
+      "estImpact": "Every user who cannot reach checkout does not convert. Depending on the share of direct checkout traffic, this can block 5–15% of potential orders. Immediate fix required.",
+      "observation": "The checkout page returns a 404 error on direct access. This is a hard conversion blocker: visitors sent to checkout via a direct link, retargeting ad, or abandoned-cart email hit a dead page and leave the session without a purchase."
     },
     {
       "_key": "e71e82bfbe00",
       "page": "Generic",
       "severity": "high",
-      "estImpact": "Onderzoek van Google toont een directe correlatie tussen performance score en bounce rate. Een verbetering van score 49 naar 70+ kan de bounce rate met 5-10% verlagen, wat bij gelijkblijvend traffic direct meer bezoekers door de funnel stuurt.",
-      "observation": "De Lighthouse performance score bedraagt 49 op desktop, wat als 'matig' geldt. Een trage laadervaring verhoogt de bounce rate aanzienlijk, vooral bij bezoekers die via advertenties binnenkomen. Er is geen mobiele Lighthouse-score gemeten, maar de Core Web Vitals (LCP 814ms, FCP 807ms) zijn op zichzelf acceptabel — het verschil suggereert problemen met JavaScript-uitvoering of resource-loading buiten de CWV-metingen."
+      "estImpact": "Google research shows a direct correlation between performance score and bounce rate. Improving the score from 49 to 70+ can lower bounce rate by 5–10%, which at unchanged traffic immediately sends more visitors through the funnel.",
+      "observation": "The Lighthouse performance score is 49 on desktop, which counts as 'moderate'. A slow load experience raises bounce rate substantially, especially for visitors arriving via ads. No mobile Lighthouse score was measured, but Core Web Vitals (LCP 814ms, FCP 807ms) are acceptable on their own — the gap suggests problems with JavaScript execution or resource loading outside the CWV measurements."
     },
     {
       "_key": "e4d59fbd0c72",
       "page": "PDP",
       "severity": "high",
-      "estImpact": "Winkels met Product-schema en Shopping-eligibility rapporteren 20-30% meer organische klikken vanuit productgerichte zoekopdrachten. Implementatie is eenmalig technisch werk met structurele traffic-impact.",
-      "observation": "Er is geen Product-schema gedetecteerd op de productdetailpagina's. Hierdoor komt de winkel niet in aanmerking voor Google Shopping-weergave via organische rich results en mist het de prijsweergave in standaard zoekresultaten. Dit is een gemiste kans op gratis, hoogintentie traffic."
+      "estImpact": "Stores with Product schema and Shopping eligibility report 20–30% more organic clicks from product-intent searches. Implementation is one-off technical work with structural traffic impact.",
+      "observation": "No Product schema was detected on product detail pages. As a result, the store does not qualify for Google Shopping appearance via organic rich results and misses price display in standard search results. This is a missed opportunity for free, high-intent traffic."
     },
     {
       "_key": "0e26dd184eab",
       "page": "PDP",
       "severity": "medium",
-      "estImpact": "AggregateRating in SERP's verhoogt de CTR gemiddeld met 10-20% voor productpagina's. Bij een bestaande organische traffic-base levert dit direct meer sessies op zonder extra advertentiekosten.",
-      "observation": "Er is geen AggregateRating-schema aanwezig, waardoor reviewsterren ontbreken in de Google-zoekresultaten. Sterren verhogen de klikfrequentie (CTR) aantoonbaar en fungeren als sociaal bewijs nog vóór de bezoeker de site betreedt. Ook op de pagina zelf zijn geen reviewsignalen via schema zichtbaar."
+      "estImpact": "AggregateRating in SERPs raises CTR by 10–20% on average for product pages. With an existing organic traffic base, this immediately delivers more sessions without extra ad spend.",
+      "observation": "No AggregateRating schema is present, so review stars are missing in Google search results. Stars demonstrably raise click-through rate (CTR) and act as social proof before the visitor even enters the site. On the page itself, no review signals via schema are visible either."
     },
     {
       "_key": "8f5153fab4fa",
       "page": "Generic",
       "severity": "low",
-      "estImpact": "Breadcrumb-schema heeft een beperkt maar meetbaar effect op CTR (geschat 2-5%) en helpt de crawl-efficiëntie van grote catalogi verbeteren. Relatief eenvoudige implementatie via bestaand schema-framework.",
-      "observation": "Er is geen BreadcrumbList-schema gedetecteerd. Breadcrumbs in zoekresultaten verbeteren de navigatieduidelijkheid voor gebruikers en geven Google beter inzicht in de sitestructuur, wat de indexering van categorie- en productpagina's ondersteunt."
+      "estImpact": "Breadcrumb schema has a limited but measurable effect on CTR (estimated 2–5%) and helps improve crawl efficiency of large catalogues. Relatively simple implementation via an existing schema framework.",
+      "observation": "No BreadcrumbList schema was detected. Breadcrumbs in search results improve navigation clarity for users and give Google better insight into site structure, which supports indexing of category and product pages."
     },
     {
       "_key": "c2d99c3c15a9",
       "page": "Generic",
       "severity": "medium",
-      "estImpact": "Verbetering van de accessibility-score naar 85+ verlaagt friction voor een bredere doelgroep en vermindert het risico op bounces door onleesbare of onklikbare interface-elementen. Geschatte impact op conversie: 1-3% bij structurele aanpak.",
-      "observation": "De accessibility-score bedraagt 69, wat betekent dat een significant deel van de gebruikersinterface niet voldoet aan WCAG-richtlijnen. Dit raakt niet alleen gebruikers met een beperking, maar ook SEO-signalen en de algehele bruikbaarheid op mobiel (ontbrekende alt-teksten, contrastratio's, formulierlabels)."
+      "estImpact": "Improving the accessibility score to 85+ lowers friction for a broader audience and reduces the risk of bounces caused by unreadable or unclickable interface elements. Estimated conversion impact: 1–3% with a structural approach.",
+      "observation": "The accessibility score is 69, which means a significant part of the user interface does not meet WCAG guidelines. This affects not only users with a disability, but also SEO signals and overall mobile usability (missing alt texts, contrast ratios, form labels)."
     }
   ],
-  "methodologyNote": "Automated outside-only scan. Alle bevindingen zijn gebaseerd op publiek toegankelijke signalen: HTTP headers, DOM analyse, PageSpeed Insights API, en third-party script catalogus. Geen admin-toegang gebruikt.",
+  "methodologyNote": "Automated outside-only scan. All findings are based on publicly accessible signals: HTTP headers, DOM analysis, PageSpeed Insights API, and third-party script catalogue. No admin access used.",
   "migrationApproach": [],
   "thirdPartyScripts": {
     "detectedScripts": [
@@ -791,6 +791,6 @@
     "recommendedArchitecture": "headless",
     "hostingDetectionEvidence": "server: Apache"
   },
-  "biggestTechOpportunity": "Geen AggregateRating schema — sterren ontbreken in Google SERP, directe CTR-winst",
+  "biggestTechOpportunity": "No AggregateRating schema — stars missing in Google SERP, direct CTR gain",
   "estPerformanceLiftPercent": 30
 }

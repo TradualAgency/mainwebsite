@@ -10,37 +10,43 @@ import { FaqSection } from "@/components/marketing/faq-section";
 import { CtaBand } from "@/components/marketing/cta-band";
 import { getServiceById } from "@/content/services";
 
-const service = getServiceById("revenue-leak-audit");
+const service = getServiceById("stack-rebuild");
 
 export const metadata: Metadata = {
   title: service.name,
   description: service.oneLiner,
 };
 
-export default function RevenueLeakAuditPage() {
+export default function StackRebuildPage() {
   return (
     <main>
       <ServiceHero service={service} />
 
-      <QualifierColumns eyebrow="Voor wie dit is" title="Herken je dit?" forWho={service.forWho} tone="muted" />
+      <QualifierColumns
+        eyebrow="When yes, when not"
+        title="Is this your starting point?"
+        forWho={service.forWho}
+        notForWho={service.notForWho}
+        tone="muted"
+      />
 
-      <ChecklistSection eyebrow="Wat je krijgt" title="Een businesscase, geen to-do-lijst" items={service.deliverables} tone="light" />
+      <ChecklistSection eyebrow="What you get" title="Structural recovery, not another patch" items={service.deliverables} tone="light" />
 
-      <ProcessTimeline eyebrow="Hoe het werkt" title="Van scan naar businesscase" steps={service.process} tone="muted" />
+      <ProcessTimeline eyebrow="How it works" title="From audit to rebuilt foundation" steps={service.process} tone="muted" />
 
       <Section tone="dark">
-        <SectionHeading eyebrow="Investering" title="Wat het kost" tone="dark" className="mb-10" />
+        <SectionHeading eyebrow="Investment" title="What it costs" tone="dark" className="mb-10" />
         <PricingCard label={service.name} priceLabel={service.priceLabel} determinants={service.priceDeterminants} tone="dark" className="max-w-xl" />
       </Section>
 
-      <FaqSection eyebrow="Vragen" title="Wat mensen ons vaak vragen" items={service.faq} tone="light" />
+      <FaqSection eyebrow="Questions" title="What people often ask us" items={service.faq} tone="light" />
 
       <CtaBand
-        eyebrow="Vervolgstap"
-        heading="Na de audit"
+        eyebrow="Next step"
+        heading="After the rebuild"
         body={service.afterThisLabel}
-        primary={{ label: "Vraag een Revenue Leak Audit aan", href: "/contact" }}
-        secondary={{ label: "Bekijk Stack Rebuild", href: service.afterThisHref }}
+        primary={{ label: "Book an intro call", href: "/contact" }}
+        secondary={{ label: "View Performance Layer", href: service.afterThisHref }}
       />
     </main>
   );

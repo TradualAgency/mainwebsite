@@ -21,11 +21,11 @@
   },
   "aiAnalysis": {
     "cro": {
-      "summary": "De grootste conversieblokkade op de BARTS-webshop is het ontbreken van vertrouwenssignalen: nieuwe bezoekers zien op de homepage geen reviews, sterren of klantbeoordelingen, terwijl dit bij een eerste aankoop cruciaal is. Daarnaast mist de homepage een heldere waardepropositie — de primaire CTA-teksten zijn logistiek ('Retourneren binnen 30 dagen', 'Gratis verzending') in plaats van inspirerend of onderscheidend. Bij een jaaromzet van circa €7 miljoen kan zelfs een kleine verbetering in conversieratio al snel tienduizenden euro's extra opleveren.",
+      "summary": "The largest conversion blocker on the BARTS webshop is the absence of trust signals: new visitors see no reviews, stars, or customer ratings on the homepage, while this is crucial for a first purchase. In addition, the homepage lacks a clear value proposition — the primary CTA texts are logistical ('Returns within 30 days', 'Free shipping') rather than inspiring or distinctive. At annual revenue of around €7 million, even a small conversion-rate improvement can quickly yield tens of thousands of extra euros.",
       "topActions": [
-        "Voeg reviewsterren en een gemiddelde beoordeling toe op de homepage, direct zichtbaar zonder scrollen — koppel dit aan een review-platform zoals Trustpilot of Kiyoh zodat nieuwe bezoekers meteen zien dat anderen tevreden zijn.",
-        "Herschrijf de homepage-headline naar een concrete waardepropositie die in één zin vertelt wat BARTS onderscheidt (bijvoorbeeld: merkbelofte, collectiebreedte of kwaliteit), in plaats van alleen verzend- en retourvoorwaarden bovenaan te zetten.",
-        "Voeg productinformatie toe aan de productvermeldingen in Google zodat er sterren en beoordelingen verschijnen naast je zoekresultaten — dit verhoogt het aantal klikken vanuit Google zonder extra advertentiekosten."
+        "Add review stars and an average rating on the homepage, immediately visible without scrolling — connect this to a review platform such as Trustpilot or Kiyoh so new visitors immediately see that others are satisfied.",
+        "Rewrite the homepage headline into a concrete value proposition that in one sentence tells what sets BARTS apart (for example: brand promise, collection breadth, or quality), instead of putting only shipping and return terms at the top.",
+        "Add product information to your product listings in Google so stars and ratings appear next to your search results — this increases clicks from Google without extra ad spend."
       ],
       "signalsUsed": [
         "social_proof_by_page",
@@ -41,65 +41,65 @@
       "phases": [
         {
           "_key": "54ba17436d6e",
-          "name": "Dichten van de lekken",
+          "name": "Close the leaks",
           "phase": 1,
           "actions": [
-            "Activeer een contentleveringsnetwerk (een tussenlaag die je pagina's en afbeeldingen opslaat dichter bij de bezoeker) voor je Magento-installatie — Cloudflare of Fastly zijn bewezen opties die binnen een dag draaien en de laadtijd op mobiel en desktop direct verbeteren",
-            "Comprimeer de hoofdafbeelding bovenaan elke pagina en stel de laadvolgorde zo in dat de zichtbare pagina-inhoud als eerste wordt getoond — doel: mobiele laadtijd onder de 2,5 seconden",
-            "Richt server-side conversiemeting in voor Meta (Facebook/Instagram) en Google Ads: aankopen worden dan rechtstreeks van je server naar het advertentieplatform gestuurd in plaats van via de browser van de klant, zodat ook klikkers die cookies weigeren worden meegeteld",
-            "Activeer een cookietoestemmingsoplossing die voldoet aan de AVG én samenwerkt met de server-side conversiemeting — dit is de juridische én meetkundige basis voor alles wat volgt",
-            "Stel domeinbeveiliging in voor e-mail: activeer SPF (een lijst van servers die namens Barts mogen mailen), DKIM (een digitale handtekening per mail) en DMARC (een beleid dat valse mails blokkeert) — werk samen met je e-mailprovider, uitvoerbaar in minder dan een werkdag"
+            "Activate a content delivery network (a layer that stores your pages and images closer to the visitor) for your Magento installation — Cloudflare or Fastly are proven options that run within a day and immediately improve load time on mobile and desktop",
+            "Compress the hero image at the top of every page and set the load order so visible page content is shown first — goal: mobile load time under 2.5 seconds",
+            "Set up server-side conversion measurement for Meta (Facebook/Instagram) and Google Ads: purchases are then sent directly from your server to the ad platform instead of via the customer's browser, so clickers who refuse cookies are counted too",
+            "Activate a cookie-consent solution that complies with GDPR and works with server-side conversion measurement — this is the legal and measurement foundation for everything that follows",
+            "Set up domain security for email: activate SPF (a list of servers allowed to send mail on behalf of Barts), DKIM (a digital signature per email), and DMARC (a policy that blocks fake emails) — work with your email provider, executable in less than a working day"
           ],
-          "objective": "Stop het directe omzetverlies door de drie grootste lekken te dichten: te trage mobiele laadtijd, verdwijnende advertentieconversies en e-mail die in spam belandt.",
-          "timeframe": "Maand 1",
+          "objective": "Stop the direct revenue loss by closing the three largest leaks: mobile load time that is too slow, disappearing ad conversions, and email that lands in spam.",
+          "timeframe": "Month 1",
           "dependencies": [],
-          "expectedOutcome": "Mobiele laadtijd onder 2,5 seconden, attributieverlies daalt van 35% naar onder 10%, e-mailcampagnes belanden structureel beter in de inbox, cookiestrategie voldoet aan AVG",
+          "expectedOutcome": "Mobile load time under 2.5 seconds, attribution loss drops from 35% to under 10%, email campaigns land structurally better in the inbox, cookie strategy complies with GDPR",
           "estMonthlyRevenueImpactEur": 48000
         },
         {
           "_key": "abd3db44d03d",
-          "name": "Conversie en zichtbaarheid verhogen",
+          "name": "Increase conversion and visibility",
           "phase": 2,
           "actions": [
-            "Voeg gestructureerde productdata toe aan je productpagina's (technische informatie die Google vertelt wat je verkoopt, inclusief prijs en beschikbaarheid) zodat je producten in aanmerking komen voor Google Shopping en je zoekresultaten opvallen met extra productdetails",
-            "Koppel je reviewplatform (Trustpilot, Kiyoh of vergelijkbaar) aan je productpagina's zodat sterren en beoordelingen zichtbaar worden naast je zoekresultaten in Google — dit verhoogt het aantal klikken op organische resultaten direct",
-            "Voeg klantbeoordelingen en een gemiddelde reviewscore toe op de homepage, zichtbaar zonder te scrollen — nieuwe bezoekers zien meteen dat anderen tevreden zijn, wat de conversie van onbekende bezoekers verhoogt",
-            "Herschrijf de homepage-headline naar een concrete merkbelofte die in één zin vertelt waarom klanten bij Barts kopen, in plaats van alleen logistieke beloften (gratis verzending, retourneren) bovenaan te zetten",
-            "Voer een gerichte analyse uit op de drukste productpagina's en collectiepagina's om de ene aangetoonde conversieblokkade te identificeren en op te lossen — gebruik de herstelde meetdata uit Fase 1 als basis",
-            "Stel de Sizebay-scripts (maatadviestool) in zodat ze later laden en de zichtbare pagina-inhoud niet vertragen — technisch: laad ze asynchroon na het eerste zichtbare deel van de pagina"
+            "Add structured product data to your product pages (technical information that tells Google what you sell, including price and availability) so your products qualify for Google Shopping and your search results stand out with extra product details",
+            "Connect your review platform (Trustpilot, Kiyoh, or similar) to your product pages so stars and ratings become visible next to your search results in Google — this immediately increases clicks on organic results",
+            "Add customer reviews and an average review score on the homepage, visible without scrolling — new visitors immediately see that others are satisfied, which raises conversion of unknown visitors",
+            "Rewrite the homepage headline into a concrete brand promise that in one sentence tells why customers buy from Barts, instead of putting only logistical promises (free shipping, returns) at the top",
+            "Run a targeted analysis on the busiest product pages and collection pages to identify and fix the one demonstrated conversion blocker — use the restored measurement data from Phase 1 as the basis",
+            "Configure the Sizebay scripts (size-advice tool) so they load later and do not delay visible page content — technically: load them asynchronously after the first visible part of the page"
           ],
-          "objective": "Zet de herwonnen laadsnelheid en correcte meetdata om in meetbaar meer bestellingen via betere zichtbaarheid in Google, sterkere vertrouwenssignalen op de site en hogere conversie op drukke pagina's.",
-          "timeframe": "Maanden 2 en 3",
+          "objective": "Turn the recovered load speed and correct measurement data into measurably more orders via better visibility in Google, stronger trust signals on the site, and higher conversion on busy pages.",
+          "timeframe": "Months 2 and 3",
           "dependencies": [
-            "Fase 1 afgerond: server-side meting actief en laadtijd onder 2,5s — zonder correcte meetdata zijn CRO-beslissingen in Fase 2 onbetrouwbaar"
+            "Phase 1 complete: server-side measurement active and load time under 2.5s — without correct measurement data, CRO decisions in Phase 2 are unreliable"
           ],
-          "expectedOutcome": "Productpagina's verschijnen met sterren in Google zoekresultaten, organisch klikpercentage stijgt, conversie op homepage en productpagina's neemt meetbaar toe, bounce op betaald verkeer daalt verder",
+          "expectedOutcome": "Product pages appear with stars in Google search results, organic click-through rate rises, conversion on homepage and product pages increases measurably, bounce on paid traffic drops further",
           "estMonthlyRevenueImpactEur": 22700
         },
         {
           "_key": "394d9a75aae8",
-          "name": "Platformkeuze en schaal voorbereiden",
+          "name": "Prepare platform choice and scale",
           "phase": 3,
           "actions": [
-            "Inventariseer alle Magento 2-integraties die Barts actief gebruikt (waaronder Sizebay en Storyblok) en breng de migratiekosten en -risico's voor Shopify Plus in kaart — doe dit nu Fase 1 en 2 concrete prestatiecijfers hebben opgeleverd waartegen je de businesscase kunt afzetten",
-            "Bouw e-mailautomatisering op voor minimaal drie flows die nu waarschijnlijk ontbreken of niet gemeten worden: welkomstmail voor nieuwe abonnees, herstelmail voor achtergelaten winkelwagens, en een terugwinmail voor klanten die lang niet besteld hebben — bij een branchegemiddelde van 30% e-mailomzet is dit het grootste onbenutte kanaal",
-            "Optimaliseer de nieuwsbriefinschrijving op de site: de aanmeldmodule staat in de footer maar is niet prominent genoeg — test een zichtbaardere plaatsing of pop-up met een concrete reden om in te schrijven",
-            "Voeg productdata toe voor Google Merchant Center zodat producten ook in Google Shopping-advertenties en gratis Shopping-resultaten verschijnen — dit was als not-ready gemarkeerd en is nu haalbaar nu de productdata uit Fase 2 aanwezig is",
-            "Neem een beslissing over de platformmigratie op basis van de inventarisatie: ga door op Magento 2 met structurele performance-investeringen, of start een gefaseerde migratie naar Shopify Plus — op €7 miljoen jaaromzet is de businesscase voor Shopify Plus reëel maar vraagt om zorgvuldige borging van bestaande integraties"
+            "Inventory all Magento 2 integrations Barts actively uses (including Sizebay and Storyblok) and map migration costs and risks for Shopify Plus — do this now that Phases 1 and 2 have produced concrete performance figures against which you can set the business case",
+            "Build email automation for at least three flows that are now likely missing or unmeasured: welcome email for new subscribers, recovery email for abandoned carts, and a win-back email for customers who have not ordered in a while — at an industry average of 30% email revenue, this is the largest unused channel",
+            "Optimise newsletter signup on the site: the signup module sits in the footer but is not prominent enough — test a more visible placement or a popup with a concrete reason to subscribe",
+            "Add product data for Google Merchant Center so products also appear in Google Shopping ads and free Shopping results — this was marked as not-ready and is now feasible now that product data from Phase 2 is present",
+            "Make a decision on platform migration based on the inventory: continue on Magento 2 with structural performance investments, or start a phased migration to Shopify Plus — at €7 million annual revenue the business case for Shopify Plus is real but requires careful safeguarding of existing integrations"
           ],
-          "objective": "Neem op basis van concrete prestatiecijfers uit Fase 1 en 2 een gefundeerde beslissing over of Magento 2 op termijn vervangen wordt door Shopify Plus, en bouw ondertussen de e-mailkanalen uit als structurele omzetlaag.",
-          "timeframe": "Maanden 3 tot 6",
+          "objective": "Based on concrete performance figures from Phases 1 and 2, make a well-founded decision on whether Magento 2 will be replaced by Shopify Plus over time, and in the meantime build out email channels as a structural revenue layer.",
+          "timeframe": "Months 3 to 6",
           "dependencies": [
-            "Fase 1 afgerond: domeinbeveiliging actief zodat e-mailflows daadwerkelijk aankomen",
-            "Fase 2 afgerond: productdata en reviewkoppeling aanwezig als basis voor Google Merchant Center"
+            "Phase 1 complete: domain security active so email flows actually arrive",
+            "Phase 2 complete: product data and review connection present as a basis for Google Merchant Center"
           ],
-          "expectedOutcome": "E-mailkanaal genereert meetbare omzet via geautomatiseerde flows, Google Shopping actief, platformkeuze voor de komende drie jaar vastgelegd met concreet migratieplan of investeringsplan voor Magento 2",
+          "expectedOutcome": "Email channel generates measurable revenue via automated flows, Google Shopping active, platform choice for the next three years locked in with a concrete migration plan or investment plan for Magento 2",
           "estMonthlyRevenueImpactEur": null
         }
       ],
       "quickWins": [
-        "Comprimeer de grootste afbeelding bovenaan elke landingspagina en stel in dat die als allereerste wordt ingeladen — uitvoerbaar in één dag, verlaagt de mobiele laadtijd direct richting de 2,5s-grens en vermindert het afhaken van betaalde klikkers",
-        "Stel SPF, DKIM en DMARC in voor je domein via je DNS-beheer — minder dan een halve werkdag werk voor een developer, voorkomt dat nieuwsbrieven in spam belanden en beschermt je merknaam tegen misbruik"
+        "Compress the largest image at the top of every landing page and set it to load first — executable in one day, immediately lowers mobile load time toward the 2.5s threshold and reduces drop-off of paid clickers",
+        "Set SPF, DKIM, and DMARC for your domain via DNS management — less than half a working day for a developer, prevents newsletters from landing in spam, and protects your brand name against abuse"
       ],
       "signalsUsed": [
         "performance.mobile",
@@ -119,22 +119,22 @@
         "prior_skill_insights.bloat"
       ],
       "topPriorities": [
-        "Verklein de laadtijd op mobiel van 2,7s naar onder 2,5s door een contentleveringsnetwerk te activeren en de grootste afbeelding bovenaan de pagina als eerste te laden — dit is de directe oorzaak van 35% verbrand advertentiebudget",
-        "Zet domeinbeveiliging voor e-mail aan (SPF, DKIM en DMARC): zonder dit belanden nieuwsbrieven structureel in spam en kunnen oplichters mails versturen uit naam van Barts — bij een branchegemiddelde van 30% e-mailomzet is dit €170.000+/mnd aan risico",
-        "Voeg server-side conversiemeting in voor Meta en Google Ads zodat 35% van de aankopen die nu onzichtbaar zijn wél worden meegeteld — algoritmen leren op complete data en kopen goedkopere klikken in",
-        "Voeg productgegevens en reviewsterren toe aan je zoekresultaten in Google (via technische productdata op je pagina's) — dit verhoogt het aantal klikken vanuit organisch zoekverkeer zonder extra advertentiekosten",
-        "Activeer een cookietoestemmingsoplossing die voldoet aan de AVG en samenwerkt met je advertentieplatformen — ontbreekt nu volledig, juridisch risico én datakwaliteitsrisico"
+        "Cut mobile load time from 2.7s to under 2.5s by activating a content delivery network and loading the largest image at the top of the page first — this is the direct cause of 35% burned ad budget",
+        "Turn on domain security for email (SPF, DKIM, and DMARC): without this, newsletters structurally land in spam and scammers can send mail in Barts' name — at an industry average of 30% email revenue this is €170,000+/mo of risk",
+        "Add server-side conversion measurement for Meta and Google Ads so 35% of purchases that are currently invisible are counted — algorithms learn on complete data and buy cheaper clicks",
+        "Add product data and review stars to your search results in Google (via technical product data on your pages) — this increases clicks from organic search without extra ad spend",
+        "Activate a cookie-consent solution that complies with GDPR and works with your ad platforms — currently completely missing, a legal risk and a data-quality risk"
       ],
-      "totalTimeline": "6 maanden",
-      "northStarMetric": "Mobiele conversieratio (nu niet gemeten — stel als doel: minimaal op niveau van desktop-benchmark van 2,0%)",
-      "executiveSummary": "Barts verliest maandelijks tot €70.700 aan aantoonbare omzet doordat de mobiele winkel net te traag laadt, advertentieklikken verdampen vóór de pagina klaar is, en e-mailcampagnes structureel vaker in spam belanden doordat basale domeinbeveiliging ontbreekt. Het pad voorwaarts is helder: eerst de lekkende funnel dichten (snelheid, e-mailbeveiliging, tracking), dan de zichtbaarheid in Google uitbreiden, en daarna de platformkeuze voor de volgende groeifase zorgvuldig voorbereiden."
+      "totalTimeline": "6 months",
+      "northStarMetric": "Mobile conversion rate (currently unmeasured — set as a goal: at least at the desktop benchmark of 2.0%)",
+      "executiveSummary": "Barts loses up to €70,700 in demonstrable revenue each month because the mobile store loads just too slowly, ad clicks evaporate before the page is ready, and email campaigns structurally land in spam more often because basic domain security is missing. The path forward is clear: first close the leaking funnel (speed, email security, tracking), then expand visibility in Google, and after that carefully prepare the platform choice for the next growth phase."
     },
     "deliverability": {
-      "summary": "De e-mailinfrastructuur van dit domein heeft drie kritieke gaten: er is geen afzenderverificatie ingesteld waardoor nieuwsbrieven structureel vaker in spam belanden, en oplichters kunnen zich voordoen als dit merk zonder dat mailproviders het kunnen blokkeren. Bij een omzet van ~€583k per maand — waarbij e-mail in de branche gemiddeld 30% van de omzet genereert — loopt deze webshop potentieel €170k+ per maand mis door slechte inbox-plaatsing. Dit is de hoogst-prioriteit technische fix in de hele audit.",
+      "summary": "This domain's email infrastructure has three critical gaps: no sender verification is set up, so newsletters structurally land in spam more often, and scammers can impersonate this brand without mail providers being able to block them. At revenue of ~€583k per month — where email in the industry generates 30% of revenue on average — this webshop potentially misses €170k+ per month through poor inbox placement. This is the highest-priority technical fix in the entire audit.",
       "topActions": [
-        "Stel een afzenderslot in voor je domein (SPF): dit vertelt mailproviders zoals Gmail en Outlook welke servers gemachtigd zijn e-mail namens jouw merk te versturen — zonder dit label je e-mails als verdacht en belanden ze vaker in spam.",
-        "Activeer een digitale handtekening voor je uitgaande e-mails (DKIM): elke nieuwsbrief of orderbevestiging krijgt dan een versleutelde echtheidsstempel die bewijst dat de mail echt van jou komt — dit verhoogt direct de inbox-plaatsing bij Gmail, Outlook en Yahoo.",
-        "Zet een domeinbeschermingsbeleid in (DMARC) op zijn minst op 'quarantine': dit voorkomt dat criminelen valse mails sturen uit naam van jouw winkel, en geeft grote mailproviders het signaal dat jouw domein te vertrouwen is — wat je nieuwsbrief-openrates structureel verbetert."
+        "Set a sender lock for your domain (SPF): this tells mail providers such as Gmail and Outlook which servers are authorised to send email on behalf of your brand — without this, your emails are labelled as suspicious and land in spam more often.",
+        "Activate a digital signature for your outgoing emails (DKIM): every newsletter or order confirmation then gets an encrypted authenticity stamp proving the mail really comes from you — this immediately improves inbox placement at Gmail, Outlook, and Yahoo.",
+        "Put a domain protection policy (DMARC) in place at least at 'quarantine': this prevents criminals from sending fake emails in your store's name, and signals to major mail providers that your domain is trustworthy — which structurally improves your newsletter open rates."
       ],
       "signalsUsed": [
         "dns_email",
@@ -144,11 +144,11 @@
       ]
     },
     "adBounceRevenue": {
-      "summary": "Van elke 1.000 mensen die op een advertentie klikken, haken er 28 extra af ten opzichte van de normale basislijn — vrijwel volledig veroorzaakt doordat de pagina net te traag laadt op mobiel (de laadtijd zit 0,2 seconden boven de kritische grens). Tegelijkertijd komt ongeveer een derde van alle aankopen nooit aan bij je advertentieplatformen: je algoritmen leren daardoor op incomplete data en blijven structureel te dure klikken inkopen. Bij een maandelijkse omzet van circa €583.000 en een advertentiebudget dat bij dit volume aanzienlijk is, is dat een concrete en vermijdbare kostenpost.",
+      "summary": "Of every 1,000 people who click an ad, 28 extra drop off versus the normal baseline — almost entirely because the page loads just too slowly on mobile (load time sits 0.2 seconds above the critical threshold). At the same time, about a third of all purchases never reach your ad platforms: your algorithms therefore learn on incomplete data and keep buying structurally too-expensive clicks. At monthly revenue of around €583,000 and an ad budget that is substantial at this volume, that is a concrete and avoidable cost.",
       "topActions": [
-        "Verklein de laadtijd van je landingspagina op mobiel met minimaal 0,3 seconden (van 2,7s naar onder de 2,5s): dit is de directe oorzaak van de extra afhakers na een advertentieklik. Praktisch: comprimeer de grootste afbeelding bovenaan de pagina en zorg dat die als eerste wordt ingeladen. Dit is uitvoerbaar binnen één sprint en verlaagt het afhaken direct.",
-        "Fix de ontbrekende tracking-pixels: momenteel registreert je meetsetup een aanzienlijk deel van de aankopen niet. Daardoor sturen Meta en Google hun advertentie-budget op basis van pakweg twee derde van de werkelijke conversies — wat leidt tot hogere kosten per klik en lagere terugkeer op je advertentie-investering. Voeg server-side doorgiften toe (een technische laag waarbij aankopen rechtstreeks van jouw server naar het advertentieplatform worden gestuurd, in plaats van alleen via de browser van de klant), zodat ook aankopen van mensen die cookies weigeren worden meegeteld.",
-        "Activeer een toestemmingsbeheer-oplossing (consent management) die volledig werkt met de cookieregels: op dit moment ontbreekt deze laag volledig. Zonder dit voldoe je niet aan de AVG-vereisten én mis je de mogelijkheid om met privacyvriendelijke signalen toch conversiedata terug te sturen naar je advertentieplatformen. Dit beschermt zowel je juridische positie als de datakwaliteit waarmee je algoritmen werken."
+        "Cut landing-page load time on mobile by at least 0.3 seconds (from 2.7s to under 2.5s): this is the direct cause of the extra drop-offs after an ad click. Practically: compress the largest image at the top of the page and make sure it loads first. This is executable within one sprint and immediately lowers drop-off.",
+        "Fix the missing tracking pixels: currently your measurement setup does not register a substantial share of purchases. As a result, Meta and Google steer their ad budget on roughly two thirds of actual conversions — which leads to higher cost per click and lower return on your ad investment. Add server-side passthrough (a technical layer where purchases are sent directly from your server to the ad platform, instead of only via the customer's browser), so purchases from people who refuse cookies are counted too.",
+        "Activate a consent-management solution that fully works with cookie rules: this layer is currently completely missing. Without it you do not meet GDPR requirements and you miss the ability to still send conversion data back to your ad platforms with privacy-friendly signals. This protects both your legal position and the data quality your algorithms work with."
       ],
       "signalsUsed": [
         "ad_traffic_impact",
@@ -161,21 +161,21 @@
     },
     "shopifyMigration": {
       "keyWins": [
-        "Snellere en betrouwbaardere betaalpagina via Shopify — bewezen hogere conversie op mobiel en desktop",
-        "Shopify-native tracking vervangt de huidige losse setup en verlaagt het attributieverlies van geschat 35% naar onder de 15%",
-        "Minder serveronderhoud en infrastructuurkosten: geen zelf-gehoste Magento-server meer, schaalt automatisch mee bij piekverkeer",
-        "Sizebay en Storyblok zijn beide beschikbaar binnen Shopify, dus maatadvies en contentbeheer hoeven niet vervangen te worden"
+        "Faster and more reliable payment page via Shopify — proven higher conversion on mobile and desktop",
+        "Shopify-native tracking replaces the current loose setup and lowers attribution loss from an estimated 35% to under 15%",
+        "Less server maintenance and infrastructure cost: no more self-hosted Magento server, scales automatically with peak traffic",
+        "Sizebay and Storyblok are both available within Shopify, so size advice and content management do not need to be replaced"
       ],
-      "summary": "Barts.eu draait op Magento 2 — een platform dat krachtig is, maar op deze schaal duur om te onderhouden en traag om te verbeteren. De combinatie van een trage mobiele laadtijd, ontbrekende cookiestrategie en een geschat attributieverlies van 35% maakt dat er nu omzet op tafel blijft liggen. Migratie naar Shopify Plus is het serieus overwegen waard, maar vraagt om een zorgvuldige aanpak vanwege de integraties die Magento 2 typisch met zich meebrengt.",
+      "summary": "Barts.eu runs on Magento 2 — a powerful platform, but expensive to maintain and slow to improve at this scale. The combination of slow mobile load time, a missing cookie strategy, and an estimated 35% attribution loss means revenue is currently left on the table. Migration to Shopify Plus is worth serious consideration, but requires a careful approach because of the integrations Magento 2 typically brings.",
       "keyRisks": [
-        "Magento 2 bevat op deze omzet vaak maatwerk in kortingen, prijsregels of B2B-specificaties — die moeten volledig in kaart gebracht worden vóór migratie start, anders zijn verrassingen onderweg kostbaar",
-        "Geen contentleveringsnetwerk en geen server-side tracking zijn nu al een probleem — bij migratie moeten beide gelijktijdig worden opgelost, anders schuif je het risico door"
+        "At this revenue, Magento 2 often contains custom work in discounts, pricing rules, or B2B specifications — those must be fully mapped before migration starts, otherwise surprises along the way are expensive",
+        "No content delivery network and no server-side tracking are already a problem — during migration both must be solved at the same time, otherwise you push the risk forward"
       ],
-      "rationale": "Barts.eu heeft een jaaromzet van circa 7 miljoen euro en draait op een zelf-gehoste Magento 2-omgeving zonder contentleveringsnetwerk (een netwerk dat je site wereldwijd sneller serveert). De mobiele laadtijd staat op 2,7 seconden — net boven de grens waarbij bezoekers afhaken, en zonder CDN is er geen buffer voor piekverkeer. Het geschatte attributieverlies van 35% — betekent dat van elke euro omzet meer dan een derde niet correct teruggeleid wordt naar het juiste marketingkanaal — kost maandelijks zichtbaar in verkeerde budgetbeslissingen. Er is geen cookietoestemmingstrategie actief, wat in de huidige privacyregelgeving een risico is. De betaalpagina toont een goed beeld: iDEAL, Klarna, Bancontact en PayPal zijn aanwezig, gastafrekenen is mogelijk, en de doorlooptijd is 5,9 seconden — acceptabel maar te verbeteren. Sizebay (maatadvies-tool) en Storyblok (contentbeheer) zijn actief en moeten geborgd worden in een migratie. De combinatie van onderhoudskosten op Magento 2, de performance-achterstand en het tracking-probleem maakt dat Shopify Plus een reële businesscase heeft — maar de maatwerk-integraties die Magento 2 bij deze omzet typisch heeft, vragen eerst om een grondige inventarisatie.",
+      "rationale": "Barts.eu has annual revenue of around 7 million euros and runs on a self-hosted Magento 2 environment without a content delivery network (a network that serves your site faster worldwide). Mobile load time sits at 2.7 seconds — just above the threshold where visitors drop off, and without a CDN there is no buffer for peak traffic. The estimated 35% attribution loss — meaning more than a third of every euro of revenue is not correctly attributed to the right marketing channel — shows up monthly in wrong budget decisions. No cookie-consent strategy is active, which is a risk under current privacy regulation. The payment page looks solid: iDEAL, Klarna, Bancontact, and PayPal are present, guest checkout is available, and elapsed time is 5.9 seconds — acceptable but improvable. Sizebay (size-advice tool) and Storyblok (content management) are active and must be safeguarded in a migration. The combination of Magento 2 maintenance cost, the performance gap, and the tracking problem means Shopify Plus has a real business case — but the custom integrations Magento 2 typically has at this revenue first require a thorough inventory.",
       "topActions": [
-        "Inventariseer alle maatwerk-aanpassingen in de huidige Magento 2-omgeving: welke kortingsregels, klantgroepen, integraties en automatiseringen zijn er — dit bepaalt de echte migratie-complexiteit",
-        "Los het attributieprobleem op ongeacht het platformbesluit: installeer een cookietoestemmingstrategie en verbeter de koppeling tussen je advertentiekanalen en je analytics — bij 583.000 euro maandelijkse omzet is 35% verlies een urgent probleem",
-        "Doe een businesscase-berekening: zet de jaarlijkse kosten van Magento 2 (server, ontwikkelaars, licenties, updates) af tegen Shopify Plus — in veel gevallen is de overstap binnen 12 maanden kostendekkend"
+        "Inventory all customisations in the current Magento 2 environment: which discount rules, customer groups, integrations, and automations exist — this determines the real migration complexity",
+        "Fix the attribution problem regardless of the platform decision: install a cookie-consent strategy and improve the connection between your ad channels and your analytics — at €583,000 monthly revenue, 35% loss is an urgent problem",
+        "Run a business-case calculation: set Magento 2 annual costs (server, developers, licences, updates) against Shopify Plus — in many cases the switch pays for itself within 12 months"
       ],
       "signalsUsed": [
         "platform_architecture",
@@ -187,15 +187,15 @@
         "owned_channels"
       ],
       "recommendation": "overwegen",
-      "estimatedTimeline": "16-24 weken",
+      "estimatedTimeline": "16–24 weeks",
       "migrationComplexity": "hoog"
     },
     "techArchitecture": {
-      "summary": "De webshop draait op Magento 2 op een eigen server zonder aantoonbaar gebruik van een extern contentleveringsnetwerk, wat betekent dat elke bezoeker de pagina ophaalt vanaf één centrale server — een kwetsbaar en traag uitgangspunt bij piekverkeer. Op mobiel duurt het ruim 2,7 seconden voordat de hoofdinhoud van de pagina zichtbaar is, en op desktop zelfs meer dan 4 seconden — bij een omzet van circa €583.000 per maand is elke seconde extra wachttijd een directe aanslag op conversies. Daarnaast worden advertentie-conversies grotendeels gemist doordat alle meetdata alleen via de browser van de bezoeker binnenkomt, wat bij moderne privacyinstellingen en adblockers structureel tot ondermeting leidt.",
+      "summary": "The webshop runs on Magento 2 on its own server without demonstrable use of an external content delivery network, which means every visitor fetches the page from one central server — a fragile and slow starting point at peak traffic. On mobile it takes over 2.7 seconds before the main page content is visible, and on desktop even more than 4 seconds — at revenue of around €583,000 per month, every extra second of wait is a direct hit on conversions. In addition, ad conversions are largely missed because all measurement data only arrives via the visitor's browser, which with modern privacy settings and ad blockers structurally leads to under-measurement.",
       "topActions": [
-        "Zet een extern contentleveringsnetwerk (een tussenlaag die pagina's en afbeeldingen dichter bij de bezoeker opslaat en serveert) in voor je Magento-installatie. Dit verlaagt de laadtijd op mobiel en desktop direct merkbaar, verdeelt het verkeer zodat je server niet overbelast raakt bij campagnes of piekmomenten, en elimineert het huidige risico dat één serverstoring je volledige winkel platgooit.",
-        "Verbeter de mobiele laadsnelheid van 2,7 seconden naar onder de 2,5 seconden door paginacaching op serverniveau in te schakelen en Magento zo in te stellen dat terugkerende bezoekers een opgeslagen versie van de pagina krijgen in plaats van dat de server elke keer opnieuw alles opbouwt. Bij je huidige omzetschaal levert elke halve seconde snelheidswinst naar schatting tienduizenden euro's aan extra maandelijkse omzet op.",
-        "Richt server-side conversiemeting in voor Meta (Facebook/Instagram) en Google Ads: daarmee stuur je meetdata rechtstreeks van je server naar de advertentieplatforms, in plaats van te vertrouwen op de browser van de bezoeker. Adblockers en privacyinstellingen onderscheppen nu een significant deel van je conversiesignalen, waardoor je campagnes slechter geoptimaliseerd worden dan mogelijk is — bij een maandelijks advertentiebudget op jouw schaal betekent dit concreet dat je betaalt voor bereik waarvan de resultaten onzichtbaar blijven."
+        "Put an external content delivery network (a layer that stores and serves pages and images closer to the visitor) in front of your Magento installation. This immediately and noticeably lowers load time on mobile and desktop, distributes traffic so your server is not overloaded during campaigns or peaks, and eliminates the current risk that one server outage takes your entire store down.",
+        "Improve mobile load speed from 2.7 seconds to under 2.5 seconds by enabling page caching at server level and configuring Magento so returning visitors get a stored version of the page instead of the server rebuilding everything each time. At your current revenue scale, every half-second of speed gain yields an estimated tens of thousands of euros in extra monthly revenue.",
+        "Set up server-side conversion measurement for Meta (Facebook/Instagram) and Google Ads: you then send measurement data directly from your server to the ad platforms, instead of relying on the visitor's browser. Ad blockers and privacy settings currently intercept a significant share of your conversion signals, so your campaigns are less well optimised than they could be — at a monthly ad budget at your scale, this concretely means you pay for reach whose results stay invisible."
       ],
       "signalsUsed": [
         "platform_architecture",
@@ -214,12 +214,12 @@
     "contactEmail": null,
     "contactPerson": null
   },
-  "coreThesis": "Barts verliest maandelijks bezoekers vóórdat ze iets kunnen kopen, doordat de mobiele pagina te traag laadt en een deel van de bestellingen niet goed aankomt in de advertentieplatformen.",
+  "coreThesis": "Barts loses visitors each month before they can buy anything, because the mobile page loads too slowly and some orders do not arrive properly in the ad platforms.",
   "ctaSection": {
     "body": null,
     "heading": null,
     "primaryButtonUrl": "https://tradual.nl/contact",
-    "primaryButtonLabel": "Plan een gesprek"
+    "primaryButtonLabel": "Book a conversation"
   },
   "performance": {
     "mobileCLS": null,
@@ -254,132 +254,132 @@
     "layers": [
       {
         "_key": "72d454d224d5",
-        "name": "De Deur",
+        "name": "The Door",
         "layer": 1,
-        "leadsTo": "Stack Rebuild™ — Snelheid",
+        "leadsTo": "Stack Rebuild™ — Speed",
         "metrics": [
           {
             "_key": "8fdb62d23119",
-            "metric": "Hoe snel zien bezoekers je producten?",
-            "signal": "Bezoekers wachten 2.7s voor ze je producten zien — te traag, ze haken af",
+            "metric": "How quickly do visitors see your products?",
+            "signal": "Visitors wait 2.7s before they see your products — too slow, they drop off",
             "status": "warning",
             "priority": "high",
             "annualLossEur": 66000,
-            "whatWeMeasure": "Hoe lang bezoekers wachten voor ze überhaupt iets te zien krijgen — elke seconde extra wachten kost klanten",
+            "whatWeMeasure": "How long visitors wait before they see anything at all — every extra second of waiting costs customers",
             "monthlyLossEur": 5500,
-            "calculationNote": "Trage laadtijd → bezoekers haken af → omzet die je misloopt"
+            "calculationNote": "Slow load time → visitors drop off → revenue you miss"
           },
           {
             "_key": "99e577639d9d",
-            "metric": "Reageert de pagina meteen op klikken?",
+            "metric": "Does the page respond immediately to clicks?",
             "signal": null,
             "status": "not-measured",
             "priority": "high",
             "annualLossEur": 0,
-            "whatWeMeasure": "Of klikken op knoppen en menu's direct werkt of dat bezoekers moeten wachten",
+            "whatWeMeasure": "Whether clicks on buttons and menus work immediately or visitors have to wait",
             "monthlyLossEur": 0,
-            "calculationNote": "Trage reactie → bezoekers denken dat het kapot is → ze vertrekken"
+            "calculationNote": "Slow response → visitors think it is broken → they leave"
           },
           {
             "_key": "a0df124e91ea",
-            "metric": "Hoeveel bezoekers vertrekken vóór ze iets zien?",
-            "signal": "48% vertrekt direct — 3% boven gezond, dat is verloren omzet",
+            "metric": "How many visitors leave before they see anything?",
+            "signal": "48% leave immediately — 3% above healthy, that is lost revenue",
             "status": "warning",
             "priority": "high",
             "annualLossEur": 195600,
-            "whatWeMeasure": "Het deel van je bezoekers dat direct wegklikt omdat de pagina te traag laadt",
+            "whatWeMeasure": "The share of your visitors who click away immediately because the page loads too slowly",
             "monthlyLossEur": 16300,
-            "calculationNote": "Extra weglopers × gemiddelde bestelwaarde × kans op aankoop = misgelopen omzet"
+            "calculationNote": "Extra leavers × average order value × chance of purchase = missed revenue"
           },
           {
             "_key": "659e3b7bd39a",
-            "metric": "Hoeveel advertentiegeld verdampt vóór de pagina laadt?",
-            "signal": "35% van je advertentiebudget verbrandt — de klikker ziet je winkel nooit echt",
+            "metric": "How much ad money evaporates before the page loads?",
+            "signal": "35% of your ad budget burns — the clicker never really sees your store",
             "status": "critical",
             "priority": "critical",
             "annualLossEur": 314400,
-            "whatWeMeasure": "Het deel van je advertentiebudget waarvoor je betaalt maar geen klant terug krijgt — de klikker is weg vóór de pagina klaar is",
+            "whatWeMeasure": "The share of your ad budget you pay for but get no customer back — the clicker is gone before the page is ready",
             "monthlyLossEur": 26200,
-            "calculationNote": "Verdampt deel × maandelijks advertentiebudget = direct verbrand geld"
+            "calculationNote": "Evaporated share × monthly ad budget = directly burned money"
           }
         ],
-        "summary": "0 van 3 gemeten metrics binnen benchmark",
+        "summary": "0 of 3 measured metrics within benchmark",
         "keySignals": [
-          "Bezoekers wachten 2.7s voor ze je producten zien — te traag, ze haken af",
-          "48% vertrekt direct — 3% boven gezond, dat is verloren omzet",
-          "35% van je advertentiebudget verbrandt — de klikker ziet je winkel nooit echt"
+          "Visitors wait 2.7s before they see your products — too slow, they drop off",
+          "48% leave immediately — 3% above healthy, that is lost revenue",
+          "35% of your ad budget burns — the clicker never really sees your store"
         ],
         "goodSignals": [],
         "metricCount": 4,
-        "coreQuestion": "Hoeveel bezoekers verliezen we vóórdat ze iets kunnen doen?",
+        "coreQuestion": "How many visitors do you lose before they can do anything?",
         "readinessScore": null,
         "estAnnualLossEur": 576000,
         "estMonthlyLossEur": 48000,
         "improvementSignals": [
-          "Bezoekers wachten 2.7s voor ze je producten zien — te traag, ze haken af",
-          "48% vertrekt direct — 3% boven gezond, dat is verloren omzet",
-          "35% van je advertentiebudget verbrandt — de klikker ziet je winkel nooit echt"
+          "Visitors wait 2.7s before they see your products — too slow, they drop off",
+          "48% leave immediately — 3% above healthy, that is lost revenue",
+          "35% of your ad budget burns — the clicker never really sees your store"
         ]
       },
       {
         "_key": "a93e9c0980b3",
-        "name": "De Motor",
+        "name": "The Engine",
         "layer": 2,
-        "leadsTo": "Stack Rebuild™ — Architectuur",
+        "leadsTo": "Stack Rebuild™ — Architecture",
         "metrics": [
           {
             "_key": "ef4a92c009d0",
-            "metric": "Hoeveel apps vertragen je winkel?",
-            "signal": "4 apps actief — binnen gezonde grens",
+            "metric": "How many apps slow your store down?",
+            "signal": "4 apps active — within a healthy range",
             "status": "good",
             "priority": "high",
             "annualLossEur": 0,
-            "whatWeMeasure": "Of de Shopify-apps die je betaalt je winkel niet meer kosten in omzet dan ze opleveren",
+            "whatWeMeasure": "Whether the Shopify apps you pay for cost your store more in revenue than they deliver",
             "monthlyLossEur": 0,
-            "calculationNote": "Extra apps boven gezonde grens → trager → minder verkopen → omzetverlies"
+            "calculationNote": "Extra apps above a healthy range → slower → fewer sales → revenue loss"
           },
           {
             "_key": "261d252c4057",
-            "metric": "Hoeveel overbodige code sleept je winkel mee?",
+            "metric": "How much surplus code is your store dragging along?",
             "signal": null,
             "status": "not-measured",
             "priority": "high",
             "annualLossEur": 0,
-            "whatWeMeasure": "Hoeveel onnodige code je theme meelaadt die niets toevoegt maar wel laadtijd kost",
+            "whatWeMeasure": "How much unnecessary code your theme loads that adds nothing but still costs load time",
             "monthlyLossEur": 0,
-            "calculationNote": "Overbodig gewicht → langere laadtijd → minder bestellingen → omzet weg"
+            "calculationNote": "Surplus weight → longer load time → fewer orders → revenue gone"
           },
           {
             "_key": "d8ed2836dfe7",
-            "metric": "Hoeveel externe scripts blokkeren je winkel?",
-            "signal": "Externe scripts wachten 32ms — geen probleem",
+            "metric": "How many external scripts block your store?",
+            "signal": "External scripts wait 32ms — no problem",
             "status": "good",
             "priority": "medium",
             "annualLossEur": 0,
-            "whatWeMeasure": "Externe diensten (tracking, chat, reviews) die de winkel laten wachten voor ze klaar zijn",
+            "whatWeMeasure": "External services (tracking, chat, reviews) that make the store wait before they are ready",
             "monthlyLossEur": 0,
-            "calculationNote": "Extra wachttijd door externe diensten → bezoekers haken af → minder omzet"
+            "calculationNote": "Extra wait from external services → visitors drop off → less revenue"
           },
           {
             "_key": "9d804632a941",
-            "metric": "Hoe snel reageert je server?",
+            "metric": "How quickly does your server respond?",
             "signal": null,
             "status": "not-measured",
             "priority": "medium",
             "annualLossEur": 0,
-            "whatWeMeasure": "Hoe lang Shopify zelf nodig heeft voor er ook maar iets terugkomt — vaak een hostings/plan-probleem",
+            "whatWeMeasure": "How long Shopify itself needs before anything comes back at all — often a hosting/plan problem",
             "monthlyLossEur": 0,
-            "calculationNote": "Trage server → trage hele winkel → minder bestellingen → minder omzet"
+            "calculationNote": "Slow server → slow entire store → fewer orders → less revenue"
           }
         ],
-        "summary": "2 van 2 gemeten metrics binnen benchmark",
+        "summary": "2 of 2 measured metrics within benchmark",
         "keySignals": [],
         "goodSignals": [
-          "4 apps actief — binnen gezonde grens",
-          "Externe scripts wachten 32ms — geen probleem"
+          "4 apps active — within a healthy range",
+          "External scripts wait 32ms — no problem"
         ],
         "metricCount": 4,
-        "coreQuestion": "Wat maakt je stack traag en wat kost dat?",
+        "coreQuestion": "What makes your stack slow, and what does that cost?",
         "readinessScore": null,
         "estAnnualLossEur": 0,
         "estMonthlyLossEur": 0,
@@ -387,31 +387,31 @@
       },
       {
         "_key": "54aea48c3efb",
-        "name": "De Lekkage",
+        "name": "The Leak",
         "layer": 3,
         "leadsTo": "Stack Rebuild™ — Checkout & Mobile",
         "metrics": [
           {
             "_key": "12fa9edf51e9",
-            "metric": "Lekt de betaalpagina klanten?",
-            "signal": "geen hindernissen gevonden in de betaalpagina",
+            "metric": "Does the payment page leak customers?",
+            "signal": "no obstacles found on the payment page",
             "status": "good",
             "priority": "critical",
             "annualLossEur": 0,
-            "whatWeMeasure": "Wrijving tussen 'in winkelmand' en 'bedankt voor je bestelling' — de duurste plek om klanten te verliezen",
+            "whatWeMeasure": "Friction between 'add to cart' and 'thanks for your order' — the most expensive place to lose customers",
             "monthlyLossEur": 0,
-            "calculationNote": "Elke hindernis in de betaalpagina kost klanten die al wilden kopen — rechtstreeks omzetverlies"
+            "calculationNote": "Every obstacle on the payment page costs customers who already wanted to buy — direct revenue loss"
           },
           {
             "_key": "b54db9cf53ef",
-            "metric": "Springt de pagina onder de muis weg?",
+            "metric": "Does the page jump away under the cursor?",
             "signal": null,
             "status": "not-measured",
             "priority": "medium",
             "annualLossEur": 0,
-            "whatWeMeasure": "Knoppen of plaatjes die verspringen terwijl bezoekers proberen te klikken — voelt onbetrouwbaar",
+            "whatWeMeasure": "Buttons or images that shift while visitors try to click — feels untrustworthy",
             "monthlyLossEur": 0,
-            "calculationNote": "Verspringende elementen → misclicks en frustratie → bezoekers geven het op → minder omzet"
+            "calculationNote": "Shifting elements → misclicks and frustration → visitors give up → less revenue"
           },
           {
             "_key": "e80a8692c211",
@@ -420,94 +420,94 @@
             "status": "not-measured",
             "priority": "critical",
             "annualLossEur": 0,
-            "whatWeMeasure": "Het verschil tussen je mobiele en desktopwinkel — 70% van je bezoekers is mobiel, dus elk procent verschil telt dubbel",
+            "whatWeMeasure": "The gap between your mobile and desktop store — 70% of your visitors are mobile, so every percent of difference counts twice",
             "monthlyLossEur": 0,
-            "calculationNote": "Groot verschil mobiel/desktop → meeste bezoekers op slechtst werkende versie → groot omzetverlies"
+            "calculationNote": "Large mobile/desktop gap → most visitors on the worst-performing version → large revenue loss"
           },
           {
             "_key": "fcd75fb8e983",
-            "metric": "Welke pagina's lekken het meeste omzet?",
-            "signal": "1 dingen op je belangrijkste pagina's die bezoekers ervan weerhouden te bestellen",
+            "metric": "Which pages leak the most revenue?",
+            "signal": "1 thing on your most important pages that stops visitors from ordering",
             "status": "warning",
             "priority": "high",
             "annualLossEur": 272400,
-            "whatWeMeasure": "Productpagina's, collectiepagina's en winkelmand-pagina's met aantoonbare conversieblokkades",
+            "whatWeMeasure": "Product pages, collection pages, and cart pages with demonstrable conversion blockers",
             "monthlyLossEur": 22700,
-            "calculationNote": "Conversieblokkades op je drukste pagina's → directe omzet die blijft liggen"
+            "calculationNote": "Conversion blockers on your busiest pages → direct revenue left on the table"
           }
         ],
-        "summary": "1 van 2 gemeten metrics binnen benchmark",
+        "summary": "1 of 2 measured metrics within benchmark",
         "keySignals": [
-          "1 dingen op je belangrijkste pagina's die bezoekers ervan weerhouden te bestellen"
+          "1 thing on your most important pages that stops visitors from ordering"
         ],
         "goodSignals": [
-          "geen hindernissen gevonden in de betaalpagina"
+          "no obstacles found on the payment page"
         ],
         "metricCount": 4,
-        "coreQuestion": "Waar lekt conversie weg door technische frictie?",
+        "coreQuestion": "Where does conversion leak through technical friction?",
         "readinessScore": null,
         "estAnnualLossEur": 272400,
         "estMonthlyLossEur": 22700,
         "improvementSignals": [
-          "1 dingen op je belangrijkste pagina's die bezoekers ervan weerhouden te bestellen"
+          "1 thing on your most important pages that stops visitors from ordering"
         ]
       },
       {
         "_key": "84ca5a55fbfc",
-        "name": "De Efficiëntie",
+        "name": "Efficiency",
         "layer": 4,
         "leadsTo": "Performance Layer™",
         "metrics": [
           {
             "_key": "93c90c71d835",
-            "metric": "Hoeveel meer bezoekers zouden kopen bij een snelle winkel?",
-            "signal": "Geen data beschikbaar",
+            "metric": "How many more visitors would buy with a fast store?",
+            "signal": "No data available",
             "status": "not-measured",
             "priority": "high",
             "annualLossEur": 0,
-            "whatWeMeasure": "Hoeveel % van je bezoekers nu koopt vs hoeveel er zouden kopen als je winkel even snel was als de concurrentie",
+            "whatWeMeasure": "What % of your visitors buy now vs how many would buy if your store were as fast as the competition",
             "monthlyLossEur": 0,
-            "calculationNote": "Verschil in aankoopkans tussen jouw winkel en een snelle winkel → directe groeimogelijkheid"
+            "calculationNote": "Difference in purchase likelihood between your store and a fast store → direct growth opportunity"
           },
           {
             "_key": "5ba7268fe030",
-            "metric": "Hoeveel omzet laat je liggen per maand?",
-            "signal": "Onvoldoende data om te berekenen",
+            "metric": "How much revenue are you leaving on the table each month?",
+            "signal": "Insufficient data to calculate",
             "status": "not-measured",
             "priority": "critical",
             "annualLossEur": 0,
-            "whatWeMeasure": "Het verschil tussen wat je nu verdient en wat je zou verdienen met dezelfde bezoekers maar een snelle winkel",
+            "whatWeMeasure": "The gap between what you earn now and what you would earn with the same visitors but a fast store",
             "monthlyLossEur": 0,
-            "calculationNote": "~32,623 bezoekers × verschil in aankoopkans × €120 gemiddelde bestelling"
+            "calculationNote": "~32,623 visitors × difference in purchase likelihood × €120 average order"
           },
           {
             "_key": "dd559974847a",
-            "metric": "Hoeveel goedkoper wordt elke nieuwe klant?",
-            "signal": "Werfkosten al optimaal bij huidige prestaties",
+            "metric": "How much cheaper does each new customer become?",
+            "signal": "Acquisition cost already optimal at current performance",
             "status": "not-measured",
             "priority": "high",
             "annualLossEur": 0,
-            "whatWeMeasure": "Wat het je nu kost om een nieuwe klant te werven vs wat dat zou zijn als de winkel niet lekt",
+            "whatWeMeasure": "What it currently costs you to acquire a new customer vs what that would be if the store did not leak",
             "monthlyLossEur": 0,
-            "calculationNote": "Minder weglopers → meer aankopen per euro advertentiebudget → lagere werfkosten per klant"
+            "calculationNote": "Fewer leavers → more purchases per euro of ad budget → lower acquisition cost per customer"
           },
           {
             "_key": "33098015d8fd",
-            "metric": "Hoeveel meer haal je uit hetzelfde advertentiebudget?",
-            "signal": "Advertentiebudget al efficiënt ingezet",
+            "metric": "How much more do you get from the same ad budget?",
+            "signal": "Ad budget already used efficiently",
             "status": "not-measured",
             "priority": "high",
             "annualLossEur": 0,
-            "whatWeMeasure": "Hoeveel extra omzet je advertentiebudget oplevert als bezoekers eenmaal binnen wél converteren",
+            "whatWeMeasure": "How much extra revenue your ad budget yields once visitors who make it in actually convert",
             "monthlyLossEur": 0,
-            "calculationNote": "Meer bezoekers die kopen bij zelfde ad spend → direct hogere omzet per advertentie-euro"
+            "calculationNote": "More visitors who buy at the same ad spend → directly higher revenue per ad euro"
           }
         ],
-        "summary": "Onvoldoende data",
+        "summary": "Insufficient data",
         "keySignals": [],
         "goodSignals": [],
         "metricCount": 4,
-        "coreQuestion": "Hoeveel meer omzet zit er in bestaande traffic?",
+        "coreQuestion": "How much more revenue is sitting in existing traffic?",
         "readinessScore": null,
         "estAnnualLossEur": 0,
         "estMonthlyLossEur": 0,
@@ -515,247 +515,247 @@
       },
       {
         "_key": "4e6aa7b740d9",
-        "name": "De Toekomst",
+        "name": "The Future",
         "layer": 5,
         "leadsTo": "Agentic Commerce Readiness™",
         "metrics": [
           {
             "_key": "3d245eb1bb37",
-            "metric": "Vindbaar in Google én ChatGPT?",
-            "signal": "Google ziet 1 van 3 productgegevens — mist: productgegevens voor zoekmachines, reviewscore in zoekresultaten",
+            "metric": "Findable in Google and ChatGPT?",
+            "signal": "Google sees 1 of 3 product data items — missing: product data for search engines, review score in search results",
             "status": "critical",
             "priority": "high",
             "annualLossEur": null,
-            "whatWeMeasure": "Of zoekmachines en AI-assistenten je producten goed begrijpen en kunnen aanbevelen",
+            "whatWeMeasure": "Whether search engines and AI assistants understand your products well and can recommend them",
             "monthlyLossEur": null,
-            "calculationNote": "Ontbrekende info → minder zichtbaar in Google-resultaten en AI-aanbevelingen → minder organisch verkeer"
+            "calculationNote": "Missing info → less visible in Google results and AI recommendations → less organic traffic"
           },
           {
             "_key": "b02741366b75",
-            "metric": "Hoe snel haalt je winkel productdata op?",
-            "signal": "Vereist diepere meting (niet zichtbaar bij deze scan van buitenaf)",
+            "metric": "How quickly does your store fetch product data?",
+            "signal": "Requires deeper measurement (not visible in this outside-in scan)",
             "status": "not-measured",
             "priority": "medium",
             "annualLossEur": null,
-            "whatWeMeasure": "Hoe vlot je productpagina's data ophalen — bepaalt of bezoekers blijven wachten of weglopen",
+            "whatWeMeasure": "How quickly your product pages fetch data — determines whether visitors keep waiting or leave",
             "monthlyLossEur": null,
-            "calculationNote": "Trage data-ophaling → bezoekers wachten langer voor ze producten zien → ze haken af"
+            "calculationNote": "Slow data fetch → visitors wait longer before they see products → they drop off"
           },
           {
             "_key": "62d015de79ab",
-            "metric": "Kunnen álle klanten je winkel gebruiken?",
-            "signal": "Niet gemeten",
+            "metric": "Can all customers use your store?",
+            "signal": "Not measured",
             "status": "warning",
             "priority": "high",
             "annualLossEur": null,
-            "whatWeMeasure": "Of klanten met een minder goed zicht, ouderen of mensen met motorische beperkingen ook kunnen bestellen — verloren omzet én juridisch risico",
+            "whatWeMeasure": "Whether customers with reduced vision, older people, or people with motor impairments can also order — lost revenue and legal risk",
             "monthlyLossEur": null,
-            "calculationNote": "Lage toegankelijkheid sluit een deel van je klanten buiten — verloren omzet én reputatierisico"
+            "calculationNote": "Low accessibility shuts out part of your customers — lost revenue and reputational risk"
           },
           {
             "_key": "46ebefb0487d",
-            "metric": "Klaar voor klanten die via AI shoppen?",
-            "signal": "1/5 datapunten klaar voor AI-aanbevelingen — Google Merchant: not-ready",
+            "metric": "Ready for customers who shop via AI?",
+            "signal": "1/5 data points ready for AI recommendations — Google Merchant: not-ready",
             "status": "critical",
             "priority": "high",
             "annualLossEur": null,
-            "whatWeMeasure": "Of ChatGPT, Gemini en andere AI-assistenten je producten kunnen aanbevelen als klanten om advies vragen",
+            "whatWeMeasure": "Whether ChatGPT, Gemini, and other AI assistants can recommend your products when customers ask for advice",
             "monthlyLossEur": null,
-            "calculationNote": "Ontbrekende productdata → AI-assistenten kunnen je producten niet aanbevelen → gemiste verkopen"
+            "calculationNote": "Missing product data → AI assistants cannot recommend your products → missed sales"
           },
           {
             "_key": "309a1f49cc29",
-            "metric": "Klaar voor verkoop via AI-assistenten?",
-            "signal": "Nog niet klaar voor verkoop via AI-assistenten — basis ontbreekt",
+            "metric": "Ready for sales via AI assistants?",
+            "signal": "Not yet ready for sales via AI assistants — the foundation is missing",
             "status": "critical",
             "priority": "medium",
             "annualLossEur": null,
-            "whatWeMeasure": "Of je winkel kan verkopen via AI-agents die straks namens klanten gaan kopen — nieuw verkoopkanaal in opkomst",
+            "whatWeMeasure": "Whether your store can sell via AI agents that will soon buy on behalf of customers — a new sales channel emerging",
             "monthlyLossEur": null,
-            "calculationNote": "Niet klaar voor AI-kanalen → je concurrenten pakken straks die verkopen en jij niet"
+            "calculationNote": "Not ready for AI channels → your competitors will take those sales and you will not"
           }
         ],
         "summary": "AI/toekomst-gereedheid 36/100",
         "keySignals": [
-          "Google ziet 1 van 3 productgegevens — mist: productgegevens voor zoekmachines, reviewscore in zoekresultaten",
-          "Vereist diepere meting (niet zichtbaar bij deze scan van buitenaf)",
-          "Niet gemeten",
-          "1/5 datapunten klaar voor AI-aanbevelingen — Google Merchant: not-ready",
-          "Nog niet klaar voor verkoop via AI-assistenten — basis ontbreekt"
+          "Google sees 1 of 3 product data items — missing: product data for search engines, review score in search results",
+          "Requires deeper measurement (not visible in this outside-in scan)",
+          "Not measured",
+          "1/5 data points ready for AI recommendations — Google Merchant: not-ready",
+          "Not yet ready for sales via AI assistants — the foundation is missing"
         ],
         "goodSignals": [],
         "metricCount": 5,
-        "coreQuestion": "Hoe vindbaar en koopbaar ben je voor AI en nieuwe kanalen?",
+        "coreQuestion": "How findable and buyable are you for AI and new channels?",
         "readinessScore": 36,
         "estAnnualLossEur": null,
         "estMonthlyLossEur": null,
         "improvementSignals": [
-          "Google ziet 1 van 3 productgegevens — mist: productgegevens voor zoekmachines, reviewscore in zoekresultaten",
-          "Niet gemeten",
-          "1/5 datapunten klaar voor AI-aanbevelingen — Google Merchant: not-ready",
-          "Nog niet klaar voor verkoop via AI-assistenten — basis ontbreekt"
+          "Google sees 1 of 3 product data items — missing: product data for search engines, review score in search results",
+          "Not measured",
+          "1/5 data points ready for AI recommendations — Google Merchant: not-ready",
+          "Not yet ready for sales via AI assistants — the foundation is missing"
         ]
       }
     ],
     "ceoTriggers": [
       {
-        "kpi": "ROAS daalt terwijl ad spend stijgt",
+        "kpi": "ROAS drops while ad spend rises",
         "_key": "1a626d92ed99",
-        "category": "Omzet & Groei",
+        "category": "Revenue & Growth",
         "benchmark": null,
         "triggered": true,
-        "alarmSignal": "ROAS < 3x bij stijgende spend",
-        "realMeaning": "De store lekt bezoekers vóórdat ze converteren. Meer traffic naar een lekkende funnel versterkt het probleem.",
-        "whatCeoSees": "Elke extra euro in ads levert minder op. Meer budget = niet meer omzet.",
-        "tradualPitch": "Je giet water in een emmer met gaten. Wij dichten de gaten zodat elke euro ad spend meer oplevert.",
+        "alarmSignal": "ROAS < 3x with rising spend",
+        "realMeaning": "The store leaks visitors before they convert. More traffic into a leaking funnel makes the problem worse.",
+        "whatCeoSees": "Every extra euro in ads returns less. More budget ≠ more revenue.",
+        "tradualPitch": "You are pouring water into a bucket with holes. We close the holes so every euro of ad spend returns more.",
         "tradualSolution": "Stack Rebuild™ + Performance Layer™"
       },
       {
-        "kpi": "Mobile converteert dramatisch lager dan desktop",
+        "kpi": "Mobile converts dramatically lower than desktop",
         "_key": "28f70e9ef593",
-        "category": "Conversie & Funnel",
-        "benchmark": "Max 30% lager dan desktop",
+        "category": "Conversion & Funnel",
+        "benchmark": "Max 30% lower than desktop",
         "triggered": false,
-        "alarmSignal": "Mobiel CR < 50% van desktop CR",
-        "realMeaning": "De mobiel-desktop gap is bijna nooit een UX-probleem. Het is een performance-probleem: mobiel is gevoeliger voor laadtijd.",
-        "whatCeoSees": "Desktop converteert 2-3x beter dan mobiel, terwijl 70%+ van het traffic mobiel is.",
-        "tradualPitch": "70% van jullie bezoekers is mobiel. Als die helft zo slecht converteert, laten jullie het meeste geld liggen waar het meeste traffic zit.",
-        "tradualSolution": "Stack Rebuild™ — mobile-first architectuur"
+        "alarmSignal": "Mobile CR < 50% of desktop CR",
+        "realMeaning": "The mobile–desktop gap is almost never a UX problem. It is a performance problem: mobile is more sensitive to load time.",
+        "whatCeoSees": "Desktop converts 2–3x better than mobile, while 70%+ of traffic is mobile.",
+        "tradualPitch": "70% of your visitors are mobile. If that half converts this poorly, you are leaving the most money where the most traffic sits.",
+        "tradualSolution": "Stack Rebuild™ — mobile-first architecture"
       },
       {
-        "kpi": "CPA stijgt structureel",
+        "kpi": "CPA rising structurally",
         "_key": "22efd7e8f8b5",
-        "category": "Kosten & Efficiëntie",
+        "category": "Cost & Efficiency",
         "benchmark": null,
         "triggered": false,
-        "alarmSignal": "CPA stijgt >15% YoY",
-        "realMeaning": "Als je funnel lekt, heb je meer klikken nodig per conversie — en elke klik kost geld.",
-        "whatCeoSees": "Het kost steeds meer om een nieuwe klant te werven. Marketing wordt duurder.",
-        "tradualPitch": "Jullie CPA stijgt niet alleen omdat ads duurder worden. Fix de store en je CPA daalt — zonder je ad strategie te veranderen.",
+        "alarmSignal": "CPA rising >15% YoY",
+        "realMeaning": "If your funnel leaks, you need more clicks per conversion — and every click costs money.",
+        "whatCeoSees": "It costs more and more to acquire a new customer. Marketing is getting more expensive.",
+        "tradualPitch": "Your CPA is not rising only because ads are getting more expensive. Fix the store and your CPA drops — without changing your ad strategy.",
         "tradualSolution": "Revenue Leak Audit™ → Stack Rebuild™"
       },
       {
-        "kpi": "Marktaandeel daalt bij vergelijkbaar product",
+        "kpi": "Market share declining against comparable product",
         "_key": "9249f512f46e",
-        "category": "Concurrentie & Toekomst",
+        "category": "Competition & Future",
         "benchmark": null,
         "triggered": false,
-        "alarmSignal": "Marktaandeel daalt >2% YoY",
-        "realMeaning": "Bij vergelijkbare producten wint de store met de beste koopervaring. Snelheid wordt de differentiator.",
-        "whatCeoSees": "Concurrenten met een vergelijkbaar product groeien sneller.",
-        "tradualPitch": "Jullie product is niet het probleem. Jullie winkelervaring is het probleem. De klant gaat naar de winkel waar het makkelijker en sneller is.",
-        "tradualSolution": "Stack Rebuild™ — volledige commerce-infrastructuur"
+        "alarmSignal": "Market share declining >2% YoY",
+        "realMeaning": "With comparable products, the store with the best buying experience wins. Speed becomes the differentiator.",
+        "whatCeoSees": "Competitors with a comparable product are growing faster.",
+        "tradualPitch": "Your product is not the problem. Your store experience is the problem. The customer goes to the store where it is easier and faster.",
+        "tradualSolution": "Stack Rebuild™ — full commerce infrastructure"
       },
       {
-        "kpi": "Geen organische groei ondanks SEO-investering",
+        "kpi": "No organic growth despite SEO investment",
         "_key": "18a23fdad525",
-        "category": "Concurrentie & Toekomst",
+        "category": "Competition & Future",
         "benchmark": null,
         "triggered": false,
-        "alarmSignal": "Geen ranking-groei na 6 maanden SEO",
-        "realMeaning": "Google beloont Core Web Vitals in de ranking. Een trage site verliest van een snelle concurrent.",
-        "whatCeoSees": "SEO-inspanningen leveren niet op. Rankings stagneren of dalen.",
-        "tradualPitch": "Google rankt niet alleen op content. Ze ranken op ervaring. Jullie Core Web Vitals zijn een ranking-factor — en op dit moment werken ze tegen jullie.",
+        "alarmSignal": "No ranking growth after 6 months of SEO",
+        "realMeaning": "Google rewards Core Web Vitals in ranking. A slow site loses to a fast competitor.",
+        "whatCeoSees": "SEO efforts are not paying off. Rankings stagnate or decline.",
+        "tradualPitch": "Google does not rank on content alone. They rank on experience. Your Core Web Vitals are a ranking factor — and right now they are working against you.",
         "tradualSolution": "Stack Rebuild™ — Core Web Vitals"
       },
       {
-        "kpi": "Niet vindbaar via AI-assistenten",
+        "kpi": "Not findable via AI assistants",
         "_key": "fe499f28a820",
-        "category": "Concurrentie & Toekomst",
+        "category": "Competition & Future",
         "benchmark": null,
         "triggered": true,
-        "alarmSignal": "Niet genoemd in AI-antwoorden",
-        "realMeaning": "AI-agents vertrouwen op gestructureerde data en API-toegankelijkheid. Zonder dat ben je onzichtbaar.",
-        "whatCeoSees": "Klanten vragen ChatGPT/Gemini om productadvies en jullie merk verschijnt niet.",
-        "tradualPitch": "Over 2 jaar start 30%+ van de productzoektochten bij een AI-agent. Als die agent jullie niet kan vinden, bestaan jullie niet in die wereld.",
+        "alarmSignal": "Not mentioned in AI answers",
+        "realMeaning": "AI agents rely on structured data and API accessibility. Without that, you are invisible.",
+        "whatCeoSees": "Customers ask ChatGPT/Gemini for product advice and your brand does not appear.",
+        "tradualPitch": "In 2 years, 30%+ of product searches will start with an AI agent. If that agent cannot find you, you do not exist in that world.",
         "tradualSolution": "Agentic Commerce Readiness™"
       },
       {
-        "kpi": "Shopify app-kosten stijgen maar resultaat niet",
+        "kpi": "Shopify app costs rise but results don't",
         "_key": "51255daf5885",
-        "category": "Kosten & Efficiëntie",
+        "category": "Cost & Efficiency",
         "benchmark": null,
         "triggered": false,
-        "alarmSignal": ">15 apps geïnstalleerd",
-        "realMeaning": "Elke app voegt gewicht toe aan de store. Je betaalt dubbel: de subscription + het conversieverlies dat de app veroorzaakt.",
-        "whatCeoSees": "Elke maand meer apps, meer subscriptions, maar geen meetbaar effect op omzet.",
-        "tradualPitch": "Jullie betalen per maand aan apps die jullie store vertragen. Sommige kosten meer aan conversieverlies dan ze opleveren aan functionaliteit.",
-        "tradualSolution": "Revenue Leak Audit™ — Laag 2: De Motor"
+        "alarmSignal": ">15 apps installed",
+        "realMeaning": "Every app adds weight to the store. You pay twice: the subscription + the conversion loss the app causes.",
+        "whatCeoSees": "Every month more apps, more subscriptions, but no measurable effect on revenue.",
+        "tradualPitch": "You pay monthly for apps that slow your store down. Some cost more in conversion loss than they deliver in functionality.",
+        "tradualSolution": "Revenue Leak Audit™ — Layer 2: The Engine"
       },
       {
-        "kpi": "Cart abandonment boven 75%",
+        "kpi": "Cart abandonment above 75%",
         "_key": "67c92b63eac9",
-        "category": "Conversie & Funnel",
+        "category": "Conversion & Funnel",
         "benchmark": "65–70%",
         "triggered": false,
         "alarmSignal": "Abandonment > 75%",
-        "realMeaning": "Checkout-latency en layout shifts breken het vertrouwen op het cruciale moment.",
-        "whatCeoSees": "3 van de 4 klanten die iets in hun winkelwagen doen, rekenen niet af.",
-        "tradualPitch": "Jullie hebben de klant al overtuigd — die heeft op 'toevoegen' geklikt. En dan verliezen jullie ze in de checkout. Dat is het duurste verlies dat er is.",
-        "tradualSolution": "Stack Rebuild™ — checkout-optimalisatie"
+        "realMeaning": "Checkout latency and layout shifts break trust at the critical moment.",
+        "whatCeoSees": "3 out of 4 customers who add something to their cart do not check out.",
+        "tradualPitch": "You already convinced the customer — they clicked 'add'. And then you lose them in checkout. That is the most expensive loss there is.",
+        "tradualSolution": "Stack Rebuild™ — checkout optimisation"
       },
       {
-        "kpi": "Omzet plateau ondanks meer traffic",
+        "kpi": "Revenue plateau despite more traffic",
         "_key": "0600d9813a5c",
-        "category": "Omzet & Groei",
+        "category": "Revenue & Growth",
         "benchmark": null,
         "triggered": false,
-        "alarmSignal": "Traffic stijgt, omzet stagneert",
-        "realMeaning": "Meer bezoekers vangen niet meer omzet omdat de funnel evenredig blijft lekken — het is een conversieprobleem, geen acquisitieprobleem. Extra traffic naar een lekkende funnel maakt de schade groter.",
-        "whatCeoSees": "Het bezoekersaantal stijgt, maar de omzet groeit niet mee. Meer traffic = niet meer verkoop.",
-        "tradualPitch": "Jullie groeien in bezoekers maar niet in omzet. Dat betekent: de winkel zelf is het knelpunt, niet jullie marketing. Dicht de lekken en elke extra bezoeker levert eindelijk omzet op.",
+        "alarmSignal": "Traffic rises, revenue stagnates",
+        "realMeaning": "More visitors do not capture more revenue because the funnel keeps leaking in proportion — it is a conversion problem, not an acquisition problem. Extra traffic into a leaking funnel makes the damage larger.",
+        "whatCeoSees": "Visitor numbers are rising, but revenue is not growing with them. More traffic ≠ more sales.",
+        "tradualPitch": "You are growing in visitors but not in revenue. That means: the store itself is the bottleneck, not your marketing. Close the leaks and every extra visitor finally yields revenue.",
         "tradualSolution": "Revenue Leak Audit™ → Stack Rebuild™"
       },
       {
-        "kpi": "Gemiddelde orderwaarde daalt",
+        "kpi": "Average order value declining",
         "_key": "b23447b5365f",
-        "category": "Omzet & Groei",
+        "category": "Revenue & Growth",
         "benchmark": null,
         "triggered": false,
-        "alarmSignal": "AOV daalt >5% jaar-op-jaar",
-        "realMeaning": "Een dalende gemiddelde orderwaarde bij gelijk aanbod duidt op cross-sell en upsell die niet werken — of een productpagina die bezoekers alleen naar het goedkoopste artikel stuurt.",
-        "whatCeoSees": "Klanten kopen steeds minder per bestelling, terwijl het assortiment niet kleiner is geworden.",
-        "tradualPitch": "Jullie laten omzet liggen bij elke bestelling. Een klant die al koopt is de makkelijkste klant om iets extra's aan te verkopen — maar de winkel doet er niets mee.",
+        "alarmSignal": "AOV declining >5% year-on-year",
+        "realMeaning": "A declining average order value with an unchanged assortment points to cross-sell and upsell that are not working — or a product page that only sends visitors to the cheapest item.",
+        "whatCeoSees": "Customers are buying less per order, while the assortment has not gotten smaller.",
+        "tradualPitch": "You leave revenue on the table with every order. A customer who is already buying is the easiest customer to sell something extra to — but the store does nothing with that.",
         "tradualSolution": "CRO Sprint™ — productpagina & winkelmand"
       },
       {
-        "kpi": "Conversieratio onder branche-gemiddelde",
+        "kpi": "Conversion rate below industry average",
         "_key": "f6f469f314e8",
-        "category": "Conversie & Funnel",
+        "category": "Conversion & Funnel",
         "benchmark": "DTC: 2.0–3.5%",
         "triggered": false,
-        "alarmSignal": "Geschatte conversieratio onder 2%",
-        "realMeaning": "Een lage paginascore gecombineerd met een groot snelheidsverschil tussen mobiel en desktop drukt de conversieratio structureel onder het branche-gemiddelde. Funnel-frictie eet de conversie op.",
-        "whatCeoSees": "Van elke 100 bezoekers koopt er minder dan 2. Concurrenten halen meer uit hetzelfde traffic.",
-        "tradualPitch": "Elke bezoeker die niet koopt is verloren acquisitiekosten. Bij een conversieratio onder de 2% laat je dagelijks omzet op tafel liggen die jullie concurrenten wél pakken.",
+        "alarmSignal": "Estimated conversion rate under 2%",
+        "realMeaning": "A low page score combined with a large speed gap between mobile and desktop structurally pushes conversion rate below the industry average. Funnel friction eats conversion.",
+        "whatCeoSees": "Of every 100 visitors, fewer than 2 buy. Competitors get more from the same traffic.",
+        "tradualPitch": "Every visitor who does not buy is lost acquisition cost. At a conversion rate under 2%, you leave revenue on the table every day that your competitors do capture.",
         "tradualSolution": "Revenue Leak Audit™ → Performance Layer™"
       },
       {
         "kpi": "Hoge bounce op advertentieverkeer",
         "_key": "6388535caf66",
-        "category": "Conversie & Funnel",
+        "category": "Conversion & Funnel",
         "benchmark": "Paid traffic: <45%",
         "triggered": false,
-        "alarmSignal": "Geschatte post-click bounce > 50%",
-        "realMeaning": "Meer dan de helft van de betaalde klikkers verlaat de pagina voordat die volledig geladen is — direct verbrand advertentiebudget zonder kans op een verkoop.",
-        "whatCeoSees": "Meer dan de helft van de mensen die op een advertentie klikken, vertrekken direct zonder iets te doen.",
-        "tradualPitch": "Jullie betalen voor elke klik, maar meer dan de helft van die klikkers ziet jullie winkel nooit echt. De pagina is te traag — en de advertentie-euro is dan meteen weg.",
-        "tradualSolution": "Stack Rebuild™ — Snelheid"
+        "alarmSignal": "Estimated post-click bounce > 50%",
+        "realMeaning": "More than half of paid clickers leave the page before it is fully loaded — directly burned ad budget with no chance of a sale.",
+        "whatCeoSees": "More than half of the people who click an ad leave immediately without doing anything.",
+        "tradualPitch": "You pay for every click, but more than half of those clickers never really see your store. The page is too slow — and the ad euro is then gone immediately.",
+        "tradualSolution": "Stack Rebuild™ — Speed"
       },
       {
-        "kpi": "Klantwaarde dekt werfkosten nauwelijks",
+        "kpi": "Customer value barely covers acquisition cost",
         "_key": "7dd3a68f56cf",
-        "category": "Kosten & Efficiëntie",
+        "category": "Cost & Efficiency",
         "benchmark": "Gezonde DTC: 3:1 of hoger",
         "triggered": false,
-        "alarmSignal": "Klantwaarde/werfkosten ratio < 3",
-        "realMeaning": "Bij stijgende werfkosten en een lekkende funnel daalt de klantwaarde t.o.v. acquisitiekosten. De unit-economics breken — elke klant kost relatief steeds meer.",
-        "whatCeoSees": "Het kost steeds meer om een klant te werven, maar die klant koopt niet genoeg terug om dat te rechtvaardigen.",
-        "tradualPitch": "Een gezond e-commercebedrijf verdient minimaal drie keer de werfkosten terug per klant. Als die verhouding daalt, kan het niet langer alleen aan de markt liggen — dan lekt de winkel zelf.",
+        "alarmSignal": "Customer value/acquisition cost ratio < 3",
+        "realMeaning": "With rising acquisition costs and a leaking funnel, customer value falls relative to acquisition cost. The unit economics break — each customer costs relatively more and more.",
+        "whatCeoSees": "It costs more and more to acquire a customer, but that customer does not buy enough back to justify it.",
+        "tradualPitch": "A healthy e-commerce business earns back at least three times the acquisition cost per customer. If that ratio falls, it can no longer be the market alone — then the store itself is leaking.",
         "tradualSolution": "Revenue Leak Audit™ → Performance Layer™"
       }
     ],
-    "methodologyNote": "Gemeten schatting. Omzet: €583,333/mnd (opgegeven door operator). Gemeten via SE Ranking: 32,609 organische + 14 betaalde sessies/mnd (32,623 totaal). CVR 14.90% afgeleid uit gemeten traffic. €120 AOV, €87,500/mnd ad spend. Gebaseerd op publiek meetbare signalen. Gebruik als indicatie, niet als definitieve audit-uitkomst.",
+    "methodologyNote": "Measured estimate. Revenue: €583,333/mo (provided by operator). Measured via SE Ranking: 32,609 organic + 14 paid sessions/mo (32,623 total). CVR 14.90% derived from measured traffic. €120 AOV, €87,500/mo ad spend. Based on publicly measurable signals. Use as an indication, not as a definitive audit outcome.",
     "totalAnnualLossEur": 848400,
     "directAnnualLossEur": 848400,
     "totalMonthlyLossEur": 70700,
@@ -763,7 +763,7 @@
     "efficiencyAnnualUpliftEur": 0,
     "efficiencyMonthlyUpliftEur": 0
   },
-  "auditSummary": "Geautomatiseerde outside-only scan van Magento 2 store (https://www.barts.eu/nl/). 5 technische risicos en 2 kansen geïdentificeerd.",
+  "auditSummary": "Automated outside-only scan of Magento 2 store (https://www.barts.eu/nl/). 5 technical risks and 2 opportunities identified.",
   "checkoutFlow": {
     "testedAsMobile": false,
     "observedFriction": [],
@@ -801,7 +801,7 @@
     "bounceDrivers": [
       "LCP 2.7s (grens 2.5s) — +3pp bounce-uplift"
     ],
-    "methodologyNote": "Gemeten schatting op basis van Google CrUX-correlaties (LCP/INP → bounce-rate). Gemeten via SE Ranking: 14 betaalde sessies/mnd. 2% CVR, €120 AOV. Gebruik als indicatie, niet als gemeten benchmark.",
+    "methodologyNote": "Measured estimate based on Google CrUX correlations (LCP/INP → bounce rate). Measured via SE Ranking: 14 paid sessions/mo. 2% CVR, €120 AOV. Use as an indication, not as a measured benchmark.",
     "bounceBaselinePct": 45,
     "estWastedAdSpendPct": 35,
     "estPostClickBouncePct": 47.8,
@@ -809,12 +809,12 @@
     "estMonthlyLostRevenueEurLow": 1,
     "estMonthlyLostRevenueEurHigh": 1
   },
-  "biggestTechRisk": "35% van je advertentiebudget verbrandt doordat bezoekers afhaken voordat de pagina zichtbaar is — betaalde klikken die nooit iets opleveren.",
+  "biggestTechRisk": "35% of your ad budget burns because visitors drop off before the page is visible — paid clicks that never yield anything.",
   "bloatWhatMustGo": [
     {
       "_key": "41126cea19e1",
-      "item": "Geen CDN actief",
-      "reason": "Je Magento-winkel levert alle pagina's en bestanden rechtstreeks vanuit één server, zonder tussenstop via een CDN (een netwerk dat je content dichter bij je bezoekers plaatst). Dit betekent dat elke bezoeker — ook in andere landen — wacht op die ene server. Bij een omzet van €7 miljoen per jaar is dit het meest renderende technische verbeterpunt: een CDN als Cloudflare kost €20–200 per maand en kan de laadtijd met 200–800ms verbeteren, wat bij jouw omzetgrootte neerkomt op een veelvoud aan terugverdiend conversieverlies.",
+      "item": "No CDN active",
+      "reason": "Your Magento store delivers all pages and files directly from one server, without a stop via a CDN (a network that places your content closer to your visitors). This means every visitor — including those in other countries — waits on that one server. At €7 million annual revenue this is the highest-yielding technical improvement: a CDN such as Cloudflare costs €20–200 per month and can improve load time by 200–800ms, which at your revenue scale amounts to a multiple of recovered conversion loss.",
       "category": "process",
       "estSavingsEur": null,
       "estPerformanceGainMs": 500
@@ -822,7 +822,7 @@
     {
       "_key": "57aba62f205e",
       "item": "vfr-v3-production.sizebay.technology + static.sizebay.technology",
-      "reason": "Dit zijn twee scripts van dezelfde maatadvies-tool (Sizebay) die samen het laden van je pagina vertragen. Ze worden allebei vroeg geladen terwijl ze pas nodig zijn als een klant op een productpagina naar maatadvies vraagt. Door ze later te laten starten, verdwijnt de vertraging die ze nu veroorzaken zonder dat de functionaliteit verloren gaat.",
+      "reason": "These are two scripts from the same size-advice tool (Sizebay) that together delay your page load. Both load early while they are only needed when a customer on a product page asks for size advice. By starting them later, the delay they currently cause disappears without losing the functionality.",
       "category": "script",
       "estSavingsEur": null,
       "estPerformanceGainMs": 32
@@ -830,7 +830,7 @@
     {
       "_key": "aa97df819076",
       "item": "a.storyblok.com",
-      "reason": "Storyblok is een extern contentplatform. Het is niet gemeten hoe zwaar dit script is, maar als het op elke pagina laadt terwijl het alleen voor redacteuren of specifieke contentblokken nodig is, kost het onnodig laadtijd. Potentieel te vervangen of te beperken zodra je een CDN hebt en meer zicht hebt op wat dit script precies doet op productpagina's.",
+      "reason": "Storyblok is an external content platform. How heavy this script is was not measured, but if it loads on every page while it is only needed for editors or specific content blocks, it costs unnecessary load time. Potentially replaceable or restrictable once you have a CDN and more visibility into what this script actually does on product pages.",
       "category": "script",
       "estSavingsEur": null,
       "estPerformanceGainMs": null
@@ -848,46 +848,46 @@
       "_key": "c42124c02b14",
       "page": "Homepage",
       "severity": "high",
-      "estImpact": "High — trust signals op de homepage reduceren bounce rate voor nieuwe bezoekers aantoonbaar. Ontbrekend sociaal bewijs verhoogt de drempel voor een eerste aankoop.",
-      "observation": "Geen reviews, sterren of vertrouwenssignalen gedetecteerd op de homepage. Geen review-platform widget (Trustpilot, Kiyoh, etc.), geen AggregateRating schema, en geen rating-patroon in paginatekst."
+      "estImpact": "High — trust signals on the homepage demonstrably reduce bounce rate for new visitors. Missing social proof raises the barrier for a first purchase.",
+      "observation": "No reviews, stars, or trust signals detected on the homepage. No review-platform widget (Trustpilot, Kiyoh, etc.), no AggregateRating schema, and no rating pattern in page text."
     },
     {
       "_key": "fbb68ef58884",
       "page": "Homepage",
       "severity": "high",
-      "estImpact": "Vertrouwenssignalen op de homepage verlagen de bounce voor nieuwe bezoekers aantoonbaar. Bij een maandomzet van ~€583k kan een verbetering van 1-2% in doorklikratio van homepage naar productpagina al €6.000–€12.000 per maand extra opleveren.",
-      "observation": "Er zijn geen reviews, sterren of klantbeoordelingen zichtbaar op de homepage. Voor een nieuwe bezoeker die BARTS nog niet kent, ontbreekt daarmee het belangrijkste signaal dat anderen al tevreden klanten zijn. Dit verhoogt de drempel om door te klikken of een eerste aankoop te doen."
+      "estImpact": "Trust signals on the homepage demonstrably lower bounce for new visitors. At monthly revenue of ~€583k, a 1–2% improvement in click-through from homepage to product page can already yield €6,000–€12,000 extra per month.",
+      "observation": "No reviews, stars, or customer ratings are visible on the homepage. For a new visitor who does not yet know BARTS, that means the most important signal that others are already satisfied customers is missing. This raises the barrier to click through or make a first purchase."
     },
     {
       "_key": "bd674f9ad714",
       "page": "Homepage",
       "severity": "high",
-      "estImpact": "Een duidelijke, onderscheidende headline verhoogt de relevantie voor nieuwe bezoekers en verlaagt de bounce rate. Sectorstudies tonen aan dat het verbeteren van de waardepropositie above-the-fold typisch 2-5% meer doorklikken naar productpagina's oplevert.",
-      "observation": "De teksten die bovenaan de pagina staan — 'Retourneren binnen 30 dagen' en 'Gratis verzending vanaf €50' — zijn servicevoordelen, geen waardepropositie. Een bezoeker die de site voor het eerst ziet, begrijpt niet in vijf seconden waarom hij of zij bij BARTS moet zijn in plaats van bij een concurrent. Er is geen H1-koptekst aanwezig op de homepage."
+      "estImpact": "A clear, distinctive headline raises relevance for new visitors and lowers bounce rate. Industry studies show that improving the above-the-fold value proposition typically yields 2–5% more click-through to product pages.",
+      "observation": "The texts at the top of the page — 'Returns within 30 days' and 'Free shipping from €50' — are service benefits, not a value proposition. A visitor seeing the site for the first time does not understand in five seconds why they should be at BARTS rather than a competitor. There is no H1 heading on the homepage."
     },
     {
       "_key": "70a042664682",
       "page": "Homepage",
       "severity": "medium",
-      "estImpact": "Elke 100 milliseconden verbetering in laadsnelheid correleert met circa 1% meer conversie op mobiel. Terugbrengen naar onder de 2,5 seconden levert naar schatting 0,5–1% meer conversies op bij mobiele bezoekers.",
-      "observation": "De mobiele laadsnelheid ligt net boven de grens die Google als 'goed' beschouwt: de pagina is volledig zichtbaar na bijna 2,7 seconden, terwijl 2,5 seconden de norm is. Elke extra tiende seconde kost op mobiel meetbaar bezoekers die afhaken voordat ze iets zien."
+      "estImpact": "Every 100 milliseconds of load-speed improvement correlates with about 1% more conversion on mobile. Bringing it under 2.5 seconds is estimated to yield 0.5–1% more conversions among mobile visitors.",
+      "observation": "Mobile load speed sits just above the threshold Google considers 'good': the page is fully visible after almost 2.7 seconds, while 2.5 seconds is the standard. Every extra tenth of a second costs measurable mobile visitors who drop off before they see anything."
     },
     {
       "_key": "7209dd4783bd",
       "page": "Generic",
       "severity": "medium",
-      "estImpact": "Sterren in zoekresultaten verhogen de doorklikratio gemiddeld met 10–15% zonder extra advertentiebudget. Bij een site met €7 miljoen jaaromzet en organisch verkeer als kanaal kan dit substantieel zijn.",
-      "observation": "Productpagina's missen de technische opmaak die Google nodig heeft om sterren en beoordelingen te tonen in zoekresultaten. Dit betekent dat je advertentie-equivalent gratis zoekverkeer misloopt: concurrenten met zichtbare sterren in Google trekken meer klikken aan bij dezelfde positie."
+      "estImpact": "Stars in search results raise click-through rate by 10–15% on average without extra ad budget. For a site with €7 million annual revenue and organic traffic as a channel, this can be substantial.",
+      "observation": "Product pages lack the technical markup Google needs to show stars and ratings in search results. That means you miss advertising-equivalent free search traffic: competitors with visible stars in Google attract more clicks at the same position."
     },
     {
       "_key": "ab6bf2e5a584",
       "page": "Generic",
       "severity": "medium",
-      "estImpact": "E-mailmarketing levert voor webshops gemiddeld circa 30% van de omzet. Een hogere inschrijfrate door een concrete aanbieding bij inschrijving (bijv. 10% korting op eerste bestelling) kan de e-maillijst versneld laten groeien en de retentie-omzet structureel verhogen.",
-      "observation": "Een nieuwsbriefinschrijving is aanwezig in de footer. Er is echter geen zichtbare stimulans (zoals een welkomstkorting of exclusieve content) zichtbaar om bezoekers actief aan te zetten tot inschrijven. Zonder een duidelijk voordeel blijft de inschrijfrate ver onder potentieel."
+      "estImpact": "Email marketing delivers around 30% of revenue on average for webshops. A higher signup rate through a concrete offer at signup (e.g. 10% off the first order) can grow the email list faster and structurally raise retention revenue.",
+      "observation": "A newsletter signup is present in the footer. However, there is no visible incentive (such as a welcome discount or exclusive content) to actively prompt visitors to subscribe. Without a clear benefit, the signup rate stays well below potential."
     }
   ],
-  "methodologyNote": "Automated outside-only scan. Alle bevindingen zijn gebaseerd op publiek toegankelijke signalen: HTTP headers, DOM analyse, PageSpeed Insights API, en third-party script catalogus. Geen admin-toegang gebruikt.",
+  "methodologyNote": "Automated outside-only scan. All findings are based on publicly accessible signals: HTTP headers, DOM analysis, PageSpeed Insights API, and third-party script catalogue. No admin access used.",
   "migrationApproach": [],
   "thirdPartyScripts": {
     "detectedScripts": [
@@ -978,6 +978,6 @@
     "recommendedArchitecture": "headless",
     "hostingDetectionEvidence": "server: nginx"
   },
-  "biggestTechOpportunity": "Je reviews worden nog niet als sterren in Google getoond en je productgegevens ontbreken — fix dit en je zoekresultaten vallen direct meer op.",
+  "biggestTechOpportunity": "Your reviews are not yet shown as stars in Google and your product data is missing — fix this and your search results immediately stand out more.",
   "estPerformanceLiftPercent": null
 }

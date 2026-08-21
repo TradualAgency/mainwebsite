@@ -33,7 +33,7 @@ export function IntroSection({ scan }: { scan: ProspectScan }) {
           )}
           {scanLevel && <ScanLevelBadge level={scanLevel} />}
         </div>
-        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Winkelanalyse</p>
+        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Store analysis</p>
         <h1 className="font-heading text-primary text-[38px] leading-[1.05] md:text-[72px] mb-6">
           {clientInfo.companyName}
         </h1>

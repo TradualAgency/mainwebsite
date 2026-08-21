@@ -50,7 +50,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           )}
 
           <span className="mt-4 inline-flex items-center gap-1 text-primary underline decoration-accent decoration-2 underline-offset-[6px] text-sm font-medium">
-            Lees de case
+            Read the case
             <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
           </span>
         </div>

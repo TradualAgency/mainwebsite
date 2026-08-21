@@ -10,37 +10,37 @@ import { FaqSection } from "@/components/marketing/faq-section";
 import { CtaBand } from "@/components/marketing/cta-band";
 import { getServiceById } from "@/content/services";
 
-const service = getServiceById("performance-layer");
+const service = getServiceById("revenue-leak-audit");
 
 export const metadata: Metadata = {
   title: service.name,
   description: service.oneLiner,
 };
 
-export default function PerformanceLayerPage() {
+export default function RevenueLeakAuditPage() {
   return (
     <main>
       <ServiceHero service={service} />
 
-      <QualifierColumns eyebrow="Voor wie dit is" title="Wanneer een retainer klopt" forWho={service.forWho} tone="muted" />
+      <QualifierColumns eyebrow="Who this is for" title="Does this sound familiar?" forWho={service.forWho} tone="muted" />
 
-      <ChecklistSection eyebrow="Wat je elke maand krijgt" title="Meten, prioriteren, bouwen, testen" items={service.deliverables} tone="light" columns={1} />
+      <ChecklistSection eyebrow="What you get" title="A business case, not a to-do list" items={service.deliverables} tone="light" />
 
-      <ProcessTimeline eyebrow="Het maandritme" title="Elke maand hetzelfde ritme" steps={service.process} tone="muted" />
+      <ProcessTimeline eyebrow="How it works" title="From scan to business case" steps={service.process} tone="muted" />
 
       <Section tone="dark">
-        <SectionHeading eyebrow="Investering" title="Wat het kost" tone="dark" className="mb-10" />
+        <SectionHeading eyebrow="Investment" title="What it costs" tone="dark" className="mb-10" />
         <PricingCard label={service.name} priceLabel={service.priceLabel} determinants={service.priceDeterminants} tone="dark" className="max-w-xl" />
       </Section>
 
-      <FaqSection eyebrow="Vragen" title="Wat mensen ons vaak vragen" items={service.faq} tone="light" />
+      <FaqSection eyebrow="Questions" title="What people often ask us" items={service.faq} tone="light" />
 
       <CtaBand
-        eyebrow="Vervolgstap"
-        heading="Wat daarna"
+        eyebrow="Next step"
+        heading="After the audit"
         body={service.afterThisLabel}
-        primary={{ label: "Plan een kennismaking", href: "/contact" }}
-        secondary={{ label: "Bekijk Agentic Readiness", href: service.afterThisHref }}
+        primary={{ label: "Request a Revenue Leak Audit", href: "/contact" }}
+        secondary={{ label: "View Stack Rebuild", href: service.afterThisHref }}
       />
     </main>
   );

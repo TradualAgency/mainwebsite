@@ -1,7 +1,7 @@
 export default function Blog(){
     return (
         <>
-            pagina moet nog gemaakt worden
+            This page is not ready yet
         </>
     )
 }

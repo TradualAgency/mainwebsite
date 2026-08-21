@@ -1,23 +1,23 @@
 const steps = [
   {
     number: "01",
-    title: "Intake & Strategie",
-    body: "We starten met een scherpe analyse van je merk, doelgroep en commerciële doelen. Zo bouwen we gericht aan een roadmap die design en performance direct koppelt aan groei.",
+    title: "Intake & strategy",
+    body: "We start with a sharp analysis of your brand, audience, and commercial goals. That way we build a roadmap that ties design and performance directly to growth.",
   },
   {
     number: "02",
-    title: "Concept & Design",
-    body: "Vanuit de strategie bouwen we een visueel systeem dat je merk versterkt — met doordachte user flows, een premium esthetiek en duidelijke conversion-triggers op elk touchpoint.",
+    title: "Concept & design",
+    body: "From the strategy we build a visual system that strengthens your brand — with considered user flows, a premium aesthetic, and clear conversion triggers at every touchpoint.",
   },
   {
     number: "03",
-    title: "Bouw & performance",
-    body: "Onze engineers vertalen het design naar snelle, schaalbare code. Elke pagina wordt geoptimaliseerd op Core Web Vitals, zodat snelheid nooit ten koste gaat van beleving.",
+    title: "Build & performance",
+    body: "Our engineers translate the design into fast, scalable code. Every page is optimized on Core Web Vitals, so speed never comes at the expense of experience.",
   },
   {
     number: "04",
-    title: "Launch & Optimalisatie",
-    body: "Na de livegang volgen we resultaten continu met data. A/B-tests, heatmaps en conversie-analyses zorgen voor blijvende verbetering na elke iteratie.",
+    title: "Launch & optimization",
+    body: "After go-live we follow results continuously with data. A/B tests, heatmaps, and conversion analyses drive ongoing improvement after every iteration.",
   },
 ]
 
@@ -25,9 +25,9 @@ export default function FiveStepsSection() {
   return (
     <section className="py-20 px-8 bg-surface">
       <div className="max-w-7xl mx-auto">
-        <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent mb-4">Hoofdstuk drie</p>
+        <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent mb-4">Chapter three</p>
         <h2 className="font-heading text-primary text-[38px] leading-[1.05] md:text-[60px] mb-16">
-          Hoe we samenwerken
+          How we work together
         </h2>
 
         <div className="relative">

@@ -54,7 +54,7 @@ export default function KennisbankSlider({posts} : { posts: Post[]  }) {
                                 <p className="text-[#defff6]">{post.excerpt}</p>
                             </div>
                             <div className="flex items-center gap-2 mt-10">
-                                <span className="text-[#defff6] text-sm">Lees meer</span>
+                                <span className="text-[#defff6] text-sm">Read more</span>
                                 <div className="bg-black text-white rounded-full w-6 h-6 flex items-center justify-center shrink-0">
                                     <svg
                                         width="12"

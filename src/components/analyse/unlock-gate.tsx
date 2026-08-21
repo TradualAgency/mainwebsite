@@ -9,7 +9,7 @@ import { Form, FormControl, FormField, FormItem, FormMessage } from '@/component
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 
-const schema = z.object({ password: z.string().min(1, 'Vul een wachtwoord in') })
+const schema = z.object({ password: z.string().min(1, 'Enter a password') })
 type FormValues = z.infer<typeof schema>
 
 interface UnlockGateProps {
@@ -32,11 +32,11 @@ export function UnlockGate({ slug, clientName }: UnlockGateProps) {
       const text = await res.text()
       data = text ? JSON.parse(text) : {}
       if (!res.ok) {
-        form.setError('password', { message: data.error ?? 'Onjuist wachtwoord' })
+        form.setError('password', { message: data.error ?? 'Incorrect password' })
         return
       }
     } catch {
-      form.setError('password', { message: 'Er is iets misgegaan. Probeer het opnieuw.' })
+      form.setError('password', { message: 'Something went wrong. Please try again.' })
       return
     }
     router.refresh()
@@ -52,13 +52,13 @@ export function UnlockGate({ slug, clientName }: UnlockGateProps) {
         </div>
 
         <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent text-center mb-3">
-          Vertrouwelijk
+          Confidential
         </p>
         <h1 className="font-heading text-primary text-[32px] leading-tight text-center mb-2">
-          {clientName ? `Welkom, ${clientName}` : 'Toegang vereist'}
+          {clientName ? `Welcome, ${clientName}` : 'Access required'}
         </h1>
         <p className="text-body text-sm leading-relaxed text-center mb-8">
-          Deze analyse is alleen beschikbaar met een persoonlijk wachtwoord.
+          This analysis is only available with a personal password.
         </p>
 
         <Form {...form}>
@@ -69,7 +69,7 @@ export function UnlockGate({ slug, clientName }: UnlockGateProps) {
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input type="password" placeholder="Wachtwoord" {...field} />
+                    <Input type="password" placeholder="Password" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -80,15 +80,15 @@ export function UnlockGate({ slug, clientName }: UnlockGateProps) {
               className="w-full bg-accent text-primary font-medium hover:opacity-90 transition"
               disabled={form.formState.isSubmitting}
             >
-              {form.formState.isSubmitting ? 'Controleren…' : 'Toegang krijgen'}
+              {form.formState.isSubmitting ? 'Checking…' : 'Get access'}
             </Button>
           </form>
         </Form>
 
         <p className="mt-6 text-center text-body text-xs">
-          Geen toegang?{' '}
+          No access?{' '}
           <a href="mailto:jordy@tradual.nl" className="underline decoration-accent underline-offset-4">
-            Neem contact op
+            Get in touch
           </a>
         </p>
       </div>

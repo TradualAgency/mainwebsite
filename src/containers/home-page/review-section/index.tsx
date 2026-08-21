@@ -8,9 +8,9 @@ export default function ProofSection() {
   return (
     <Section tone="muted">
       <SectionHeading
-        eyebrow="Bewijs"
-        title="Wat het oplevert."
-        intro="Trajecten waarin we een Revenue Leak hebben blootgelegd en gedicht — met de uitgangssituatie, wat we bouwden en het resultaat."
+        eyebrow="Proof"
+        title="What it delivers."
+        intro="Engagements where we uncovered a Revenue Leak and closed it — with the starting situation, what we built, and the result."
         className="mb-12"
       />
       <ProjectGrid featured limit={3} />

@@ -7,30 +7,30 @@ export function TrackingDataQualitySection({ tracking }: { tracking: NonNullable
   return (
     <section className="py-20 px-8 bg-surface">
       <div className="max-w-7xl mx-auto">
-        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Tracking & datakwaliteit</p>
+        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Tracking & data quality</p>
         <h2 className="font-heading text-primary text-[32px] leading-[1.05] md:text-[48px] mb-10">
-          Hoe goed wordt data gemeten?
+          How well is data being measured?
         </h2>
 
         {tracking.estAttributionLossPercent != null && (
           <div className="mb-10 border border-primary/10 p-8 max-w-sm">
             <p className="text-accent font-heading text-[64px] leading-none mb-1">{tracking.estAttributionLossPercent}%</p>
-            <p className="text-primary text-sm font-medium">Geschatte attribution loss</p>
-            <p className="text-body text-xs mt-1">iOS 14+ verlies bij ontbrekende CAPI</p>
+            <p className="text-primary text-sm font-medium">Estimated attribution loss</p>
+            <p className="text-body text-xs mt-1">iOS 14+ loss when CAPI is missing</p>
           </div>
         )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           {tracking.analyticsStack && (
             <div>
-              <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-1">Analytics-stack</p>
+              <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-1">Analytics stack</p>
               <p className="text-primary text-sm">{tracking.analyticsStack}</p>
-              {tracking.detectionEvidence && <EvidenceCollapsible evidence={tracking.detectionEvidence} label="Detectie-bewijs" />}
+              {tracking.detectionEvidence && <EvidenceCollapsible evidence={tracking.detectionEvidence} label="Detection evidence" />}
             </div>
           )}
           {tracking.cmpProvider && (
             <div>
-              <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-1">CMP-provider</p>
+              <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-1">CMP provider</p>
               <p className="text-primary text-sm">{tracking.cmpProvider}</p>
             </div>
           )}
@@ -39,13 +39,13 @@ export function TrackingDataQualitySection({ tracking }: { tracking: NonNullable
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10">
           {tracking.pixelsHealth && (
             <div className="border border-primary/10 p-4">
-              <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-2">Pixelstatus</p>
+              <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-2">Pixel status</p>
               <StatusPill status={tracking.pixelsHealth} />
             </div>
           )}
           {tracking.capiStatus && (
             <div className="border border-primary/10 p-4">
-              <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-2">CAPI-status</p>
+              <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-2">CAPI status</p>
               <StatusPill status={tracking.capiStatus} />
             </div>
           )}
@@ -63,9 +63,9 @@ export function TrackingDataQualitySection({ tracking }: { tracking: NonNullable
           )}
           {tracking.duplicateTrackingDetected != null && (
             <div className="border border-primary/10 p-4">
-              <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-2">Dubbele tracking</p>
+              <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-2">Duplicate tracking</p>
               <StatusPill status={tracking.duplicateTrackingDetected ? 'issues' : 'valid'} />
-              <p className="text-xs text-body mt-1">{tracking.duplicateTrackingDetected ? 'Gedetecteerd' : 'Niet gedetecteerd'}</p>
+              <p className="text-xs text-body mt-1">{tracking.duplicateTrackingDetected ? 'Detected' : 'Not detected'}</p>
             </div>
           )}
         </div>

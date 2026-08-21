@@ -6,7 +6,6 @@ export const site = {
   name: "Tradual",
   legalName: "Tradual",
   tagline: "The E-commerce Performance Company",
-  promiseNl: "Meer omzet uit het verkeer dat je al hebt.",
   promiseEn: "More revenue from the same traffic",
   url: "https://tradual.com",
   email: {

@@ -3,10 +3,10 @@ import { CtaBand } from "@/components/marketing/cta-band";
 export default function FinalCTA() {
   return (
     <CtaBand
-      heading="Weet je waar je omzet lekt?"
-      body="In een paar weken weet je het. Met bedragen erbij, per laag, en een roadmap die op volgorde van impact staat."
-      primary={{ label: "Vraag een Revenue Leak Audit aan", href: "/diensten/revenue-leak-audit" }}
-      secondary={{ label: "Plan een kennismaking", href: "/contact" }}
+      heading="Do you know where your revenue leaks?"
+      body="In a few weeks you'll know. With amounts attached, per layer, and a roadmap ordered by impact."
+      primary={{ label: "Request a Revenue Leak Audit", href: "/services/revenue-leak-audit" }}
+      secondary={{ label: "Book an intro call", href: "/contact" }}
       tone="dark"
     />
   );

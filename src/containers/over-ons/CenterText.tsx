@@ -4,11 +4,11 @@ type CenterTextProps = {
 };
 
 export default function CenterText({
-  text = "Een e-commercewereld waarin elk merk de volledige omzetpotentie benut van de vraag die het al heeft verdiend.",
-  label = "Onze missie",
+  text = "An e-commerce world where every brand captures the full revenue potential of the demand it has already earned.",
+  label = "Our mission",
 }: CenterTextProps) {
   return (
-    <section id="centerText" className="bg-surface-muted py-20 px-8" aria-label="Missie">
+    <section id="centerText" className="bg-surface-muted py-20 px-8" aria-label="Mission">
       <div className="max-w-4xl mx-auto text-center">
         <div className="mb-8 flex items-center justify-center gap-3">
           <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent">{label}</p>

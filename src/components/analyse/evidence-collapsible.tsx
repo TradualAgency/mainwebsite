@@ -3,7 +3,7 @@ interface Props {
   evidence: string
 }
 
-export function EvidenceCollapsible({ label = 'Hoe weten we dit?', evidence }: Props) {
+export function EvidenceCollapsible({ label = 'How do we know this?', evidence }: Props) {
   return (
     <details className="mt-1">
       <summary className="cursor-pointer text-[11px] text-surface/50 hover:text-surface/80 transition select-none">

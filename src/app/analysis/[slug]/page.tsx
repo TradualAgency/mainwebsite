@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const { slug } = await params
   const scan = await getProspectScanBySlug(slug)
   return {
-    title: scan ? `Analyse – ${scan.clientInfo?.companyName ?? slug}` : 'Analyse',
+    title: scan ? `Analysis – ${scan.clientInfo?.companyName ?? slug}` : 'Analysis',
     robots: { index: false, follow: false },
   }
 }
@@ -26,8 +26,8 @@ export default async function AnalysePage({ params }: { params: Params }) {
     return (
       <div className="max-w-7xl mx-auto px-8 py-24 text-center">
         <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">404</p>
-        <h1 className="font-heading text-primary text-[38px] leading-[1.05]">Pagina niet gevonden</h1>
-        <p className="mt-4 text-body">Deze analyse bestaat niet of is niet meer beschikbaar.</p>
+        <h1 className="font-heading text-primary text-[38px] leading-[1.05]">Page not found</h1>
+        <p className="mt-4 text-body">This analysis does not exist or is no longer available.</p>
       </div>
     )
   }

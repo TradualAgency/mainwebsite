@@ -10,7 +10,7 @@ export const prospectScanType = defineType({
     { name: 'setup', title: 'Setup' },
     { name: 'intro', title: 'Intro & Summary' },
     { name: 'revenue', title: 'Revenue Leak' },
-    { name: 'ai', title: 'AI Analyse' },
+    { name: 'ai', title: 'AI Analysis' },
     { name: 'adImpact', title: 'Ad Traffic Impact' },
     { name: 'platform', title: '1. Platform' },
     { name: 'performance', title: '2. Performance' },
@@ -52,7 +52,7 @@ export const prospectScanType = defineType({
       fields: [
         defineField({ name: 'companyName', title: 'Company Name', type: 'string', validation: R => R.required() }),
         defineField({ name: 'storeUrl', title: 'Store URL', type: 'url', validation: R => R.required() }),
-        defineField({ name: 'industry', title: 'Industry', type: 'string', description: 'bv. "Fashion DTC", "Education B2C"' }),
+        defineField({ name: 'industry', title: 'Industry', type: 'string', description: 'e.g. "Fashion DTC", "Education B2C"' }),
         defineField({ name: 'estAnnualRevenueEur', title: 'Est. Annual Revenue (EUR)', type: 'number' }),
         defineField({ name: 'contactPerson', title: 'Contact Person', type: 'string' }),
         defineField({ name: 'contactEmail', title: 'Contact Email', type: 'string' }),
@@ -65,18 +65,18 @@ export const prospectScanType = defineType({
     }),
 
     // ── Intro & Summary ───────────────────────────────────────────────────
-    defineField({ name: 'intro', title: 'Intro (2–3 paragrafen)', type: 'blockContent', group: 'intro' }),
+    defineField({ name: 'intro', title: 'Intro (2–3 paragraphs)', type: 'blockContent', group: 'intro' }),
     defineField({
       name: 'coreThesis', title: 'Core Thesis (pull-quote)', type: 'text', rows: 3, group: 'intro',
       description: '1–2 zinnen: het verhaal van deze scan. Positief geframed.',
       validation: R => R.max(300),
     }),
     defineField({ name: 'auditSummary', title: 'Audit Summary', type: 'text', rows: 4, group: 'intro' }),
-    defineField({ name: 'biggestTechRisk', title: 'Biggest Tech Risk (1 zin)', type: 'string', group: 'intro' }),
-    defineField({ name: 'biggestTechOpportunity', title: 'Biggest Tech Opportunity (1 zin)', type: 'string', group: 'intro' }),
+    defineField({ name: 'biggestTechRisk', title: 'Biggest Tech Risk (1 sentence)', type: 'string', group: 'intro' }),
+    defineField({ name: 'biggestTechOpportunity', title: 'Biggest Tech Opportunity (1 sentence)', type: 'string', group: 'intro' }),
     defineField({
       name: 'estPerformanceLiftPercent', title: 'Est. Performance Lift (%)', type: 'number', group: 'intro',
-      description: 'bv. 8 → "we denken 8% conversie-lift puur uit speed"',
+      description: 'e.g. 8 → "we estimate 8% conversion lift purely from speed"',
       validation: R => R.min(0).max(100),
     }),
     defineField({ name: 'methodologyNote', title: 'Methodology Note', type: 'text', rows: 3, group: 'intro', validation: R => R.max(400) }),
@@ -85,7 +85,7 @@ export const prospectScanType = defineType({
     defineField({
       name: 'platformArchitecture', title: 'Platform & Architecture', type: 'object', group: 'platform',
       fields: [
-        defineField({ name: 'detectedPlatform', title: 'Detected Platform', type: 'string', description: 'bv. "Magento 2", "Shopify Plus", "Custom Node.js"' }),
+        defineField({ name: 'detectedPlatform', title: 'Detected Platform', type: 'string', description: 'e.g. "Magento 2", "Shopify Plus", "Custom Node.js"' }),
         defineField({
           name: 'detectionConfidence', title: 'Detection Confidence', type: 'string',
           options: { list: ['confirmed', 'probable', 'unknown'], layout: 'radio' },
@@ -94,7 +94,7 @@ export const prospectScanType = defineType({
         defineField({ name: 'hosting', title: 'Hosting', type: 'string' }),
         defineField({ name: 'hostingDetectionEvidence', title: 'Hosting Detection Evidence', type: 'text', rows: 2 }),
         defineField({ name: 'cdnDetected', title: 'CDN Detected', type: 'string' }),
-        defineField({ name: 'cdnEvidence', title: 'CDN Evidence', type: 'text', rows: 2, description: 'bv. "via cf-ray header"' }),
+        defineField({ name: 'cdnEvidence', title: 'CDN Evidence', type: 'text', rows: 2, description: 'e.g. "via cf-ray header"' }),
         defineField({ name: 'serverLocation', title: 'Server Location', type: 'string' }),
         defineField({ name: 'themeOrFramework', title: 'Theme / Framework', type: 'string' }),
         defineField({
@@ -142,7 +142,7 @@ export const prospectScanType = defineType({
         defineField({
           name: 'renderBlockingResources', title: 'Render-Blocking Resources', type: 'array',
           of: [defineArrayMember({ type: 'string' })],
-          description: 'bv. "main.css 240kb", "tracking.js 180kb"',
+          description: 'e.g. "main.css 240kb", "tracking.js 180kb"',
         }),
         defineField({
           name: 'largeImagesUncompressed', title: 'Large Uncompressed Images', type: 'array',
@@ -185,7 +185,7 @@ export const prospectScanType = defineType({
         defineField({
           name: 'dangerousPatterns', title: 'Dangerous Patterns', type: 'array',
           of: [defineArrayMember({ type: 'string' })],
-          description: 'bv. "Tracking laadt vóór consent", "Twee analytics tools parallel"',
+          description: 'e.g. "Tracking loads before consent", "Two analytics tools in parallel"',
         }),
         defineField({ name: 'notesAndDiagnosis', title: 'Notes & Diagnosis', type: 'blockContent' }),
       ],
@@ -209,7 +209,7 @@ export const prospectScanType = defineType({
           name: 'consentModeStatus', title: 'Consent Mode Status', type: 'string',
           options: { list: ['v2-correct', 'v2-incorrect', 'geen', 'te-valideren'], layout: 'radio' },
         }),
-        defineField({ name: 'cmpProvider', title: 'CMP Provider', type: 'string', description: 'bv. "Cookiebot", "OneTrust"' }),
+        defineField({ name: 'cmpProvider', title: 'CMP Provider', type: 'string', description: 'e.g. "Cookiebot", "OneTrust"' }),
         defineField({
           name: 'estAttributionLossPercent', title: 'Est. Attribution Loss (%)', type: 'number',
           description: 'Schatting iOS 14+ verlies bij missing CAPI',
@@ -247,7 +247,7 @@ export const prospectScanType = defineType({
             fields: [
               defineField({ name: 'step', title: 'Step', type: 'string', validation: R => R.required() }),
               defineField({ name: 'issue', title: 'Issue', type: 'string', validation: R => R.required() }),
-              defineField({ name: 'estImpact', title: 'Est. Impact', type: 'string', description: 'bv. "Medium — +5–10s in flow"' }),
+              defineField({ name: 'estImpact', title: 'Est. Impact', type: 'string', description: 'e.g. "Medium — +5–10s in flow"' }),
             ],
             preview: { select: { title: 'step', subtitle: 'issue' } },
           })],
@@ -261,7 +261,7 @@ export const prospectScanType = defineType({
     defineField({
       name: 'ownedChannels', title: 'Email & Owned Channels', type: 'object', group: 'email',
       fields: [
-        defineField({ name: 'espDetected', title: 'ESP Detected', type: 'string', description: 'bv. "Vermoedelijk Klaviyo (via __kla_id cookie)"' }),
+        defineField({ name: 'espDetected', title: 'ESP Detected', type: 'string', description: 'e.g. "Likely Klaviyo (via __kla_id cookie)"' }),
         defineField({ name: 'espDetectionEvidence', title: 'ESP Detection Evidence', type: 'text', rows: 2 }),
         defineField({ name: 'newsletterSignupTested', title: 'Newsletter Signup Tested', type: 'boolean' }),
         defineField({ name: 'welcomeFlowObserved', title: 'Welcome Flow Observed', type: 'boolean' }),
@@ -283,8 +283,8 @@ export const prospectScanType = defineType({
           name: 'organicTrafficTrend', title: 'Organic Traffic Trend', type: 'string',
           options: { list: ['stijgend', 'stabiel', 'dalend', 'onbekend'], layout: 'radio' },
         }),
-        defineField({ name: 'organicTrafficSource', title: 'Traffic Source', type: 'string', description: 'bv. "Ahrefs", "SimilarWeb", "Niet gemeten"' }),
-        defineField({ name: 'brandedVsNonBrandedRatio', title: 'Branded vs Non-Branded Ratio', type: 'string', description: 'bv. "75% branded, 25% non-branded"' }),
+        defineField({ name: 'organicTrafficSource', title: 'Traffic Source', type: 'string', description: 'e.g. "Ahrefs", "SimilarWeb", "Not measured"' }),
+        defineField({ name: 'brandedVsNonBrandedRatio', title: 'Branded vs Non-Branded Ratio', type: 'string', description: 'e.g. "75% branded, 25% non-branded"' }),
         defineField({ name: 'hasSchemaMarkup', title: 'Has Schema Markup', type: 'boolean' }),
         defineField({ name: 'schemaIssues', title: 'Schema Issues', type: 'text', rows: 2 }),
         defineField({ name: 'programmaticPagesDetected', title: 'Programmatic Pages Detected', type: 'boolean' }),
@@ -351,7 +351,7 @@ export const prospectScanType = defineType({
       of: [defineArrayMember({
         type: 'object',
         fields: [
-          defineField({ name: 'page', title: 'Page', type: 'string', validation: R => R.required(), description: 'bv. "Homepage", "PDP", "Checkout"' }),
+          defineField({ name: 'page', title: 'Page', type: 'string', validation: R => R.required(), description: 'e.g. "Homepage", "PDP", "Checkout"' }),
           defineField({ name: 'observation', title: 'Observation', type: 'text', rows: 3, validation: R => R.required() }),
           defineField({
             name: 'severity', title: 'Severity', type: 'string',
@@ -369,7 +369,7 @@ export const prospectScanType = defineType({
       of: [defineArrayMember({
         type: 'object',
         fields: [
-          defineField({ name: 'phase', title: 'Phase Title', type: 'string', validation: R => R.required(), description: 'bv. "Fase 1 — Speed Audit"' }),
+          defineField({ name: 'phase', title: 'Phase Title', type: 'string', validation: R => R.required(), description: 'e.g. "Phase 1 — Speed Audit"' }),
           defineField({
             name: 'tradualProduct', title: 'Tradual Product', type: 'string',
             options: { list: ['speed-audit', 'stack-rebuild', 'performance-retainer'], layout: 'radio' },
@@ -430,7 +430,7 @@ export const prospectScanType = defineType({
             type: 'object',
             fields: [
               defineField({ name: 'layer', title: 'Layer #', type: 'number', validation: R => R.required().min(1).max(5) }),
-              defineField({ name: 'name', title: 'Naam', type: 'string', validation: R => R.required() }),
+              defineField({ name: 'name', title: 'Name', type: 'string', validation: R => R.required() }),
               defineField({ name: 'coreQuestion', title: 'Core Question', type: 'string' }),
               defineField({ name: 'leadsTo', title: 'Leads To (Tradual product)', type: 'string' }),
               defineField({ name: 'estMonthlyLossEur', title: 'Est. Monthly Loss (EUR)', type: 'number' }),
@@ -527,14 +527,14 @@ export const prospectScanType = defineType({
             defineField({ name: 'summary', title: 'Summary', type: 'text', rows: 4 }),
             defineField({ name: 'rationale', title: 'Rationale', type: 'text', rows: 4 }),
             defineField({
-              name: 'recommendation', title: 'Aanbeveling', type: 'string',
+              name: 'recommendation', title: 'Recommendation', type: 'string',
               options: { list: ['aanbevolen', 'overwegen', 'nu-niet'], layout: 'radio' },
             }),
             defineField({
               name: 'migrationComplexity', title: 'Complexiteit', type: 'string',
               options: { list: ['laag', 'middel', 'hoog'], layout: 'radio' },
             }),
-            defineField({ name: 'estimatedTimeline', title: 'Geschatte Timeline', type: 'string' }),
+            defineField({ name: 'estimatedTimeline', title: 'Estimated Timeline', type: 'string' }),
             defineField({ name: 'keyWins', title: 'Key Wins', type: 'array', of: [defineArrayMember({ type: 'string' })] }),
             defineField({ name: 'keyRisks', title: 'Key Risks', type: 'array', of: [defineArrayMember({ type: 'string' })] }),
             defineField({ name: 'topActions', title: 'Top Actions', type: 'array', of: [defineArrayMember({ type: 'string' })] }),
@@ -556,13 +556,13 @@ export const prospectScanType = defineType({
                 type: 'object',
                 fields: [
                   defineField({ name: 'phase', title: 'Fase nummer', type: 'number', validation: R => R.required() }),
-                  defineField({ name: 'name', title: 'Naam', type: 'string', validation: R => R.required() }),
+                  defineField({ name: 'name', title: 'Name', type: 'string', validation: R => R.required() }),
                   defineField({ name: 'timeframe', title: 'Timeframe', type: 'string' }),
                   defineField({ name: 'objective', title: 'Doel', type: 'text', rows: 3 }),
                   defineField({ name: 'actions', title: 'Acties', type: 'array', of: [defineArrayMember({ type: 'text', rows: 2 })] }),
                   defineField({ name: 'dependencies', title: 'Dependencies', type: 'array', of: [defineArrayMember({ type: 'string' })] }),
                   defineField({ name: 'expectedOutcome', title: 'Verwacht resultaat', type: 'text', rows: 3 }),
-                  defineField({ name: 'estMonthlyRevenueImpactEur', title: 'Geschatte impact (EUR/mnd)', type: 'number' }),
+                  defineField({ name: 'estMonthlyRevenueImpactEur', title: 'Estimated impact (EUR/mo)', type: 'number' }),
                 ],
                 preview: { select: { title: 'name', subtitle: 'timeframe' } },
               })],

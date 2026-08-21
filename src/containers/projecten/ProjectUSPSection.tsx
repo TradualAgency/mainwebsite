@@ -9,21 +9,21 @@ const stats = [
     value: 38,
     prefix: "+",
     suffix: "%",
-    label: "Gemiddelde conversielift",
+    label: "Average conversion lift",
   },
   {
     icon: Zap,
     value: 52,
     prefix: "-",
     suffix: "%",
-    label: "Snellere laadtijden",
+    label: "Faster load times",
   },
   {
     icon: Target,
     value: 3.1,
     prefix: "",
     suffix: "x",
-    label: "ROAS-potentieel",
+    label: "ROAS potential",
   },
 ]
 
@@ -98,14 +98,14 @@ export default function ProjectUSPSection() {
   return (
     <section className="bg-primary my-20 py-20 px-8">
       <div className="max-w-7xl mx-auto text-center">
-        <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent mb-4">Hoofdstuk vier</p>
+        <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent mb-4">Chapter four</p>
         <h2 className="font-heading text-surface text-[38px] leading-[1.05] md:text-[60px] mb-4">
-          Waarom onze projecten presteren
+          Why our projects perform
         </h2>
         <div className="w-16 h-px bg-accent mx-auto mb-10" aria-hidden="true" />
         <p className="max-w-3xl mx-auto text-surface/70 text-base md:text-lg leading-relaxed mb-16">
-          Elk project wordt gebouwd met een balans tussen merkbeleving, technische performance en commerciële
-          doelstellingen, zodat resultaten duurzaam schaalbaar zijn.
+          Every project is built with a balance of brand experience, technical performance, and commercial
+          objectives, so results stay durably scalable.
         </p>
 
         <div

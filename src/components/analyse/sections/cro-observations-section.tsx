@@ -5,13 +5,13 @@ export function CroObservationsSection({ observations }: { observations: NonNull
   return (
     <section className="py-20 px-8 bg-[#f9f9f9]">
       <div className="max-w-7xl mx-auto">
-        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">CRO Observaties</p>
+        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">CRO observations</p>
         <h2 className="font-heading text-primary text-[28px] leading-[1.05] md:text-[38px] mb-4">
-          Wat we opvielen tijdens de scan.
+          What we noticed during the scan.
         </h2>
         <p className="text-body text-sm mb-10 max-w-xl">
-          Dit zijn observaties, geen aanbevelingen. CRO-uitvoering — copywriting, A/B testing, conversion design — doet jouw CRO specialist.
-          Tradual zorgt dat de technische foundation er klaar voor is.
+          These are observations, not recommendations. CRO execution — copywriting, A/B testing, conversion design — is for your CRO specialist.
+          Tradual makes sure the technical foundation is ready for it.
         </p>
 
         <div className="space-y-0 max-w-3xl">

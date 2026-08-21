@@ -10,43 +10,37 @@ import { FaqSection } from "@/components/marketing/faq-section";
 import { CtaBand } from "@/components/marketing/cta-band";
 import { getServiceById } from "@/content/services";
 
-const service = getServiceById("stack-rebuild");
+const service = getServiceById("performance-layer");
 
 export const metadata: Metadata = {
   title: service.name,
   description: service.oneLiner,
 };
 
-export default function StackRebuildPage() {
+export default function PerformanceLayerPage() {
   return (
     <main>
       <ServiceHero service={service} />
 
-      <QualifierColumns
-        eyebrow="Wanneer wel, wanneer niet"
-        title="Is dit je vertrekpunt?"
-        forWho={service.forWho}
-        notForWho={service.notForWho}
-        tone="muted"
-      />
+      <QualifierColumns eyebrow="Who this is for" title="When a retainer is the right fit" forWho={service.forWho} tone="muted" />
 
-      <ChecklistSection eyebrow="Wat je krijgt" title="Structureel herstel, niet nog een patch" items={service.deliverables} tone="light" />
+      <ChecklistSection eyebrow="What you get every month" title="Measure, prioritize, build, test" items={service.deliverables} tone="light" columns={1} />
 
-      <ProcessTimeline eyebrow="Hoe het werkt" title="Van audit naar herbouwde fundering" steps={service.process} tone="muted" />
+      <ProcessTimeline eyebrow="The monthly rhythm" title="The same rhythm every month" steps={service.process} tone="muted" />
 
       <Section tone="dark">
-        <SectionHeading eyebrow="Investering" title="Wat het kost" tone="dark" className="mb-10" />
+        <SectionHeading eyebrow="Investment" title="What it costs" tone="dark" className="mb-10" />
         <PricingCard label={service.name} priceLabel={service.priceLabel} determinants={service.priceDeterminants} tone="dark" className="max-w-xl" />
       </Section>
 
-      <FaqSection eyebrow="Vragen" title="Wat mensen ons vaak vragen" items={service.faq} tone="light" />
+      <FaqSection eyebrow="Questions" title="What people often ask us" items={service.faq} tone="light" />
 
       <CtaBand
-        eyebrow="Vervolgstap"
-        heading="Na de rebuild"
+        eyebrow="Next step"
+        heading="What comes after"
         body={service.afterThisLabel}
-        primary={{ label: "Plan een kennismaking", href: "/contact" }}
-        secondary={{ label: "Bekijk Performance Layer", href: service.afterThisHref }}
+        primary={{ label: "Book an intro call", href: "/contact" }}
+        secondary={{ label: "View Agentic Readiness", href: service.afterThisHref }}
       />
     </main>
   );

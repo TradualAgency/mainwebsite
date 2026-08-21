@@ -14,8 +14,8 @@ export default async function ProjectPage({ params }: { params: Params }) {
     if (!project) {
         return (
             <div className="max-w-7xl mx-auto px-8 py-24 text-center">
-                <h1 className="font-heading text-primary text-3xl mb-4">Project niet gevonden</h1>
-                <p className="text-body">Het project dat je zoekt bestaat niet of is verwijderd.</p>
+                <h1 className="font-heading text-primary text-3xl mb-4">Project not found</h1>
+                <p className="text-body">The project you're looking for doesn't exist or has been removed.</p>
             </div>
         );
     }
@@ -68,7 +68,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 bg-accent text-primary px-6 py-3 font-medium hover:opacity-90 transition"
                         >
-                            Bekijk live project
+                            View live project
                             <ArrowUpRight size={16} strokeWidth={2} />
                         </a>
                     </div>

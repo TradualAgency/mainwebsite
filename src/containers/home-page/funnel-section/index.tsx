@@ -8,9 +8,9 @@ export default function FunnelSection() {
   return (
     <Section tone="dark">
       <SectionHeading
-        eyebrow="De route"
-        title="Meten, herstellen, doorlopend verbeteren."
-        intro="Vier diensten, één volgorde. Je begint altijd met meten — anders bouw je op aannames."
+        eyebrow="The route"
+        title="Measure, repair, continuously improve."
+        intro="Four services, one sequence. You always start by measuring — otherwise you're building on assumptions."
         tone="dark"
         className="mb-10"
       />

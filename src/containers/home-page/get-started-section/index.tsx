@@ -8,11 +8,11 @@ export default function GetStarted() {
                 {/* Linker kolom */}
                 <div>
                     <h2 className="text-4xl font-semibold text-secondary mb-4">
-                        Start met Tradual
+                        Get started with Tradual
                     </h2>
                     <p className="text-lg text-gray-700">
-                        Begin vandaag nog met het laten groeien van je e-commerce business.
-                        Wij helpen je sneller te schalen met een platform dat gebouwd is voor groei.
+                        Start growing your e-commerce business today.
+                        We help you scale faster with a platform built for growth.
                     </p>
                 </div>
 
@@ -20,18 +20,18 @@ export default function GetStarted() {
                 <div className="flex flex-col gap-6">
                     {[
                         {
-                            title: "Maak je eerste webshop",
-                            subtitle: "Snel, schaalbaar en klaar voor groei",
+                            title: "Build your first store",
+                            subtitle: "Fast, scalable, and ready for growth",
                             href: "/webshop",
                         },
                         {
-                            title: "Automatiseer processen",
-                            subtitle: "Bespaar tijd en focus op je klanten",
+                            title: "Automate processes",
+                            subtitle: "Save time and focus on your customers",
                             href: "/automatiseren",
                         },
                         {
-                            title: "Optimaliseer conversies",
-                            subtitle: "Meer omzet uit hetzelfde verkeer",
+                            title: "Optimize conversions",
+                            subtitle: "More revenue from the same traffic",
                             href: "/conversie-optimalisatie",
                         },
                     ].map((item, idx) => (

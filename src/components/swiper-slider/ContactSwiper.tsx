@@ -24,9 +24,9 @@ export default function ContactSwiper() {
                 <section className="flex flex-col justify-between h-full">
                     <p className="font-heading text-[10px] uppercase tracking-[0.16em] text-accent">Performance</p>
                     <div className="flex-grow flex items-center justify-center">
-                        <p className="text-2xl italic text-surface leading-snug">&quot;Snellere laadtijden, betere tracking en een stabielere Shopify-basis zorgen direct voor meer rendement uit hetzelfde verkeer.&quot;</p>
+                        <p className="text-2xl italic text-surface leading-snug">&quot;Faster load times, better tracking, and a more stable Shopify base immediately return more from the same traffic.&quot;</p>
                     </div>
-                    <p className="font-heading text-[10px] uppercase tracking-[0.16em] text-surface/40">Tradual infrastructuur</p>
+                    <p className="font-heading text-[10px] uppercase tracking-[0.16em] text-surface/40">Tradual infrastructure</p>
                 </section>
             </SwiperSlide>
             <SwiperSlide
@@ -35,7 +35,7 @@ export default function ContactSwiper() {
                 <section className="flex flex-col justify-between h-full">
                     <p className="font-heading text-[10px] uppercase tracking-[0.16em] text-accent">Shopify</p>
                     <div className="flex-grow flex items-center justify-center">
-                        <p className="text-2xl italic text-surface leading-snug">&quot;We kijken naar de volledige store: checkout, data, apps, performance en de technische keuzes die groei mogelijk maken.&quot;</p>
+                        <p className="text-2xl italic text-surface leading-snug">&quot;We look at the full store: checkout, data, apps, performance, and the technical choices that make growth possible.&quot;</p>
                     </div>
                     <p className="font-heading text-[10px] uppercase tracking-[0.16em] text-surface/40">E-commerce stack</p>
                 </section>

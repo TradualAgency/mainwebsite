@@ -1,22 +1,22 @@
 export const homepageFaqs = [
   {
-    question: "Zijn jullie een CRO-agency?",
+    question: "Are you a CRO agency?",
     answer:
-      "Nee. Wij repareren de technische foundation — snelheid, infrastructuur, tracking en de juiste stack. Copy, A/B-tests en funneloptimalisatie laten we bewust aan jouw CRO-specialist.",
+      "No. We repair the technical foundation — speed, infrastructure, tracking, and the right stack. Copy, A/B tests, and funnel optimization stay with your CRO specialist.",
   },
   {
-    question: "Moet ik altijd beginnen met een audit?",
+    question: "Do I always have to start with an audit?",
     answer:
-      "Bij ons wel, en met reden: een Stack Rebuild of Performance Layer zonder onderbouwde probleemstelling is een gok op jouw kosten. De audit levert die onderbouwing in euro's.",
+      "With us, yes — and for a reason: a Stack Rebuild or Performance Layer without a substantiated problem statement is a guess at your expense. The audit delivers that case in euros.",
   },
   {
-    question: "Werken jullie alleen met Shopify?",
+    question: "Do you only work with Shopify?",
     answer:
-      "Shopify is meestal de basis, maar ons werk draait om de volledige infrastructuur rondom je e-commerce store: performance, tracking, conversie, data en schaalbaarheid.",
+      "Shopify is usually the base, but our work covers the full infrastructure around your e-commerce store: performance, tracking, conversion, data, and scalability.",
   },
   {
-    question: "Wat als de audit geen grote Revenue Leak vindt?",
+    question: "What if the audit doesn't find a major Revenue Leak?",
     answer:
-      "Dat gebeurt zelden bij merken met substantiële traffic. Vinden we het niet, dan hoor je dat ook gewoon — inclusief waarom je foundation al goed staat.",
+      "That's rare for brands with substantial traffic. If we don't find it, you'll hear that too — including why your foundation is already in good shape.",
   },
 ] as const;

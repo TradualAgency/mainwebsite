@@ -13,13 +13,13 @@ export default function Footer() {
           <p className="mt-3 text-xs text-primary/75 font-heading tracking-[0.08em] uppercase">
             {site.tagline}
           </p>
-          <p className="mt-4 text-sm text-body max-w-xs">{site.promiseNl}</p>
+          <p className="mt-4 text-sm text-body max-w-xs">{site.promiseEn}</p>
         </div>
 
         <nav>
-          <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Diensten</p>
+          <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Services</p>
           <ul className="space-y-3 text-sm text-primary/90">
-            {footerNav.diensten.map((item) => (
+            {footerNav.services.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="hover:text-accent transition">
                   {item.label}
@@ -30,9 +30,9 @@ export default function Footer() {
         </nav>
 
         <nav>
-          <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Bedrijf</p>
+          <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Company</p>
           <ul className="space-y-3 text-sm text-primary/90">
-            {footerNav.bedrijf.map((item) => (
+            {footerNav.company.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="hover:text-accent transition">
                   {item.label}
@@ -52,7 +52,7 @@ export default function Footer() {
             </li>
             <li>
               <Link href="/contact" className="hover:text-accent transition">
-                Stuur een bericht
+                Send a message
               </Link>
             </li>
           </ul>
@@ -61,7 +61,7 @@ export default function Footer() {
 
       <div className="border-t border-primary/15">
         <div className="max-w-7xl mx-auto px-8 py-5 text-center text-xs text-primary/70">
-          © {new Date().getFullYear()} {site.name}. Alle rechten voorbehouden.
+          © {new Date().getFullYear()} {site.name}. All rights reserved.
         </div>
       </div>
     </footer>

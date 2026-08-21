@@ -7,33 +7,33 @@ import {
 
 const faqItems = [
   {
-    question: "Beginnen jullie altijd met een audit?",
+    question: "Do you always start with an audit?",
     answer:
-      "Bij ons wel: een Stack Rebuild of Performance Layer zonder onderbouwde probleemstelling is een gok op jouw kosten. De Revenue Leak Audit levert die onderbouwing in euro's.",
+      "With us, yes: a Stack Rebuild or Performance Layer without a substantiated problem statement is a guess at your expense. The Revenue Leak Audit delivers that case in euros.",
   },
   {
-    question: "Hoe lang duurt een gemiddeld traject?",
+    question: "How long does a typical engagement take?",
     answer:
-      "Een audit duurt enkele weken. Een Stack Rebuild is maatwerk qua doorlooptijd, afhankelijk van omvang en complexiteit. Vooraf stellen we een heldere planning op met concrete mijlpalen.",
+      "An audit takes a few weeks. A Stack Rebuild is custom in duration, depending on size and complexity. Up front we set a clear plan with concrete milestones.",
   },
   {
-    question: "Kunnen jullie een bestaande Shopify-store optimaliseren?",
+    question: "Can you optimize an existing Shopify store?",
     answer:
-      "Ja. We verbeteren bestaande shops op snelheid, tracking en checkout. Dat kan variëren van gerichte verbeteringen tot een volledige Stack Rebuild.",
+      "Yes. We improve existing shops on speed, tracking, and checkout. That can range from targeted improvements to a full Stack Rebuild.",
   },
   {
-    question: "Bieden jullie support na livegang?",
+    question: "Do you offer support after go-live?",
     answer:
-      "Dat is precies wat de Performance Layer is: een maandelijkse retainer die je foundation op orde houdt nadat een audit of rebuild de grote lekken heeft gedicht.",
+      "That's exactly what the Performance Layer is: a monthly retainer that keeps your foundation in shape after an audit or rebuild has closed the big leaks.",
   },
 ];
 
 export default function ProjectFAQSection() {
   return (
     <section className="max-w-5xl mx-auto py-20 px-8">
-      <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent text-center mb-4">Vragen</p>
+      <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent text-center mb-4">Questions</p>
       <h2 className="font-heading text-primary text-[38px] leading-[1.05] md:text-[60px] text-center mb-10">
-        Veelgestelde vragen
+        Frequently asked questions
       </h2>
 
       <Accordion type="single" collapsible className="w-full">

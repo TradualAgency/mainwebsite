@@ -26,13 +26,13 @@ export const metadata: Metadata = {
     template: `%s — ${site.name}`,
   },
   description:
-    "Tradual is The E-commerce Performance Company. We meten waar je webshop omzet laat liggen — de Revenue Leak — en lossen het op via audit, rebuild en een doorlopende performance-laag.",
+    "Tradual is The E-commerce Performance Company. We measure where your store leaks revenue — the Revenue Leak — and fix it through audit, rebuild, and an ongoing performance layer.",
   openGraph: {
     type: "website",
-    locale: "nl_NL",
+    locale: "en_US",
     siteName: site.name,
     title: `${site.name} — ${site.tagline}`,
-    description: site.promiseNl,
+    description: site.promiseEn,
   },
 };
 
@@ -42,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="nl">
+    <html lang="en">
       <body
         className={`${notoSerif.variable} ${notoSans.variable} antialiased`}
       >

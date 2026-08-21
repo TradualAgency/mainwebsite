@@ -23,30 +23,30 @@ const revenueRanges = ["< €1M", "€1M – €3M", "€3M – €8M", "€8M+"
 const formSchema = z.object({
     name: z.string()
         .min(2, {
-            message: 'Je naam moet minimaal 2 karakters bevatten'
+            message: 'Your name must be at least 2 characters'
         })
         .max(50, {
-            message: 'Je naam mag niet meer dan 50 karakters bevatten'
+            message: 'Your name may not be more than 50 characters'
         }),
     email: z.string().email({
-        message: 'Ongeldig e-mailadres'
+        message: 'Invalid email address'
     }),
     contactNumber: z.string()
         .min(10, {
-            message: 'Ongeldig telefoonnummer'
+            message: 'Invalid phone number'
         })
         .max(14, {
-            message: 'Ongeldig telefoonnummer'
+            message: 'Invalid phone number'
         }),
     revenueRange: z.enum(revenueRanges, {
-        message: 'Kies je huidige online omzet',
+        message: 'Choose your current online revenue',
     }),
     bericht: z.string()
         .min(2, {
-            message: 'Bericht moet langer dan 2 karakters zijn'
+            message: 'Message must be longer than 2 characters'
         })
         .max(2000, {
-            message: 'Bericht mag niet langer dan 2000 karakters zijn'
+            message: 'Message may not be longer than 2000 characters'
         })
 })
 
@@ -91,13 +91,13 @@ export default function ContactForm({ source }: ContactFormProps) {
             const data = await response.json();
 
             if (!response.ok) {
-                throw new Error(data.error || 'Er is iets mis gegaan bij het verzenden van het formulier');
+                throw new Error(data.error || 'Something went wrong sending the form');
             }
 
             form.reset();
             setStatus('success');
         } catch (error) {
-            console.error('Fout bij het verzenden van het formulier:', error);
+            console.error('Error sending the form:', error);
             setStatus('error');
         }
     }
@@ -105,10 +105,10 @@ export default function ContactForm({ source }: ContactFormProps) {
     if (status === 'success') {
         return (
             <div className="text-surface">
-                <p className="font-heading text-[10px] uppercase tracking-[0.14em] text-accent mb-3">Verzonden</p>
-                <h3 className="font-heading text-2xl mb-3">Bedankt voor je bericht.</h3>
+                <p className="font-heading text-[10px] uppercase tracking-[0.14em] text-accent mb-3">Sent</p>
+                <h3 className="font-heading text-2xl mb-3">Thanks for your message.</h3>
                 <p className="text-surface/70 leading-relaxed">
-                    We nemen binnen één werkdag contact met je op.
+                    We'll get back to you within one working day.
                 </p>
             </div>
         );
@@ -122,12 +122,12 @@ export default function ContactForm({ source }: ContactFormProps) {
                         name="name"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel className="font-heading text-[10px] uppercase tracking-[0.14em] text-accent">Naam</FormLabel>
+                                <FormLabel className="font-heading text-[10px] uppercase tracking-[0.14em] text-accent">Name</FormLabel>
                                 <FormControl>
                                     <Input className="h-12 border-surface/20 bg-surface/5 text-surface placeholder:text-surface/40 focus-visible:border-accent focus-visible:ring-accent/30" placeholder="" {...field} />
                                 </FormControl>
                                 <FormDescription className="text-surface/50">
-                                    Voer hier je volledige naam in
+                                    Enter your full name
                                 </FormDescription>
                                 <FormMessage className="text-red-300" />
                             </FormItem>
@@ -138,12 +138,12 @@ export default function ContactForm({ source }: ContactFormProps) {
                         name="email"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel className="font-heading text-[10px] uppercase tracking-[0.14em] text-accent">E-mail</FormLabel>
+                                <FormLabel className="font-heading text-[10px] uppercase tracking-[0.14em] text-accent">Email</FormLabel>
                                 <FormControl>
                                     <Input className="h-12 border-surface/20 bg-surface/5 text-surface placeholder:text-surface/40 focus-visible:border-accent focus-visible:ring-accent/30" placeholder="" {...field} />
                                 </FormControl>
                                 <FormDescription className="text-surface/50">
-                                    Voer hier je e-mailadres in
+                                    Enter your email address
                                 </FormDescription>
                                 <FormMessage className="text-red-300" />
                             </FormItem>
@@ -154,12 +154,12 @@ export default function ContactForm({ source }: ContactFormProps) {
                         name="contactNumber"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel className="font-heading text-[10px] uppercase tracking-[0.14em] text-accent">Telefoonnummer</FormLabel>
+                                <FormLabel className="font-heading text-[10px] uppercase tracking-[0.14em] text-accent">Phone number</FormLabel>
                                 <FormControl>
                                     <Input className="h-12 border-surface/20 bg-surface/5 text-surface placeholder:text-surface/40 focus-visible:border-accent focus-visible:ring-accent/30" placeholder="" {...field} />
                                 </FormControl>
                                 <FormDescription className="text-surface/50">
-                                    Voer hier je telefoonnummer in
+                                    Enter your phone number
                                 </FormDescription>
                                 <FormMessage className="text-red-300" />
                             </FormItem>
@@ -170,7 +170,7 @@ export default function ContactForm({ source }: ContactFormProps) {
                         name="revenueRange"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel className="font-heading text-[10px] uppercase tracking-[0.14em] text-accent">Huidige online omzet</FormLabel>
+                                <FormLabel className="font-heading text-[10px] uppercase tracking-[0.14em] text-accent">Current online revenue</FormLabel>
                                 <FormControl>
                                     <select
                                         className="h-12 w-full border border-surface/20 bg-surface/5 text-surface px-3 rounded-md focus-visible:border-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/30"
@@ -179,7 +179,7 @@ export default function ContactForm({ source }: ContactFormProps) {
                                         onBlur={field.onBlur}
                                         name={field.name}
                                     >
-                                        <option value="" disabled className="text-primary">Kies een range</option>
+                                        <option value="" disabled className="text-primary">Choose a range</option>
                                         {revenueRanges.map((range) => (
                                             <option key={range} value={range} className="text-primary">
                                                 {range}
@@ -188,7 +188,7 @@ export default function ContactForm({ source }: ContactFormProps) {
                                     </select>
                                 </FormControl>
                                 <FormDescription className="text-surface/50">
-                                    Zo kunnen we je meteen bij de juiste dienst indelen
+                                    So we can place you with the right service immediately
                                 </FormDescription>
                                 <FormMessage className="text-red-300" />
                             </FormItem>
@@ -199,7 +199,7 @@ export default function ContactForm({ source }: ContactFormProps) {
                         name="bericht"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel className="font-heading text-[10px] uppercase tracking-[0.14em] text-accent">Bericht</FormLabel>
+                                <FormLabel className="font-heading text-[10px] uppercase tracking-[0.14em] text-accent">Message</FormLabel>
                                 <FormControl>
                                     <Textarea
                                         placeholder=""
@@ -208,7 +208,7 @@ export default function ContactForm({ source }: ContactFormProps) {
                                     />
                                 </FormControl>
                                 <FormDescription className="text-surface/50">
-                                    Voer hier je bericht in
+                                    Enter your message
                                 </FormDescription>
                                 <FormMessage className="text-red-300" />
                             </FormItem>
@@ -216,12 +216,12 @@ export default function ContactForm({ source }: ContactFormProps) {
                     />
                     {status === 'error' && (
                         <p className="text-red-300 text-sm">
-                            Er ging iets mis bij het verzenden. Probeer het opnieuw, of mail direct naar{' '}
-                            <a href="mailto:info@tradual.com" className="underline">info@tradual.com</a>.
+                            Something went wrong sending this. Please try again, or email{' '}
+                            <a href="mailto:info@tradual.com" className="underline">info@tradual.com</a> directly.
                         </p>
                     )}
                     <Button className="bg-accent text-primary hover:bg-accent/90" variant="default" size="lg" type="submit" disabled={status === 'submitting'}>
-                        {status === 'submitting' ? 'Versturen…' : 'Verzenden'}
+                        {status === 'submitting' ? 'Sending…' : 'Send'}
                     </Button>
                 </form>
             </Form>

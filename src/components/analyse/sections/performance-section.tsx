@@ -23,7 +23,7 @@ export function PerformanceSection({ perf }: { perf: NonNullable<ProspectScan['p
       <div className="max-w-7xl mx-auto">
         <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Performance</p>
         <h2 className="font-heading text-primary text-[32px] leading-[1.05] md:text-[48px] mb-10">
-          Aanvullende performance-signalen.
+          Additional performance signals.
         </h2>
 
         {(perf.mobileLCP != null || perf.mobileINP != null || perf.mobileCLS != null) && (
@@ -93,25 +93,25 @@ export function PerformanceSection({ perf }: { perf: NonNullable<ProspectScan['p
 
         {(perf.renderBlockingResources?.length || perf.largeImagesUncompressed?.length || perf.unusedJavaScriptKb != null || perf.totalPageWeightKb != null || perf.numberOfRequests != null) && (
           <div className="border-t border-primary/10 pt-8 mb-8">
-            <p className="font-heading text-[10px] uppercase tracking-[0.15em] text-accent mb-6">Diagnose</p>
+            <p className="font-heading text-[10px] uppercase tracking-[0.15em] text-accent mb-6">Diagnosis</p>
             {(perf.unusedJavaScriptKb != null || perf.totalPageWeightKb != null || perf.numberOfRequests != null) && (
               <div className="flex flex-wrap gap-8 mb-6">
                 {perf.unusedJavaScriptKb != null && (
                   <div>
                     <p className="font-heading text-primary text-[28px] leading-none">{perf.unusedJavaScriptKb}KB</p>
-                    <p className="text-xs text-body">Ongebruikte JavaScript</p>
+                    <p className="text-xs text-body">Unused JavaScript</p>
                   </div>
                 )}
                 {perf.totalPageWeightKb != null && (
                   <div>
                     <p className="font-heading text-primary text-[28px] leading-none">{perf.totalPageWeightKb}KB</p>
-                    <p className="text-xs text-body">Totaal paginagewicht</p>
+                    <p className="text-xs text-body">Total page weight</p>
                   </div>
                 )}
                 {perf.numberOfRequests != null && (
                   <div>
                     <p className="font-heading text-primary text-[28px] leading-none">{perf.numberOfRequests}</p>
-                    <p className="text-xs text-body">HTTP-requests</p>
+                    <p className="text-xs text-body">HTTP requests</p>
                   </div>
                 )}
               </div>
@@ -128,7 +128,7 @@ export function PerformanceSection({ perf }: { perf: NonNullable<ProspectScan['p
             )}
             {perf.largeImagesUncompressed && perf.largeImagesUncompressed.length > 0 && (
               <div>
-                <p className="text-xs font-heading uppercase tracking-[0.12em] text-amber-600 mb-2">Grote ongecomprimeerde afbeeldingen</p>
+                <p className="text-xs font-heading uppercase tracking-[0.12em] text-amber-600 mb-2">Large uncompressed images</p>
                 <ul className="space-y-1">
                   {perf.largeImagesUncompressed.map((r, i) => (
                     <li key={i} className="text-sm text-body font-mono bg-amber-50 px-3 py-1 border-l-2 border-amber-400">{r}</li>

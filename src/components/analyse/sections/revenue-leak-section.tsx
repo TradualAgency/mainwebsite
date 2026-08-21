@@ -39,31 +39,31 @@ export function RevenueLeakSection({ data }: { data: RevenueLeak }) {
       <div className="bg-[var(--primary)] py-16 px-8">
         <div className="max-w-7xl mx-auto">
           <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-6">
-            Revenue Leak-analyse
+            Revenue Leak analysis
           </p>
           <h2 className="font-heading text-white text-[32px] md:text-[56px] leading-[1.05] mb-10">
-            Hoeveel kost het je?
+            How much is it costing you?
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="col-span-2">
               <StatCard
-                value={`${fmt(displayMonthlyLossEur)}/mnd`}
-                label="Geschat omzetverlies"
-                sublabel={`${fmt(displayAnnualLossEur)} per jaar`}
+                value={`${fmt(displayMonthlyLossEur)}/mo`}
+                label="Estimated revenue loss"
+                sublabel={`${fmt(displayAnnualLossEur)} per year`}
                 tone="dark"
               />
             </div>
             {roi?.yearOneNetReturnEur != null && (
               <StatCard
                 value={fmt(roi.yearOneNetReturnEur)}
-                label="Netto rendement jaar 1"
+                label="Net return year 1"
                 tone="dark"
               />
             )}
             {roi?.paybackMonths != null && (
               <StatCard
-                value={`${roi.paybackMonths} mnd`}
-                label="Terugverdientijd"
+                value={`${roi.paybackMonths} mo`}
+                label="Payback period"
                 tone="dark"
               />
             )}
@@ -76,10 +76,10 @@ export function RevenueLeakSection({ data }: { data: RevenueLeak }) {
         <div className="bg-[var(--surface-muted)] py-16 px-8">
           <div className="max-w-7xl mx-auto">
             <h3 className="font-heading text-primary text-2xl md:text-4xl mb-2">
-              Waar lekt het geld?
+              Where is the money leaking?
             </h3>
             <p className="text-body/60 text-sm mb-10">
-              5 lagen — van zichtbaarheid tot omzet
+              5 layers — from visibility to revenue
             </p>
             <Accordion type="multiple" className="space-y-3">
               {layers.map((layer) => {
@@ -139,14 +139,14 @@ export function RevenueLeakSection({ data }: { data: RevenueLeak }) {
                         <div className="shrink-0 text-right pl-4">
                           {isStrategic ? (
                             <span className="font-heading text-sm text-primary/30 uppercase tracking-widest">
-                              strategisch
+                              strategic
                             </span>
                           ) : (
                             <>
                               <span className="font-heading text-2xl text-accent">
                                 {fmt(layer.estMonthlyLossEur)}
                               </span>
-                              <span className="font-heading text-xs text-primary/30">/mnd</span>
+                              <span className="font-heading text-xs text-primary/30">/mo</span>
                             </>
                           )}
                         </div>
@@ -178,16 +178,16 @@ export function RevenueLeakSection({ data }: { data: RevenueLeak }) {
                                   Metric
                                 </th>
                                 <th className="px-4 py-2.5 text-left font-heading text-[9px] uppercase tracking-[0.14em] text-primary/40 font-normal">
-                                  Signaal
+                                  Signal
                                 </th>
                                 <th className="px-4 py-2.5 text-left font-heading text-[9px] uppercase tracking-[0.14em] text-primary/40 font-normal">
-                                  Prioriteit
+                                  Priority
                                 </th>
                                 <th className="px-4 py-2.5 text-right font-heading text-[9px] uppercase tracking-[0.14em] text-primary/40 font-normal">
-                                  /mnd
+                                  /mo
                                 </th>
                                 <th className="px-4 py-2.5 text-right font-heading text-[9px] uppercase tracking-[0.14em] text-primary/40 font-normal">
-                                  /jaar
+                                  /year
                                 </th>
                               </tr>
                             </thead>
@@ -230,10 +230,10 @@ export function RevenueLeakSection({ data }: { data: RevenueLeak }) {
         <div className="bg-[var(--surface)] py-16 px-8 border-t border-primary/8">
           <div className="max-w-7xl mx-auto">
             <h3 className="font-heading text-primary text-2xl md:text-4xl mb-2">
-              CEO-signalen
+              CEO signals
             </h3>
             <p className="text-body/60 text-sm mb-10">
-              Herken jij deze patronen in je business?
+              Do you recognize these patterns in your business?
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {triggeredItems.map((trigger) => (
@@ -242,7 +242,7 @@ export function RevenueLeakSection({ data }: { data: RevenueLeak }) {
                   className="p-5 border border-accent/40 bg-accent/[0.03] flex flex-col gap-2"
                 >
                   <span className="font-heading text-[9px] uppercase tracking-[0.15em] text-accent border border-accent/30 px-2 py-0.5 w-fit">
-                    Getriggerd
+                    Triggered
                   </span>
                   <p className="font-heading text-primary text-sm leading-snug">{trigger.kpi}</p>
                   {trigger.whatCeoSees && (

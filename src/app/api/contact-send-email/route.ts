@@ -17,7 +17,7 @@ export async function POST(request: Request) {
             const { data, error } = await resend.emails.send({
                 from: 'info@tradual.com',
                 to: ['info@tradual.com'],  // Je ontvangst-emailadres
-                subject: 'Contact Formulier Bericht',
+                subject: 'Contact form message',
                 react: ContactEmailTemplate({
                     firstName,
                     email,
@@ -37,14 +37,14 @@ export async function POST(request: Request) {
         } catch (sendError) {
             console.error("Error tijdens het verzenden van de email:", sendError);
             return Response.json({
-                error: sendError instanceof Error ? sendError.message : 'Onbekende fout bij email versturen',
+                error: sendError instanceof Error ? sendError.message : 'Unknown error sending email',
                 details: sendError
             }, {status: 500});
         }
     } catch (error) {
         console.error("Algemene API route error:", error);
         return Response.json({
-            error: error instanceof Error ? error.message : 'Onbekende fout',
+            error: error instanceof Error ? error.message : 'Unknown error',
             details: error
         }, {status: 500});
     }

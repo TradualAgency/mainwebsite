@@ -15,11 +15,11 @@ export default function ContactEmailTemplate(props: Readonly<ContactTemplateProp
     return (
         <Html>
             <Section>
-                <Heading className="text-center">Contact aanvraag, {firstName}</Heading>
+                <Heading className="text-center">Contact request, {firstName}</Heading>
                 <Text>Email: {email}</Text>
-                <Text>Telefoonnummer: {mobileNumber}</Text>
-                {revenueRange && <Text>Online omzet: {revenueRange}</Text>}
-                <Text>Bericht: {message}</Text>
+                <Text>Phone number: {mobileNumber}</Text>
+                {revenueRange && <Text>Online revenue: {revenueRange}</Text>}
+                <Text>Message: {message}</Text>
             </Section>
         </Html>
         )

@@ -7,31 +7,31 @@ export function CostAnalysisSection({ cost }: { cost: NonNullable<ProspectScan['
   return (
     <section className="bg-primary py-24 px-8">
       <div className="max-w-7xl mx-auto">
-        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Kostenanalyse</p>
+        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Cost analysis</p>
         <h2 className="font-heading text-surface text-[38px] leading-[1.05] md:text-[56px] mb-12">
-          Wat kost het nu, en wat kan het kosten.
+          What it costs now, and what it could cost.
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {cost.currentMonthlyAppCostEur != null && (
             <div className="border border-surface/10 p-6">
-              <p className="font-heading text-surface/50 text-[14px] uppercase tracking-[0.12em] mb-2">Huidig</p>
+              <p className="font-heading text-surface/50 text-[14px] uppercase tracking-[0.12em] mb-2">Current</p>
               <p className="font-heading text-surface text-[60px] leading-none">€{cost.currentMonthlyAppCostEur.toLocaleString('nl-NL')}</p>
-              <p className="text-surface/50 text-sm mt-1">per maand</p>
+              <p className="text-surface/50 text-sm mt-1">per month</p>
             </div>
           )}
           {cost.recommendedMonthlyAppCostEur != null && (
             <div className="border border-surface/10 p-6">
-              <p className="font-heading text-surface/50 text-[14px] uppercase tracking-[0.12em] mb-2">Aanbevolen</p>
+              <p className="font-heading text-surface/50 text-[14px] uppercase tracking-[0.12em] mb-2">Recommended</p>
               <p className="font-heading text-accent text-[60px] leading-none">€{cost.recommendedMonthlyAppCostEur.toLocaleString('nl-NL')}</p>
-              <p className="text-surface/50 text-sm mt-1">per maand</p>
+              <p className="text-surface/50 text-sm mt-1">per month</p>
             </div>
           )}
           {cost.estMonthlySavingsEur != null && (
             <div className="border border-accent/30 p-6">
-              <p className="font-heading text-accent text-[14px] uppercase tracking-[0.12em] mb-2">Besparing</p>
+              <p className="font-heading text-accent text-[14px] uppercase tracking-[0.12em] mb-2">Savings</p>
               <p className="font-heading text-accent text-[60px] leading-none">€{cost.estMonthlySavingsEur.toLocaleString('nl-NL')}</p>
-              <p className="text-surface/50 text-sm mt-1">per maand</p>
+              <p className="text-surface/50 text-sm mt-1">per month</p>
             </div>
           )}
         </div>
@@ -41,12 +41,12 @@ export function CostAnalysisSection({ cost }: { cost: NonNullable<ProspectScan['
             <table className="w-full text-sm min-w-[640px]">
               <thead>
                 <tr className="border-b border-surface/10">
-                  <th className="text-left py-3 pr-4 font-heading text-[10px] uppercase tracking-[0.15em] text-accent">Categorie</th>
-                  <th className="text-left py-3 pr-4 font-heading text-[10px] uppercase tracking-[0.15em] text-accent">Huidig</th>
+                  <th className="text-left py-3 pr-4 font-heading text-[10px] uppercase tracking-[0.15em] text-accent">Category</th>
+                  <th className="text-left py-3 pr-4 font-heading text-[10px] uppercase tracking-[0.15em] text-accent">Current</th>
                   <th className="text-right py-3 pr-4 font-heading text-[10px] uppercase tracking-[0.15em] text-accent">€/mo</th>
-                  <th className="text-left py-3 pr-4 font-heading text-[10px] uppercase tracking-[0.15em] text-accent">Aanbevolen</th>
+                  <th className="text-left py-3 pr-4 font-heading text-[10px] uppercase tracking-[0.15em] text-accent">Recommended</th>
                   <th className="text-right py-3 pr-4 font-heading text-[10px] uppercase tracking-[0.15em] text-accent">€/mo</th>
-                  <th className="text-right py-3 font-heading text-[10px] uppercase tracking-[0.15em] text-accent">Besparing</th>
+                  <th className="text-right py-3 font-heading text-[10px] uppercase tracking-[0.15em] text-accent">Savings</th>
                 </tr>
               </thead>
               <tbody>
@@ -62,7 +62,7 @@ export function CostAnalysisSection({ cost }: { cost: NonNullable<ProspectScan['
                 ))}
                 {totalSavings > 0 && (
                   <tr className="border-t-2 border-accent/40">
-                    <td colSpan={5} className="py-3 pr-4 text-surface/50 text-right text-xs uppercase tracking-[0.12em] font-heading">Totaal</td>
+                    <td colSpan={5} className="py-3 pr-4 text-surface/50 text-right text-xs uppercase tracking-[0.12em] font-heading">Total</td>
                     <td className="py-3 text-right font-heading text-accent text-base">€{totalSavings.toLocaleString('nl-NL')}</td>
                   </tr>
                 )}

@@ -9,14 +9,14 @@ type AboutHeroProps = {
 };
 
 export default function AboutHero({
-  label = "Over ons",
-  title = "Gemaakt voor merken die duurzame groei waarderen",
-  subtitle = "Wij helpen ambitieuze merken groeien met de volledige infrastructuur rondom hun e-commerce store en Shopify. Van strategie en design tot development, CRO en performance leveren we ervaringen die premium aanvoelen en aantoonbaar converteren.",
+  label = "About",
+  title = "Built for brands that value durable growth",
+  subtitle = "We help ambitious brands grow with the full infrastructure around their e-commerce store and Shopify. From strategy and design to development, CRO, and performance, we deliver experiences that feel premium and convert measurably.",
   ctaHref = "/contact",
-  ctaText = "Start een gesprek",
+  ctaText = "Start a conversation",
 }: AboutHeroProps) {
   return (
-    <section className="py-20 px-8 bg-surface" aria-label="Over ons hero">
+    <section className="py-20 px-8 bg-surface" aria-label="About hero">
       <div className="max-w-7xl mx-auto text-center">
         <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent mb-4">{label}</p>
 
@@ -39,7 +39,7 @@ export default function AboutHero({
             href="/projects"
             className="bg-transparent border border-accent text-accent px-8 py-3 rounded-md font-medium hover:bg-accent/10 transition"
           >
-            Bekijk projecten
+            View cases
           </Link>
         </div>
       </div>

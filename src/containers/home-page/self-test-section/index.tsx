@@ -7,8 +7,8 @@ export default function SelfTestSection() {
   return (
     <Section tone="light">
       <SectionHeading
-        eyebrow="Zelftest"
-        title="Vijf vragen die je vandaag zou moeten kunnen beantwoorden."
+        eyebrow="Self-test"
+        title="Five questions you should be able to answer today."
         align="center"
         className="mb-12"
       />
@@ -24,10 +24,10 @@ export default function SelfTestSection() {
       </ol>
       <div className="text-center mt-14">
         <p className="text-body max-w-xl mx-auto mb-6">
-          Kun je er drie of meer niet met cijfers beantwoorden? Dan is de Revenue Leak Audit je startpunt.
+          Can't answer three or more with numbers? Then the Revenue Leak Audit is your starting point.
         </p>
-        <CtaButton href="/diensten/revenue-leak-audit" variant="gold">
-          Vraag de audit aan
+        <CtaButton href="/services/revenue-leak-audit" variant="gold">
+          Request the audit
         </CtaButton>
       </div>
     </Section>

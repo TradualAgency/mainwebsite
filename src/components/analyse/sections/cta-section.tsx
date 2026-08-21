@@ -5,7 +5,7 @@ export function CtaSection({ cta }: { cta: NonNullable<ProspectScan['ctaSection'
   return (
     <section className="bg-primary py-24 px-8">
       <div className="max-w-7xl mx-auto text-center">
-        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Volgende stap</p>
+        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Next step</p>
         {cta.heading && (
           <h2 className="font-heading text-surface text-[38px] leading-[1.05] md:text-[60px] mb-6">
             {cta.heading}

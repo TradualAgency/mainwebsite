@@ -22,25 +22,25 @@ export default function AgenticReadinessPage() {
     <main>
       <ServiceHero service={service} />
 
-      <QualifierColumns eyebrow="Waarom nu" title="Dit wordt sneller relevant dan je denkt" forWho={service.forWho} tone="muted" />
+      <QualifierColumns eyebrow="Why now" title="This becomes relevant faster than you think" forWho={service.forWho} tone="muted" />
 
-      <ChecklistSection eyebrow="Wat we beoordelen" title="Klaar om gevonden, begrepen en gekozen te worden" items={service.deliverables} tone="light" />
+      <ChecklistSection eyebrow="What we assess" title="Ready to be found, understood, and chosen" items={service.deliverables} tone="light" />
 
-      <ProcessTimeline eyebrow="Hoe het werkt" title="Van analyse naar implementatie" steps={service.process} tone="muted" />
+      <ProcessTimeline eyebrow="How it works" title="From analysis to implementation" steps={service.process} tone="muted" />
 
       <Section tone="dark">
-        <SectionHeading eyebrow="Investering" title="Wat het kost" tone="dark" className="mb-10" />
+        <SectionHeading eyebrow="Investment" title="What it costs" tone="dark" className="mb-10" />
         <PricingCard label={service.name} priceLabel={service.priceLabel} determinants={service.priceDeterminants} tone="dark" className="max-w-xl" />
       </Section>
 
-      <FaqSection eyebrow="Vragen" title="Wat mensen ons vaak vragen" items={service.faq} tone="light" />
+      <FaqSection eyebrow="Questions" title="What people often ask us" items={service.faq} tone="light" />
 
       <CtaBand
-        eyebrow="Startpunt"
-        heading="Begin bij het begin"
-        body="Nog geen audit gehad? De Revenue Leak Audit is het startpunt van de hele route."
-        primary={{ label: "Plan een kennismaking", href: "/contact" }}
-        secondary={{ label: "Bekijk alle diensten", href: service.afterThisHref }}
+        eyebrow="Starting point"
+        heading="Start at the beginning"
+        body="Haven't had an audit yet? The Revenue Leak Audit is the starting point of the entire route."
+        primary={{ label: "Book an intro call", href: "/contact" }}
+        secondary={{ label: "View all services", href: service.afterThisHref }}
       />
     </main>
   );

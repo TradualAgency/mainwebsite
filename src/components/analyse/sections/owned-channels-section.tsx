@@ -24,16 +24,16 @@ export function OwnedChannelsSection({ channels }: { channels: NonNullable<Prosp
   return (
     <section className="py-20 px-8 bg-surface">
       <div className="max-w-7xl mx-auto">
-        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">E-mail & owned channels</p>
+        <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Email & owned channels</p>
         <h2 className="font-heading text-primary text-[32px] leading-[1.05] md:text-[48px] mb-10">
-          Wat is de staat van de owned channels?
+          What&apos;s the state of your owned channels?
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-10">
           {/* ESP detection */}
           {channels.espDetected && (
             <div>
-              <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-2">ESP gedetecteerd</p>
+              <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-2">ESP detected</p>
               <p className="text-primary text-base font-medium">{channels.espDetected}</p>
               {channels.espDetectionEvidence && <EvidenceCollapsible evidence={channels.espDetectionEvidence} />}
             </div>
@@ -41,14 +41,14 @@ export function OwnedChannelsSection({ channels }: { channels: NonNullable<Prosp
 
           {/* Flow checklist */}
           <div>
-            <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-2">E-mailflows</p>
+            <p className="text-xs font-heading uppercase tracking-[0.12em] text-body mb-2">Email flows</p>
             <div className="divide-y divide-primary/10">
-              <BoolRow label="Nieuwsbriefinschrijving getest" value={channels.newsletterSignupTested} />
-              <BoolRow label="Welkomstflow" value={channels.welcomeFlowObserved} />
-              <BoolRow label="Verlaten-winkelwagenflow" value={channels.abandonedCartFlowObserved} />
-              <BoolRow label="Post-purchaseflow" value={channels.postPurchaseFlowObserved} />
-              <BoolRow label="Win-backflow" value={channels.winBackFlowObserved} />
-              {channels.smsActive != null && <BoolRow label="SMS actief" value={channels.smsActive} />}
+              <BoolRow label="Newsletter signup tested" value={channels.newsletterSignupTested} />
+              <BoolRow label="Welcome flow" value={channels.welcomeFlowObserved} />
+              <BoolRow label="Abandoned cart flow" value={channels.abandonedCartFlowObserved} />
+              <BoolRow label="Post-purchase flow" value={channels.postPurchaseFlowObserved} />
+              <BoolRow label="Win-back flow" value={channels.winBackFlowObserved} />
+              {channels.smsActive != null && <BoolRow label="SMS active" value={channels.smsActive} />}
             </div>
           </div>
         </div>
@@ -58,19 +58,19 @@ export function OwnedChannelsSection({ channels }: { channels: NonNullable<Prosp
             {channels.estEmailRevenuePercent != null && (
               <div className="border border-primary/10 p-6">
                 <p className="font-heading text-primary text-[48px] leading-none mb-1">{channels.estEmailRevenuePercent}%</p>
-                <p className="text-xs text-body">Geschatte e-mailomzet nu</p>
+                <p className="text-xs text-body">Estimated email revenue now</p>
               </div>
             )}
             {channels.benchmarkEmailRevenuePercent != null && (
               <div className="border border-primary/10 p-6">
                 <p className="font-heading text-primary text-[48px] leading-none mb-1">{channels.benchmarkEmailRevenuePercent}%</p>
-                <p className="text-xs text-body">Benchmark (DTC gemiddeld)</p>
+                <p className="text-xs text-body">Benchmark (DTC average)</p>
               </div>
             )}
             {emailDelta != null && emailDelta > 0 && (
               <div className="border border-red-200 bg-red-50 p-6">
                 <p className="font-heading text-red-500 text-[48px] leading-none mb-1">+{emailDelta}%</p>
-                <p className="text-xs text-red-600">Kans: potentiele e-mailomzet</p>
+                <p className="text-xs text-red-600">Opportunity: potential email revenue</p>
               </div>
             )}
           </div>

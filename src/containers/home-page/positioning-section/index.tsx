@@ -6,31 +6,31 @@ import { ComparisonTwoCol } from "@/components/marketing/comparison-two-col";
 export default function PositioningSection() {
   return (
     <ComparisonTwoCol
-      eyebrow="Hoe we werken"
+      eyebrow="How we work"
       title={
         <>
-          Wij bouwen de motor.
+          We build the engine.
           <br />
-          <span className="text-body">Jij brengt de richting.</span>
+          <span className="text-body">You bring the direction.</span>
         </>
       }
-      intro="Tradual is geen CRO-agency. Wij repareren de technische foundation — snelheid, infrastructuur en de juiste stack. Denk aan het bouwen van de snelste auto op de grid. Wie er stuurt, bepaal jij."
+      intro="Tradual is not a CRO agency. We repair the technical foundation — speed, infrastructure, and the right stack. Think of building the fastest car on the grid. Who steers it is up to you."
       left={{
         icon: Wrench,
         title: "Tradual",
         items: [
-          "Core Web Vitals & snelheid",
-          "Plugin-stack optimalisatie",
-          "Tech-stack architectuur",
-          "Tracking & data-infrastructuur",
-          "Headless / Hydrogen migratie",
+          "Core Web Vitals & speed",
+          "Plugin stack optimization",
+          "Tech stack architecture",
+          "Tracking & data infrastructure",
+          "Headless / Hydrogen migration",
         ],
         emphasis: true,
       }}
       right={{
         icon: TrendingUp,
-        title: "Jouw CRO-specialist",
-        items: ["Copy & messaging", "A/B-tests", "Funneloptimalisatie", "Klantonderzoek & interviews", "Conversieflows"],
+        title: "Your CRO specialist",
+        items: ["Copy & messaging", "A/B tests", "Funnel optimization", "Customer research & interviews", "Conversion flows"],
       }}
     />
   );

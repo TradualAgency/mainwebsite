@@ -14,7 +14,7 @@ export async function POST(req: NextRequest) {
   try { body = await req.json() } catch { body = {} }
   const parsed = bodySchema.safeParse(body)
   if (!parsed.success) {
-    return NextResponse.json({ error: 'Ongeldig verzoek' }, { status: 400 })
+    return NextResponse.json({ error: 'Invalid request' }, { status: 400 })
   }
 
   const { slug, password } = parsed.data
@@ -23,20 +23,20 @@ export async function POST(req: NextRequest) {
     scan = await getProspectScanAuthBySlug(slug)
   } catch (error) {
     console.error('[analyse-unlock] Failed to fetch prospect scan auth', { slug, error })
-    return NextResponse.json({ error: 'Analyse kon niet worden geladen' }, { status: 500 })
+    return NextResponse.json({ error: 'Analysis could not be loaded' }, { status: 500 })
   }
 
   if (!scan) {
-    return NextResponse.json({ error: 'Pagina niet gevonden' }, { status: 404 })
+    return NextResponse.json({ error: 'Page not found' }, { status: 404 })
   }
 
   if (!scan.password) {
     console.error('[analyse-unlock] Prospect scan is missing a password', { slug, scanId: scan._id })
-    return NextResponse.json({ error: 'Server configuratie fout — neem contact op.' }, { status: 500 })
+    return NextResponse.json({ error: 'Server configuration error — please get in touch.' }, { status: 500 })
   }
 
   if (!checkPassword(password, scan.password)) {
-    return NextResponse.json({ error: 'Onjuist wachtwoord' }, { status: 401 })
+    return NextResponse.json({ error: 'Incorrect password' }, { status: 401 })
   }
 
   let token: string
@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
     token = signToken(slug, scan._id)
   } catch (error) {
     console.error('[analyse-unlock] Failed to sign auth token', { slug, scanId: scan._id, error })
-    return NextResponse.json({ error: 'Server configuratie fout — neem contact op.' }, { status: 500 })
+    return NextResponse.json({ error: 'Server configuration error — please get in touch.' }, { status: 500 })
   }
 
   const cookieStore = await cookies()
@@ -54,7 +54,7 @@ export async function POST(req: NextRequest) {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
     sameSite: 'lax',
-    path: `/analyse/${slug}`,
+    path: `/analysis/${slug}`,
     maxAge: 60 * 60 * 24 * 7,
   })
 

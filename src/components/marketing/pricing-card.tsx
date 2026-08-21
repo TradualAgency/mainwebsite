@@ -32,7 +32,7 @@ export function PricingCard({ label, priceLabel, determinants, tone = "dark", cl
       {determinants && determinants.length > 0 && (
         <>
           <p className={cn("text-xs uppercase tracking-[0.12em] font-heading mb-3", isDark ? "text-surface/50" : "text-body/50")}>
-            Wat de prijs bepaalt
+            What determines the price
           </p>
           <ul className="space-y-2">
             {determinants.map((item) => (

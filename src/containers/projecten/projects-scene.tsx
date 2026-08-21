@@ -74,13 +74,13 @@ export function ProjectsScene({ projects }: ProjectsSceneProps) {
   return (
     <section id="projects-scene" className="relative py-20 px-8 bg-[#f9f9f9]">
       <div className="max-w-7xl mx-auto mb-10">
-        <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent mb-4">Hoofdstuk twee</p>
+        <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent mb-4">Chapter two</p>
         <h2 className="font-heading text-primary text-[38px] leading-[1.05] md:text-[60px] mb-6">
-          Geselecteerd werk
+          Selected work
         </h2>
         <p className="max-w-3xl text-body text-base md:text-lg leading-relaxed">
-          Een overzicht van projecten waarin strategie, performance en esthetiek samenkomen in een digitale
-          ervaring die verkoopt.
+          An overview of projects where strategy, performance, and aesthetics come together in a digital
+          experience that sells.
         </p>
       </div>
 

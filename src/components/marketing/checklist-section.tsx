@@ -10,7 +10,7 @@ interface ChecklistSectionProps {
   columns?: 1 | 2;
 }
 
-export function ChecklistSection({ eyebrow = "Wat je krijgt", title, items, tone = "light", columns = 2 }: ChecklistSectionProps) {
+export function ChecklistSection({ eyebrow = "What you get", title, items, tone = "light", columns = 2 }: ChecklistSectionProps) {
   const isDark = tone === "dark";
   return (
     <Section tone={tone}>

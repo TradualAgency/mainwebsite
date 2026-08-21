@@ -2,21 +2,21 @@ import { services } from "@/content/services";
 
 export const mainNav = [
   {
-    label: "Diensten",
-    href: "/diensten",
+    label: "Services",
+    href: "/services",
     children: services.map((s) => ({ label: s.name, href: s.slug })),
   },
   { label: "Revenue Leak", href: "/revenue-leak" },
   { label: "Cases", href: "/projects" },
-  { label: "Over ons", href: "/over-ons" },
+  { label: "About", href: "/about" },
 ] as const;
 
-export const headerCta = { label: "Revenue Leak Audit", href: "/diensten/revenue-leak-audit" } as const;
+export const headerCta = { label: "Revenue Leak Audit", href: "/services/revenue-leak-audit" } as const;
 
 export const footerNav = {
-  diensten: services.map((s) => ({ label: s.name, href: s.slug })),
-  bedrijf: [
-    { label: "Over ons", href: "/over-ons" },
+  services: services.map((s) => ({ label: s.name, href: s.slug })),
+  company: [
+    { label: "About", href: "/about" },
     { label: "Cases", href: "/projects" },
     { label: "Revenue Leak", href: "/revenue-leak" },
   ],

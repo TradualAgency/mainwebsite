@@ -3,7 +3,7 @@ import type { ScanLevel } from '@/sanity/lib/getProspectScans'
 const config: Record<ScanLevel, { label: string; style: string }> = {
   'outside-only': { label: 'Outside-only scan', style: 'border-primary/20 text-primary/60' },
   semi: { label: 'Semi scan', style: 'border-amber-500/40 text-amber-600' },
-  'full-access': { label: 'Scan met volledige toegang', style: 'border-emerald-500/40 text-emerald-600' },
+  'full-access': { label: 'Full-access scan', style: 'border-emerald-500/40 text-emerald-600' },
 }
 
 export function ScanLevelBadge({ level }: { level: ScanLevel }) {
