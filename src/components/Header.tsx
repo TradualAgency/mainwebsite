@@ -1,9 +1,13 @@
 'use client'
 import Link from "next/link";
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import { usePathname } from 'next/navigation';
 import { ChevronDown } from "lucide-react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import { mainNav, headerCta } from "@/content/nav";
+
+gsap.registerPlugin(useGSAP);
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
@@ -44,7 +48,7 @@ export default function Header() {
             return;
         }
 
-        const HEADER_OFFSET = 96;
+        const HEADER_OFFSET = 128;
         const updateOverDark = () => {
             const sentinel = document.getElementById("header-dark-zone-end");
             if (!sentinel) {
@@ -64,8 +68,22 @@ export default function Header() {
         };
     }, [isHome]);
 
+    const headerWrap = useRef<HTMLDivElement>(null);
+
+    useGSAP(() => {
+        const mm = gsap.matchMedia();
+        mm.add("(prefers-reduced-motion: no-preference)", () => {
+            gsap.from(headerWrap.current, {
+                autoAlpha: 0,
+                y: -16,
+                duration: 0.8,
+                ease: "power3.out",
+            });
+        });
+    }, { scope: headerWrap });
+
     return (
-        <div className="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8">
+        <div ref={headerWrap} className="fixed top-12 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8">
             <header className={`max-w-7xl mx-auto bg-primary/10 backdrop-blur-md border border-primary/15 rounded-2xl shadow-sm shadow-primary/10 px-8 py-4 transition-colors ${overDark ? "text-white" : "text-[#727272]"}`}>
             <div className="flex items-center justify-between">
                 {/* Merk & navigatie */}
