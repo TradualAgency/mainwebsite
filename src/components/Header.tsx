@@ -39,8 +39,6 @@ export default function Header() {
     // De header zweeft vast bovenaan. Op de homepage lopen de hero en het patroonblok
     // achter elkaar met een donkere achtergrond, dus houden we de headertekst wit tot de
     // sentinel na het patroonblok voorbij de header scrolt — daarna weer de normale kleuren.
-    // Het woordmerk blijft op de homepage wit: later in de pagina liggen opnieuw donkere
-    // vlakken (self-test, finish-cta) en slate-secondary valt daar weg.
     const isHome = pathname === "/";
     const [overDark, setOverDark] = useState(isHome);
 
@@ -91,7 +89,7 @@ export default function Header() {
                 {/* Merk & navigatie */}
                 <div className="flex items-center gap-8">
                     <Link href="/" className="flex items-center">
-                        <h2 className={`text-lg uppercase font-bold transition-colors ${overDark || isHome ? "text-white" : "text-secondary"}`}>Tradual</h2>
+                        <h2 className={`text-lg uppercase font-bold transition-colors ${overDark ? "text-white" : "text-secondary"}`}>Tradual</h2>
                     </Link>
                     <nav className={`hidden lg:flex items-center gap-6 font-heading text-sm transition-colors ${overDark ? "text-white" : "text-[#727272]"}`}>
                         {mainNav.map((item) =>
