@@ -93,10 +93,60 @@ export const ceoSignals: string[] = [
 ];
 
 // De vijf "Gift Questions" uit de pitch — zelfkwalificatie op de homepage.
-export const giftQuestions: string[] = [
-  "If you got 20% more traffic tomorrow, which part of your store would you trust the least?",
-  "Between the paid click and the payment, where is the most revenue being lost right now?",
-  "Which technical limitation of your store has cost you the most money or growth speed in the past six months?",
-  "If conversion rose 10% with no extra media budget, what would that mean in annual revenue?",
-  "As more product discovery moves through AI agents: is your commerce infrastructure ready to be found, understood, and chosen?",
+// `sector` is de naam van de laag uit leakLayers hierboven waar de vraag op landt:
+// wie eerder op de pagina de vijf lagen heeft gezien, herkent hier hetzelfde model
+// terug in plaats van vijf losse vragen.
+export type GiftQuestion = {
+  question: string;
+  sector: string;
+};
+
+export const giftQuestions: GiftQuestion[] = [
+  {
+    question: "If you got 20% more traffic tomorrow, which part of your store would you trust the least?",
+    sector: "The Door",
+  },
+  {
+    question: "Between the paid click and the payment, where is the most revenue being lost right now?",
+    sector: "The Leak",
+  },
+  {
+    question: "Which technical limitation of your store has cost you the most money or growth speed in the past six months?",
+    sector: "The Engine",
+  },
+  {
+    question: "If conversion rose 10% with no extra media budget, what would that mean in annual revenue?",
+    sector: "Efficiency",
+  },
+  {
+    question: "As more product discovery moves through AI agents: is your commerce infrastructure ready to be found, understood, and chosen?",
+    sector: "The Future",
+  },
+];
+
+// Uitkomst van de zelftest, gekozen op het aantal vragen dat iemand met cijfers kan
+// beantwoorden. De drempel van drie komt uit de pitch ("can't answer three or more
+// with numbers"): tot en met twee beantwoord betekent drie of meer blinde vlekken.
+export type GiftVerdict = {
+  minAnswered: number;
+  label: string;
+  body: string;
+};
+
+export const giftVerdicts: GiftVerdict[] = [
+  {
+    minAnswered: 5,
+    label: "Grid clear",
+    body: "Full grid clear. The next gain sits in the Performance Layer.",
+  },
+  {
+    minAnswered: 3,
+    label: "On the grid",
+    body: "One or two blind spots left. Worth measuring before you spend more media.",
+  },
+  {
+    minAnswered: 0,
+    label: "Blind spots",
+    body: "Three or more blind spots. The Revenue Leak Audit is your starting point.",
+  },
 ];
