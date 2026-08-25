@@ -32,12 +32,13 @@ export function ProjectSlider({ projects }: ProjectSliderProps) {
         onSwiper={setSwiper}
         onSlideChange={(instance) => setActiveIndex(instance.activeIndex)}
         // Dezelfde gutter als de kop erboven, zodat de eerste kaart uitlijnt.
-        className="px-6 md:px-8"
+        className="px-6 md:px-8 [&_.swiper-wrapper]:items-stretch"
       >
         {projects.map((project, index) => (
-          // Swiper zet slides op height: 100%; met h-auto krijgen de flex-kaarten
-          // binnen een rij gelijke hoogte.
-          <SwiperSlide key={project._id} className="h-auto">
+          // Swiper zet slides op height: 100%. Een expliciete hoogte sluit
+          // align-items: stretch uit, waardoor elke kaart zijn eigen contenthoogte
+          // houdt; met height: auto rekt elke slide mee tot de hoogste in de rij.
+          <SwiperSlide key={project._id} className="!h-auto">
             <ProjectCard project={project} index={index} />
           </SwiperSlide>
         ))}
