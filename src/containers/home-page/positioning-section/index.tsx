@@ -1,8 +1,9 @@
 import { Wrench, TrendingUp } from "lucide-react";
 import { ComparisonTwoCol } from "@/components/marketing/comparison-two-col";
 
-// Geport uit src/components/analyse/sections/positioning-section.tsx zodat scan-rapport
-// en homepage exact dezelfde positionering tonen.
+// Zelfde ComparisonTwoCol als /services en het scan-rapport
+// (src/components/analyse/sections/positioning-section.tsx), zodat alle drie exact
+// dezelfde positionering tonen.
 export default function PositioningSection() {
   return (
     <ComparisonTwoCol

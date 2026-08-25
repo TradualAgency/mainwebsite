@@ -92,16 +92,6 @@ export const ceoSignals: string[] = [
   "Market share declining against comparable product",
 ];
 
-// Kortere subset voor de homepage (2x3 kaarten)
-export const ceoSignalsHomepage: string[] = [
-  ceoSignals[0],
-  ceoSignals[1],
-  ceoSignals[2],
-  ceoSignals[3],
-  ceoSignals[4],
-  ceoSignals[5],
-];
-
 // De vijf "Gift Questions" uit de pitch — zelfkwalificatie op de homepage.
 export const giftQuestions: string[] = [
   "If you got 20% more traffic tomorrow, which part of your store would you trust the least?",
