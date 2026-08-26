@@ -22,16 +22,16 @@ const notoSans = Noto_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — ${site.tagline}`,
-    template: `%s — ${site.name}`,
+    default: `${site.name} | ${site.tagline}`,
+    template: `%s | ${site.name}`,
   },
   description:
-    "Tradual is The E-commerce Performance Company. We measure where your store leaks revenue — the Revenue Leak — and fix it through audit, rebuild, and an ongoing performance layer.",
+    "Tradual is The E-commerce Performance Company. We measure where your store leaks revenue, the Revenue Leak, and fix it through audit, rebuild, and an ongoing performance layer.",
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: site.name,
-    title: `${site.name} — ${site.tagline}`,
+    title: `${site.name} | ${site.tagline}`,
     description: site.promiseEn,
   },
 };

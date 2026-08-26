@@ -7,7 +7,7 @@ const steps = [
   {
     number: "02",
     title: "Concept & design",
-    body: "From the strategy we build a visual system that strengthens your brand — with considered user flows, a premium aesthetic, and clear conversion triggers at every touchpoint.",
+    body: "From the strategy we build a visual system that strengthens your brand, with considered user flows, a premium aesthetic, and clear conversion triggers at every touchpoint.",
   },
   {
     number: "03",

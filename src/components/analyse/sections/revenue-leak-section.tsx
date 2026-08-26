@@ -79,7 +79,7 @@ export function RevenueLeakSection({ data }: { data: RevenueLeak }) {
               Where is the money leaking?
             </h3>
             <p className="text-body/60 text-sm mb-10">
-              5 layers — from visibility to revenue
+              5 layers, from visibility to revenue
             </p>
             <Accordion type="multiple" className="space-y-3">
               {layers.map((layer) => {

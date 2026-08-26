@@ -61,7 +61,7 @@ export default function HeroSection() {
                         More revenue from the traffic you already have.
                     </h1>
                     <p className="hero-el max-w-2xl text-white/80 text-base md:text-lg leading-relaxed mb-8">
-                        You already pay for demand. But between the click and the payment, revenue leaks away — through speed,
+                        You already pay for demand. But between the click and the payment, revenue leaks away: through speed,
                         mobile UX, checkout, and tracking. We make visible how much that costs you, and we build it out.
                     </p>
                     <div className="hero-el flex flex-col sm:flex-row items-start gap-4">

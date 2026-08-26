@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
 
   if (!scan.password) {
     console.error('[analyse-unlock] Prospect scan is missing a password', { slug, scanId: scan._id })
-    return NextResponse.json({ error: 'Server configuration error — please get in touch.' }, { status: 500 })
+    return NextResponse.json({ error: 'Server configuration error, please get in touch.' }, { status: 500 })
   }
 
   if (!checkPassword(password, scan.password)) {
@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
     token = signToken(slug, scan._id)
   } catch (error) {
     console.error('[analyse-unlock] Failed to sign auth token', { slug, scanId: scan._id, error })
-    return NextResponse.json({ error: 'Server configuration error — please get in touch.' }, { status: 500 })
+    return NextResponse.json({ error: 'Server configuration error, please get in touch.' }, { status: 500 })
   }
 
   const cookieStore = await cookies()

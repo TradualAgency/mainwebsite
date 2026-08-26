@@ -7,7 +7,7 @@ export default function SelfTestSection() {
   return (
     <Section id="self-test" tone="light" spacing="lg">
       <SectionHeading
-        eyebrow="Self-test — Start procedure"
+        eyebrow="Self-test: Start procedure"
         title="Five questions you should be able to answer today."
         intro="Five lights on the gantry. Tick off every question you can answer with a number; the lights only go out once the grid is clear."
         align="center"

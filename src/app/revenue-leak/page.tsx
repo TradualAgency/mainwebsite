@@ -33,7 +33,7 @@ export default function RevenueLeakPage() {
           Revenue Leak: the revenue you've already earned, but don't receive.
         </h1>
         <p className="max-w-2xl text-body text-base md:text-lg leading-relaxed">
-          You're already paying for demand — through ads, organic reach, or word of mouth. But between the
+          You're already paying for demand, through ads, organic reach, or word of mouth. But between the
           click and the payment, part of that demand stalls on the technical foundation. That gap is what we
           call Revenue Leak.
         </p>
@@ -66,7 +66,7 @@ export default function RevenueLeakPage() {
         <SectionHeading
           eyebrow="Familiar?"
           title="CEO signals"
-          intro="Each one a symptom of the same problem — patterns we see in brands before they commission an audit."
+          intro="Each one a symptom of the same problem: patterns we see in brands before they commission an audit."
           tone="dark"
           className="mb-10"
         />
@@ -76,8 +76,8 @@ export default function RevenueLeakPage() {
       <Section tone="light" innerClassName="max-w-3xl">
         <SectionHeading eyebrow="Methodology" title="From signal to euros" className="mb-6" />
         <p className="text-body text-base md:text-lg leading-relaxed mb-4">
-          Every technical finding is tied to a measurable signal — load time, error rate,
-          checkout drop-off, missing tracking data — and translated into estimated revenue loss per
+          Every technical finding is tied to a measurable signal (load time, error rate,
+          checkout drop-off, missing tracking data) and translated into estimated revenue loss per
           month and per year. Where possible we use your own traffic and conversion data to underpin that
           translation; where we can't, we use industry benchmarks and make that explicit.
         </p>

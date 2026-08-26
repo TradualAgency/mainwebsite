@@ -20,7 +20,7 @@ export default function ProjectPage() {
             secondaryCta={{ href: "/about", text: "More about Tradual" }}
         />
         <Section tone="muted">
-            <ProjectGrid />
+            <ProjectGrid showViewAllCta={false} />
         </Section>
         <ProjectFAQSection />
     </>

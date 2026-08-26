@@ -22,7 +22,7 @@ export const leakLayers: LeakLayer[] = [
       "Render-blocking resources and uncompressed images",
       "Mobile performance versus desktop",
     ],
-    leadsTo: "Stack Rebuild — Speed",
+    leadsTo: "Stack Rebuild: Speed",
     leadsToHref: "/services/stack-rebuild",
   },
   {
@@ -34,7 +34,7 @@ export const leakLayers: LeakLayer[] = [
       "Third-party scripts: count, weight, blocking time",
       "App stack: what's needed, what's bloat",
     ],
-    leadsTo: "Stack Rebuild — Architecture",
+    leadsTo: "Stack Rebuild: Architecture",
     leadsToHref: "/services/stack-rebuild",
   },
   {
@@ -46,7 +46,7 @@ export const leakLayers: LeakLayer[] = [
       "Tracking, consent mode, and attribution loss",
       "Owned channels: email and SMS flows",
     ],
-    leadsTo: "Stack Rebuild — Checkout & Mobile",
+    leadsTo: "Stack Rebuild: Checkout & Mobile",
     leadsToHref: "/services/stack-rebuild",
   },
   {

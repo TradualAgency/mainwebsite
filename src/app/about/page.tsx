@@ -13,12 +13,12 @@ export default function About() {
     {
       question: "Are you a CRO agency?",
       answer:
-        "No. We repair the technical foundation — speed, infrastructure, tracking, and the right stack. Copy, A/B tests, and funnel optimization stay with your CRO specialist.",
+        "No. We repair the technical foundation: speed, infrastructure, tracking, and the right stack. Copy, A/B tests, and funnel optimization stay with your CRO specialist.",
     },
     {
       question: "Do I always have to start with an audit?",
       answer:
-        "With us, yes — and for a reason: a Stack Rebuild or Performance Layer without a substantiated problem statement is a guess at your expense. The audit delivers that case in euros.",
+        "With us, yes, and for a reason: a Stack Rebuild or Performance Layer without a substantiated problem statement is a guess at your expense. The audit delivers that case in euros.",
     },
     {
       question: "Do you only work with Shopify?",
@@ -28,7 +28,7 @@ export default function About() {
     {
       question: "Do you also work with brands that aren't on Shopify?",
       answer:
-        "Our sweet spot is Shopify and Shopify Plus, but the method — measure, prioritize by euro impact, repair — is platform-agnostic. Get in touch to discuss whether your situation fits.",
+        "Our sweet spot is Shopify and Shopify Plus, but the method (measure, prioritize by euro impact, repair) is platform-agnostic. Get in touch to discuss whether your situation fits.",
     },
     {
       question: "How long does a typical engagement take?",
@@ -38,7 +38,7 @@ export default function About() {
     {
       question: "Do you also offer maintenance and support?",
       answer:
-        "Yes — that's exactly what the Performance Layer is: a monthly retainer that keeps your foundation in shape after an audit or rebuild has closed the big leaks.",
+        "Yes, that's exactly what the Performance Layer is: a monthly retainer that keeps your foundation in shape after an audit or rebuild has closed the big leaks.",
     },
   ];
 
@@ -46,13 +46,13 @@ export default function About() {
     <main>
       <AboutHero
         title="We build the engine behind e-commerce brands."
-        subtitle="Tradual is The E-commerce Performance Company. We measure where your store leaks revenue — the Revenue Leak — and fix it through audit, rebuild, and an ongoing performance layer."
+        subtitle="Tradual is The E-commerce Performance Company. We measure where your store leaks revenue, the Revenue Leak, and fix it through audit, rebuild, and an ongoing performance layer."
       />
       <CenterText text="An e-commerce world where every brand captures the full revenue potential of the demand it has already earned. Where the foundation accelerates growth instead of holding it back." />
       <TextWithImage
         title="Where it started"
         text="Tradual is built on a simple conviction: most brands leave revenue on the table that they've already earned, simply because the technical foundation underneath can't keep up. Not for lack of traffic, but because of speed, checkout friction, or tracking that doesn't add up.
-We combine deep technical expertise with a sharp eye for measurable impact, so every technical choice translates into euros — not assumptions."
+We combine deep technical expertise with a sharp eye for measurable impact, so every technical choice translates into euros, not assumptions."
         imageUrl="/images/the-start.png"
         imageAlt="Tradual story"
         imagePosition="left"
@@ -61,11 +61,11 @@ We combine deep technical expertise with a sharp eye for measurable impact, so e
       <TextWithImage
         eyebrow="The team"
         title="Small team, senior hands on the work"
-        text="At Tradual you work directly with the people who also do the work. The engineer who analyses your stack is the same one who repairs it — no account manager in between.
+        text="At Tradual you work directly with the people who also do the work. The engineer who analyses your stack is the same one who repairs it, no account manager in between.
 That's why we deliberately take on a limited number of engagements at a time. Better a few brands where we actually get the foundation right than a full calendar with half results."
         points={[
           "Direct contact with the engineers working on your stack",
-          "Senior only — no juniors learning on your store",
+          "Senior only, no juniors learning on your store",
           "Deliberately a limited number of engagements at a time",
           "Reporting in euros, not dashboards",
         ]}

@@ -16,7 +16,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   const remainingTags = project.tags?.slice(1) ?? []
 
   return (
-    <Link href={`/projects/${project.slug.current}`} className="block h-full">
+    <Link href={`/projects/${project.slug.current}`} className="project-card block h-full">
       {/* De afbeelding vult de hele kaart; de vaste verhouding bepaalt de hoogte, zodat
           kaarten naast elkaar altijd even hoog zijn ongeacht de lengte van de tekst. */}
       <article className="group relative aspect-[5/7] overflow-hidden rounded-[20px] bg-surface-muted">

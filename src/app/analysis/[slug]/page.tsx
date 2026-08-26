@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const { slug } = await params
   const scan = await getProspectScanBySlug(slug)
   return {
-    title: scan ? `Analysis – ${scan.clientInfo?.companyName ?? slug}` : 'Analysis',
+    title: scan ? `Analysis | ${scan.clientInfo?.companyName ?? slug}` : 'Analysis',
     robots: { index: false, follow: false },
   }
 }

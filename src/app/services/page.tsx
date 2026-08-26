@@ -38,7 +38,7 @@ export default function ServicesPage() {
         <SectionHeading
           eyebrow="All services"
           title="Choose your starting point"
-          intro="Most brands start with the audit — it delivers the case for everything that comes after."
+          intro="Most brands start with the audit: it delivers the case for everything that comes after."
           tone="dark"
           className="mb-10"
         />
@@ -54,7 +54,7 @@ export default function ServicesPage() {
             <span className="text-body">You bring the direction.</span>
           </>
         }
-        intro="Tradual is not a CRO agency. We repair the technical foundation — speed, infrastructure, and the right stack. Think of building the fastest car on the grid."
+        intro="Tradual is not a CRO agency. We repair the technical foundation: speed, infrastructure, and the right stack. Think of building the fastest car on the grid."
         left={{
           icon: Wrench,
           title: "Tradual",
@@ -79,7 +79,7 @@ export default function ServicesPage() {
       <CtaBand
         eyebrow="Starting point"
         heading="Start with the Revenue Leak Audit."
-        body="That's the service that underpins the rest of the route — with numbers, not assumptions."
+        body="That's the service that underpins the rest of the route, with numbers, not assumptions."
         primary={{ label: "Request a Revenue Leak Audit", href: "/services/revenue-leak-audit" }}
         secondary={{ label: "Book an intro call", href: "/contact" }}
       />

@@ -45,7 +45,7 @@ export const services: Service[] = [
     priceLabel: "€2,500 – €7,500",
     heroTitle: "Know within weeks how much revenue your store is leaving on the table.",
     heroLede:
-      "We scan your shop across five layers — from load time to checkout to AI findability — and translate every technical problem into an amount per month and per year. Not a list of improvements: a business case.",
+      "We scan your shop across five layers, from load time to checkout to AI findability, and translate every technical problem into an amount per month and per year. Not a list of improvements: a business case.",
     forWho: [
       "You're already investing seriously in traffic and want to know if the foundation can carry it",
       "You suspect revenue is leaking, but lack the numbers to prove it",
@@ -65,7 +65,7 @@ export const services: Service[] = [
     process: [
       {
         title: "Scan",
-        body: "We measure your shop from the outside — speed, architecture, tracking, checkout, SEO, and app costs — and extend that with Shopify, analytics, or ad access if you provide it.",
+        body: "We measure your shop from the outside: speed, architecture, tracking, checkout, SEO, and app costs. We extend that with Shopify, analytics, or ad access if you provide it.",
       },
       {
         title: "Translate",
@@ -96,7 +96,7 @@ export const services: Service[] = [
       {
         question: "What if you find nothing?",
         answer:
-          "That's rare for brands with substantial traffic, but if it happens you'll hear that too — including why your foundation is already in good shape.",
+          "That's rare for brands with substantial traffic, but if it happens you'll hear that too, including why your foundation is already in good shape.",
       },
       {
         question: "Do I have to continue with Tradual afterwards?",
@@ -119,7 +119,7 @@ export const services: Service[] = [
     priceLabel: "from €25,000",
     heroTitle: "When optimizing inside your current stack is no longer enough.",
     heroLede:
-      "There's a point where another month of tweaking yields nothing, because the problem sits in the foundation. That's when we rebuild it — focused on structural recovery of speed and conversion.",
+      "There's a point where another month of tweaking yields nothing, because the problem sits in the foundation. That's when we rebuild it, focused on structural recovery of speed and conversion.",
     forWho: [
       "Your load time no longer improves, despite optimization",
       "Your theme has been extended for years and nobody dares touch it",
@@ -128,10 +128,10 @@ export const services: Service[] = [
       "Your app stack costs more than it returns",
     ],
     notForWho: [
-      "Your stack is younger than two years and the leak sits mainly in layer 3 or 4 — then the Performance Layer is cheaper and faster",
+      "Your stack is younger than two years and the leak sits mainly in layer 3 or 4, then the Performance Layer is cheaper and faster",
     ],
     deliverables: [
-      "Substantiated architecture choice: monolith, hybrid, or headless — not headless by default",
+      "Substantiated architecture choice: monolith, hybrid, or headless (not headless by default)",
       "Bloat cleanup: apps, scripts, and processes that can go",
       "Rebuild of the technical foundation",
       "Migration without revenue loss",
@@ -140,7 +140,7 @@ export const services: Service[] = [
     process: [
       {
         title: "Starting point",
-        body: "We start from an audit — ours or an existing one — so the rebuild targets measurable problems, not assumptions.",
+        body: "We start from an audit (ours or an existing one) so the rebuild targets measurable problems, not assumptions.",
       },
       {
         title: "Architecture choice",
@@ -179,7 +179,7 @@ export const services: Service[] = [
       {
         question: "Is it always headless?",
         answer:
-          "No. We recommend the architecture that fits your scale and team — that's often an improved monolith, not a headless migration.",
+          "No. We recommend the architecture that fits your scale and team: that's often an improved monolith, not a headless migration.",
       },
       {
         question: "How do you prevent revenue loss during the migration?",
@@ -202,7 +202,7 @@ export const services: Service[] = [
     priceLabel: "€3,000 – €10,000 / mo",
     heroTitle: "Every month, more revenue from the same traffic.",
     heroLede:
-      "A rebuild closes the big leaks. The Performance Layer makes sure new ones don't appear — and that every month more revenue comes from traffic you're already paying for.",
+      "A rebuild closes the big leaks. The Performance Layer makes sure new ones don't appear, and that every month more revenue comes from traffic you're already paying for.",
     forWho: [
       "Your foundation is in place (after audit or rebuild) and you want to keep it that way",
       "You regularly add apps, campaigns, or theme changes that can introduce new leaks",
@@ -232,11 +232,11 @@ export const services: Service[] = [
       {
         question: "Why a retainer and not a one-off project?",
         answer:
-          "Performance isn't a project with an end date. Every app, every campaign, and every theme change can introduce a new leak — that requires ongoing measurement, not a one-time fix.",
+          "Performance isn't a project with an end date. Every app, every campaign, and every theme change can introduce a new leak: that requires ongoing measurement, not a one-time fix.",
       },
       {
         question: "What's the minimum term?",
-        answer: "Get in touch for current terms — we discuss this per situation.",
+        answer: "Get in touch for current terms. We discuss this per situation.",
       },
     ],
   },
@@ -251,10 +251,10 @@ export const services: Service[] = [
     priceFrom: 5000,
     priceTo: 15000,
     priceUnit: "one-time",
-    priceLabel: "€5,000 – €15,000 (analysis — implementation separate)",
+    priceLabel: "€5,000 – €15,000 (analysis; implementation separate)",
     heroTitle: "Ready for the buyer who isn't human.",
     heroLede:
-      "More and more product discovery runs through AI assistants and agents. They don't read a pretty product page — they read your data. We make sure you're found, understood, and chosen.",
+      "More and more product discovery runs through AI assistants and agents. They don't read a pretty product page; they read your data. We make sure you're found, understood, and chosen.",
     forWho: [
       "You notice AI answers name your competitors and not you",
       "Your product data was never built with machines as the reader",
@@ -284,7 +284,7 @@ export const services: Service[] = [
       {
         question: "Isn't this too early?",
         answer:
-          "The brands that get this right first become the default answers. That's a position you can only take once — early is an advantage here, not a risk.",
+          "The brands that get this right first become the default answers. That's a position you can only take once: early is an advantage here, not a risk.",
       },
       {
         question: "How is this different from SEO?",

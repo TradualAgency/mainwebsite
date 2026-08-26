@@ -17,6 +17,8 @@ const nextConfig: NextConfig = {
       { source: '/diensten/:slug', destination: '/services/:slug', permanent: true },
       { source: '/over-ons', destination: '/about', permanent: true },
       { source: '/analyse/:slug', destination: '/analysis/:slug', permanent: true },
+      { source: '/posts', destination: '/insights', permanent: true },
+      { source: '/posts/:slug', destination: '/insights/:slug', permanent: true },
     ];
   },
 };

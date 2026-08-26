@@ -10,7 +10,7 @@ export function CroObservationsSection({ observations }: { observations: NonNull
           What we noticed during the scan.
         </h2>
         <p className="text-body text-sm mb-10 max-w-xl">
-          These are observations, not recommendations. CRO execution — copywriting, A/B testing, conversion design — is for your CRO specialist.
+          These are observations, not recommendations. CRO execution (copywriting, A/B testing, conversion design) is for your CRO specialist.
           Tradual makes sure the technical foundation is ready for it.
         </p>
 

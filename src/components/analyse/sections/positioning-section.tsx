@@ -16,7 +16,7 @@ export function PositioningSection() {
           <span className="text-body">You bring the direction.</span>
         </>
       }
-      intro="Tradual is not a CRO agency. We repair the technical foundation — speed, infrastructure, and the right stack. Think of building the fastest car on the grid. Who steers it is up to you."
+      intro="Tradual is not a CRO agency. We repair the technical foundation: speed, infrastructure, and the right stack. Think of building the fastest car on the grid. Who steers it is up to you."
       left={{
         icon: Wrench,
         title: 'Tradual',

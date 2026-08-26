@@ -209,7 +209,7 @@ export function StartLightsSelfTest({
 
                 <div className="min-w-0">
                   <span className="block font-heading text-[9px] uppercase tracking-[0.18em] text-accent/70 mb-2">
-                    Sector {pad(index)} — {item.sector}
+                    Sector {pad(index)}: {item.sector}
                   </span>
                   <p className="text-surface text-base md:text-lg leading-relaxed">{item.question}</p>
                 </div>

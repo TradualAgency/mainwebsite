@@ -16,7 +16,7 @@ export default async function ProofSection() {
         <SectionHeading
           eyebrow="Proof"
           title="What it delivers."
-          intro="Engagements where we uncovered a Revenue Leak and closed it — with the starting situation, what we built, and the result."
+          intro="Engagements where we uncovered a Revenue Leak and closed it, with the starting situation, what we built, and the result."
           className="mb-12"
         />
       </div>

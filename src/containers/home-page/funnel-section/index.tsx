@@ -13,7 +13,7 @@ export default function FunnelSection() {
           <SectionHeading
             eyebrow="The route"
             title="Measure, repair, continuously improve."
-            intro="Four services, one sequence. You always start by measuring — otherwise you're building on assumptions."
+            intro="Four services, one sequence. You always start by measuring. Otherwise you're building on assumptions."
             tone="dark"
             className="mb-10"
           />
