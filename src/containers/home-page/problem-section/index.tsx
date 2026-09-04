@@ -6,8 +6,8 @@ import { site } from "@/content/site";
 // precies overheen valt. De z-10 houdt het boven de gepinde hero.
 export default function ProblemSection() {
   return (
-    <div className="relative z-10 bg-surface p-5 min-h-svh bg-transparent">
-      <section className="bg-primary rounded-2xl min-h-[calc(100svh-2.5rem)] flex items-center px-8 py-16">
+    <div className="relative z-10 bg-surface p-5 bg-transparent">
+      <section className="bg-primary rounded-2xl px-8 py-16 md:py-20">
         <div className="max-w-7xl mx-auto w-full">
           <SectionHeading
             eyebrow="Why Tradual"

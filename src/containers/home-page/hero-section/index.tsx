@@ -36,10 +36,13 @@ export default function HeroSection() {
             scrollTrigger: {
               trigger: container.current,
               start: "top top",
-              end: "+=100%",
+              // De hero heeft geen vaste hoogte meer, dus de pin duurt precies
+              // zo lang als het volgende blok nodig heeft om hem te bedekken.
+              end: () => "+=" + (container.current?.offsetHeight ?? 0),
               pin: true,
               pinSpacing: false,
               scrub: true,
+              invalidateOnRefresh: true,
               // Achter het volgende blok staat de video anders onzichtbaar door te decoderen.
               onLeave: () => video?.pause(),
               onEnterBack: () => {
@@ -55,7 +58,7 @@ export default function HeroSection() {
 
   return (
     <div ref={container} className="-mt-24 bg-surface p-5">
-      <section className="hero-section relative overflow-hidden rounded-2xl h-full flex items-center px-8 py-16">
+      <section className="hero-section relative overflow-hidden rounded-2xl px-8 pt-32 pb-20 md:pt-40 md:pb-28">
         <HeroVideoLoop />
 
         <div className="hero-content relative z-10 max-w-7xl mx-auto w-full">
