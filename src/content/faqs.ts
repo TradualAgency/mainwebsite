@@ -21,6 +21,29 @@ export const homepageFaqs = [
   },
 ] as const;
 
+export const industriesFaqs = [
+  {
+    question: "Do you only work in these four sectors?",
+    answer:
+      "No. These are the four where we see the same leaks often enough to know where to look first. The five-layer model applies to any e-commerce store.",
+  },
+  {
+    question: "Is an industry page a different service?",
+    answer:
+      "No. Same four services, same model. What changes is which layer usually costs you the most, and therefore where an audit goes deepest.",
+  },
+  {
+    question: "We sit between two of these. Which one applies?",
+    answer:
+      "Pick the one where your catalog and checkout behave most like the description. The audit measures your store, not your category.",
+  },
+  {
+    question: "Do you have experience in our specific niche?",
+    answer:
+      "The leaks we measure are technical: speed, architecture, tracking, checkout, and how machine-readable your data is. Those behave the same whether you sell brake discs or oat milk. What sector experience buys you is knowing where to look first.",
+  },
+] as const;
+
 export const insightsFaqs = [
   {
     question: "How often do you publish new articles?",

@@ -50,11 +50,19 @@ interface ServiceCardGridProps {
   services: Service[];
   tone?: "light" | "dark";
   showPrice?: boolean;
+  columns?: 3 | 4;
 }
 
-export function ServiceCardGrid({ services, tone = "dark", showPrice = true }: ServiceCardGridProps) {
+// Volledige klassenamen in een lookup — nooit `lg:grid-cols-${n}`, want de scanner van
+// Tailwind v4 leest alleen letterlijke tekst in de source.
+const gridClasses = {
+  3: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4",
+  4: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4",
+} as const;
+
+export function ServiceCardGrid({ services, tone = "dark", showPrice = true, columns = 4 }: ServiceCardGridProps) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div className={gridClasses[columns]}>
       {services.map((service) => (
         <ServiceCard key={service.id} service={service} tone={tone} showPrice={showPrice} />
       ))}
