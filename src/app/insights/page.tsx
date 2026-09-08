@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import InsightsHero from "@/containers/insights/hero-section";
+import PageHero from "@/components/marketing/page-hero";
 import { Section } from "@/components/marketing/section";
 import { PostGrid } from "@/components/insights/post-grid";
 import { FaqSection } from "@/components/marketing/faq-section";
@@ -20,7 +20,7 @@ export default async function InsightsPage() {
 
   return (
     <>
-      <InsightsHero
+      <PageHero
         eyebrow="Insights"
         title="Notes from the work itself"
         intro="What we learn from real audits and rebuilds, written up so you can check the basics yourself before you ever talk to us."

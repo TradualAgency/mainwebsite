@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PortableText } from "@portabletext/react";
-import InsightsHero from "@/containers/insights/hero-section";
+import PageHero from "@/components/marketing/page-hero";
 import { portableTextComponents } from "@/components/portable-text-components";
 import FinalCTA from "@/containers/home-page/final-cta-section";
 import { getPostBySlug, getPostSlugs } from "@/sanity/lib/getPosts";
@@ -60,7 +60,7 @@ export default async function InsightArticlePage({ params }: { params: Params })
 
   return (
     <>
-      <InsightsHero eyebrow={category ?? "Insights"} title={post.title} intro={post.excerpt} />
+      <PageHero eyebrow={category ?? "Insights"} title={post.title} intro={post.excerpt} />
 
       <div className="max-w-3xl mx-auto px-6 md:px-8">
         {byline && <p className="text-primary/60 text-sm text-center mb-10">{byline}</p>}
