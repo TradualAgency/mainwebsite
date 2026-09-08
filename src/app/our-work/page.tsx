@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import ProjectsHero from "@/containers/projecten/HeroSection";
-import ProjectGrid from "@/components/projecten/ProjectGrid";
-import ProjectFAQSection from "@/containers/projecten/ProjectFAQSection";
+import ProjectsHero from "@/containers/our-work/HeroSection";
+import ProjectGrid from "@/components/our-work/ProjectGrid";
+import ProjectFAQSection from "@/containers/our-work/ProjectFAQSection";
 import { Section } from "@/components/marketing/section";
 
 export const metadata: Metadata = {
-    title: "Cases",
+    title: "Our Work",
     description: "What happens when the foundation is right: engagements where we uncovered a Revenue Leak and closed it.",
 };
 
@@ -13,7 +13,7 @@ export default function ProjectPage() {
     return (
     <>
         <ProjectsHero
-            label="Cases"
+            label="Our Work"
             title="What happens when the foundation is right."
             subtitle="Engagements where we uncovered where revenue was leaking, and restored the technical foundation."
             primaryCta={{ href: "/services/revenue-leak-audit", text: "Request an audit" }}

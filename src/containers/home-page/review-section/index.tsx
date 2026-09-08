@@ -1,6 +1,6 @@
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { CtaButton } from "@/components/marketing/cta-button";
-import { ProjectSlider } from "@/components/projecten/ProjectSlider";
+import { ProjectSlider } from "@/components/our-work/ProjectSlider";
 import { getFeaturedProjects } from "@/sanity/lib/getProjects";
 
 // Voorheen drie stat-tegels (45% / 300% / 2.5x) zonder onderbouwing. Vervangen door
@@ -24,8 +24,8 @@ export default async function ProofSection() {
       {projects.length > 0 && <ProjectSlider projects={projects} />}
 
       <div className="max-w-7xl mx-auto px-6 md:px-8 text-center mt-8">
-        <CtaButton href="/projects" variant="ghost-light">
-          View all cases
+        <CtaButton href="/our-work" variant="ghost-light">
+          View all work
         </CtaButton>
       </div>
     </section>

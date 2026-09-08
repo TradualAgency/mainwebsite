@@ -17,7 +17,7 @@ export default function ProjectCard({id, title, description, image}: ProjectCard
                 <p className="text-gray-600">{description}</p>
                 </div>
                 <div className="text-end self-end">
-                    <Link href={`/projects/${id}`}>Read more</Link>
+                    <Link href={`/our-work/${id}`}>Read more</Link>
                 </div>
             </div>
         </div>

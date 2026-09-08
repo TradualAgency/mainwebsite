@@ -10,7 +10,7 @@ interface ProcessTimelineProps {
 }
 
 // Genummerde verticale tijdlijn met gouden rail — zelfde grammatica als de rest van de
-// site (vergelijkbaar met containers/projecten/FiveStepsSection.tsx, maar prop-driven
+// site (vergelijkbaar met containers/our-work/FiveStepsSection.tsx, maar prop-driven
 // zodat elke dienstpagina zijn eigen stappen kan tonen).
 export function ProcessTimeline({ eyebrow = "How it works", title, steps, tone = "light" }: ProcessTimelineProps) {
   return (

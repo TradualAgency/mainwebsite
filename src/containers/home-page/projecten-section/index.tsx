@@ -1,5 +1,5 @@
 import {Heading2} from "@/components/lettertypes/HeaderTypes";
-import ProjectGrid from "@/components/projecten/ProjectGrid";
+import ProjectGrid from "@/components/our-work/ProjectGrid";
 
 export default function ProjectenSection() {
     return (
