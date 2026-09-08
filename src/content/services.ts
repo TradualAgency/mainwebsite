@@ -2,6 +2,9 @@
 // de homepage-sectie en de funnel-stepper lezen allemaal uit dit bestand — zodat een
 // prijsrange nooit op twee plekken iets anders zegt.
 
+import type { LucideIcon } from "lucide-react";
+import { Activity, Bot, Gauge, Wrench } from "lucide-react";
+
 export type ProcessStep = {
   title: string;
   body: string;
@@ -14,6 +17,11 @@ export type Service = {
   name: string;
   shortName: string;
   oneLiner: string;
+  // Kaart-copy voor het mega-menu in de header: kort genoeg voor een kolom van ~285px.
+  // Bewust niet oneLiner hergebruiken — die is geschreven voor de veel bredere ServiceCard
+  // op /services en loopt daar tot 25 woorden.
+  navDescription: string;
+  icon: LucideIcon;
   priceFrom: number;
   priceTo: number | null;
   priceUnit: "one-time" | "/mo";
@@ -39,6 +47,8 @@ export const services: Service[] = [
     shortName: "Audit",
     oneLiner:
       "We measure where your revenue leaks, across all five layers, and translate it into euros per month and per year.",
+    navDescription: "Measure the leak across five layers and price it in euros per month.",
+    icon: Gauge,
     priceFrom: 2500,
     priceTo: 7500,
     priceUnit: "one-time",
@@ -113,6 +123,8 @@ export const services: Service[] = [
     shortName: "Rebuild",
     oneLiner:
       "When optimizing inside your current stack is no longer enough. Focused on structural recovery of performance and conversion.",
+    navDescription: "Rebuild the foundation when tweaking your current stack stops paying off.",
+    icon: Wrench,
     priceFrom: 25000,
     priceTo: null,
     priceUnit: "one-time",
@@ -196,6 +208,8 @@ export const services: Service[] = [
     shortName: "Performance Layer",
     oneLiner:
       "Ongoing optimization layer after audit or rebuild: measure, prioritize, build, test, and improve.",
+    navDescription: "Monthly measuring, building and testing so new leaks never settle in.",
+    icon: Activity,
     priceFrom: 3000,
     priceTo: 10000,
     priceUnit: "/mo",
@@ -248,6 +262,8 @@ export const services: Service[] = [
     shortName: "Agentic Readiness",
     oneLiner:
       "Preparing commerce infrastructure for AI agents and new buying interfaces: product data, structured data, feeds, APIs, and transactional readiness.",
+    navDescription: "Get found, understood and chosen by the buyer that isn't human.",
+    icon: Bot,
     priceFrom: 5000,
     priceTo: 15000,
     priceUnit: "one-time",

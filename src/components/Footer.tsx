@@ -5,7 +5,9 @@ import { site } from "@/content/site";
 export default function Footer() {
   return (
     <footer className="bg-surface text-primary border-t border-primary/10">
-      <div className="max-w-7xl mx-auto px-8 py-16 md:py-20 grid grid-cols-1 md:grid-cols-4 gap-10">
+      {/* Vijf kolommen passen niet op md (704px → ~140px per kolom breekt elke dienstnaam),
+          dus eerst twee, pas vanaf lg vijf. */}
+      <div className="max-w-7xl mx-auto px-8 py-16 md:py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
         <div>
           <Link href="/" className="inline-flex items-center">
             <span className="font-heading text-2xl">{site.name}</span>
@@ -20,6 +22,19 @@ export default function Footer() {
           <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Services</p>
           <ul className="space-y-3 text-sm text-primary/90">
             {footerNav.services.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="hover:text-accent transition">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <nav>
+          <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Industries</p>
+          <ul className="space-y-3 text-sm text-primary/90">
+            {footerNav.industries.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="hover:text-accent transition">
                   {item.label}

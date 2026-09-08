@@ -5,15 +5,19 @@ import { usePathname } from 'next/navigation';
 import { ChevronDown } from "lucide-react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { mainNav, headerCta } from "@/content/nav";
+import { mainNav, headerCta, isMegaItem } from "@/content/nav";
+import { NavMegaMenu } from "@/components/header/nav-mega-menu";
 
 gsap.registerPlugin(useGSAP);
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
-    const [dienstenOpen, setDienstenOpen] = useState(false);
-    const [mobileDienstenOpen, setMobileDienstenOpen] = useState(false);
+    // Gesleuteld op href, niet één boolean: er zijn nu twee items met children (Services
+    // en Industries), en met een gedeelde boolean opende hoveren over de één ook het
+    // paneel van de ander.
+    const [openMenu, setOpenMenu] = useState<string | null>(null);
+    const [openMobileMenu, setOpenMobileMenu] = useState<string | null>(null);
     const pathname = usePathname();
 
     // Sluit het menu wanneer de pathname verandert. Aangepast tijdens render (i.p.v. in een
@@ -22,8 +26,16 @@ export default function Header() {
     if (pathname !== lastPathname) {
         setLastPathname(pathname);
         setIsOpen(false);
-        setMobileDienstenOpen(false);
+        setOpenMobileMenu(null);
+        // Ook het desktop-paneel: bij navigatie vanaf toetsenbordfocus komt er nooit een
+        // mouseleave, dus zonder deze reset blijft het paneel op de nieuwe pagina openstaan.
+        setOpenMenu(null);
     }
+
+    const openPanel = (href: string) => setOpenMenu(href);
+    // Functionele guard: bij een snelle diagonale muisbeweging (leave A → enter B → late
+    // leave A) mag de afsluiter van A het net geopende paneel B niet dichtgooien.
+    const closePanel = (href: string) => setOpenMenu((cur) => (cur === href ? null : cur));
 
     useEffect(() => {
         const checkScreenSize = () => {
@@ -84,7 +96,14 @@ export default function Header() {
 
     return (
         <div ref={headerWrap} className="fixed top-12 left-0 right-0 z-50 px-8 sm:px-6 lg:px-8">
-            <header className={`max-w-7xl mx-auto bg-primary/10 backdrop-blur-md border border-primary/15 rounded-2xl shadow-sm shadow-primary/10 px-8 py-4 transition-colors ${overDark ? "text-white" : "text-[#727272]"}`}>
+            {/* Het mega-menu hangt met left-0/right-0 aan deze header, zodat het exact zo
+                breed is als de pill. `lg:` omdat het paneel alleen boven lg bestaat.
+                Overigens is deze header via `backdrop-blur-md` sowieso al de containing
+                block voor absolute kinderen (backdrop-filter maakt er één aan, ongeacht
+                `position`) — het mobiele paneel eronder hing er dus al aan en verschuift
+                hier niet door. De expliciete relative houdt dat waar als de blur ooit
+                verdwijnt. */}
+            <header className={`max-w-7xl mx-auto lg:relative bg-primary/10 backdrop-blur-md border border-primary/15 rounded-2xl shadow-sm shadow-primary/10 px-8 py-4 transition-colors ${overDark ? "text-white" : "text-[#727272]"}`}>
             <div className="flex items-center justify-between">
                 {/* Merk & navigatie */}
                 <div className="flex items-center gap-8">
@@ -92,42 +111,52 @@ export default function Header() {
                         <h2 className={`text-lg uppercase font-bold transition-colors ${overDark ? "text-white" : "text-secondary"}`}>Tradual</h2>
                     </Link>
                     <nav className={`hidden lg:flex items-center gap-6 font-heading text-sm transition-colors ${overDark ? "text-white" : "text-[#727272]"}`}>
-                        {mainNav.map((item) =>
-                            "children" in item && item.children.length > 0 ? (
+                        {mainNav.map((item) => {
+                            if (!isMegaItem(item)) {
+                                return (
+                                    <Link key={item.href} href={item.href} className="hover:text-secondary">
+                                        {item.label}
+                                    </Link>
+                                );
+                            }
+                            // Deterministisch, dus SSR en client komen op dezelfde id uit.
+                            const panelId = `nav-panel${item.href.replace(/\//g, "-")}`;
+                            const isPanelOpen = openMenu === item.href;
+                            return (
+                                // Bewust géén `relative` hier: het paneel hangt aan <header>.
                                 <div
                                     key={item.href}
-                                    className="relative"
-                                    onMouseEnter={() => setDienstenOpen(true)}
-                                    onMouseLeave={() => setDienstenOpen(false)}
+                                    onMouseEnter={() => openPanel(item.href)}
+                                    onMouseLeave={() => closePanel(item.href)}
+                                    // onFocus/onBlur mappen op focusin/focusout en bubbelen dus:
+                                    // één paar handlers dekt de trigger én elke link in het paneel.
+                                    onFocus={() => openPanel(item.href)}
+                                    onBlur={(e) => {
+                                        if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
+                                            closePanel(item.href);
+                                        }
+                                    }}
+                                    onKeyDown={(e) => {
+                                        if (e.key === "Escape") closePanel(item.href);
+                                    }}
                                 >
-                                    <Link href={item.href} className="hover:text-secondary flex items-center gap-1">
-                                        {item.label}
-                                        <ChevronDown size={14} strokeWidth={1.5} />
-                                    </Link>
-                                    <div
-                                        className={`absolute left-0 top-full pt-3 w-64 transition-all duration-150 ${
-                                            dienstenOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-1 pointer-events-none"
-                                        }`}
+                                    <Link
+                                        href={item.href}
+                                        aria-expanded={isPanelOpen}
+                                        aria-controls={panelId}
+                                        className="hover:text-secondary flex items-center gap-1"
                                     >
-                                        <div className="bg-surface border border-primary/10 shadow-lg py-2">
-                                            {item.children.map((child) => (
-                                                <Link
-                                                    key={child.href}
-                                                    href={child.href}
-                                                    className="block px-5 py-2.5 text-sm text-primary hover:bg-surface-muted hover:text-accent transition"
-                                                >
-                                                    {child.label}
-                                                </Link>
-                                            ))}
-                                        </div>
-                                    </div>
+                                        {item.label}
+                                        <ChevronDown
+                                            size={14}
+                                            strokeWidth={1.5}
+                                            className={`transition-transform motion-reduce:transition-none ${isPanelOpen ? "rotate-180" : ""}`}
+                                        />
+                                    </Link>
+                                    <NavMegaMenu item={item} open={isPanelOpen} panelId={panelId} />
                                 </div>
-                            ) : (
-                                <Link key={item.href} href={item.href} className="hover:text-secondary">
-                                    {item.label}
-                                </Link>
-                            )
-                        )}
+                            );
+                        })}
                     </nav>
                 </div>
 
@@ -166,24 +195,34 @@ export default function Header() {
                         >
                             <nav className="flex flex-col gap-4 text-primary font-heading">
                                 {mainNav.map((item) =>
-                                    "children" in item && item.children.length > 0 ? (
+                                    isMegaItem(item) ? (
                                         <div key={item.href} className="border-b border-primary/10 pb-3">
                                             <button
                                                 type="button"
-                                                onClick={() => setMobileDienstenOpen((v) => !v)}
+                                                // Eén open tegelijk, anders staan er acht sub-items
+                                                // onder elkaar in een paneel dat toch al scrolt.
+                                                onClick={() =>
+                                                    setOpenMobileMenu((cur) => (cur === item.href ? null : item.href))
+                                                }
+                                                aria-expanded={openMobileMenu === item.href}
                                                 className="flex items-center justify-between w-full hover:text-accent transition"
                                             >
                                                 {item.label}
                                                 <ChevronDown
                                                     size={16}
                                                     strokeWidth={1.5}
-                                                    className={`transition-transform ${mobileDienstenOpen ? "rotate-180" : ""}`}
+                                                    className={`transition-transform ${openMobileMenu === item.href ? "rotate-180" : ""}`}
                                                 />
                                             </button>
-                                            {mobileDienstenOpen && (
-                                                <div className="mt-3 flex flex-col gap-2 pl-3">
+                                            {openMobileMenu === item.href && (
+                                                <div className="mt-3 flex flex-col gap-2.5 pl-3">
                                                     {item.children.map((child) => (
-                                                        <Link key={child.href} href={child.href} className="text-sm text-primary/80 hover:text-accent transition">
+                                                        <Link
+                                                            key={child.href}
+                                                            href={child.href}
+                                                            className="flex items-center gap-2.5 text-sm text-primary/80 hover:text-accent transition"
+                                                        >
+                                                            <child.icon className="text-accent shrink-0" size={15} strokeWidth={1.5} />
                                                             {child.label}
                                                         </Link>
                                                     ))}
