@@ -27,6 +27,9 @@ export type Industry = {
   forWho: string[];
   notForWho?: string[];
   whatWeDo: string[];
+  // Volle-breedte beeldband tussen de kwalificatie- en de "wat we doen"-sectie. De
+  // statement-regel staat over het beeld en herhaalt bewust de heroTitle niet.
+  band: { image: string; alt: string; statement: string };
   // Getypeerd op Service["id"], zodat een typefout een compile error is en geen dode kaart.
   relatedServices: Service["id"][];
   faq: { question: string; answer: string }[];
@@ -69,6 +72,11 @@ export const industries: Industry[] = [
       "Part numbers, OEM references and fitment attributes structured for search and AI assistants",
       "Checkout measured on mobile, on the device your buyer actually uses",
     ],
+    band: {
+      image: "/images/industry-auto-parts.jpg",
+      alt: "Aisle in an auto parts warehouse, shelves stacked with boxed components",
+      statement: "A catalog this deep only earns money if search can find the right part.",
+    },
     relatedServices: ["revenue-leak-audit", "stack-rebuild", "agentic-readiness"],
     faq: [
       {
@@ -127,6 +135,11 @@ export const industries: Industry[] = [
       "Cut the app stack that was bought to patch B2B onto a consumer checkout",
       "Tracking that separates account revenue from anonymous traffic",
     ],
+    band: {
+      image: "/images/industry-b2b-wholesale.jpg",
+      alt: "Rows of shrink-wrapped pallets in a wholesale distribution centre",
+      statement: "The pricing layer your buyers wait for is the layer that costs you orders.",
+    },
     relatedServices: ["revenue-leak-audit", "stack-rebuild", "performance-layer"],
     faq: [
       {
@@ -185,6 +198,11 @@ export const industries: Industry[] = [
       "Clean up the wishlist, comparison and review apps that all load together",
       "Tracking that survives a consideration cycle spread over several visits",
     ],
+    band: {
+      image: "/images/industry-retail-homegoods.jpg",
+      alt: "Furniture and homegoods showroom interior in low evening light",
+      statement: "A buyer who comes back four times pays the load-time tax four times.",
+    },
     relatedServices: ["revenue-leak-audit", "stack-rebuild", "performance-layer"],
     faq: [
       {
@@ -243,6 +261,11 @@ export const industries: Industry[] = [
       "Untangle bundle and mix-and-match apps that were stacked over the years",
       "Tracking that connects an acquisition channel to a second and third order",
     ],
+    band: {
+      image: "/images/industry-food-beverage.jpg",
+      alt: "Glass bottles moving along a stainless steel bottling line",
+      statement: "Churn that starts with a hard-to-find pause button isn't churn. It's friction.",
+    },
     relatedServices: ["revenue-leak-audit", "performance-layer", "agentic-readiness"],
     faq: [
       {

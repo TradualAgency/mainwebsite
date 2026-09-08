@@ -5,6 +5,7 @@ import { Section } from "@/components/marketing/section";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { SignalGrid } from "@/components/marketing/signal-grid";
 import { QualifierColumns } from "@/components/marketing/qualifier-columns";
+import { MediaBand } from "@/components/marketing/media-band";
 import { ChecklistSection } from "@/components/marketing/checklist-section";
 import { ServiceCardGrid } from "@/components/marketing/service-card";
 import { FaqSection } from "@/components/marketing/faq-section";
@@ -63,6 +64,16 @@ export default async function IndustryPage({ params }: Params) {
         forWho={industry.forWho}
         notForWho={industry.notForWho}
         tone="muted"
+      />
+
+      {/* frame="muted" laat de rand doorlopen in de QualifierColumns hierboven; de witte
+          ChecklistSection begint daarna schoon. */}
+      <MediaBand
+        src={industry.band.image}
+        alt={industry.band.alt}
+        eyebrow={industry.name}
+        statement={industry.band.statement}
+        frame="muted"
       />
 
       <ChecklistSection
