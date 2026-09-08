@@ -7,7 +7,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const eslintConfig = [...nextCoreWebVitals, ...nextTypescript, {
-  ignores: ["node_modules/**", ".next/**", "out/**", "build/**", "next-env.d.ts"]
+  // .claude/** bevat Claude Code worktrees met hun eigen .next-builds; eslint liep daar
+  // uit zijn geheugen op de gebundelde chunks.
+  ignores: ["node_modules/**", ".next/**", "out/**", "build/**", "next-env.d.ts", "**/.claude/**"]
 }];
 
 export default eslintConfig;
