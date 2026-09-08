@@ -34,13 +34,8 @@ export function FunnelStepper({ current, tone = "dark" }: FunnelStepperProps) {
               >
                 {idx + 1}
               </span>
-              <span>
-                <span className={cn("block font-heading text-sm", isDark ? "text-surface" : "text-primary")}>
-                  {service.shortName}
-                </span>
-                <span className={cn("block text-xs mt-0.5", isDark ? "text-surface/50" : "text-body/60")}>
-                  {service.priceLabel}
-                </span>
+              <span className={cn("font-heading text-sm", isDark ? "text-surface" : "text-primary")}>
+                {service.shortName}
               </span>
             </Link>
             {idx < services.length - 1 && (

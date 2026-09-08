@@ -15,8 +15,7 @@ export function ServiceHero({ service }: ServiceHeroProps) {
       <h1 className="font-heading text-primary text-[40px] leading-[1.05] md:text-[68px] max-w-4xl mb-6">
         {service.heroTitle}
       </h1>
-      <p className="max-w-2xl text-body text-base md:text-lg leading-relaxed mb-4">{service.heroLede}</p>
-      <p className="font-heading text-accent text-xl md:text-2xl mb-8">{service.priceLabel}</p>
+      <p className="max-w-2xl text-body text-base md:text-lg leading-relaxed mb-8">{service.heroLede}</p>
       <div className="flex flex-col sm:flex-row gap-4">
         <CtaButton href="/contact" variant="gold">
           Book an intro call

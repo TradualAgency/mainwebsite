@@ -1,5 +1,4 @@
 import { SectionHeading } from "@/components/marketing/section-heading";
-import { FunnelStepper } from "@/components/marketing/funnel-stepper";
 import { ServiceCardGrid } from "@/components/marketing/service-card";
 import { services } from "@/content/services";
 
@@ -17,10 +16,7 @@ export default function FunnelSection() {
             tone="dark"
             className="mb-10"
           />
-          <FunnelStepper tone="dark" />
-          <div className="mt-10">
-            <ServiceCardGrid services={services} tone="dark" />
-          </div>
+          <ServiceCardGrid services={services} tone="dark" showPrice={false} />
         </div>
       </section>
     </div>
