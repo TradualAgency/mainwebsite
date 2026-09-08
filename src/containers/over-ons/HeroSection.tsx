@@ -36,10 +36,10 @@ export default function AboutHero({
             {ctaText}
           </Link>
           <Link
-            href="/projects"
+            href="/our-work"
             className="bg-transparent border border-accent text-accent px-8 py-3 rounded-md font-medium hover:bg-accent/10 transition"
           >
-            View cases
+            View our work
           </Link>
         </div>
       </div>

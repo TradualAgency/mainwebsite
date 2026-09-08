@@ -6,6 +6,7 @@ const RESERVED_SLUGS = [
   'contact',
   'services',
   'projects',
+  'our-work',
   'posts',
   'analysis',
   'analyse',

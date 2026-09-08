@@ -7,7 +7,7 @@ export const mainNav = [
     children: services.map((s) => ({ label: s.name, href: s.slug })),
   },
   { label: "Revenue Leak", href: "/revenue-leak" },
-  { label: "Cases", href: "/projects" },
+  { label: "Our Work", href: "/our-work" },
   { label: "About", href: "/about" },
 ] as const;
 
@@ -17,7 +17,7 @@ export const footerNav = {
   services: services.map((s) => ({ label: s.name, href: s.slug })),
   company: [
     { label: "About", href: "/about" },
-    { label: "Cases", href: "/projects" },
+    { label: "Our Work", href: "/our-work" },
     { label: "Revenue Leak", href: "/revenue-leak" },
     { label: "Insights", href: "/insights" },
   ],

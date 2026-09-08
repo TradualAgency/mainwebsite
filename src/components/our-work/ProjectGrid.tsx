@@ -1,4 +1,4 @@
-import ProjectCardGrid from "@/components/projecten/ProjectCardGrid";
+import ProjectCardGrid from "@/components/our-work/ProjectCardGrid";
 import { getProjects, getFeaturedProjects } from "@/sanity/lib/getProjects";
 import { CtaButton } from "@/components/marketing/cta-button";
 
@@ -21,8 +21,8 @@ export default async function ProjectGrid({ featured = false, limit, showViewAll
             <ProjectCardGrid projects={displayProjects} />
             {showViewAllCta && (
                 <div className="text-center mt-8">
-                    <CtaButton href="/projects" variant="ghost-light">
-                        View all cases
+                    <CtaButton href="/our-work" variant="ghost-light">
+                        View all work
                     </CtaButton>
                 </div>
             )}
