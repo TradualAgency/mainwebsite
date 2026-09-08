@@ -3,6 +3,7 @@
 import type { LucideIcon } from "lucide-react";
 import { Section } from "@/components/marketing/section";
 import { SectionHeading } from "@/components/marketing/section-heading";
+import { cn } from "@/lib/utils";
 import { useCountUp } from "@/hooks/use-count-up";
 import { useInView } from "@/hooks/use-in-view";
 
@@ -46,9 +47,14 @@ export function StatBand({ eyebrow, heading, intro, stats, tone = "dark" }: Stat
       {(eyebrow || heading) && (
         <SectionHeading eyebrow={eyebrow} title={heading ?? ""} intro={intro} align="center" tone={tone === "dark" ? "dark" : "light"} />
       )}
+      {/* Kolomaantal volgt het aantal cijfers: de casepagina voert er soms twee aan, en
+          een vaste sm:grid-cols-3 laat dan een gat vallen. */}
       <div
         ref={ref}
-        className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-accent/20 mt-6"
+        className={cn(
+          "grid grid-cols-1 divide-y sm:divide-y-0 sm:divide-x divide-accent/20 mt-6",
+          stats.length === 1 ? "sm:grid-cols-1" : stats.length === 2 ? "sm:grid-cols-2" : "sm:grid-cols-3",
+        )}
       >
         {stats.map((stat) => (
           <AnimatedStat key={stat.label} {...stat} trigger={inView} />

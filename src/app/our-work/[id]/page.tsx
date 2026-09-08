@@ -1,79 +1,113 @@
-import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
-import { getProjectBySlug } from "@/sanity/lib/getProjects";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { PortableText } from "@portabletext/react";
+import { CaseHero } from "@/components/our-work/case-hero";
+import { CaseQuote } from "@/components/our-work/case-quote";
+import { CaseGallery } from "@/components/our-work/case-gallery";
+import ProjectCardGrid from "@/components/our-work/ProjectCardGrid";
+import { Section } from "@/components/marketing/section";
+import { SectionHeading } from "@/components/marketing/section-heading";
+import { StatBand } from "@/components/marketing/stat-band";
+import { CtaBand } from "@/components/marketing/cta-band";
+import { portableTextComponents } from "@/components/portable-text-components";
+import { getProjectBySlug, getProjectSlugs, getRelatedProjects } from "@/sanity/lib/getProjects";
 import { urlFor } from "@/sanity/lib/image";
-import { PortableText } from '@portabletext/react'
 
+// Zelfde opzet als de Insights-detailpagina (app/insights/[slug]/page.tsx): statische
+// params uit Sanity, metadata met OG-image en notFound() op een onbekende slug.
 type Params = Promise<{ id: string }>;
 
+export async function generateStaticParams() {
+  const slugs = await getProjectSlugs();
+  return slugs.map((id) => ({ id }));
+}
+
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const { id } = await params;
+  const project = await getProjectBySlug(id);
+
+  if (!project) {
+    return { title: "Case not found" };
+  }
+
+  const ogImage = project.mainImage
+    ? urlFor(project.mainImage).width(1200).height(630).url()
+    : undefined;
+
+  return {
+    title: project.title,
+    description: project.description,
+    openGraph: {
+      type: "article",
+      title: project.title,
+      description: project.description,
+      images: ogImage
+        ? [{ url: ogImage, alt: project.mainImage?.alt || project.title }]
+        : undefined,
+    },
+  };
+}
+
 export default async function ProjectPage({ params }: { params: Params }) {
-    const { id } = await params;
+  const { id } = await params;
+  const project = await getProjectBySlug(id);
 
-    const project = await getProjectBySlug(id);
+  if (!project) {
+    notFound();
+  }
 
-    if (!project) {
-        return (
-            <div className="max-w-7xl mx-auto px-8 py-24 text-center">
-                <h1 className="font-heading text-primary text-3xl mb-4">Project not found</h1>
-                <p className="text-body">The project you're looking for doesn't exist or has been removed.</p>
-            </div>
-        );
-    }
+  const related = await getRelatedProjects(id);
 
-    const imageUrl = project.mainImage ? urlFor(project.mainImage).url() : "/placeholder.svg";
+  // De twee stub-projecten in Sanity hebben alleen een foto en een description. Elke
+  // sectie hieronder rendert daarom alleen als zijn data bestaat, zodat zo'n pagina
+  // kort is in plaats van leeg.
+  const results = project.results ?? [];
+  const gallery = project.gallery ?? [];
+  const quote = project.quote?.text;
 
-    return (
-        <div className="max-w-5xl mx-auto px-8 py-16 md:py-24">
-            <div className="mb-10 relative w-full h-64 md:h-[480px]">
-                <Image
-                    src={imageUrl}
-                    alt={project.mainImage?.alt || project.title}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 1024px"
-                    className="object-cover"
-                    priority
-                />
-            </div>
-            <div>
-                <h1 className="font-heading text-primary text-3xl md:text-5xl mb-4">{project.title}</h1>
-                {project.client && (
-                    <p className="text-body font-medium mb-2">Client: {project.client}</p>
-                )}
-                <p className="text-body text-lg mb-6">{project.description}</p>
+  return (
+    <main>
+      <CaseHero project={project} />
 
-                {project.tags && project.tags.length > 0 && (
-                    <div className="flex flex-wrap gap-2 mb-8">
-                        {project.tags.map((tag) => (
-                            <span
-                                key={tag}
-                                className="px-3 py-1 bg-surface-muted text-body text-sm"
-                            >
-                                {tag}
-                            </span>
-                        ))}
-                    </div>
-                )}
+      {project.content && (
+        <Section tone="light" innerClassName="max-w-3xl">
+          <PortableText value={project.content} components={portableTextComponents} />
+        </Section>
+      )}
 
-                {project.content && (
-                    <div className="prose prose-lg max-w-none text-body">
-                        <PortableText value={project.content} />
-                    </div>
-                )}
+      {results.length > 0 && <StatBand eyebrow="The result" stats={results} tone="dark" />}
 
-                {project.projectUrl && (
-                    <div className="mt-8">
-                        <a
-                            href={project.projectUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 bg-accent text-primary px-6 py-3 font-medium hover:opacity-90 transition"
-                        >
-                            View live project
-                            <ArrowUpRight size={16} strokeWidth={2} />
-                        </a>
-                    </div>
-                )}
-            </div>
-        </div>
-    );
+      {quote && <CaseQuote text={quote} attribution={project.quote?.attribution} />}
+
+      {gallery.length > 0 && (
+        <Section tone="light">
+          <CaseGallery images={gallery} fallbackAlt={project.title} />
+        </Section>
+      )}
+
+      {related.length > 0 && (
+        <Section tone="muted">
+          <SectionHeading eyebrow="More work" title="Other cases" className="mb-10" />
+          <ProjectCardGrid projects={related} />
+          <div className="mt-10">
+            <Link
+              href="/our-work"
+              className="text-primary underline decoration-accent decoration-2 underline-offset-4 hover:text-accent transition text-sm md:text-base"
+            >
+              ← Back to all work
+            </Link>
+          </div>
+        </Section>
+      )}
+
+      <CtaBand
+        eyebrow="Next step"
+        heading="Do you know where your revenue leaks?"
+        body="The Revenue Leak Audit measures all five layers on your store and translates every finding into an amount per month and per year."
+        primary={{ label: "Request a Revenue Leak Audit", href: "/services/revenue-leak-audit" }}
+        secondary={{ label: "View all work", href: "/our-work" }}
+      />
+    </main>
+  );
 }
