@@ -17,13 +17,18 @@ interface NavMegaMenuProps {
 // verder naar rechts staat. De hover blijft werken omdat het paneel nog steeds een DOM-
 // kind van de item-wrapper is: muisevents bubbelen via de DOM, niet via layout.
 //
-// pt-3 is de transparante brug over het gat tussen trigger en paneel; zonder die padding
-// klapt het menu dicht terwijl de cursor ernaartoe beweegt.
+// -mt-4 + pt-7 is de transparante brug over het gat tussen trigger en paneel. top-full zet de
+// bovenkant van het paneel op de onderrand van de padding-box van <header>; de 16px
+// onderpadding daarboven hoort bij <header> en is dus dode zone waar de hover afbreekt. -mt-4
+// trekt de doos precies die 16px omhoog — tot exact de onderrand van de rij, dus zonder de
+// CTA-knop te overlappen — en pt-7 (was pt-3 plus diezelfde 16px) houdt de zichtbare kaart op
+// precies dezelfde plek. Verder omhoog mag níét: het paneel is pill-breed en zou dan de
+// onderste pixels van de CTA onklikbaar maken.
 export function NavMegaMenu({ item, open, panelId }: NavMegaMenuProps) {
   return (
     <div
       id={panelId}
-      className={`absolute left-0 right-0 top-full pt-3 transition-all duration-150 motion-reduce:transition-none ${
+      className={`absolute left-0 right-0 top-full -mt-4 pt-7 transition-all duration-150 motion-reduce:transition-none ${
         open ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-1 pointer-events-none"
       }`}
     >

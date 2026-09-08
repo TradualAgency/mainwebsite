@@ -10,6 +10,13 @@ import { NavMegaMenu } from "@/components/header/nav-mega-menu";
 
 gsap.registerPlugin(useGSAP);
 
+// Genadetijd voordat een mega-paneel sluit. Tussen de onderkant van het nav-item en de
+// bovenkant van het paneel ligt ruimte die aan <header> toebehoort (de py-4 onderpadding),
+// niet aan de wrapper en niet aan het paneel; zonder uitstel vuurt onMouseLeave halverwege
+// die oversteek. 200ms dekt zelfs een heel trage muisbeweging en blijft onder de ~300ms
+// waarop een menu "blijft hangen" gaat voelen.
+const PANEL_CLOSE_DELAY_MS = 200;
+
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
@@ -32,10 +39,48 @@ export default function Header() {
         setOpenMenu(null);
     }
 
-    const openPanel = (href: string) => setOpenMenu(href);
+    // Eén gedeelde timer voor álle panelen, niet één per item: daardoor annuleert het openen
+    // van Industries óók de lopende sluiter van Services, zodat de wissel meteen gebeurt.
+    const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+    const cancelPendingClose = () => {
+        if (closeTimer.current !== null) {
+            clearTimeout(closeTimer.current);
+            closeTimer.current = null;
+        }
+    };
+
+    const openPanel = (href: string) => {
+        cancelPendingClose();
+        setOpenMenu(href);
+    };
+
+    // Direct sluiten, voor blur en Escape: uitstel zou het paneel zichtbaar laten terwijl de
+    // focus er al uit is, en dat is voor toetsenbordgebruik erger dan te snel sluiten.
     // Functionele guard: bij een snelle diagonale muisbeweging (leave A → enter B → late
     // leave A) mag de afsluiter van A het net geopende paneel B niet dichtgooien.
-    const closePanel = (href: string) => setOpenMenu((cur) => (cur === href ? null : cur));
+    const closePanelNow = (href: string) => {
+        cancelPendingClose();
+        setOpenMenu((cur) => (cur === href ? null : cur));
+    };
+
+    // Uitgesteld sluiten, voor de muis. Zodra de cursor het paneel bereikt vuurt onMouseEnter
+    // op de wrapper — het paneel is een React-kind van de wrapper en React leidt enter/leave
+    // af uit de fiber-boom, niet uit de layout — en annuleert openPanel deze timer. Zo
+    // overleeft het paneel de oversteek.
+    const closePanelSoon = (href: string) => {
+        cancelPendingClose();
+        closeTimer.current = setTimeout(() => {
+            closeTimer.current = null;
+            setOpenMenu((cur) => (cur === href ? null : cur));
+        }, PANEL_CLOSE_DELAY_MS);
+    };
+
+    // Deze Header staat in de root layout en unmount dus nooit bij client-navigatie; dit is
+    // hygiëne voor HMR en StrictMode.
+    useEffect(() => () => {
+        if (closeTimer.current !== null) clearTimeout(closeTimer.current);
+    }, []);
 
     useEffect(() => {
         const checkScreenSize = () => {
@@ -124,20 +169,28 @@ export default function Header() {
                             const isPanelOpen = openMenu === item.href;
                             return (
                                 // Bewust géén `relative` hier: het paneel hangt aan <header>.
+                                // py-2.5 rekt het hitgebied op tot de volle rijhoogte, zodat de
+                                // 10px `items-center`-speling onder de tekst geen dode zone meer
+                                // is. Layout-neutraal: 10+20+10 = 40px = precies de bestaande
+                                // rijhoogte (gedicteerd door de CTA: 24px regelhoogte + py-2),
+                                // dus de nav wordt 40px en het label blijft op exact dezelfde
+                                // y-positie. Let op die koppeling: verandert de CTA van maat, pas
+                                // dan deze py mee aan (of stap over op self-stretch).
                                 <div
                                     key={item.href}
+                                    className="py-2.5"
                                     onMouseEnter={() => openPanel(item.href)}
-                                    onMouseLeave={() => closePanel(item.href)}
+                                    onMouseLeave={() => closePanelSoon(item.href)}
                                     // onFocus/onBlur mappen op focusin/focusout en bubbelen dus:
                                     // één paar handlers dekt de trigger én elke link in het paneel.
                                     onFocus={() => openPanel(item.href)}
                                     onBlur={(e) => {
                                         if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
-                                            closePanel(item.href);
+                                            closePanelNow(item.href);
                                         }
                                     }}
                                     onKeyDown={(e) => {
-                                        if (e.key === "Escape") closePanel(item.href);
+                                        if (e.key === "Escape") closePanelNow(item.href);
                                     }}
                                 >
                                     <Link
