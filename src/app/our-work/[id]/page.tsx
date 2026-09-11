@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PortableText } from "@portabletext/react";
 import { CaseHero } from "@/components/our-work/case-hero";
 import { CaseQuote } from "@/components/our-work/case-quote";
 import { CaseGallery } from "@/components/our-work/case-gallery";
-import ProjectCardGrid from "@/components/our-work/ProjectCardGrid";
+import { RelatedCases } from "@/components/our-work/related-cases";
 import { Section } from "@/components/marketing/section";
-import { SectionHeading } from "@/components/marketing/section-heading";
+import { ProseReveal } from "@/components/marketing/prose-reveal";
 import { StatBand } from "@/components/marketing/stat-band";
 import { CtaBand } from "@/components/marketing/cta-band";
 import { portableTextComponents } from "@/components/portable-text-components";
@@ -75,7 +74,9 @@ export default async function ProjectPage({ params }: { params: Params }) {
 
       {project.content && (
         <Section tone="light" innerClassName="max-w-3xl">
-          <PortableText value={project.content} components={portableTextComponents} />
+          <ProseReveal>
+            <PortableText value={project.content} components={portableTextComponents} />
+          </ProseReveal>
         </Section>
       )}
 
@@ -89,20 +90,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
         </Section>
       )}
 
-      {related.length > 0 && (
-        <Section tone="muted">
-          <SectionHeading eyebrow="More work" title="Other cases" className="mb-10" />
-          <ProjectCardGrid projects={related} />
-          <div className="mt-10">
-            <Link
-              href="/our-work"
-              className="text-primary underline decoration-accent decoration-2 underline-offset-4 hover:text-accent transition text-sm md:text-base"
-            >
-              ← Back to all work
-            </Link>
-          </div>
-        </Section>
-      )}
+      {related.length > 0 && <RelatedCases projects={related} />}
 
       <CtaBand
         eyebrow="Next step"
