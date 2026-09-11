@@ -27,7 +27,7 @@ export const projectType = defineType({
       name: 'description',
       title: 'Description',
       type: 'text',
-      validation: Rule => Rule.required().max(200)
+      validation: Rule => Rule.required()
     }),
     defineField({
       name: 'mainImage',
