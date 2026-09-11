@@ -94,13 +94,15 @@ export default function Header() {
     }, []);
 
     // De header zweeft vast bovenaan. Op de homepage lopen de hero en het patroonblok
-    // achter elkaar met een donkere achtergrond, dus houden we de headertekst wit tot de
-    // sentinel na het patroonblok voorbij de header scrolt — daarna weer de normale kleuren.
-    const isHome = pathname === "/";
-    const [overDark, setOverDark] = useState(isHome);
+    // achter elkaar met een donkere achtergrond, en op een case-detail doet de hero
+    // hetzelfde. Op die routes houden we de headertekst wit tot de sentinel achter dat
+    // blok voorbij de header scrolt — daarna weer de normale kleuren. De index /our-work
+    // valt er bewust buiten: die heeft een lichte PageHero.
+    const startsOverDark = pathname === "/" || /^\/our-work\/[^/]+$/.test(pathname);
+    const [overDark, setOverDark] = useState(startsOverDark);
 
     useEffect(() => {
-        if (!isHome) {
+        if (!startsOverDark) {
             setOverDark(false);
             return;
         }
@@ -123,7 +125,7 @@ export default function Header() {
             window.removeEventListener("scroll", updateOverDark);
             window.removeEventListener("resize", updateOverDark);
         };
-    }, [isHome]);
+    }, [startsOverDark]);
 
     const headerWrap = useRef<HTMLDivElement>(null);
 

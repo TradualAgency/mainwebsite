@@ -12,9 +12,11 @@ interface MetaItem {
   value: React.ReactNode;
 }
 
-// Zelfde mediabehandeling als MediaBand en de hero-video op de homepage: beeld absoluut
-// op de achtergrond onder een verloop, copy op z-10, alles in een rounded-2xl blok met
-// p-5 eromheen. Server component — er zit geen interactie in.
+// Zelfde geometrie als de hero op de homepage: beeld absoluut op de achtergrond onder
+// een verloop, copy op z-10, alles in een rounded-2xl blok met p-5 eromheen. De -mt-24
+// heft de globale pt-24 van de layout op zodat het donkere blok bovenaan de pagina begint
+// en de header-pill eroverheen zweeft; de extra pt- compenseert dat intern, zodat de copy
+// onder de pill uitkomt. Server component — er zit geen interactie in.
 export function CaseHero({ project }: CaseHeroProps) {
   const eyebrow = ["Case", project.tags?.[0]].filter(Boolean).join(" · ");
   const year = project.completedAt ? new Date(project.completedAt).getFullYear() : null;
@@ -43,8 +45,8 @@ export function CaseHero({ project }: CaseHeroProps) {
   }
 
   return (
-    <div className="bg-surface p-5">
-      <section className="relative overflow-hidden rounded-2xl px-8 py-20 md:py-28">
+    <div className="-mt-24 bg-surface p-5">
+      <section className="relative overflow-hidden rounded-2xl px-8 pt-32 pb-20 md:pt-40 md:pb-28">
         <div className="absolute inset-0 bg-primary">
           {project.mainImage && (
             <Image

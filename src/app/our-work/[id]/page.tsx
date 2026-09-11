@@ -69,6 +69,9 @@ export default async function ProjectPage({ params }: { params: Params }) {
   return (
     <main>
       <CaseHero project={project} />
+      {/* De hero loopt onder de header door, dus houdt de header zijn tekst wit tot deze
+          sentinel hem voorbij scrolt. Zelfde afspraak als op de homepage. */}
+      <div id="header-dark-zone-end" />
 
       {project.content && (
         <Section tone="light" innerClassName="max-w-3xl">
