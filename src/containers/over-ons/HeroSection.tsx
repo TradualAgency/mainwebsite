@@ -14,7 +14,7 @@ export default function AboutHero({
   label,
   title,
   subtitle,
-  ctaHref = "/contact",
+  ctaHref = "/book-a-call",
   ctaText,
 }: AboutHeroProps) {
   const t = useTranslations("AboutComponents.hero");

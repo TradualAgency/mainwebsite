@@ -62,7 +62,7 @@ export function PostGrid({ posts }: PostGridProps) {
     return (
       <div ref={container} className="text-center py-16">
         <p className="text-body text-base md:text-lg mb-6">{t("empty")}</p>
-        <CtaButton href="/contact" variant="ghost-light">
+        <CtaButton href="/book-a-call" variant="ghost-light">
           {t("cta")}
         </CtaButton>
       </div>
