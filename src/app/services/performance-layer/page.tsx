@@ -3,9 +3,6 @@ import { ServiceHero } from "@/components/marketing/service-hero";
 import { QualifierColumns } from "@/components/marketing/qualifier-columns";
 import { ChecklistSection } from "@/components/marketing/checklist-section";
 import { ProcessTimeline } from "@/components/marketing/process-timeline";
-import { Section } from "@/components/marketing/section";
-import { SectionHeading } from "@/components/marketing/section-heading";
-import { PricingCard } from "@/components/marketing/pricing-card";
 import { FaqSection } from "@/components/marketing/faq-section";
 import { CtaBand } from "@/components/marketing/cta-band";
 import { getServiceById } from "@/content/services";
@@ -27,12 +24,6 @@ export default function PerformanceLayerPage() {
       <ChecklistSection eyebrow="What you get every month" title="Measure, prioritize, build, test" items={service.deliverables} tone="light" columns={1} />
 
       <ProcessTimeline eyebrow="The monthly rhythm" title="The same rhythm every month" steps={service.process} tone="muted" />
-
-      <Section tone="dark">
-        <SectionHeading eyebrow="Investment" title="What it costs" tone="dark" className="mb-10" />
-        <PricingCard label={service.name} priceLabel={service.priceLabel} determinants={service.priceDeterminants} tone="dark" className="max-w-xl" />
-      </Section>
-
       <FaqSection eyebrow="Questions" title="What people often ask us" items={service.faq} tone="light" />
 
       <CtaBand

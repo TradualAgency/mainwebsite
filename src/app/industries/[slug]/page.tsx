@@ -14,7 +14,7 @@ import { industries } from "@/content/industries";
 import { getServiceById } from "@/content/services";
 
 // Eén route in plaats van vier mappen zoals bij /services: de sectorpagina's zijn
-// structureel identiek (geen PricingCard-achtige uitzonderingen per pagina), dus vier
+// structureel identiek (geen uitzonderingen per pagina), dus vier
 // keer dezelfde compositie kopiëren levert alleen drift op. Alle variatie zit in
 // content/industries.ts.
 type Params = { params: Promise<{ slug: string }> };

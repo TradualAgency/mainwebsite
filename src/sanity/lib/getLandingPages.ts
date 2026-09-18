@@ -16,7 +16,6 @@ export type HeroBlock = {
   eyebrow?: string
   heading: string
   lede?: string
-  priceLabel?: string
   primaryCta?: CtaLink
   secondaryCta?: CtaLink
 }
@@ -44,16 +43,6 @@ export type ProcessBlock = {
   eyebrow?: string
   title: string
   steps: { _key: string; title: string; body: string }[]
-}
-
-export type PricingBlock = {
-  _type: 'pricing'
-  _key: string
-  eyebrow?: string
-  title: string
-  label: string
-  priceLabel: string
-  determinants?: string[]
 }
 
 export type FaqsBlock = {
@@ -105,7 +94,6 @@ export type PageBuilderBlock =
   | AudienceBlock
   | ChecklistBlock
   | ProcessBlock
-  | PricingBlock
   | FaqsBlock
   | CtaBlock
   | ContactFormBlock

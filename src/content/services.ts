@@ -1,6 +1,6 @@
 // Single source of truth voor de vier diensten. Nav, footer, /services, elke dienstpagina,
-// de homepage-sectie en de funnel-stepper lezen allemaal uit dit bestand — zodat een
-// prijsrange nooit op twee plekken iets anders zegt.
+// de homepage-sectie en de funnel-stepper lezen allemaal uit dit bestand — zodat copy
+// nooit op twee plekken iets anders zegt.
 
 import type { LucideIcon } from "lucide-react";
 import { Activity, Bot, Gauge, Wrench } from "lucide-react";
@@ -22,17 +22,12 @@ export type Service = {
   // op /services en loopt daar tot 25 woorden.
   navDescription: string;
   icon: LucideIcon;
-  priceFrom: number;
-  priceTo: number | null;
-  priceUnit: "one-time" | "/mo";
-  priceLabel: string;
   heroTitle: string;
   heroLede: string;
   forWho: string[];
   notForWho?: string[];
   deliverables: string[];
   process: ProcessStep[];
-  priceDeterminants: string[];
   afterThisLabel: string;
   afterThisHref: string;
   faq: { question: string; answer: string }[];
@@ -49,10 +44,6 @@ export const services: Service[] = [
       "We measure where your revenue leaks, across all five layers, and translate it into euros per month and per year.",
     navDescription: "Measure the leak across five layers and price it in euros per month.",
     icon: Gauge,
-    priceFrom: 2500,
-    priceTo: 7500,
-    priceUnit: "one-time",
-    priceLabel: "€2,500 – €7,500",
     heroTitle: "Know within weeks how much revenue your store is leaving on the table.",
     heroLede:
       "We scan your shop across five layers, from load time to checkout to AI findability, and translate every technical problem into an amount per month and per year. Not a list of improvements: a business case.",
@@ -90,11 +81,6 @@ export const services: Service[] = [
         body: "In a one-hour session we walk through the report and decide the next step together.",
       },
     ],
-    priceDeterminants: [
-      "Catalog size",
-      "Number of markets and languages",
-      "Scan depth: outside-only, or also access to Shopify admin, analytics, and ad accounts",
-    ],
     afterThisLabel: "You choose: execute yourself with the roadmap, a Stack Rebuild, or the Performance Layer.",
     afterThisHref: "/services/stack-rebuild",
     faq: [
@@ -125,10 +111,6 @@ export const services: Service[] = [
       "When optimizing inside your current stack is no longer enough. Focused on structural recovery of performance and conversion.",
     navDescription: "Rebuild the foundation when tweaking your current stack stops paying off.",
     icon: Wrench,
-    priceFrom: 25000,
-    priceTo: null,
-    priceUnit: "one-time",
-    priceLabel: "from €25,000",
     heroTitle: "When optimizing inside your current stack is no longer enough.",
     heroLede:
       "There's a point where another month of tweaking yields nothing, because the problem sits in the foundation. That's when we rebuild it, focused on structural recovery of speed and conversion.",
@@ -175,11 +157,6 @@ export const services: Service[] = [
         body: "After go-live we measure again whether the leak is actually closed.",
       },
     ],
-    priceDeterminants: [
-      "Size and complexity of the current stack",
-      "Chosen architecture (monolith, hybrid, or headless)",
-      "Number of integrations and custom functionality",
-    ],
     afterThisLabel: "After the rebuild you continue with the Performance Layer to keep the leak closed.",
     afterThisHref: "/services/performance-layer",
     faq: [
@@ -210,10 +187,6 @@ export const services: Service[] = [
       "Ongoing optimization layer after audit or rebuild: measure, prioritize, build, test, and improve.",
     navDescription: "Monthly measuring, building and testing so new leaks never settle in.",
     icon: Activity,
-    priceFrom: 3000,
-    priceTo: 10000,
-    priceUnit: "/mo",
-    priceLabel: "€3,000 – €10,000 / mo",
     heroTitle: "Every month, more revenue from the same traffic.",
     heroLede:
       "A rebuild closes the big leaks. The Performance Layer makes sure new ones don't appear, and that every month more revenue comes from traffic you're already paying for.",
@@ -234,11 +207,6 @@ export const services: Service[] = [
       { title: "Build", body: "Improvements are built and shipped." },
       { title: "Test", body: "Results are measured before anything counts as done." },
       { title: "Report", body: "You get back what it delivered, in euros." },
-    ],
-    priceDeterminants: [
-      "Size of the shop and its traffic",
-      "Number of involved channels and integrations",
-      "Desired iteration speed",
     ],
     afterThisLabel: "Ready for the next step? Agentic Readiness prepares you for AI agents as buyers.",
     afterThisHref: "/services/agentic-readiness",
@@ -264,10 +232,6 @@ export const services: Service[] = [
       "Preparing commerce infrastructure for AI agents and new buying interfaces: product data, structured data, feeds, APIs, and transactional readiness.",
     navDescription: "Get found, understood and chosen by the buyer that isn't human.",
     icon: Bot,
-    priceFrom: 5000,
-    priceTo: 15000,
-    priceUnit: "one-time",
-    priceLabel: "€5,000 – €15,000 (analysis; implementation separate)",
     heroTitle: "Ready for the buyer who isn't human.",
     heroLede:
       "More and more product discovery runs through AI assistants and agents. They don't read a pretty product page; they read your data. We make sure you're found, understood, and chosen.",
@@ -288,11 +252,6 @@ export const services: Service[] = [
       { title: "Analyze", body: "We assess product data, structured data, feeds, and API accessibility against what AI agents need." },
       { title: "Report", body: "You get a concrete picture of where you stand now and what the biggest gaps are." },
       { title: "Implement", body: "Separate from the analysis: we build the changes that make you findable and transactionally ready." },
-    ],
-    priceDeterminants: [
-      "Size of the product catalog",
-      "Current state of structured data and feeds",
-      "Number of channels and markets",
     ],
     afterThisLabel: "Back to the overview of all services.",
     afterThisHref: "/services",

@@ -7,14 +7,12 @@ import type { SectionTone } from "@/components/marketing/section";
 import type { PageBuilderBlock } from "@/sanity/lib/getLandingPages";
 import { LandingHero } from "@/components/landing/hero";
 import { F1StorySection } from "@/components/landing/f1-story-section";
-import { LandingPricing } from "@/components/landing/pricing-section";
 import { LandingContactForm } from "@/components/landing/contact-form-section";
 import { LandingRichText } from "@/components/landing/rich-text-section";
 
 const FIXED_TONES: Partial<Record<PageBuilderBlock["_type"], SectionTone>> = {
   hero: "light",
   f1Story: "dark",
-  pricing: "dark",
   cta: "dark",
   contactForm: "dark",
 };
@@ -82,8 +80,6 @@ export function PageBuilder({
                 tone={tone === "dark" ? "muted" : tone}
               />
             );
-          case "pricing":
-            return <LandingPricing key={block._key} {...block} />;
           case "faqs":
             return (
               <FaqSection

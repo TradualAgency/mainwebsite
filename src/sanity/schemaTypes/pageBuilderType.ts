@@ -10,7 +10,6 @@ export const pageBuilderType = defineType({
     defineArrayMember({ type: 'audience' }),
     defineArrayMember({ type: 'checklist' }),
     defineArrayMember({ type: 'process' }),
-    defineArrayMember({ type: 'pricing' }),
     defineArrayMember({ type: 'faqs' }),
     defineArrayMember({ type: 'cta' }),
     defineArrayMember({ type: 'contactForm' }),

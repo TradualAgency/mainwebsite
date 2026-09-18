@@ -16,7 +16,7 @@ export default function FunnelSection() {
             tone="dark"
             className="mb-10"
           />
-          <ServiceCardGrid services={services} tone="dark" showPrice={false} />
+          <ServiceCardGrid services={services} tone="dark" />
         </div>
       </section>
     </div>

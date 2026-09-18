@@ -5,10 +5,9 @@ import type { Service } from "@/content/services";
 interface ServiceCardProps {
   service: Service;
   tone?: "light" | "dark";
-  showPrice?: boolean;
 }
 
-export function ServiceCard({ service, tone = "dark", showPrice = true }: ServiceCardProps) {
+export function ServiceCard({ service, tone = "dark" }: ServiceCardProps) {
   const isDark = tone === "dark";
   return (
     <Link
@@ -28,14 +27,7 @@ export function ServiceCard({ service, tone = "dark", showPrice = true }: Servic
           {service.oneLiner}
         </p>
       </div>
-      <div
-        className={`flex items-center mt-auto pt-4 border-t border-accent/20 ${
-          showPrice ? "justify-between" : "justify-end"
-        }`}
-      >
-        {showPrice && (
-          <span className={`font-heading text-sm ${isDark ? "text-surface" : "text-primary"}`}>{service.priceLabel}</span>
-        )}
+      <div className="flex items-center justify-end mt-auto pt-4 border-t border-accent/20">
         <ArrowRight
           className="text-accent transition-transform group-hover:translate-x-1"
           size={18}
@@ -49,7 +41,6 @@ export function ServiceCard({ service, tone = "dark", showPrice = true }: Servic
 interface ServiceCardGridProps {
   services: Service[];
   tone?: "light" | "dark";
-  showPrice?: boolean;
   columns?: 3 | 4;
 }
 
@@ -60,11 +51,11 @@ const gridClasses = {
   4: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4",
 } as const;
 
-export function ServiceCardGrid({ services, tone = "dark", showPrice = true, columns = 4 }: ServiceCardGridProps) {
+export function ServiceCardGrid({ services, tone = "dark", columns = 4 }: ServiceCardGridProps) {
   return (
     <div className={gridClasses[columns]}>
       {services.map((service) => (
-        <ServiceCard key={service.id} service={service} tone={tone} showPrice={showPrice} />
+        <ServiceCard key={service.id} service={service} tone={tone} />
       ))}
     </div>
   );

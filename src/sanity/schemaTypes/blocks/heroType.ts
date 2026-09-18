@@ -25,12 +25,6 @@ export const heroType = defineType({
       rows: 3,
     }),
     defineField({
-      name: 'priceLabel',
-      title: 'Price label',
-      type: 'string',
-      description: 'Optional, e.g. €2,500 – €7,500',
-    }),
-    defineField({
       name: 'primaryCta',
       title: 'Primary button',
       type: 'ctaLink',

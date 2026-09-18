@@ -13,7 +13,6 @@ import {f1StoryType} from './blocks/f1StoryType'
 import {audienceType} from './blocks/audienceType'
 import {checklistType} from './blocks/checklistType'
 import {processType} from './blocks/processType'
-import {pricingType} from './blocks/pricingType'
 import {faqsType} from './blocks/faqsType'
 import {ctaType} from './blocks/ctaType'
 import {contactFormType} from './blocks/contactFormType'
@@ -36,7 +35,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     audienceType,
     checklistType,
     processType,
-    pricingType,
     faqsType,
     ctaType,
     contactFormType,

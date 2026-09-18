@@ -7,10 +7,10 @@ export default function ContactPageCTABlock() {
             <div className="text-center">
                 <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-4">Next step</p>
                 <h2 className="font-heading text-primary text-[32px] leading-[1.05] md:text-[48px] mb-4 md:mb-6">
-                    Prefer to know what it costs first?
+                    Prefer to see what we do first?
                 </h2>
                 <p className="text-base md:text-lg leading-relaxed text-body mb-6 md:mb-8 max-w-2xl mx-auto">
-                    View the four services and price ranges, or email us directly if you'd rather speak in person.
+                    View the four services and how they work, or email us directly if you'd rather speak in person.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                     <Link
