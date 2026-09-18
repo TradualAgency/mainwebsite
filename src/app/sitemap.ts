@@ -13,6 +13,7 @@ const STATIC_PATHS = [
   "/",
   "/about",
   "/contact",
+  "/book-a-call",
   "/services",
   ...SERVICE_ORDER.map((id) => `/services/${id}`),
   "/industries",

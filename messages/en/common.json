@@ -29,6 +29,7 @@
       "industries": "Industries",
       "company": "Company",
       "contact": "Contact",
+      "bookCall": "Book an intro call",
       "sendMessage": "Send a message",
       "rights": "© {year} {name}. All rights reserved."
     },

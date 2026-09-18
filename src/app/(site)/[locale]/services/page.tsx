@@ -79,7 +79,7 @@ export default async function ServicesPage({ params }: Props) {
         heading={t("cta.heading")}
         body={t("cta.body")}
         primary={{ label: t("cta.primary"), href: "/services/revenue-leak-audit" }}
-        secondary={{ label: t("cta.secondary"), href: "/contact" }}
+        secondary={{ label: t("cta.secondary"), href: "/book-a-call" }}
       />
     </main>
   );

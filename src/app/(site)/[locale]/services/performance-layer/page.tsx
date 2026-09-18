@@ -55,7 +55,7 @@ export default async function PerformanceLayerPage({ params }: Props) {
         eyebrow={shared("nextStepEyebrow")}
         heading={t("cta.heading")}
         body={service.afterThisLabel}
-        primary={{ label: shared("bookIntroCall"), href: "/contact" }}
+        primary={{ label: shared("bookIntroCall"), href: "/book-a-call" }}
         secondary={{ label: t("cta.secondary"), href: service.afterThisHref }}
       />
     </main>

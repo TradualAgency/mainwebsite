@@ -6,6 +6,7 @@ import {postType} from './postType'
 import {authorType} from './authorType'
 import {projectType} from "./projectType";
 import {prospectScanType} from "./prospectScanType";
+import {bookingSlotType} from './bookingSlotType'
 import {ctaLinkType} from './objects/ctaLinkType'
 import {heroType} from './blocks/heroType'
 import {f1StoryType} from './blocks/f1StoryType'
@@ -27,6 +28,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     authorType,
     projectType,
     prospectScanType,
+    bookingSlotType,
     ctaLinkType,
     heroType,
     f1StoryType,

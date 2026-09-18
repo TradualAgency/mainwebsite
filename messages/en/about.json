@@ -53,6 +53,10 @@
     },
     "eyebrow": "Contact",
     "title": "Let's find out where your revenue leaks.",
+    "bookBanner": {
+      "text": "Prefer to pick a time right away? You get an instant confirmation with a Google Meet link, no waiting for a reply.",
+      "cta": "Book an intro call"
+    },
     "cta": {
       "eyebrow": "Next step",
       "heading": "Prefer to see what we do first?",

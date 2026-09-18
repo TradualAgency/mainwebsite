@@ -6,7 +6,8 @@ import home from "./home.json";
 import services from "./services.json";
 import about from "./about.json";
 import work from "./work.json";
+import booking from "./booking.json";
 
-const messages = { ...common, ...home, ...services, ...about, ...work };
+const messages = { ...common, ...home, ...services, ...about, ...work, ...booking };
 
 export default messages;

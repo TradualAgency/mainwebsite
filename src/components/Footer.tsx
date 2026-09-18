@@ -74,6 +74,11 @@ export default async function Footer() {
               </a>
             </li>
             <li>
+              <Link href="/book-a-call" className="hover:text-accent transition">
+                {t("bookCall")}
+              </Link>
+            </li>
+            <li>
               <Link href="/contact" className="hover:text-accent transition">
                 {t("sendMessage")}
               </Link>

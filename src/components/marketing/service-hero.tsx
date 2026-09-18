@@ -19,7 +19,7 @@ export function ServiceHero({ service }: ServiceHeroProps) {
       </h1>
       <p className="max-w-2xl text-body text-base md:text-lg leading-relaxed mb-8">{service.heroLede}</p>
       <div className="flex flex-col sm:flex-row gap-4">
-        <CtaButton href="/contact" variant="gold">
+        <CtaButton href="/book-a-call" variant="gold">
           {t("primary")}
         </CtaButton>
         <CtaButton href="/services" variant="ghost-light">

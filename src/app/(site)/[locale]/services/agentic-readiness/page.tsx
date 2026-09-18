@@ -54,7 +54,7 @@ export default async function AgenticReadinessPage({ params }: Props) {
         eyebrow={t("cta.eyebrow")}
         heading={t("cta.heading")}
         body={t("cta.body")}
-        primary={{ label: shared("bookIntroCall"), href: "/contact" }}
+        primary={{ label: shared("bookIntroCall"), href: "/book-a-call" }}
         secondary={{ label: t("cta.secondary"), href: service.afterThisHref }}
       />
     </main>

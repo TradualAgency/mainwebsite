@@ -53,6 +53,10 @@
     },
     "eyebrow": "Contact",
     "title": "Laten we uitzoeken waar je omzet weglekt.",
+    "bookBanner": {
+      "text": "Liever meteen een moment kiezen? Je krijgt direct een bevestiging met een Google Meet-link, zonder te wachten op antwoord.",
+      "cta": "Plan een kennismaking"
+    },
     "cta": {
       "eyebrow": "Volgende stap",
       "heading": "Liever eerst zien wat we doen?",

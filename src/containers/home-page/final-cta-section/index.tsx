@@ -10,7 +10,7 @@ export default async function FinalCTA() {
       heading={t("heading")}
       body={t("body")}
       primary={{ label: t("primary"), href: "/services/revenue-leak-audit" }}
-      secondary={{ label: t("secondary"), href: "/contact" }}
+      secondary={{ label: t("secondary"), href: "/book-a-call" }}
     />
   );
 }

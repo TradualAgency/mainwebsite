@@ -1,0 +1,94 @@
+{
+  "BookCallPage": {
+    "metadata": {
+      "title": "Book an intro call",
+      "description": "Pick a 30-minute intro call that suits you. Receive a confirmation and calendar file by email, and a Google Meet link before the call."
+    },
+    "eyebrow": "Intro call",
+    "title": "Pick a moment. It's booked right away.",
+    "lede": "Choose a 30-minute slot below. Your confirmation and calendar file arrive by email. You'll receive a Google Meet link before the call. Bring your store and your numbers; we'll bring the questions.",
+    "expect": {
+      "ariaLabel": "What to expect",
+      "pick": {
+        "title": "Pick a slot",
+        "body": "Choose a day and time that suits you."
+      },
+      "confirm": {
+        "title": "Instant confirmation",
+        "body": "Your confirmation lands in your inbox the moment you confirm. No back-and-forth, no waiting for a reply."
+      },
+      "meet": {
+        "title": "Meet via Google Meet",
+        "body": "Add the call to your calendar using the attached file. You'll receive the Google Meet link before we meet. Thirty minutes, one engineer, straight to the point."
+      }
+    },
+    "widget": {
+      "eyebrow": "Intro call",
+      "duration": "{minutes} minutes",
+      "location": "Google Meet",
+      "timezoneNote": "Times shown in Dutch time (Europe/Amsterdam)",
+      "pickDay": "Pick a day",
+      "pickTime": "Pick a time",
+      "selectDayFirst": "Select a day to see available times.",
+      "prevMonth": "Previous month",
+      "nextMonth": "Next month",
+      "loading": "Loading availability…",
+      "noSlots": "No times available on this day.",
+      "noSlotsMonth": "No availability left this month. Try the next one.",
+      "error": "We couldn't load the calendar. Email us or use the contact form instead.",
+      "retry": "Try again",
+      "yourSlot": "Your slot",
+      "change": "Change",
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "company": "Company or store (optional)",
+        "notes": "What's on your mind? (optional)"
+      },
+      "errors": {
+        "nameMin": "Your name must be at least 2 characters",
+        "nameMax": "Your name may not be more than 80 characters",
+        "email": "Invalid email address",
+        "companyMax": "Keep it under 120 characters",
+        "notesMax": "Keep it under 1000 characters"
+      },
+      "submit": "Confirm booking",
+      "submitting": "Booking…",
+      "slotTaken": "That time was just taken. Pick another one.",
+      "submitError": "Booking failed. Email us at {email} and we'll fix it right away.",
+      "success": {
+        "eyebrow": "Booked",
+        "heading": "You're in the calendar.",
+        "body": "Your confirmation and calendar file are on their way to {email}. You'll receive the Google Meet link before the call. Need to move it? Just reply to the confirmation.",
+        "home": "Back to home",
+        "emailPending": "Your call is booked and Jordy has received your details, but we couldn't send your confirmation email. Contact {email} for your confirmation and meeting link."
+      },
+      "slotExpired": "That time is no longer available. Pick another one.",
+      "unavailable": "Online booking is temporarily unavailable. Email us at {email} to arrange your call.",
+      "checkBooking": "We couldn't verify your booking. Please email {email} before trying again so we can check whether your time has been reserved."
+    },
+    "fallback": {
+      "eyebrow": "Prefer another way?",
+      "heading": "Rather write first?",
+      "body": "Send a message through the contact form or email us directly. You'll hear back within one working day.",
+      "contact": "Go to the contact form",
+      "email": "Email us directly"
+    }
+  },
+  "BookingEmail": {
+    "subject": "Confirmed: intro call {when}",
+    "preview": "Your intro call with Tradual is booked.",
+    "greeting": "Hi {name},",
+    "confirmed": "Your intro call is booked.",
+    "whenLabel": "When",
+    "whenValue": "{when} (Dutch time)",
+    "whereLabel": "Where",
+    "meetButton": "Open Google Meet",
+    "meetPending": "You'll receive the Google Meet link by email before the call.",
+    "ics": "The calendar file is attached, so it takes one click to add.",
+    "reschedule": "Need to move or cancel? Just reply to this email.",
+    "signoff": "See you then,",
+    "signature": "Jordy van Zanten · Tradual",
+    "icsSummary": "Intro call Tradual × {name}"
+  }
+}

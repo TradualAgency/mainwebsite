@@ -1,0 +1,94 @@
+{
+  "BookCallPage": {
+    "metadata": {
+      "title": "Plan een kennismaking",
+      "description": "Kies een kennismaking van 30 minuten op een moment dat jou uitkomt. Ontvang een bevestiging en agenda-bestand per mail en vóór het gesprek een Google Meet-link."
+    },
+    "eyebrow": "Kennismaking",
+    "title": "Kies een moment. Het staat meteen vast.",
+    "lede": "Kies hieronder een moment van 30 minuten. Je bevestiging en agenda-bestand ontvang je per mail. De Google Meet-link krijg je vóór het gesprek. Neem je webshop en je cijfers mee; wij nemen de vragen mee.",
+    "expect": {
+      "ariaLabel": "Wat je kunt verwachten",
+      "pick": {
+        "title": "Kies een moment",
+        "body": "Kies een dag en tijd die jou uitkomt."
+      },
+      "confirm": {
+        "title": "Direct bevestigd",
+        "body": "Zodra je bevestigt, staat de bevestiging in je inbox. Geen heen-en-weer, geen wachten op antwoord."
+      },
+      "meet": {
+        "title": "Kennismaken via Google Meet",
+        "body": "Zet de afspraak in je agenda met het bijgevoegde bestand. De Google Meet-link krijg je vóór het gesprek. Dertig minuten, één engineer, meteen ter zake."
+      }
+    },
+    "widget": {
+      "eyebrow": "Kennismaking",
+      "duration": "{minutes} minuten",
+      "location": "Google Meet",
+      "timezoneNote": "Tijden in Nederlandse tijd (Europe/Amsterdam)",
+      "pickDay": "Kies een dag",
+      "pickTime": "Kies een tijd",
+      "selectDayFirst": "Kies een dag om de beschikbare tijden te zien.",
+      "prevMonth": "Vorige maand",
+      "nextMonth": "Volgende maand",
+      "loading": "Beschikbaarheid laden…",
+      "noSlots": "Geen tijden beschikbaar op deze dag.",
+      "noSlotsMonth": "Deze maand is vol. Probeer de volgende.",
+      "error": "De kalender kon niet worden geladen. Mail ons of gebruik het contactformulier.",
+      "retry": "Opnieuw proberen",
+      "yourSlot": "Jouw moment",
+      "change": "Wijzig",
+      "form": {
+        "name": "Naam",
+        "email": "E-mail",
+        "company": "Bedrijf of webshop (optioneel)",
+        "notes": "Waar wil je het over hebben? (optioneel)"
+      },
+      "errors": {
+        "nameMin": "Je naam moet minimaal 2 tekens zijn",
+        "nameMax": "Je naam mag maximaal 80 tekens zijn",
+        "email": "Ongeldig e-mailadres",
+        "companyMax": "Houd het onder de 120 tekens",
+        "notesMax": "Houd het onder de 1000 tekens"
+      },
+      "submit": "Bevestig afspraak",
+      "submitting": "Bezig met boeken…",
+      "slotTaken": "Dat tijdstip is net vergeven. Kies een ander moment.",
+      "submitError": "Boeken is mislukt. Mail ons op {email}, dan lossen we het direct op.",
+      "success": {
+        "eyebrow": "Geboekt",
+        "heading": "Je staat in de agenda.",
+        "body": "Je bevestiging en agenda-bestand zijn onderweg naar {email}. De Google Meet-link ontvang je vóór het gesprek. Wil je verzetten? Beantwoord gewoon de bevestigingsmail.",
+        "home": "Terug naar home",
+        "emailPending": "Je afspraak staat vast en Jordy heeft je gegevens ontvangen, maar je bevestigingsmail kon niet worden verstuurd. Mail {email} voor je bevestiging en vergaderlink."
+      },
+      "slotExpired": "Dat tijdstip is niet meer beschikbaar. Kies een ander moment.",
+      "unavailable": "Online boeken is tijdelijk niet beschikbaar. Mail ons op {email} om je kennismaking te plannen.",
+      "checkBooking": "We konden je boeking niet controleren. Mail {email} voordat je opnieuw boekt, zodat we kunnen nagaan of jouw moment al is gereserveerd."
+    },
+    "fallback": {
+      "eyebrow": "Liever anders?",
+      "heading": "Liever eerst schrijven?",
+      "body": "Stuur een bericht via het contactformulier of mail ons direct. Je hoort binnen één werkdag van ons.",
+      "contact": "Naar het contactformulier",
+      "email": "Mail ons direct"
+    }
+  },
+  "BookingEmail": {
+    "subject": "Bevestigd: kennismaking {when}",
+    "preview": "Je kennismaking met Tradual staat vast.",
+    "greeting": "Hoi {name},",
+    "confirmed": "Je kennismaking staat vast.",
+    "whenLabel": "Wanneer",
+    "whenValue": "{when} (Nederlandse tijd)",
+    "whereLabel": "Waar",
+    "meetButton": "Open Google Meet",
+    "meetPending": "Je ontvangt de Google Meet-link vóór het gesprek per mail.",
+    "ics": "Het agenda-bestand zit in de bijlage, dus toevoegen is één klik.",
+    "reschedule": "Verzetten of annuleren? Beantwoord gewoon deze mail.",
+    "signoff": "Tot dan,",
+    "signature": "Jordy van Zanten · Tradual",
+    "icsSummary": "Kennismaking Tradual × {name}"
+  }
+}
