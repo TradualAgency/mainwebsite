@@ -1,0 +1,233 @@
+{
+  "Marketing": {
+    "faq": {
+      "eyebrow": "Veelgestelde vragen",
+      "title": "Vragen die als eerste komen"
+    },
+    "checklist": {
+      "eyebrow": "Wat je krijgt"
+    },
+    "qualifier": {
+      "eyebrow": "Voor wie het is"
+    },
+    "process": {
+      "eyebrow": "Hoe het werkt"
+    },
+    "serviceCard": {
+      "step": "Stap {n}"
+    },
+    "serviceHero": {
+      "step": "Stap {n} van {total}",
+      "primary": "Plan een kennismaking",
+      "secondary": "Alle diensten"
+    },
+    "industryHero": {
+      "eyebrow": "Sectoren",
+      "primary": "Vraag een Revenue Leak Audit aan",
+      "secondary": "Alle sectoren"
+    }
+  },
+  "ServicesPage": {
+    "metadata": {
+      "title": "Diensten",
+      "description": "Vier diensten, één route: Revenue Leak Audit, Stack Rebuild, Performance Layer en Agentic Readiness. Je begint met meten, daarna herstel je wat het meeste kost."
+    },
+    "hero": {
+      "eyebrow": "Diensten",
+      "title": "Vier diensten. Eén route naar meer omzet uit hetzelfde verkeer.",
+      "lede": "Je begint met meten. Daarna herstel je wat aantoonbaar het meeste kost. Daarna houd je het zo."
+    },
+    "route": {
+      "eyebrow": "De route",
+      "title": "Audit → Rebuild → Performance Layer → Agentic Readiness"
+    },
+    "all": {
+      "eyebrow": "Alle diensten",
+      "title": "Kies je startpunt",
+      "intro": "De meeste merken beginnen met de audit: die levert de onderbouwing voor alles wat daarna komt."
+    },
+    "cta": {
+      "eyebrow": "Startpunt",
+      "heading": "Begin met de Revenue Leak Audit.",
+      "body": "Dat is de dienst die de rest van de route onderbouwt, met cijfers, niet met aannames.",
+      "primary": "Vraag een Revenue Leak Audit aan",
+      "secondary": "Plan een kennismaking"
+    }
+  },
+  "ServiceDetail": {
+    "shared": {
+      "questionsEyebrow": "Vragen",
+      "questionsTitle": "Wat mensen ons vaak vragen",
+      "nextStepEyebrow": "Volgende stap",
+      "bookIntroCall": "Plan een kennismaking"
+    },
+    "revenue-leak-audit": {
+      "qualifier": {
+        "eyebrow": "Voor wie dit is",
+        "title": "Klinkt dit bekend?"
+      },
+      "checklist": {
+        "eyebrow": "Wat je krijgt",
+        "title": "Een businesscase, geen to-do-lijst"
+      },
+      "process": {
+        "eyebrow": "Hoe het werkt",
+        "title": "Van scan naar businesscase"
+      },
+      "cta": {
+        "heading": "Na de audit",
+        "primary": "Vraag een Revenue Leak Audit aan",
+        "secondary": "Bekijk Stack Rebuild"
+      }
+    },
+    "stack-rebuild": {
+      "qualifier": {
+        "eyebrow": "Wanneer wel, wanneer niet",
+        "title": "Is dit jouw startpunt?"
+      },
+      "checklist": {
+        "eyebrow": "Wat je krijgt",
+        "title": "Structureel herstel, geen zoveelste pleister"
+      },
+      "process": {
+        "eyebrow": "Hoe het werkt",
+        "title": "Van audit naar herbouwde fundering"
+      },
+      "cta": {
+        "heading": "Na de rebuild",
+        "secondary": "Bekijk Performance Layer"
+      }
+    },
+    "performance-layer": {
+      "qualifier": {
+        "eyebrow": "Voor wie dit is",
+        "title": "Wanneer een retainer de juiste keuze is"
+      },
+      "checklist": {
+        "eyebrow": "Wat je elke maand krijgt",
+        "title": "Meten, prioriteren, bouwen, testen"
+      },
+      "process": {
+        "eyebrow": "Het maandelijkse ritme",
+        "title": "Elke maand hetzelfde ritme"
+      },
+      "cta": {
+        "heading": "Wat erna komt",
+        "secondary": "Bekijk Agentic Readiness"
+      }
+    },
+    "agentic-readiness": {
+      "qualifier": {
+        "eyebrow": "Waarom nu",
+        "title": "Dit wordt sneller relevant dan je denkt"
+      },
+      "checklist": {
+        "eyebrow": "Wat we beoordelen",
+        "title": "Klaar om gevonden, begrepen en gekozen te worden"
+      },
+      "process": {
+        "eyebrow": "Hoe het werkt",
+        "title": "Van analyse naar implementatie"
+      },
+      "cta": {
+        "eyebrow": "Startpunt",
+        "heading": "Begin bij het begin",
+        "body": "Nog geen audit gehad? De Revenue Leak Audit is het startpunt van de hele route.",
+        "secondary": "Alle diensten"
+      }
+    }
+  },
+  "IndustriesPage": {
+    "metadata": {
+      "title": "Sectoren",
+      "description": "Auto & Onderdelen, B2B & Groothandel, Retail & Wonen en Food & Beverage. Hetzelfde vijflagenmodel, toegepast waar elke sector daadwerkelijk omzet lekt."
+    },
+    "hero": {
+      "eyebrow": "Sectoren",
+      "title": "Dezelfde vijf lagen. Andere plekken waar het geld weglekt.",
+      "lede": "Elke webshop lekt ergens tussen vraag en checkout omzet. Waar het het hardst lekt, hangt af van wat je verkoopt. Dit zijn de vier sectoren waar we dezelfde patronen vaak genoeg zien om te weten waar we eerst moeten kijken."
+    },
+    "sectors": {
+      "eyebrow": "Vier sectoren",
+      "title": "Waar we de diepte in gaan",
+      "intro": "Geen andere dienst per sector. Dezelfde route, gericht op de laag die jou het meeste kost."
+    },
+    "faq": {
+      "eyebrow": "Vragen",
+      "title": "Wat mensen ons hierover vragen"
+    },
+    "cta": {
+      "eyebrow": "Startpunt",
+      "heading": "In welke sector je ook zit, je begint met meten.",
+      "body": "De Revenue Leak Audit scant alle vijf de lagen en vertaalt elke bevinding naar een bedrag per maand en per jaar.",
+      "primary": "Vraag een Revenue Leak Audit aan",
+      "secondary": "Alle diensten"
+    }
+  },
+  "IndustryDetail": {
+    "signals": {
+      "eyebrow": "Herkenbaar?",
+      "title": "Signalen die we zien in {name}"
+    },
+    "qualifier": {
+      "eyebrow": "Voor wie dit is",
+      "title": "Ben jij dit?"
+    },
+    "fix": {
+      "eyebrow": "Wat we herstellen",
+      "title": "Waar we als eerste op jagen"
+    },
+    "approach": {
+      "eyebrow": "Waar te beginnen",
+      "title": "Hoe we het zouden aanpakken",
+      "intro": "Dezelfde route als altijd: eerst meten, dan herstellen wat aantoonbaar het meeste kost."
+    },
+    "faq": {
+      "eyebrow": "Vragen",
+      "title": "Wat mensen in deze sector ons vragen"
+    },
+    "cta": {
+      "eyebrow": "Volgende stap",
+      "primary": "Vraag een Revenue Leak Audit aan",
+      "secondary": "Alle sectoren"
+    }
+  },
+  "RevenueLeakPage": {
+    "metadata": {
+      "title": "Wat is Revenue Leak?",
+      "description": "Revenue Leak is het gat tussen de omzet die je verkeer zou moeten opleveren en wat er daadwerkelijk binnenkomt. Vijf lagen, gemeten en vertaald naar euro's."
+    },
+    "hero": {
+      "eyebrow": "Het model",
+      "title": "Revenue Leak: de omzet die je al hebt verdiend, maar niet ontvangt.",
+      "lede": "Je betaalt al voor vraag, via advertenties, organisch bereik of mond-tot-mond. Maar tussen de klik en de betaling strandt een deel van die vraag op de technische fundering. Dat gat noemen we Revenue Leak."
+    },
+    "quote": "“Revenue Leak is het gat tussen de omzet die je verkeer zou moeten opleveren en wat er daadwerkelijk binnenkomt.”",
+    "layers": {
+      "eyebrow": "Het model",
+      "title": "Vijf lagen tussen vraag en omzet"
+    },
+    "measure": {
+      "eyebrow": "Methodiek",
+      "title": "Wat we meten"
+    },
+    "signals": {
+      "eyebrow": "Herkenbaar?",
+      "title": "CEO-signalen",
+      "intro": "Stuk voor stuk een symptoom van hetzelfde probleem: patronen die we bij merken zien voordat ze een audit laten doen."
+    },
+    "method": {
+      "eyebrow": "Methodiek",
+      "title": "Van signaal naar euro's",
+      "p1": "Elke technische bevinding is gekoppeld aan een meetbaar signaal (laadtijd, foutpercentage, checkout-uitval, ontbrekende trackingdata) en vertaald naar geschat omzetverlies per maand en per jaar. Waar mogelijk gebruiken we je eigen verkeers- en conversiedata om die vertaling te onderbouwen; waar dat niet kan, gebruiken we branchebenchmarks en maken we dat expliciet.",
+      "p2": "Je krijgt dus geen losse lijst technische opmerkingen, maar een businesscase: wat het kost om niets te doen, en wat het oplevert om het te herstellen."
+    },
+    "cta": {
+      "eyebrow": "Volgende stap",
+      "heading": "Weet binnen een paar weken waar je lek zit.",
+      "body": "De Revenue Leak Audit meet alle vijf de lagen en vertaalt ze naar bedragen.",
+      "primary": "Vraag een Revenue Leak Audit aan",
+      "secondary": "Alle diensten"
+    }
+  }
+}

@@ -1,6 +1,7 @@
-import Link from "next/link";
+import { getLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import { services } from "@/content/services";
+import { getServices } from "@/content";
 
 interface FunnelStepperProps {
   current?: string;
@@ -8,9 +9,9 @@ interface FunnelStepperProps {
 }
 
 // Audit -> Rebuild -> Performance Layer -> Agentic Readiness, als één ladder.
-// Gebruikt op /diensten en de homepage zodat de volgorde van de funnel overal
-// hetzelfde oogt.
-export function FunnelStepper({ current, tone = "dark" }: FunnelStepperProps) {
+// Gebruikt op /services zodat de volgorde van de funnel overal hetzelfde oogt.
+export async function FunnelStepper({ current, tone = "dark" }: FunnelStepperProps) {
+  const services = getServices(await getLocale());
   const isDark = tone === "dark";
   return (
     <ol className="flex flex-col md:flex-row md:items-stretch gap-4">

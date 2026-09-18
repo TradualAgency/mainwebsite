@@ -1,0 +1,99 @@
+{
+  "InsightsPage": {
+    "metadata": {
+      "title": "Insights",
+      "description": "Notities uit echte Revenue Leak Audits en Stack Rebuilds: snelheid, tracking, checkout en stackarchitectuur, geschreven door de mensen die het werk doen."
+    },
+    "hero": {
+      "eyebrow": "Insights",
+      "title": "Notities uit het werk zelf",
+      "intro": "Wat we leren van echte audits en rebuilds, uitgeschreven zodat je de basis zelf kunt checken voordat je ooit met ons praat."
+    },
+    "faq": {
+      "eyebrow": "Vragen",
+      "title": "Over de Insights-hub"
+    }
+  },
+  "InsightDetail": {
+    "notFound": "Artikel niet gevonden",
+    "fallbackEyebrow": "Insights",
+    "backToAll": "← Terug naar alle insights"
+  },
+  "OurWorkPage": {
+    "metadata": {
+      "title": "Ons werk",
+      "description": "Wat er gebeurt als de fundering klopt: trajecten waarin we een Revenue Leak blootlegden en dichtten."
+    },
+    "hero": {
+      "title": "Wat er gebeurt als de fundering klopt.",
+      "intro": "Trajecten waarin we blootlegden waar omzet weglekte, en de technische fundering herstelden."
+    }
+  },
+  "CaseDetail": {
+    "notFound": "Case niet gevonden",
+    "resultEyebrow": "Het resultaat",
+    "cta": {
+      "eyebrow": "Volgende stap",
+      "heading": "Weet jij waar je omzet weglekt?",
+      "body": "De Revenue Leak Audit meet alle vijf de lagen van je webshop en vertaalt elke bevinding naar een bedrag per maand en per jaar.",
+      "primary": "Vraag een Revenue Leak Audit aan",
+      "secondary": "Bekijk al ons werk"
+    }
+  },
+  "LandingPage": {
+    "notFound": "Pagina niet gevonden",
+    "contactImageAlt": "Abstract architectonisch interieur in donkergroen marmer met gouden randen"
+  },
+  "Work": {
+    "postGrid": {
+      "empty": "De eerste artikelen zijn onderweg.",
+      "cta": "Neem contact op"
+    },
+    "postCard": {
+      "readMore": "Lees het artikel"
+    },
+    "caseHero": {
+      "eyebrow": "Case",
+      "client": "Klant",
+      "services": "Diensten",
+      "year": "Jaar",
+      "live": "Live",
+      "visitSite": "Bekijk de site"
+    },
+    "relatedCases": {
+      "eyebrow": "Meer werk",
+      "title": "Andere cases",
+      "backToAll": "← Terug naar al ons werk"
+    },
+    "projectGrid": {
+      "viewAll": "Bekijk al ons werk"
+    },
+    "projectCard": {
+      "readMore": "Lees meer",
+      "readCase": "Lees de case"
+    },
+    "steps": {
+      "eyebrow": "Hoofdstuk drie",
+      "title": "Hoe we samenwerken"
+    },
+    "faq": {
+      "eyebrow": "Vragen",
+      "title": "Veelgestelde vragen"
+    },
+    "usp": {
+      "eyebrow": "Hoofdstuk vier",
+      "title": "Waarom onze projecten presteren",
+      "intro": "Elk project is gebouwd met een balans tussen merkbeleving, technische performance en commerciële doelen, zodat resultaten duurzaam schaalbaar blijven.",
+      "stats": {
+        "conversion": "Gemiddelde conversiestijging",
+        "speed": "Snellere laadtijden",
+        "roas": "ROAS-potentieel"
+      }
+    },
+    "scene": {
+      "eyebrow": "Hoofdstuk twee",
+      "title": "Geselecteerd werk",
+      "intro": "Een overzicht van projecten waarin strategie, performance en esthetiek samenkomen in een digitale ervaring die verkoopt."
+    }
+  }
+}

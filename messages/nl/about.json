@@ -1,0 +1,109 @@
+{
+  "AboutPage": {
+    "metadata": {
+      "title": "Over ons",
+      "description": "Tradual is The E-commerce Performance Company. Wij bouwen de motor achter e-commercemerken: snelheid, infrastructuur en de juiste stack."
+    },
+    "hero": {
+      "title": "Wij bouwen de motor achter e-commercemerken.",
+      "subtitle": "Tradual is The E-commerce Performance Company. We meten waar je webshop omzet lekt, de Revenue Leak, en herstellen dat met een audit, een rebuild en een doorlopende performance layer."
+    },
+    "mission": "Een e-commercewereld waarin elk merk het volledige omzetpotentieel benut van de vraag die het al heeft verdiend. Waar de fundering groei versnelt in plaats van afremt.",
+    "origin": {
+      "title": "Waar het begon",
+      "text": "Tradual is gebouwd op een simpele overtuiging: de meeste merken laten omzet liggen die ze al hebben verdiend, simpelweg omdat de technische fundering eronder het niet bijhoudt. Niet door een gebrek aan verkeer, maar door snelheid, checkout-frictie of tracking die niet klopt.\nWe combineren diepe technische expertise met een scherp oog voor meetbare impact, zodat elke technische keuze zich vertaalt naar euro's, niet naar aannames.",
+      "imageAlt": "Het verhaal van Tradual"
+    },
+    "team": {
+      "eyebrow": "Het team",
+      "title": "Klein team, senior handen aan het werk",
+      "text": "Bij Tradual werk je direct met de mensen die ook het werk doen. De engineer die je stack analyseert, is dezelfde die hem herstelt, zonder accountmanager ertussen.\nDaarom nemen we bewust een beperkt aantal trajecten tegelijk aan. Liever een paar merken waar we de fundering echt goed krijgen dan een volle agenda met halve resultaten.",
+      "points": [
+        "Direct contact met de engineers die aan je stack werken",
+        "Alleen senior, geen juniors die leren op jouw webshop",
+        "Bewust een beperkt aantal trajecten tegelijk",
+        "Rapportage in euro's, niet in dashboards"
+      ],
+      "imageAlt": "Shopify-storefront en code-editor naast elkaar op één scherm"
+    }
+  },
+  "AboutComponents": {
+    "hero": {
+      "ariaLabel": "Over ons hero",
+      "label": "Over ons",
+      "title": "Gebouwd voor merken die duurzame groei waarderen",
+      "subtitle": "We helpen ambitieuze merken groeien met de volledige infrastructuur rond hun webshop en Shopify. Van strategie en design tot development, CRO en performance leveren we ervaringen die premium aanvoelen en meetbaar converteren.",
+      "cta": "Start een gesprek",
+      "viewWork": "Bekijk ons werk"
+    },
+    "mission": {
+      "ariaLabel": "Missie",
+      "label": "Onze missie",
+      "text": "Een e-commercewereld waarin elk merk het volledige omzetpotentieel benut van de vraag die het al heeft verdiend."
+    },
+    "faq": {
+      "eyebrow": "Vragen",
+      "title": "Veelgestelde vragen"
+    }
+  },
+  "ContactPage": {
+    "metadata": {
+      "title": "Contact",
+      "description": "Neem contact op met Tradual. Vertel ons over je webshop en we reageren binnen één werkdag."
+    },
+    "eyebrow": "Contact",
+    "title": "Laten we uitzoeken waar je omzet weglekt.",
+    "cta": {
+      "eyebrow": "Volgende stap",
+      "heading": "Liever eerst zien wat we doen?",
+      "body": "Bekijk de vier diensten en hoe ze werken, of mail ons direct als je liever persoonlijk spreekt.",
+      "email": "Mail ons direct",
+      "services": "Bekijk diensten"
+    }
+  },
+  "ContactForm": {
+    "fields": {
+      "name": { "label": "Naam", "description": "Vul je volledige naam in" },
+      "email": { "label": "E-mail", "description": "Vul je e-mailadres in" },
+      "phone": { "label": "Telefoonnummer", "description": "Vul je telefoonnummer in" },
+      "revenue": {
+        "label": "Huidige online omzet",
+        "description": "Zodat we je direct bij de juiste dienst kunnen plaatsen",
+        "placeholder": "Kies een bereik"
+      },
+      "message": { "label": "Bericht", "description": "Vul je bericht in" }
+    },
+    "ranges": ["< €1M", "€1M – €3M", "€3M – €8M", "€8M+"],
+    "errors": {
+      "nameMin": "Je naam moet minimaal 2 tekens zijn",
+      "nameMax": "Je naam mag maximaal 50 tekens zijn",
+      "email": "Ongeldig e-mailadres",
+      "phone": "Ongeldig telefoonnummer",
+      "revenue": "Kies je huidige online omzet",
+      "messageMin": "Je bericht moet langer zijn dan 2 tekens",
+      "messageMax": "Je bericht mag maximaal 2000 tekens zijn"
+    },
+    "success": {
+      "eyebrow": "Verzonden",
+      "heading": "Bedankt voor je bericht.",
+      "body": "We reageren binnen één werkdag."
+    },
+    "error": "Er ging iets mis bij het verzenden. Probeer het opnieuw, of mail direct naar <link>{email}</link>.",
+    "submit": "Verstuur",
+    "submitting": "Verzenden…"
+  },
+  "ContactSwiper": {
+    "slides": [
+      {
+        "label": "Performance",
+        "quote": "Snellere laadtijden, betere tracking en een stabielere Shopify-basis leveren direct meer op uit hetzelfde verkeer.",
+        "source": "Tradual-infrastructuur"
+      },
+      {
+        "label": "Shopify",
+        "quote": "We kijken naar de hele webshop: checkout, data, apps, performance en de technische keuzes die groei mogelijk maken.",
+        "source": "E-commerce stack"
+      }
+    ]
+  }
+}

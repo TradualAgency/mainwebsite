@@ -4,7 +4,6 @@ import {blockContentType} from './blockContentType'
 import {categoryType} from './categoryType'
 import {postType} from './postType'
 import {authorType} from './authorType'
-import {employeeType} from "./employeeType";
 import {projectType} from "./projectType";
 import {prospectScanType} from "./prospectScanType";
 import {ctaLinkType} from './objects/ctaLinkType'
@@ -26,7 +25,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     categoryType,
     postType,
     authorType,
-    employeeType,
     projectType,
     prospectScanType,
     ctaLinkType,

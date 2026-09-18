@@ -1,6 +1,8 @@
 import { client } from '@/sanity/lib/client'
 import { type Image } from '@sanity/types'
 import { type PortableTextBlock } from '@portabletext/types'
+import type { Locale } from '@/i18n/routing'
+import { LANG_FILTER, TRANSLATIONS_PROJECTION, translatedSlugQuery, type Translation } from './locale'
 
 type SeoImage = Image & { alt?: string }
 
@@ -110,37 +112,66 @@ export type LandingPage = {
     noIndex?: boolean
   }
   pageBuilder?: PageBuilderBlock[]
+  language?: Locale
+  _translations?: Translation[]
 }
+
+export type LandingPageSitemapEntry = { slug: string; updatedAt: string; noIndex?: boolean; _translations?: Translation[] }
 
 const LANDING_PAGE_QUERY = `*[
   _type == "landingPage"
+  && ${LANG_FILTER}
   && slug.current == $slug
 ][0] {
   _id,
   title,
   slug,
   seo,
+  language,
   pageBuilder[]{
     ...,
     _key,
     _type
-  }
+  },
+  ${TRANSLATIONS_PROJECTION}
 }`
 
 const LANDING_PAGE_SLUGS_QUERY = `*[
   _type == "landingPage"
+  && ${LANG_FILTER}
   && defined(slug.current)
 ]{
   "slug": slug.current
 }`
 
+const LANDING_PAGE_SLUGS_WITH_TRANSLATIONS_QUERY = `*[
+  _type == "landingPage"
+  && ${LANG_FILTER}
+  && defined(slug.current)
+]{
+  "slug": slug.current,
+  "updatedAt": _updatedAt,
+  "noIndex": seo.noIndex,
+  ${TRANSLATIONS_PROJECTION}
+}`
+
+const TRANSLATED_SLUG_QUERY = translatedSlugQuery('landingPage')
+
 const options = { next: { revalidate: 60 } }
 
-export async function getLandingPageBySlug(slug: string): Promise<LandingPage | null> {
-  return await client.fetch<LandingPage | null>(LANDING_PAGE_QUERY, { slug }, options)
+export async function getLandingPageBySlug(slug: string, locale: Locale): Promise<LandingPage | null> {
+  return await client.fetch<LandingPage | null>(LANDING_PAGE_QUERY, { slug, locale }, options)
 }
 
-export async function getLandingPageSlugs(): Promise<string[]> {
-  const rows = await client.fetch<{ slug: string }[]>(LANDING_PAGE_SLUGS_QUERY, {}, options)
+export async function getLandingPageSlugs(locale: Locale): Promise<string[]> {
+  const rows = await client.fetch<{ slug: string }[]>(LANDING_PAGE_SLUGS_QUERY, { locale }, options)
   return (rows ?? []).map((row) => row.slug).filter(Boolean)
+}
+
+export async function getLandingPageSlugsWithTranslations(locale: Locale): Promise<LandingPageSitemapEntry[]> {
+  return await client.fetch<LandingPageSitemapEntry[]>(LANDING_PAGE_SLUGS_WITH_TRANSLATIONS_QUERY, { locale }, options)
+}
+
+export async function getTranslatedLandingPageSlug(slug: string, locale: Locale): Promise<string | null> {
+  return await client.fetch<string | null>(TRANSLATED_SLUG_QUERY, { slug, locale }, options)
 }

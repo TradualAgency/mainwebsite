@@ -1,7 +1,8 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import { urlFor } from "@/sanity/lib/image"
 import type { Project } from "@/sanity/lib/getProjects"
 
@@ -11,6 +12,7 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  const t = useTranslations("Work.projectCard")
   const imageUrl = project.mainImage ? urlFor(project.mainImage).url() : "/placeholder.svg"
   const eyebrow = project.tags?.[0] ?? ""
   const remainingTags = project.tags?.slice(1) ?? []
@@ -56,7 +58,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </p>
 
           <span className="mt-4 inline-flex items-center gap-1 text-white underline decoration-accent decoration-2 underline-offset-[6px] text-sm font-medium">
-            Read the case
+            {t("readCase")}
             <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
           </span>
         </div>

@@ -1,17 +1,20 @@
 'use client'
 
 import { useRef } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { LeakLayers } from "@/components/marketing/leak-layers";
-import { leakLayers } from "@/content/revenue-leak";
+import { useLocale, useTranslations } from "next-intl";
+import { getLeakLayers } from "@/content";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function LeakLayersSection() {
+  const leakLayers = getLeakLayers(useLocale());
+  const t = useTranslations("Home.leakLayers");
   const container = useRef<HTMLDivElement>(null);
   const list = useRef<HTMLDivElement>(null);
 
@@ -46,18 +49,18 @@ export default function LeakLayersSection() {
       <section className="bg-surface-muted rounded-2xl px-8 py-16 md:py-20">
         <div className="max-w-7xl mx-auto w-full">
           <SectionHeading
-            eyebrow="The model"
-            title="Five layers between demand and revenue"
-            intro="From the moment someone searches for you to the moment they pay, there are five layers. Each layer has its own leak. We measure them all and convert them into euros per month."
+            eyebrow={t("eyebrow")}
+            title={t("title")}
+            intro={t("intro")}
             className="leak-heading mb-12"
           />
           <div ref={list}>
             <LeakLayers layers={leakLayers} variant="compact" />
           </div>
           <div className="leak-footer mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-            <p className="text-body text-sm md:text-base">Every layer is measurable. Every layer has a price tag.</p>
+            <p className="text-body text-sm md:text-base">{t("footer")}</p>
             <Link href="/revenue-leak" className="text-primary underline decoration-accent decoration-2 underline-offset-4 hover:text-accent transition text-sm md:text-base w-fit">
-              Read how we measure each layer →
+              {t("link")}
             </Link>
           </div>
         </div>

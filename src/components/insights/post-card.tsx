@@ -1,19 +1,13 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
+import { Link } from "@/i18n/navigation";
+import { useFormatter, useTranslations } from "next-intl";
 import { urlFor } from "@/sanity/lib/image"
 import type { Post } from "@/sanity/lib/getPosts"
 
 interface PostCardProps {
   post: Post
-}
-
-function formatDate(dateString?: string) {
-  if (!dateString) return null
-  return new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short", year: "numeric" }).format(
-    new Date(dateString)
-  )
 }
 
 // Zelfde familie als ProjectCard (project-card.tsx) — geleend: het glasbadge-recept
@@ -24,8 +18,12 @@ function formatDate(dateString?: string) {
 // de foto in plaats van een glaspaneel eróver — artikelen hebben meer tekst
 // (titel + excerpt + datum) dan een case, dus overlay-op-foto zou minder leesbaar zijn.
 export function PostCard({ post }: PostCardProps) {
+  const t = useTranslations("Work.postCard")
+  const format = useFormatter()
   const category = post.categories?.[0]?.title ?? ""
-  const date = formatDate(post.publishedAt)
+  const date = post.publishedAt
+    ? format.dateTime(new Date(post.publishedAt), { day: "numeric", month: "short", year: "numeric" })
+    : null
 
   return (
     <Link href={`/insights/${post.slug.current}`} className="insight-card group block h-full">
@@ -66,7 +64,7 @@ export function PostCard({ post }: PostCardProps) {
           <div className="mt-4 flex items-center justify-between border-t border-primary/10 pt-4">
             <span className="text-primary/60 text-xs">{date ?? " "}</span>
             <span className="inline-flex items-center gap-1 text-primary underline decoration-accent decoration-2 underline-offset-[6px] text-sm font-medium">
-              Read the article
+              {t("readMore")}
               <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
             </span>
           </div>

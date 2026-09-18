@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { Check, X } from "lucide-react";
 import { Section } from "@/components/marketing/section";
 import { SectionHeading } from "@/components/marketing/section-heading";
@@ -12,10 +13,11 @@ interface QualifierColumnsProps {
 
 // Toont voor wie een dienst wel/niet is. Een expliciete "niet voor jou"-lijst
 // kwalificeert net zo hard als de "wel voor jou"-lijst.
-export function QualifierColumns({ eyebrow = "Who it's for", title, forWho, notForWho, tone = "muted" }: QualifierColumnsProps) {
+export function QualifierColumns({ eyebrow, title, forWho, notForWho, tone = "muted" }: QualifierColumnsProps) {
+  const t = useTranslations("Marketing.qualifier");
   return (
     <Section tone={tone}>
-      <SectionHeading eyebrow={eyebrow} title={title} className="mb-10" />
+      <SectionHeading eyebrow={eyebrow ?? t("eyebrow")} title={title} className="mb-10" />
       <div className={`grid grid-cols-1 ${notForWho?.length ? "md:grid-cols-2" : ""} gap-8`}>
         <ul className="space-y-3">
           {forWho.map((item) => (

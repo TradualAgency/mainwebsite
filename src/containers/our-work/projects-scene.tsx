@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { useTranslations } from "next-intl"
 import { ProjectCard } from "@/components/project-card"
 import { type Project } from "@/sanity/lib/getProjects"
 
@@ -16,6 +17,7 @@ interface ProjectsSceneProps {
 }
 
 export function ProjectsScene({ projects }: ProjectsSceneProps) {
+  const t = useTranslations("Work.scene")
   const containerRef = useRef<HTMLDivElement>(null)
   const cardsRef = useRef<HTMLDivElement>(null)
 
@@ -74,14 +76,11 @@ export function ProjectsScene({ projects }: ProjectsSceneProps) {
   return (
     <section id="projects-scene" className="relative py-20 px-8 bg-[#f9f9f9]">
       <div className="max-w-7xl mx-auto mb-10">
-        <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent mb-4">Chapter two</p>
+        <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent mb-4">{t("eyebrow")}</p>
         <h2 className="font-heading text-primary text-[38px] leading-[1.05] md:text-[60px] mb-6">
-          Selected work
+          {t("title")}
         </h2>
-        <p className="max-w-3xl text-body text-base md:text-lg leading-relaxed">
-          An overview of projects where strategy, performance, and aesthetics come together in a digital
-          experience that sells.
-        </p>
+        <p className="max-w-3xl text-body text-base md:text-lg leading-relaxed">{t("intro")}</p>
       </div>
 
       <div ref={containerRef} className="min-h-[60vh] md:min-h-screen">

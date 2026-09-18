@@ -1,5 +1,6 @@
 import {ProjectsIcon} from '@sanity/icons'
 import {defineArrayMember, defineField, defineType} from 'sanity'
+import {isUniqueWithinLanguage, languageField} from './shared/language'
 
 export const projectType = defineType({
   name: 'project',
@@ -7,6 +8,7 @@ export const projectType = defineType({
   type: 'document',
   icon: ProjectsIcon,
   fields: [
+    languageField,
     defineField({
       name: 'title',
       title: 'Title',
@@ -20,6 +22,7 @@ export const projectType = defineType({
       options: {
         source: 'title',
         maxLength: 96,
+        isUnique: isUniqueWithinLanguage,
       },
       validation: Rule => Rule.required()
     }),

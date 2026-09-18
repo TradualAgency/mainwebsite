@@ -7,11 +7,13 @@
 import {visionTool} from '@sanity/vision'
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
+import {documentInternationalization} from '@sanity/document-internationalization'
 
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
 import {apiVersion, dataset, projectId} from './src/sanity/env'
 import {schema} from './src/sanity/schemaTypes'
 import {structure} from './src/sanity/structure'
+import {SUPPORTED_LANGUAGES} from './src/sanity/schemaTypes/shared/language'
 
 export default defineConfig({
   basePath: '/studio',
@@ -24,5 +26,13 @@ export default defineConfig({
     // Vision is for querying with GROQ from inside the Studio
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({defaultApiVersion: apiVersion}),
+    // Document-level vertalingen: elk document bestaat per taal en wordt via een
+    // `translation.metadata`-document aan zijn vertalingen gekoppeld.
+    documentInternationalization({
+      supportedLanguages: SUPPORTED_LANGUAGES,
+      schemaTypes: ['landingPage', 'post', 'project', 'category'],
+      languageField: 'language',
+      apiVersion,
+    }),
   ],
 })

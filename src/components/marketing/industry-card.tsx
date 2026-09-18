@@ -1,6 +1,6 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
-import type { Industry } from "@/content/industries";
+import type { Industry } from "@/content/types";
 
 interface IndustryCardProps {
   industry: Industry;

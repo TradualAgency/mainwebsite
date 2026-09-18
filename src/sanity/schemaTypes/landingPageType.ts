@@ -1,5 +1,6 @@
 import { DocumentIcon } from '@sanity/icons'
 import { defineField, defineType } from 'sanity'
+import {isUniqueWithinLanguage, languageField} from './shared/language'
 
 const RESERVED_SLUGS = [
   'about',
@@ -16,6 +17,8 @@ const RESERVED_SLUGS = [
   'studio',
   'revenue-leak',
   'api',
+  'en',
+  'nl',
 ]
 
 export const landingPageType = defineType({
@@ -28,6 +31,7 @@ export const landingPageType = defineType({
     { name: 'seo', title: 'SEO' },
   ],
   fields: [
+    languageField,
     defineField({
       name: 'title',
       title: 'Title',
@@ -41,10 +45,11 @@ export const landingPageType = defineType({
       title: 'Slug',
       type: 'slug',
       group: 'content',
-      description: 'The page will live at tradual.nl/{slug}. Reserved paths like /about cannot be used.',
+      description: 'The page will live at tradual.com/{slug}. Reserved paths like /about cannot be used.',
       options: {
         source: 'title',
         maxLength: 96,
+        isUnique: isUniqueWithinLanguage,
       },
       validation: (rule) =>
         rule.required().custom((slug) => {

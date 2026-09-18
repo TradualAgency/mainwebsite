@@ -1,31 +1,23 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { TrendingUp, Zap, Target } from "lucide-react"
+import { TrendingUp, Zap, Target, type LucideIcon } from "lucide-react"
+import { useTranslations } from "next-intl"
 
-const stats = [
-  {
-    icon: TrendingUp,
-    value: 38,
-    prefix: "+",
-    suffix: "%",
-    label: "Average conversion lift",
-  },
-  {
-    icon: Zap,
-    value: 52,
-    prefix: "-",
-    suffix: "%",
-    label: "Faster load times",
-  },
-  {
-    icon: Target,
-    value: 3.1,
-    prefix: "",
-    suffix: "x",
-    label: "ROAS potential",
-  },
-]
+type Stat = {
+  icon: LucideIcon
+  value: number
+  prefix: string
+  suffix: string
+  label: string
+}
+
+// Cijfers en iconen; de labels komen uit messages (Work.usp.stats).
+const statValues = [
+  { key: "conversion", icon: TrendingUp, value: 38, prefix: "+", suffix: "%" },
+  { key: "speed", icon: Zap, value: 52, prefix: "-", suffix: "%" },
+  { key: "roas", icon: Target, value: 3.1, prefix: "", suffix: "x" },
+] as const
 
 function useCountUp(target: number, duration = 1800, trigger: boolean) {
   const [value, setValue] = useState(0)
@@ -54,7 +46,7 @@ function StatCard({
   suffix,
   label,
   triggered,
-}: (typeof stats)[0] & { triggered: boolean }) {
+}: Stat & { triggered: boolean }) {
   const [prefersReduced] = useState(
     () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches
   )
@@ -76,6 +68,8 @@ function StatCard({
 }
 
 export default function ProjectUSPSection() {
+  const t = useTranslations("Work.usp")
+  const stats: Stat[] = statValues.map(({ key, ...rest }) => ({ ...rest, label: t(`stats.${key}`) }))
   const [triggered, setTriggered] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
@@ -98,14 +92,13 @@ export default function ProjectUSPSection() {
   return (
     <section className="bg-primary my-20 py-20 px-8">
       <div className="max-w-7xl mx-auto text-center">
-        <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent mb-4">Chapter four</p>
+        <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent mb-4">{t("eyebrow")}</p>
         <h2 className="font-heading text-surface text-[38px] leading-[1.05] md:text-[60px] mb-4">
-          Why our projects perform
+          {t("title")}
         </h2>
         <div className="w-16 h-px bg-accent mx-auto mb-10" aria-hidden="true" />
         <p className="max-w-3xl mx-auto text-surface/70 text-base md:text-lg leading-relaxed mb-16">
-          Every project is built with a balance of brand experience, technical performance, and commercial
-          objectives, so results stay durably scalable.
+          {t("intro")}
         </p>
 
         <div

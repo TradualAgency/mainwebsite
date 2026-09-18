@@ -1,0 +1,58 @@
+{
+  "Home": {
+    "hero": {
+      "eyebrow": "The E-commerce Performance Company",
+      "title": "Meer omzet uit het verkeer dat je al hebt.",
+      "lede": "Je betaalt al voor vraag. Maar tussen de klik en de betaling lekt er omzet weg: via snelheid, mobiele UX, checkout en tracking. Wij maken zichtbaar hoeveel dat je kost, en we dichten het.",
+      "primaryCta": "Vraag een Revenue Leak Audit aan",
+      "secondaryCta": "Hoe Revenue Leak werkt",
+      "note": "Voor Nederlandse DTC-merken op Shopify met €1–10M online omzet."
+    },
+    "problem": {
+      "eyebrow": "Waarom Tradual",
+      "title": "De beste coureur wint niet in een auto die niet klopt.",
+      "intro": "Hetzelfde geldt voor e-commerce. Je kunt fors investeren in verkeer, maar als de webshop erachter niet presteert als een Formule 1-auto, lekt er omzet weg op de weg naar de checkout. Dat noemen we Revenue Leak."
+    },
+    "leakLayers": {
+      "eyebrow": "Het model",
+      "title": "Vijf lagen tussen vraag en omzet",
+      "intro": "Vanaf het moment dat iemand je zoekt tot het moment dat er betaald wordt, zitten er vijf lagen tussen. Elke laag heeft zijn eigen lek. We meten ze allemaal en rekenen ze om naar euro's per maand.",
+      "footer": "Elke laag is meetbaar. Elke laag heeft een prijskaartje.",
+      "link": "Lees hoe we elke laag meten →"
+    },
+    "funnel": {
+      "eyebrow": "De route",
+      "title": "Meten, herstellen, blijven verbeteren.",
+      "intro": "Vier diensten, één volgorde. Je begint altijd met meten. Anders bouw je op aannames."
+    },
+    "proof": {
+      "eyebrow": "Bewijs",
+      "title": "Wat het oplevert.",
+      "intro": "Trajecten waarin we een Revenue Leak vonden en dichtten, met de uitgangssituatie, wat we bouwden en het resultaat.",
+      "cta": "Bekijk al ons werk"
+    },
+    "selfTest": {
+      "eyebrow": "Zelftest: startprocedure",
+      "title": "Vijf vragen die je vandaag moet kunnen beantwoorden.",
+      "intro": "Vijf lichten op de startbrug. Vink elke vraag af die je met een cijfer kunt beantwoorden; de lichten gaan pas uit als de grid vrij is.",
+      "ctaLabel": "Vraag de audit aan",
+      "secondaryLabel": "Bekijk de Performance Layer"
+    },
+    "finalCta": {
+      "eyebrow": "Van start tot finish",
+      "heading": "Weet jij waar je omzet weglekt?",
+      "body": "Binnen een paar weken weet je het. Met bedragen erbij, per laag, en een roadmap gesorteerd op impact.",
+      "primary": "Vraag een Revenue Leak Audit aan",
+      "secondary": "Plan een kennismaking"
+    }
+  },
+  "SelfTest": {
+    "sector": "Sector {n}: {sector}",
+    "answered": "Beantwoord",
+    "canAnswer": "Dit kan ik beantwoorden",
+    "answeredWithNumbers": "Beantwoord met cijfers"
+  },
+  "ProjectSlider": {
+    "goTo": "Ga naar {title}"
+  }
+}

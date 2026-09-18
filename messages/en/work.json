@@ -1,0 +1,99 @@
+{
+  "InsightsPage": {
+    "metadata": {
+      "title": "Insights",
+      "description": "Notes from real Revenue Leak Audits and Stack Rebuilds: speed, tracking, checkout, and stack architecture, written by the people doing the work."
+    },
+    "hero": {
+      "eyebrow": "Insights",
+      "title": "Notes from the work itself",
+      "intro": "What we learn from real audits and rebuilds, written up so you can check the basics yourself before you ever talk to us."
+    },
+    "faq": {
+      "eyebrow": "Questions",
+      "title": "About the Insights hub"
+    }
+  },
+  "InsightDetail": {
+    "notFound": "Article not found",
+    "fallbackEyebrow": "Insights",
+    "backToAll": "← Back to all insights"
+  },
+  "OurWorkPage": {
+    "metadata": {
+      "title": "Our Work",
+      "description": "What happens when the foundation is right: engagements where we uncovered a Revenue Leak and closed it."
+    },
+    "hero": {
+      "title": "What happens when the foundation is right.",
+      "intro": "Engagements where we uncovered where revenue was leaking, and restored the technical foundation."
+    }
+  },
+  "CaseDetail": {
+    "notFound": "Case not found",
+    "resultEyebrow": "The result",
+    "cta": {
+      "eyebrow": "Next step",
+      "heading": "Do you know where your revenue leaks?",
+      "body": "The Revenue Leak Audit measures all five layers on your store and translates every finding into an amount per month and per year.",
+      "primary": "Request a Revenue Leak Audit",
+      "secondary": "View all work"
+    }
+  },
+  "LandingPage": {
+    "notFound": "Page not found",
+    "contactImageAlt": "Abstract architectural interior in dark green marble with gold edges"
+  },
+  "Work": {
+    "postGrid": {
+      "empty": "The first articles are on their way.",
+      "cta": "Get in touch"
+    },
+    "postCard": {
+      "readMore": "Read the article"
+    },
+    "caseHero": {
+      "eyebrow": "Case",
+      "client": "Client",
+      "services": "Services",
+      "year": "Year",
+      "live": "Live",
+      "visitSite": "Visit site"
+    },
+    "relatedCases": {
+      "eyebrow": "More work",
+      "title": "Other cases",
+      "backToAll": "← Back to all work"
+    },
+    "projectGrid": {
+      "viewAll": "View all work"
+    },
+    "projectCard": {
+      "readMore": "Read more",
+      "readCase": "Read the case"
+    },
+    "steps": {
+      "eyebrow": "Chapter three",
+      "title": "How we work together"
+    },
+    "faq": {
+      "eyebrow": "Questions",
+      "title": "Frequently asked questions"
+    },
+    "usp": {
+      "eyebrow": "Chapter four",
+      "title": "Why our projects perform",
+      "intro": "Every project is built with a balance of brand experience, technical performance, and commercial objectives, so results stay durably scalable.",
+      "stats": {
+        "conversion": "Average conversion lift",
+        "speed": "Faster load times",
+        "roas": "ROAS potential"
+      }
+    },
+    "scene": {
+      "eyebrow": "Chapter two",
+      "title": "Selected work",
+      "intro": "An overview of projects where strategy, performance, and aesthetics come together in a digital experience that sells."
+    }
+  }
+}

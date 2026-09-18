@@ -1,6 +1,7 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
-import type { NavMegaItem } from "@/content/nav";
+import { useTranslations } from "next-intl";
+import type { NavMegaItem } from "@/content/types";
 
 interface NavMegaMenuProps {
   item: NavMegaItem;
@@ -25,6 +26,7 @@ interface NavMegaMenuProps {
 // precies dezelfde plek. Verder omhoog mag níét: het paneel is pill-breed en zou dan de
 // onderste pixels van de CTA onklikbaar maken.
 export function NavMegaMenu({ item, open, panelId }: NavMegaMenuProps) {
+  const t = useTranslations("Chrome.megaMenu");
   return (
     <div
       id={panelId}
@@ -47,7 +49,7 @@ export function NavMegaMenu({ item, open, panelId }: NavMegaMenuProps) {
               <span className="font-heading text-primary text-[15px] leading-snug">{child.label}</span>
               <span className="text-body text-[13px] leading-relaxed">{child.description}</span>
               <span className="mt-auto pt-1 inline-flex items-center gap-1.5 font-heading text-[10px] uppercase tracking-[0.18em] text-accent">
-                Learn more
+                {t("learnMore")}
                 <ArrowRight
                   size={12}
                   strokeWidth={1.5}

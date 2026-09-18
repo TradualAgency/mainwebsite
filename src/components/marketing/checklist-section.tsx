@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { Check } from "lucide-react";
 import { Section } from "@/components/marketing/section";
 import { SectionHeading } from "@/components/marketing/section-heading";
@@ -10,11 +11,12 @@ interface ChecklistSectionProps {
   columns?: 1 | 2;
 }
 
-export function ChecklistSection({ eyebrow = "What you get", title, items, tone = "light", columns = 2 }: ChecklistSectionProps) {
+export function ChecklistSection({ eyebrow, title, items, tone = "light", columns = 2 }: ChecklistSectionProps) {
+  const t = useTranslations("Marketing.checklist");
   const isDark = tone === "dark";
   return (
     <Section tone={tone}>
-      <SectionHeading eyebrow={eyebrow} title={title} tone={isDark ? "dark" : "light"} className="mb-10" />
+      <SectionHeading eyebrow={eyebrow ?? t("eyebrow")} title={title} tone={isDark ? "dark" : "light"} className="mb-10" />
       <ul className={`grid grid-cols-1 ${columns === 2 ? "md:grid-cols-2" : ""} gap-x-8 gap-y-4`}>
         {items.map((item) => (
           <li key={item} className={`flex items-start gap-3 text-base leading-relaxed ${isDark ? "text-surface/85" : "text-body"}`}>

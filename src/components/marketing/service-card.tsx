@@ -1,6 +1,7 @@
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
-import type { Service } from "@/content/services";
+import type { Service } from "@/content/types";
 
 interface ServiceCardProps {
   service: Service;
@@ -8,6 +9,7 @@ interface ServiceCardProps {
 }
 
 export function ServiceCard({ service, tone = "dark" }: ServiceCardProps) {
+  const t = useTranslations("Marketing.serviceCard");
   const isDark = tone === "dark";
   return (
     <Link
@@ -18,7 +20,7 @@ export function ServiceCard({ service, tone = "dark" }: ServiceCardProps) {
     >
       <div>
         <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-3">
-          Step {service.funnelStep}
+          {t("step", { n: service.funnelStep })}
         </p>
         <h3 className={`font-heading text-[22px] mb-3 ${isDark ? "text-surface" : "text-primary"}`}>
           {service.name}

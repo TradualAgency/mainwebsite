@@ -1,14 +1,13 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import ContactForm from "@/components/contact-form";
 import { Section } from "@/components/marketing/section";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { urlFor } from "@/sanity/lib/image";
 import type { ContactFormBlock } from "@/sanity/lib/getLandingPages";
 
-const FALLBACK_IMAGE = {
-  src: "/images/Chapter-Two.png",
-  alt: "Abstract architectural interior in dark green marble with gold edges",
-};
+// Alt-tekst komt uit messages (LandingPage.contactImageAlt).
+const FALLBACK_IMAGE_SRC = "/images/Chapter-Two.png";
 
 export function LandingContactForm({
   heading,
@@ -16,8 +15,9 @@ export function LandingContactForm({
   image,
   source,
 }: ContactFormBlock & { source?: string }) {
-  const imageSrc = image?.asset ? urlFor(image).width(1400).url() : FALLBACK_IMAGE.src;
-  const imageAlt = image?.alt || FALLBACK_IMAGE.alt;
+  const t = useTranslations("LandingPage");
+  const imageSrc = image?.asset ? urlFor(image).width(1400).url() : FALLBACK_IMAGE_SRC;
+  const imageAlt = image?.alt || t("contactImageAlt");
 
   return (
     <Section tone="dark">

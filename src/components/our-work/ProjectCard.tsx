@@ -1,5 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
+
 type ProjectCardProps = {
     id: string;
     title: string;
@@ -8,6 +10,7 @@ type ProjectCardProps = {
 }
 
 export default function ProjectCard({id, title, description, image}: ProjectCardProps) {
+    const t = useTranslations("Work.projectCard");
     return (
         <div>
             <Image width={500} height={500} src={image} alt={title} className="w-full h-[400px] object-cover rounded mb-4" />
@@ -17,7 +20,7 @@ export default function ProjectCard({id, title, description, image}: ProjectCard
                 <p className="text-gray-600">{description}</p>
                 </div>
                 <div className="text-end self-end">
-                    <Link href={`/our-work/${id}`}>Read more</Link>
+                    <Link href={`/our-work/${id}`}>{t("readMore")}</Link>
                 </div>
             </div>
         </div>

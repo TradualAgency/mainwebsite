@@ -6,6 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { useTranslations } from "next-intl";
 import { urlFor } from "@/sanity/lib/image";
 import type { Project } from "@/sanity/lib/getProjects";
 
@@ -31,18 +32,19 @@ interface MetaItem {
 // urlFor leunt alleen op NEXT_PUBLIC_-variabelen (zie project-card.tsx, die hetzelfde doet).
 export function CaseHero({ project }: CaseHeroProps) {
   const container = useRef<HTMLDivElement>(null);
-  const eyebrow = ["Case", project.tags?.[0]].filter(Boolean).join(" · ");
+  const t = useTranslations("Work.caseHero");
+  const eyebrow = [t("eyebrow"), project.tags?.[0]].filter(Boolean).join(" · ");
   const year = project.completedAt ? new Date(project.completedAt).getFullYear() : null;
 
   // Alleen gevulde velden worden een kolom, zodat een case zonder client of datum
   // geen lege plek in de balk krijgt.
   const meta: MetaItem[] = [];
-  if (project.client) meta.push({ label: "Client", value: project.client });
-  if (project.tags?.length) meta.push({ label: "Services", value: project.tags.join(" · ") });
-  if (year) meta.push({ label: "Year", value: year });
+  if (project.client) meta.push({ label: t("client"), value: project.client });
+  if (project.tags?.length) meta.push({ label: t("services"), value: project.tags.join(" · ") });
+  if (year) meta.push({ label: t("year"), value: year });
   if (project.projectUrl) {
     meta.push({
-      label: "Live",
+      label: t("live"),
       value: (
         <a
           href={project.projectUrl}
@@ -50,7 +52,7 @@ export function CaseHero({ project }: CaseHeroProps) {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1 underline decoration-accent decoration-2 underline-offset-4 hover:text-accent transition"
         >
-          Visit site
+          {t("visitSite")}
           <ArrowUpRight size={14} strokeWidth={2} />
         </a>
       ),

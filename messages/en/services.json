@@ -1,0 +1,233 @@
+{
+  "Marketing": {
+    "faq": {
+      "eyebrow": "Frequently asked questions",
+      "title": "Questions that come first"
+    },
+    "checklist": {
+      "eyebrow": "What you get"
+    },
+    "qualifier": {
+      "eyebrow": "Who it's for"
+    },
+    "process": {
+      "eyebrow": "How it works"
+    },
+    "serviceCard": {
+      "step": "Step {n}"
+    },
+    "serviceHero": {
+      "step": "Step {n} of {total}",
+      "primary": "Book an intro call",
+      "secondary": "View all services"
+    },
+    "industryHero": {
+      "eyebrow": "Industries",
+      "primary": "Request a Revenue Leak Audit",
+      "secondary": "All industries"
+    }
+  },
+  "ServicesPage": {
+    "metadata": {
+      "title": "Services",
+      "description": "Four services, one route: Revenue Leak Audit, Stack Rebuild, Performance Layer, and Agentic Readiness. You start by measuring, then you fix what costs the most."
+    },
+    "hero": {
+      "eyebrow": "Services",
+      "title": "Four services. One route to more revenue from the same traffic.",
+      "lede": "You start by measuring. Then you fix what demonstrably costs the most. Then you keep it that way."
+    },
+    "route": {
+      "eyebrow": "The route",
+      "title": "Audit → Rebuild → Performance Layer → Agentic Readiness"
+    },
+    "all": {
+      "eyebrow": "All services",
+      "title": "Choose your starting point",
+      "intro": "Most brands start with the audit: it delivers the case for everything that comes after."
+    },
+    "cta": {
+      "eyebrow": "Starting point",
+      "heading": "Start with the Revenue Leak Audit.",
+      "body": "That's the service that underpins the rest of the route, with numbers, not assumptions.",
+      "primary": "Request a Revenue Leak Audit",
+      "secondary": "Book an intro call"
+    }
+  },
+  "ServiceDetail": {
+    "shared": {
+      "questionsEyebrow": "Questions",
+      "questionsTitle": "What people often ask us",
+      "nextStepEyebrow": "Next step",
+      "bookIntroCall": "Book an intro call"
+    },
+    "revenue-leak-audit": {
+      "qualifier": {
+        "eyebrow": "Who this is for",
+        "title": "Does this sound familiar?"
+      },
+      "checklist": {
+        "eyebrow": "What you get",
+        "title": "A business case, not a to-do list"
+      },
+      "process": {
+        "eyebrow": "How it works",
+        "title": "From scan to business case"
+      },
+      "cta": {
+        "heading": "After the audit",
+        "primary": "Request a Revenue Leak Audit",
+        "secondary": "View Stack Rebuild"
+      }
+    },
+    "stack-rebuild": {
+      "qualifier": {
+        "eyebrow": "When yes, when not",
+        "title": "Is this your starting point?"
+      },
+      "checklist": {
+        "eyebrow": "What you get",
+        "title": "Structural recovery, not another patch"
+      },
+      "process": {
+        "eyebrow": "How it works",
+        "title": "From audit to rebuilt foundation"
+      },
+      "cta": {
+        "heading": "After the rebuild",
+        "secondary": "View Performance Layer"
+      }
+    },
+    "performance-layer": {
+      "qualifier": {
+        "eyebrow": "Who this is for",
+        "title": "When a retainer is the right fit"
+      },
+      "checklist": {
+        "eyebrow": "What you get every month",
+        "title": "Measure, prioritize, build, test"
+      },
+      "process": {
+        "eyebrow": "The monthly rhythm",
+        "title": "The same rhythm every month"
+      },
+      "cta": {
+        "heading": "What comes after",
+        "secondary": "View Agentic Readiness"
+      }
+    },
+    "agentic-readiness": {
+      "qualifier": {
+        "eyebrow": "Why now",
+        "title": "This becomes relevant faster than you think"
+      },
+      "checklist": {
+        "eyebrow": "What we assess",
+        "title": "Ready to be found, understood, and chosen"
+      },
+      "process": {
+        "eyebrow": "How it works",
+        "title": "From analysis to implementation"
+      },
+      "cta": {
+        "eyebrow": "Starting point",
+        "heading": "Start at the beginning",
+        "body": "Haven't had an audit yet? The Revenue Leak Audit is the starting point of the entire route.",
+        "secondary": "View all services"
+      }
+    }
+  },
+  "IndustriesPage": {
+    "metadata": {
+      "title": "Industries",
+      "description": "Auto & Parts, B2B & Wholesale, Retail & Homegoods, and Food & Beverage. The same five-layer model, applied where each sector actually leaks revenue."
+    },
+    "hero": {
+      "eyebrow": "Industries",
+      "title": "Same five layers. Different places the money leaks.",
+      "lede": "Every e-commerce store leaks revenue somewhere between demand and checkout. Where it leaks hardest depends on what you sell. These are the four sectors where we see the same patterns often enough to know where to look first."
+    },
+    "sectors": {
+      "eyebrow": "Four sectors",
+      "title": "Where we go deep",
+      "intro": "Not a different service per sector. The same route, pointed at the layer that costs you the most."
+    },
+    "faq": {
+      "eyebrow": "Questions",
+      "title": "What people ask us about this"
+    },
+    "cta": {
+      "eyebrow": "Starting point",
+      "heading": "Whichever sector you're in, you start by measuring.",
+      "body": "The Revenue Leak Audit scans all five layers and translates every finding into an amount per month and per year.",
+      "primary": "Request a Revenue Leak Audit",
+      "secondary": "View all services"
+    }
+  },
+  "IndustryDetail": {
+    "signals": {
+      "eyebrow": "Familiar?",
+      "title": "Signals we see in {name}"
+    },
+    "qualifier": {
+      "eyebrow": "Who this is for",
+      "title": "Is this you?"
+    },
+    "fix": {
+      "eyebrow": "What we fix",
+      "title": "What we go after first"
+    },
+    "approach": {
+      "eyebrow": "Where to start",
+      "title": "How we'd approach it",
+      "intro": "Same route as always: measure first, then fix what demonstrably costs the most."
+    },
+    "faq": {
+      "eyebrow": "Questions",
+      "title": "What people in this sector ask us"
+    },
+    "cta": {
+      "eyebrow": "Next step",
+      "primary": "Request a Revenue Leak Audit",
+      "secondary": "View all industries"
+    }
+  },
+  "RevenueLeakPage": {
+    "metadata": {
+      "title": "What is Revenue Leak?",
+      "description": "Revenue Leak is the gap between the revenue your traffic should produce and what actually comes in. Five layers, measured and translated into euros."
+    },
+    "hero": {
+      "eyebrow": "The model",
+      "title": "Revenue Leak: the revenue you've already earned, but don't receive.",
+      "lede": "You're already paying for demand, through ads, organic reach, or word of mouth. But between the click and the payment, part of that demand stalls on the technical foundation. That gap is what we call Revenue Leak."
+    },
+    "quote": "“Revenue Leak is the gap between the revenue your traffic should produce and what actually comes in.”",
+    "layers": {
+      "eyebrow": "The model",
+      "title": "Five layers between demand and revenue"
+    },
+    "measure": {
+      "eyebrow": "Methodology",
+      "title": "What we measure"
+    },
+    "signals": {
+      "eyebrow": "Familiar?",
+      "title": "CEO signals",
+      "intro": "Each one a symptom of the same problem: patterns we see in brands before they commission an audit."
+    },
+    "method": {
+      "eyebrow": "Methodology",
+      "title": "From signal to euros",
+      "p1": "Every technical finding is tied to a measurable signal (load time, error rate, checkout drop-off, missing tracking data) and translated into estimated revenue loss per month and per year. Where possible we use your own traffic and conversion data to underpin that translation; where we can't, we use industry benchmarks and make that explicit.",
+      "p2": "So you don't get a loose list of technical remarks, but a business case: what it costs to do nothing, and what it returns to fix it."
+    },
+    "cta": {
+      "eyebrow": "Next step",
+      "heading": "Know within weeks where your leak sits.",
+      "body": "The Revenue Leak Audit measures all five layers and translates them into amounts.",
+      "primary": "Request a Revenue Leak Audit",
+      "secondary": "View all services"
+    }
+  }
+}

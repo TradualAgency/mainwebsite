@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { Link } from "@/i18n/navigation";
 import type { ProspectScan } from '@/sanity/lib/getProspectScans'
 
 export function CtaSection({ cta }: { cta: NonNullable<ProspectScan['ctaSection']> }) {

@@ -1,0 +1,39 @@
+{
+  "Common": {
+    "promise": "Meer omzet uit hetzelfde verkeer"
+  },
+  "Metadata": {
+    "site": {
+      "tagline": "The E-commerce Performance Company",
+      "description": "Tradual is The E-commerce Performance Company. We meten waar je webshop omzet lekt, de Revenue Leak, en herstellen dat met een audit, een rebuild en een doorlopende performance layer."
+    }
+  },
+  "NotFound": {
+    "eyebrow": "404",
+    "title": "Pagina niet gevonden",
+    "body": "Deze pagina bestaat niet of is verplaatst.",
+    "home": "Terug naar home"
+  },
+  "LanguageSwitcher": {
+    "label": "Taal",
+    "en": "EN",
+    "nl": "NL"
+  },
+  "Chrome": {
+    "header": {
+      "menu": "Menu",
+      "contact": "Contact"
+    },
+    "footer": {
+      "services": "Diensten",
+      "industries": "Sectoren",
+      "company": "Bedrijf",
+      "contact": "Contact",
+      "sendMessage": "Stuur een bericht",
+      "rights": "© {year} {name}. Alle rechten voorbehouden."
+    },
+    "megaMenu": {
+      "learnMore": "Meer weten"
+    }
+  }
+}

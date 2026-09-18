@@ -1,33 +1,16 @@
-const steps = [
-  {
-    number: "01",
-    title: "Intake & strategy",
-    body: "We start with a sharp analysis of your brand, audience, and commercial goals. That way we build a roadmap that ties design and performance directly to growth.",
-  },
-  {
-    number: "02",
-    title: "Concept & design",
-    body: "From the strategy we build a visual system that strengthens your brand, with considered user flows, a premium aesthetic, and clear conversion triggers at every touchpoint.",
-  },
-  {
-    number: "03",
-    title: "Build & performance",
-    body: "Our engineers translate the design into fast, scalable code. Every page is optimized on Core Web Vitals, so speed never comes at the expense of experience.",
-  },
-  {
-    number: "04",
-    title: "Launch & optimization",
-    body: "After go-live we follow results continuously with data. A/B tests, heatmaps, and conversion analyses drive ongoing improvement after every iteration.",
-  },
-]
+import { getLocale, getTranslations } from "next-intl/server";
+import { getWorkSteps } from "@/content";
 
-export default function FiveStepsSection() {
+export default async function FiveStepsSection() {
+  const steps = getWorkSteps(await getLocale());
+  const t = await getTranslations("Work.steps");
+
   return (
     <section className="py-20 px-8 bg-surface">
       <div className="max-w-7xl mx-auto">
-        <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent mb-4">Chapter three</p>
+        <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent mb-4">{t("eyebrow")}</p>
         <h2 className="font-heading text-primary text-[38px] leading-[1.05] md:text-[60px] mb-16">
-          How we work together
+          {t("title")}
         </h2>
 
         <div className="relative">

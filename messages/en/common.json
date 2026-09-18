@@ -1,0 +1,39 @@
+{
+  "Common": {
+    "promise": "More revenue from the same traffic"
+  },
+  "Metadata": {
+    "site": {
+      "tagline": "The E-commerce Performance Company",
+      "description": "Tradual is The E-commerce Performance Company. We measure where your store leaks revenue, the Revenue Leak, and fix it through audit, rebuild, and an ongoing performance layer."
+    }
+  },
+  "NotFound": {
+    "eyebrow": "404",
+    "title": "Page not found",
+    "body": "This page does not exist or has moved.",
+    "home": "Back to home"
+  },
+  "LanguageSwitcher": {
+    "label": "Language",
+    "en": "EN",
+    "nl": "NL"
+  },
+  "Chrome": {
+    "header": {
+      "menu": "Menu",
+      "contact": "Contact"
+    },
+    "footer": {
+      "services": "Services",
+      "industries": "Industries",
+      "company": "Company",
+      "contact": "Contact",
+      "sendMessage": "Send a message",
+      "rights": "© {year} {name}. All rights reserved."
+    },
+    "megaMenu": {
+      "learnMore": "Learn more"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "Home": {
+    "hero": {
+      "eyebrow": "The E-commerce Performance Company",
+      "title": "More revenue from the traffic you already have.",
+      "lede": "You already pay for demand. But between the click and the payment, revenue leaks away: through speed, mobile UX, checkout, and tracking. We make visible how much that costs you, and we build it out.",
+      "primaryCta": "Request a Revenue Leak Audit",
+      "secondaryCta": "How Revenue Leak works",
+      "note": "For Dutch DTC brands on Shopify with €1–10M online revenue."
+    },
+    "problem": {
+      "eyebrow": "Why Tradual",
+      "title": "The best driver won't win in a car that isn't right.",
+      "intro": "The same goes for e-commerce. You can invest heavily in traffic, but if the store behind it doesn't perform like a Formula 1 car, revenue leaks away on the road to checkout. We call that Revenue Leak."
+    },
+    "leakLayers": {
+      "eyebrow": "The model",
+      "title": "Five layers between demand and revenue",
+      "intro": "From the moment someone searches for you to the moment they pay, there are five layers. Each layer has its own leak. We measure them all and convert them into euros per month.",
+      "footer": "Every layer is measurable. Every layer has a price tag.",
+      "link": "Read how we measure each layer →"
+    },
+    "funnel": {
+      "eyebrow": "The route",
+      "title": "Measure, repair, continuously improve.",
+      "intro": "Four services, one sequence. You always start by measuring. Otherwise you're building on assumptions."
+    },
+    "proof": {
+      "eyebrow": "Proof",
+      "title": "What it delivers.",
+      "intro": "Engagements where we uncovered a Revenue Leak and closed it, with the starting situation, what we built, and the result.",
+      "cta": "View all work"
+    },
+    "selfTest": {
+      "eyebrow": "Self-test: Start procedure",
+      "title": "Five questions you should be able to answer today.",
+      "intro": "Five lights on the gantry. Tick off every question you can answer with a number; the lights only go out once the grid is clear.",
+      "ctaLabel": "Request the audit",
+      "secondaryLabel": "See the Performance Layer"
+    },
+    "finalCta": {
+      "eyebrow": "Start to finish",
+      "heading": "Do you know where your revenue leaks?",
+      "body": "In a few weeks you'll know. With amounts attached, per layer, and a roadmap ordered by impact.",
+      "primary": "Request a Revenue Leak Audit",
+      "secondary": "Book an intro call"
+    }
+  },
+  "SelfTest": {
+    "sector": "Sector {n}: {sector}",
+    "answered": "Answered",
+    "canAnswer": "I can answer this",
+    "answeredWithNumbers": "Answered with numbers"
+  },
+  "ProjectSlider": {
+    "goTo": "Go to {title}"
+  }
+}

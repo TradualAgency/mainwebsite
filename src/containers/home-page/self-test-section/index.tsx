@@ -1,24 +1,28 @@
+import { getLocale, getTranslations } from "next-intl/server";
 import { Section } from "@/components/marketing/section";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { StartLightsSelfTest } from "@/components/marketing/start-lights-selftest";
-import { giftQuestions } from "@/content/revenue-leak";
+import { getGiftQuestions } from "@/content";
 
-export default function SelfTestSection() {
+export default async function SelfTestSection() {
+  const giftQuestions = getGiftQuestions(await getLocale());
+  const t = await getTranslations("Home.selfTest");
+
   return (
     <Section id="self-test" tone="light" spacing="lg">
       <SectionHeading
-        eyebrow="Self-test: Start procedure"
-        title="Five questions you should be able to answer today."
-        intro="Five lights on the gantry. Tick off every question you can answer with a number; the lights only go out once the grid is clear."
+        eyebrow={t("eyebrow")}
+        title={t("title")}
+        intro={t("intro")}
         align="center"
         className="mb-12"
       />
       <StartLightsSelfTest
         questions={giftQuestions}
         ctaHref="/services/revenue-leak-audit"
-        ctaLabel="Request the audit"
+        ctaLabel={t("ctaLabel")}
         secondaryHref="/services/performance-layer"
-        secondaryLabel="See the Performance Layer"
+        secondaryLabel={t("secondaryLabel")}
       />
     </Section>
   );

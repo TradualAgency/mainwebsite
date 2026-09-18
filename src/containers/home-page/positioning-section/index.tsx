@@ -1,38 +1,27 @@
+import { getLocale } from "next-intl/server";
 import { Wrench, TrendingUp } from "lucide-react";
 import { ComparisonTwoCol } from "@/components/marketing/comparison-two-col";
+import { getPositioning } from "@/content";
 
 // Zelfde ComparisonTwoCol als /services en het scan-rapport
 // (src/components/analyse/sections/positioning-section.tsx), zodat alle drie exact
-// dezelfde positionering tonen.
-export default function PositioningSection() {
+// dezelfde positionering tonen. De copy komt uit content/{locale}/pitch.ts.
+export default async function PositioningSection() {
+  const positioning = getPositioning(await getLocale());
+
   return (
     <ComparisonTwoCol
-      eyebrow="How we work"
+      eyebrow={positioning.eyebrow}
       title={
         <>
-          We build the engine.
+          {positioning.titleLine1}
           <br />
-          <span className="text-body">You bring the direction.</span>
+          <span className="text-body">{positioning.titleLine2}</span>
         </>
       }
-      intro="Tradual is not a CRO agency. We repair the technical foundation: speed, infrastructure, and the right stack. Think of building the fastest car on the grid. Who steers it is up to you."
-      left={{
-        icon: Wrench,
-        title: "Tradual",
-        items: [
-          "Core Web Vitals & speed",
-          "Plugin stack optimization",
-          "Tech stack architecture",
-          "Tracking & data infrastructure",
-          "Headless / Hydrogen migration",
-        ],
-        emphasis: true,
-      }}
-      right={{
-        icon: TrendingUp,
-        title: "Your CRO specialist",
-        items: ["Copy & messaging", "A/B tests", "Funnel optimization", "Customer research & interviews", "Conversion flows"],
-      }}
+      intro={positioning.introExtended}
+      left={{ icon: Wrench, title: positioning.left.title, items: positioning.left.items, emphasis: true }}
+      right={{ icon: TrendingUp, title: positioning.right.title, items: positioning.right.items }}
     />
   );
 }

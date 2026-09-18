@@ -1,6 +1,7 @@
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { CtaButton } from "@/components/marketing/cta-button";
 import { ProjectSlider } from "@/components/our-work/ProjectSlider";
+import { getLocale, getTranslations } from "next-intl/server";
 import { getFeaturedProjects } from "@/sanity/lib/getProjects";
 
 // Voorheen drie stat-tegels (45% / 300% / 2.5x) zonder onderbouwing. Vervangen door
@@ -8,15 +9,17 @@ import { getFeaturedProjects } from "@/sanity/lib/getProjects";
 // De kop en de CTA blijven in de max-w-7xl container; de slider staat er bewust
 // buiten, zodat de slides tot aan de schermrand doorlopen.
 export default async function ProofSection() {
-  const projects = await getFeaturedProjects();
+  const locale = await getLocale();
+  const projects = await getFeaturedProjects(locale);
+  const t = await getTranslations("Home.proof");
 
   return (
     <section className="bg-surface-muted py-20">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <SectionHeading
-          eyebrow="Proof"
-          title="What it delivers."
-          intro="Engagements where we uncovered a Revenue Leak and closed it, with the starting situation, what we built, and the result."
+          eyebrow={t("eyebrow")}
+          title={t("title")}
+          intro={t("intro")}
           className="mb-12"
         />
       </div>
@@ -25,7 +28,7 @@ export default async function ProofSection() {
 
       <div className="max-w-7xl mx-auto px-6 md:px-8 text-center mt-8">
         <CtaButton href="/our-work" variant="ghost-light">
-          View all work
+          {t("cta")}
         </CtaButton>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import {DocumentTextIcon} from '@sanity/icons'
 import {defineArrayMember, defineField, defineType} from 'sanity'
+import {isUniqueWithinLanguage, languageField} from './shared/language'
 
 export const postType = defineType({
   name: 'post',
@@ -7,6 +8,7 @@ export const postType = defineType({
   type: 'document',
   icon: DocumentTextIcon,
   fields: [
+    languageField,
     defineField({
       name: 'title',
       type: 'string',
@@ -16,6 +18,7 @@ export const postType = defineType({
       type: 'slug',
       options: {
         source: 'title',
+        isUnique: isUniqueWithinLanguage,
       },
     }),
     defineField({

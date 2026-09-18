@@ -1,12 +1,14 @@
 'use client'
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import {useEffect, useRef, useState} from "react";
-import { usePathname } from 'next/navigation';
+import { usePathname } from "@/i18n/navigation";
 import { ChevronDown } from "lucide-react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { mainNav, headerCta, isMegaItem } from "@/content/nav";
+import { useLocale, useTranslations } from "next-intl";
+import { getNav, isMegaItem } from "@/content";
 import { NavMegaMenu } from "@/components/header/nav-mega-menu";
+import { LanguageSwitcher } from "@/components/language-switcher";
 
 gsap.registerPlugin(useGSAP);
 
@@ -26,6 +28,9 @@ export default function Header() {
     const [openMenu, setOpenMenu] = useState<string | null>(null);
     const [openMobileMenu, setOpenMobileMenu] = useState<string | null>(null);
     const pathname = usePathname();
+    const locale = useLocale();
+    const { mainNav, headerCta } = getNav(locale);
+    const t = useTranslations("Chrome.header");
 
     // Sluit het menu wanneer de pathname verandert. Aangepast tijdens render (i.p.v. in een
     // effect) zodat er geen extra render-cyclus nodig is om het menu te sluiten.
@@ -99,13 +104,13 @@ export default function Header() {
     // blok voorbij de header scrolt — daarna weer de normale kleuren. De index /our-work
     // valt er bewust buiten: die heeft een lichte PageHero.
     const startsOverDark = pathname === "/" || /^\/our-work\/[^/]+$/.test(pathname);
-    const [overDark, setOverDark] = useState(startsOverDark);
+    const [overDarkState, setOverDark] = useState(startsOverDark);
+    // Afgeleid i.p.v. via setState in het effect: op routes zonder donkere start is de
+    // header sowieso licht, ongeacht de laatst gemeten scrollstand.
+    const overDark = startsOverDark && overDarkState;
 
     useEffect(() => {
-        if (!startsOverDark) {
-            setOverDark(false);
-            return;
-        }
+        if (!startsOverDark) return;
 
         const HEADER_OFFSET = 128;
         const updateOverDark = () => {
@@ -220,7 +225,7 @@ export default function Header() {
                         <button
                             onClick={() => setIsOpen(!isOpen)}
                             className="focus:outline-none relative w-6 h-6"
-                            aria-label="Menu"
+                            aria-label={t("menu")}
                         >
                             {/* Hamburger icon die naar kruisje transformeert */}
                             <span
@@ -291,22 +296,23 @@ export default function Header() {
                                     )
                                 )}
                                 <Link href="/contact" className="border-b border-primary/10 pb-3 hover:text-accent transition">
-                                    Contact
+                                    {t("contact")}
                                 </Link>
                                 <Link href={headerCta.href} className="bg-primary text-surface px-4 py-3 font-medium text-center hover:bg-primary/90 transition">
                                     {headerCta.label}
                                 </Link>
+                                <LanguageSwitcher className="justify-center pt-1 text-primary/80" />
                             </nav>
                         </div>
                     </div>
                 ) : (
-                    <div className="hidden lg:flex">
+                    <div className="hidden lg:flex items-center gap-6">
+                        <LanguageSwitcher />
                         <Link href={headerCta.href}
                             className="bg-accent text-primary px-6 py-2 font-medium hover:opacity-90 transition font-heading"
                         >
                             {headerCta.label}
                         </Link>
-
                     </div>
                 )}
             </div>

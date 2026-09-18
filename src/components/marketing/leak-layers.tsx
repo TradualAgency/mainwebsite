@@ -1,11 +1,11 @@
 'use client'
 
 import { useRef } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import type { LeakLayer } from "@/content/revenue-leak";
+import type { LeakLayer } from "@/content/types";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -71,9 +71,9 @@ export function LeakLayers({ layers, variant = "compact" }: LeakLayersProps) {
               </Link>
             </div>
             <p className="text-body text-sm md:text-base mb-3">{layer.coreQuestion}</p>
-            {variant === "expanded" && layer.watWeMeten.length > 0 && (
+            {variant === "expanded" && layer.whatWeMeasure.length > 0 && (
               <ul className="flex flex-wrap gap-2 mt-2">
-                {layer.watWeMeten.map((item) => (
+                {layer.whatWeMeasure.map((item) => (
                   <li key={item} className="text-xs bg-accent/10 text-accent px-3 py-1">
                     {item}
                   </li>

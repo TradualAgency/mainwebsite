@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -8,7 +9,7 @@ import { useGSAP } from "@gsap/react";
 import { Section } from "@/components/marketing/section";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { cn } from "@/lib/utils";
-import type { ProcessStep } from "@/content/services";
+import type { ProcessStep } from "@/content/types";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -34,11 +35,13 @@ function hasImages(steps: ProcessStep[]): steps is ShowcaseStep[] {
 // de gepinde 3-koloms showcase: bullets links, beeld in het midden, tekst rechts, en de
 // scroll loopt de stappen één voor één af. Zonder beelden (de Sanity `process`-blokken op
 // landingspagina's) blijft het de rustige genummerde lijst.
-export function ProcessTimeline({ eyebrow = "How it works", title, steps, tone = "light" }: ProcessTimelineProps) {
+export function ProcessTimeline({ eyebrow, title, steps, tone = "light" }: ProcessTimelineProps) {
+  const t = useTranslations("Marketing.process");
+  const eyebrowText = eyebrow ?? t("eyebrow");
   if (!hasImages(steps)) {
-    return <SimpleList eyebrow={eyebrow} title={title} steps={steps} tone={tone} />;
+    return <SimpleList eyebrow={eyebrowText} title={title} steps={steps} tone={tone} />;
   }
-  return <Showcase eyebrow={eyebrow} title={title} steps={steps} tone={tone} />;
+  return <Showcase eyebrow={eyebrowText} title={title} steps={steps} tone={tone} />;
 }
 
 interface VariantProps<T extends ProcessStep> {

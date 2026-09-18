@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -11,6 +12,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function HeroSection() {
   const container = useRef<HTMLDivElement>(null);
+  const t = useTranslations("Home.hero");
 
   useGSAP(
     () => {
@@ -63,27 +65,24 @@ export default function HeroSection() {
 
         <div className="hero-content relative z-10 max-w-7xl mx-auto w-full">
           <p className="hero-el uppercase text-accent font-heading text-[10px] tracking-[0.18em] mb-4">
-            The E-commerce Performance Company
+            {t("eyebrow")}
           </p>
           <h1 className="hero-el font-heading font-medium text-white text-[40px] md:text-[68px] max-w-4xl leading-[1.05] mb-6">
-            More revenue from the traffic you already have.
+            {t("title")}
           </h1>
           <p className="hero-el max-w-2xl text-white/80 text-base md:text-lg leading-relaxed mb-8">
-            You already pay for demand. But between the click and the payment,
-            revenue leaks away: through speed, mobile UX, checkout, and
-            tracking. We make visible how much that costs you, and we build it
-            out.
+            {t("lede")}
           </p>
           <div className="hero-el flex flex-col sm:flex-row items-start gap-4">
             <CtaButton href="/services/revenue-leak-audit" variant="gold">
-              Request a Revenue Leak Audit
+              {t("primaryCta")}
             </CtaButton>
             <CtaButton href="/revenue-leak" variant="ghost-dark">
-              How Revenue Leak works
+              {t("secondaryCta")}
             </CtaButton>
           </div>
           <p className="hero-el mt-6 text-white/60 text-xs md:text-sm">
-            For Dutch DTC brands on Shopify with €1–10M online revenue.
+            {t("note")}
           </p>
         </div>
       </section>

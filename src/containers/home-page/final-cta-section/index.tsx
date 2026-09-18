@@ -1,13 +1,16 @@
+import { getTranslations } from "next-intl/server";
 import { FinishLineCta } from "@/components/marketing/finish-line-cta";
 
-export default function FinalCTA() {
+export default async function FinalCTA() {
+  const t = await getTranslations("Home.finalCta");
+
   return (
     <FinishLineCta
-      eyebrow="Start to finish"
-      heading="Do you know where your revenue leaks?"
-      body="In a few weeks you'll know. With amounts attached, per layer, and a roadmap ordered by impact."
-      primary={{ label: "Request a Revenue Leak Audit", href: "/services/revenue-leak-audit" }}
-      secondary={{ label: "Book an intro call", href: "/contact" }}
+      eyebrow={t("eyebrow")}
+      heading={t("heading")}
+      body={t("body")}
+      primary={{ label: t("primary"), href: "/services/revenue-leak-audit" }}
+      secondary={{ label: t("secondary"), href: "/contact" }}
     />
   );
 }

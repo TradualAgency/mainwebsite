@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperClass } from "swiper";
 import 'swiper/css';
@@ -19,6 +20,7 @@ interface ProjectSliderProps {
 export function ProjectSlider({ projects }: ProjectSliderProps) {
   const [swiper, setSwiper] = useState<SwiperClass | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const t = useTranslations("ProjectSlider");
 
   return (
     <div>
@@ -51,7 +53,7 @@ export function ProjectSlider({ projects }: ProjectSliderProps) {
               key={project._id}
               type="button"
               onClick={() => swiper?.slideTo(index)}
-              aria-label={`Go to ${project.title}`}
+              aria-label={t("goTo", { title: project.title })}
               aria-current={index === activeIndex}
               className={cn(
                 "h-2 rounded-full transition-all",

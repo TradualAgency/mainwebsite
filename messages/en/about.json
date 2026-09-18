@@ -1,0 +1,109 @@
+{
+  "AboutPage": {
+    "metadata": {
+      "title": "About",
+      "description": "Tradual is The E-commerce Performance Company. We build the engine behind e-commerce brands: speed, infrastructure, and the right stack."
+    },
+    "hero": {
+      "title": "We build the engine behind e-commerce brands.",
+      "subtitle": "Tradual is The E-commerce Performance Company. We measure where your store leaks revenue, the Revenue Leak, and fix it through audit, rebuild, and an ongoing performance layer."
+    },
+    "mission": "An e-commerce world where every brand captures the full revenue potential of the demand it has already earned. Where the foundation accelerates growth instead of holding it back.",
+    "origin": {
+      "title": "Where it started",
+      "text": "Tradual is built on a simple conviction: most brands leave revenue on the table that they've already earned, simply because the technical foundation underneath can't keep up. Not for lack of traffic, but because of speed, checkout friction, or tracking that doesn't add up.\nWe combine deep technical expertise with a sharp eye for measurable impact, so every technical choice translates into euros, not assumptions.",
+      "imageAlt": "Tradual story"
+    },
+    "team": {
+      "eyebrow": "The team",
+      "title": "Small team, senior hands on the work",
+      "text": "At Tradual you work directly with the people who also do the work. The engineer who analyses your stack is the same one who repairs it, no account manager in between.\nThat's why we deliberately take on a limited number of engagements at a time. Better a few brands where we actually get the foundation right than a full calendar with half results.",
+      "points": [
+        "Direct contact with the engineers working on your stack",
+        "Senior only, no juniors learning on your store",
+        "Deliberately a limited number of engagements at a time",
+        "Reporting in euros, not dashboards"
+      ],
+      "imageAlt": "Shopify storefront and code editor side by side on one screen"
+    }
+  },
+  "AboutComponents": {
+    "hero": {
+      "ariaLabel": "About hero",
+      "label": "About",
+      "title": "Built for brands that value durable growth",
+      "subtitle": "We help ambitious brands grow with the full infrastructure around their e-commerce store and Shopify. From strategy and design to development, CRO, and performance, we deliver experiences that feel premium and convert measurably.",
+      "cta": "Start a conversation",
+      "viewWork": "View our work"
+    },
+    "mission": {
+      "ariaLabel": "Mission",
+      "label": "Our mission",
+      "text": "An e-commerce world where every brand captures the full revenue potential of the demand it has already earned."
+    },
+    "faq": {
+      "eyebrow": "Questions",
+      "title": "Frequently asked questions"
+    }
+  },
+  "ContactPage": {
+    "metadata": {
+      "title": "Contact",
+      "description": "Get in touch with Tradual. Tell us about your store and we'll get back to you within one working day."
+    },
+    "eyebrow": "Contact",
+    "title": "Let's find out where your revenue leaks.",
+    "cta": {
+      "eyebrow": "Next step",
+      "heading": "Prefer to see what we do first?",
+      "body": "View the four services and how they work, or email us directly if you'd rather speak in person.",
+      "email": "Email us directly",
+      "services": "View services"
+    }
+  },
+  "ContactForm": {
+    "fields": {
+      "name": { "label": "Name", "description": "Enter your full name" },
+      "email": { "label": "Email", "description": "Enter your email address" },
+      "phone": { "label": "Phone number", "description": "Enter your phone number" },
+      "revenue": {
+        "label": "Current online revenue",
+        "description": "So we can place you with the right service immediately",
+        "placeholder": "Choose a range"
+      },
+      "message": { "label": "Message", "description": "Enter your message" }
+    },
+    "ranges": ["< €1M", "€1M – €3M", "€3M – €8M", "€8M+"],
+    "errors": {
+      "nameMin": "Your name must be at least 2 characters",
+      "nameMax": "Your name may not be more than 50 characters",
+      "email": "Invalid email address",
+      "phone": "Invalid phone number",
+      "revenue": "Choose your current online revenue",
+      "messageMin": "Message must be longer than 2 characters",
+      "messageMax": "Message may not be longer than 2000 characters"
+    },
+    "success": {
+      "eyebrow": "Sent",
+      "heading": "Thanks for your message.",
+      "body": "We'll get back to you within one working day."
+    },
+    "error": "Something went wrong sending this. Please try again, or email <link>{email}</link> directly.",
+    "submit": "Send",
+    "submitting": "Sending…"
+  },
+  "ContactSwiper": {
+    "slides": [
+      {
+        "label": "Performance",
+        "quote": "Faster load times, better tracking, and a more stable Shopify base immediately return more from the same traffic.",
+        "source": "Tradual infrastructure"
+      },
+      {
+        "label": "Shopify",
+        "quote": "We look at the full store: checkout, data, apps, performance, and the technical choices that make growth possible.",
+        "source": "E-commerce stack"
+      }
+    ]
+  }
+}

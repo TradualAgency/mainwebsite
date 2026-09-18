@@ -4,6 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { useTranslations } from "next-intl";
 import { PostCard } from "@/components/insights/post-card";
 import { CtaButton } from "@/components/marketing/cta-button";
 import type { Post } from "@/sanity/lib/getPosts";
@@ -22,6 +23,7 @@ interface PostGridProps {
 // beeld komen, zodat elke rij pas animeert op het moment dat hij zichtbaar wordt.
 export function PostGrid({ posts }: PostGridProps) {
   const container = useRef<HTMLDivElement>(null);
+  const t = useTranslations("Work.postGrid");
 
   useGSAP(() => {
     const mm = gsap.matchMedia();
@@ -59,11 +61,9 @@ export function PostGrid({ posts }: PostGridProps) {
   if (posts.length === 0) {
     return (
       <div ref={container} className="text-center py-16">
-        <p className="text-body text-base md:text-lg mb-6">
-          The first articles are on their way.
-        </p>
+        <p className="text-body text-base md:text-lg mb-6">{t("empty")}</p>
         <CtaButton href="/contact" variant="ghost-light">
-          Get in touch
+          {t("cta")}
         </CtaButton>
       </div>
     );

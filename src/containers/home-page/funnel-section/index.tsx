@@ -1,18 +1,22 @@
+import { getLocale, getTranslations } from "next-intl/server";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { ServiceCardGrid } from "@/components/marketing/service-card";
-import { services } from "@/content/services";
+import { getServices } from "@/content";
 
 // Zelfde kaderpatroon als de hero, ProblemSection en LeakLayersSection: witte rand van
 // 20px met een afgeronde kaart erin.
-export default function FunnelSection() {
+export default async function FunnelSection() {
+  const services = getServices(await getLocale());
+  const t = await getTranslations("Home.funnel");
+
   return (
     <div className="bg-surface p-5">
       <section className="bg-primary rounded-2xl px-8 py-16 md:py-20">
         <div className="max-w-7xl mx-auto w-full">
           <SectionHeading
-            eyebrow="The route"
-            title="Measure, repair, continuously improve."
-            intro="Four services, one sequence. You always start by measuring. Otherwise you're building on assumptions."
+            eyebrow={t("eyebrow")}
+            title={t("title")}
+            intro={t("intro")}
             tone="dark"
             className="mb-10"
           />

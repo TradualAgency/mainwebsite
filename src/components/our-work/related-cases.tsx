@@ -1,10 +1,11 @@
 'use client'
 
 import { useRef } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { useTranslations } from "next-intl";
 import { Section } from "@/components/marketing/section";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import ProjectCardGrid from "@/components/our-work/ProjectCardGrid";
@@ -23,6 +24,7 @@ interface RelatedCasesProps {
 export function RelatedCases({ projects }: RelatedCasesProps) {
   const container = useRef<HTMLDivElement>(null);
   const grid = useRef<HTMLDivElement>(null);
+  const t = useTranslations("Work.relatedCases");
 
   useGSAP(
     () => {
@@ -53,7 +55,7 @@ export function RelatedCases({ projects }: RelatedCasesProps) {
   return (
     <Section tone="muted">
       <div ref={container}>
-        <SectionHeading eyebrow="More work" title="Other cases" className="related-heading mb-10" />
+        <SectionHeading eyebrow={t("eyebrow")} title={t("title")} className="related-heading mb-10" />
         <div ref={grid}>
           <ProjectCardGrid projects={projects} />
         </div>
@@ -62,7 +64,7 @@ export function RelatedCases({ projects }: RelatedCasesProps) {
             href="/our-work"
             className="text-primary underline decoration-accent decoration-2 underline-offset-4 hover:text-accent transition text-sm md:text-base"
           >
-            ← Back to all work
+            {t("backToAll")}
           </Link>
         </div>
       </div>

@@ -1,14 +1,16 @@
 'use client'
 
 import { useRef, useState } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Check } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { CtaButton } from "@/components/marketing/cta-button";
 import { cn } from "@/lib/utils";
-import { giftVerdicts, type GiftQuestion } from "@/content/revenue-leak";
+import { useLocale, useTranslations } from "next-intl";
+import { getGiftVerdicts } from "@/content";
+import type { GiftQuestion } from "@/content/types";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -43,6 +45,8 @@ export function StartLightsSelfTest({
   secondaryLabel,
 }: StartLightsSelfTestProps) {
   const container = useRef<HTMLDivElement>(null);
+  const giftVerdicts = getGiftVerdicts(useLocale());
+  const t = useTranslations("SelfTest");
   const [answers, setAnswers] = useState<boolean[]>(() => questions.map(() => false));
 
   const answered = answers.filter(Boolean).length;
@@ -209,7 +213,7 @@ export function StartLightsSelfTest({
 
                 <div className="min-w-0">
                   <span className="block font-heading text-[9px] uppercase tracking-[0.18em] text-accent/70 mb-2">
-                    Sector {pad(index)}: {item.sector}
+                    {t("sector", { n: pad(index), sector: item.sector })}
                   </span>
                   <p className="text-surface text-base md:text-lg leading-relaxed">{item.question}</p>
                 </div>
@@ -238,7 +242,7 @@ export function StartLightsSelfTest({
                   >
                     {isAnswered && <Check className="size-3" strokeWidth={3} />}
                   </span>
-                  {isAnswered ? "Answered" : "I can answer this"}
+                  {isAnswered ? t("answered") : t("canAnswer")}
                 </button>
               </li>
             );
@@ -248,7 +252,7 @@ export function StartLightsSelfTest({
         <div className="border-t border-white/10 px-6 md:px-10 py-10 md:py-12 flex flex-col md:flex-row md:items-end gap-8 md:gap-12">
           <div className="shrink-0">
             <span className="block font-heading text-[9px] uppercase tracking-[0.18em] text-accent/70 mb-3">
-              Answered with numbers
+              {t("answeredWithNumbers")}
             </span>
             <p className="font-heading leading-none tabular-nums text-surface">
               <span key={answered} className="selftest-score inline-block text-[56px] md:text-[72px]">

@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Section } from "@/components/marketing/section";
 import { SectionHeading } from "@/components/marketing/section-heading";
@@ -14,7 +15,8 @@ interface FaqSectionProps {
   tone?: "light" | "muted" | "dark";
 }
 
-export function FaqSection({ eyebrow = "Frequently asked questions", title = "Questions that come first", items, tone = "light" }: FaqSectionProps) {
+export function FaqSection({ eyebrow, title, items, tone = "light" }: FaqSectionProps) {
+  const t = useTranslations("Marketing.faq");
   const headingTone = tone === "dark" ? "dark" : "light";
 
   // Radix' AccordionContent unmount't gesloten content, dus die staat niet in de
@@ -33,7 +35,7 @@ export function FaqSection({ eyebrow = "Frequently asked questions", title = "Qu
   return (
     <Section tone={tone} innerClassName="max-w-3xl mx-auto">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <SectionHeading eyebrow={eyebrow} title={title} align="center" tone={headingTone} className="mb-10" />
+      <SectionHeading eyebrow={eyebrow ?? t("eyebrow")} title={title ?? t("title")} align="center" tone={headingTone} className="mb-10" />
       <Accordion type="single" collapsible className="w-full">
         {items.map((item, idx) => (
           <AccordionItem
