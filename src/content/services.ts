@@ -8,6 +8,11 @@ import { Activity, Bot, Gauge, Wrench } from "lucide-react";
 export type ProcessStep = {
   title: string;
   body: string;
+  // Beeld dat de ProcessTimeline naast de stap toont. Optioneel omdat de Sanity
+  // `process`-blokken (landingspagina's) geen afbeelding hebben; zonder beeld valt de
+  // component terug op de eenvoudige lijst. Paden zijn placeholders uit public/images —
+  // vervang ze door definitieve beelden per stap.
+  image?: { src: string; alt: string };
 };
 
 export type Service = {
@@ -67,18 +72,22 @@ export const services: Service[] = [
       {
         title: "Scan",
         body: "We measure your shop from the outside: speed, architecture, tracking, checkout, SEO, and app costs. We extend that with Shopify, analytics, or ad access if you provide it.",
+        image: { src: "/images/the-start.png", alt: "Scanning a Shopify store across five layers" },
       },
       {
         title: "Translate",
         body: "Every technical finding is translated into estimated revenue loss per month and per year, with the underlying measurement attached.",
+        image: { src: "/images/industry-retail-homegoods.jpg", alt: "Technical findings translated into euros per month" },
       },
       {
         title: "Prioritize",
         body: "Findings are ranked by euro impact, not technical weight, so you know where to start.",
+        image: { src: "/images/quote-home.png", alt: "Findings ranked by euro impact" },
       },
       {
         title: "Walkthrough",
         body: "In a one-hour session we walk through the report and decide the next step together.",
+        image: { src: "/images/over-ons-img.png", alt: "Walking through the audit report together" },
       },
     ],
     afterThisLabel: "You choose: execute yourself with the roadmap, a Stack Rebuild, or the Performance Layer.",
@@ -135,26 +144,32 @@ export const services: Service[] = [
       {
         title: "Starting point",
         body: "We start from an audit (ours or an existing one) so the rebuild targets measurable problems, not assumptions.",
+        image: { src: "/images/arch-without-limits.png", alt: "Audit findings as the starting point for a rebuild" },
       },
       {
         title: "Architecture choice",
         body: "We determine whether monolith, hybrid, or headless is the right choice for your scale and team. That is never headless by default.",
+        image: { src: "/images/Chapter-Two.png", alt: "Choosing between monolith, hybrid, or headless" },
       },
       {
         title: "Clean up",
         body: "Apps, scripts, and processes that cost money without returning anything come out before anything new goes in.",
+        image: { src: "/images/industry-auto-parts.jpg", alt: "Removing apps and scripts that cost money" },
       },
       {
         title: "Rebuild",
         body: "We rebuild the foundation: speed, checkout, mobile, and tracking as the starting point, not afterthoughts.",
+        image: { src: "/images/cases-tradual.png", alt: "Rebuilding the technical foundation" },
       },
       {
         title: "Migrate",
         body: "Transition without downtime or revenue loss, with a rollback scenario.",
+        image: { src: "/images/industry-b2b-wholesale.jpg", alt: "Migrating without downtime or revenue loss" },
       },
       {
         title: "Measure",
         body: "After go-live we measure again whether the leak is actually closed.",
+        image: { src: "/images/project-img.jpg", alt: "Measuring after go-live whether the leak is closed" },
       },
     ],
     afterThisLabel: "After the rebuild you continue with the Performance Layer to keep the leak closed.",
@@ -202,11 +217,31 @@ export const services: Service[] = [
       "Monthly reporting in revenue, not hours",
     ],
     process: [
-      { title: "Measure", body: "Every month again: Core Web Vitals, tracking quality, and checkout friction." },
-      { title: "Prioritize", body: "What costs the most goes first on the list." },
-      { title: "Build", body: "Improvements are built and shipped." },
-      { title: "Test", body: "Results are measured before anything counts as done." },
-      { title: "Report", body: "You get back what it delivered, in euros." },
+      {
+        title: "Measure",
+        body: "Every month again: Core Web Vitals, tracking quality, and checkout friction.",
+        image: { src: "/images/industry-food-beverage.jpg", alt: "Monthly measurement of Core Web Vitals and tracking" },
+      },
+      {
+        title: "Prioritize",
+        body: "What costs the most goes first on the list.",
+        image: { src: "/images/quote-home.png", alt: "Prioritizing by euro impact" },
+      },
+      {
+        title: "Build",
+        body: "Improvements are built and shipped.",
+        image: { src: "/images/the-start.png", alt: "Building and shipping improvements" },
+      },
+      {
+        title: "Test",
+        body: "Results are measured before anything counts as done.",
+        image: { src: "/images/cases-tradual.png", alt: "Testing results before marking work as done" },
+      },
+      {
+        title: "Report",
+        body: "You get back what it delivered, in euros.",
+        image: { src: "/images/contact-cta-img.png", alt: "Monthly reporting in euros" },
+      },
     ],
     afterThisLabel: "Ready for the next step? Agentic Readiness prepares you for AI agents as buyers.",
     afterThisHref: "/services/agentic-readiness",
@@ -249,9 +284,21 @@ export const services: Service[] = [
       "Assessment of transactional readiness",
     ],
     process: [
-      { title: "Analyze", body: "We assess product data, structured data, feeds, and API accessibility against what AI agents need." },
-      { title: "Report", body: "You get a concrete picture of where you stand now and what the biggest gaps are." },
-      { title: "Implement", body: "Separate from the analysis: we build the changes that make you findable and transactionally ready." },
+      {
+        title: "Analyze",
+        body: "We assess product data, structured data, feeds, and API accessibility against what AI agents need.",
+        image: { src: "/images/arch-without-limits.png", alt: "Assessing product data and feeds for AI agents" },
+      },
+      {
+        title: "Report",
+        body: "You get a concrete picture of where you stand now and what the biggest gaps are.",
+        image: { src: "/images/Chapter-Two.png", alt: "A concrete picture of the biggest gaps" },
+      },
+      {
+        title: "Implement",
+        body: "Separate from the analysis: we build the changes that make you findable and transactionally ready.",
+        image: { src: "/images/over-ons-img.png", alt: "Implementing changes for agentic readiness" },
+      },
     ],
     afterThisLabel: "Back to the overview of all services.",
     afterThisHref: "/services",
