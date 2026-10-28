@@ -17,7 +17,20 @@
   "InsightDetail": {
     "notFound": "Artikel niet gevonden",
     "fallbackEyebrow": "Insights",
-    "backToAll": "← Terug naar alle insights"
+    "backToAll": "← Alle insights",
+    "readingTime": "{minutes} min lezen",
+    "share": "Delen",
+    "copyLink": "Kopieer link",
+    "copied": "Gekopieerd",
+    "faqTitle": "Veelgestelde vragen",
+    "relatedEyebrow": "Verder lezen",
+    "relatedTitle": "Meer insights",
+    "serviceCta": {
+      "eyebrow": "Revenue Leak Report",
+      "heading": "Hoeveel omzet laat je Shopify-store liggen?",
+      "body": "We rekenen uit wat snelheid en techniek je kosten, in euro's per maand, op basis van de data van je eigen bezoekers.",
+      "button": "Vraag je Revenue Leak Report aan"
+    }
   },
   "OurWorkPage": {
     "metadata": {

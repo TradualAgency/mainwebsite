@@ -1,5 +1,5 @@
 import {defineType, defineArrayMember} from 'sanity'
-import {ImageIcon} from '@sanity/icons'
+import {BlockquoteIcon, ImageIcon, LinkIcon, TextIcon} from '@sanity/icons'
 
 /**
  * This is the schema type for block content used in the post document type
@@ -31,7 +31,10 @@ export const blockContentType = defineType({
         {title: 'H4', value: 'h4'},
         {title: 'Quote', value: 'blockquote'},
       ],
-      lists: [{title: 'Bullet', value: 'bullet'}],
+      lists: [
+        {title: 'Bullet', value: 'bullet'},
+        {title: 'Numbered', value: 'number'},
+      ],
       // Marks let you mark up inline text in the Portable Text Editor
       marks: {
         // Decorators usually describe a single property – e.g. a typographic
@@ -60,6 +63,74 @@ export const blockContentType = defineType({
     // You can add additional types here. Note that you can't use
     // primitive types such as 'string' and 'number' in the same array
     // as a block type.
+    // "Titel + tekst": één klik voor een nette sectie (kop + alinea's/lijsten),
+    // zodat een artikel uit zoveel secties kan bestaan als nodig.
+    defineArrayMember({
+      name: 'textSection',
+      title: 'Titel + tekst',
+      type: 'object',
+      icon: TextIcon,
+      fields: [
+        {name: 'title', title: 'Titel', type: 'string', validation: (rule) => rule.required()},
+        {
+          name: 'level',
+          title: 'Kopniveau',
+          type: 'string',
+          options: {list: [{title: 'H2', value: 'h2'}, {title: 'H3', value: 'h3'}], layout: 'radio', direction: 'horizontal'},
+          initialValue: 'h2',
+        },
+        {
+          name: 'body',
+          title: 'Tekst',
+          type: 'array',
+          of: [
+            defineArrayMember({
+              type: 'block',
+              styles: [{title: 'Normal', value: 'normal'}],
+              lists: [
+                {title: 'Bullet', value: 'bullet'},
+                {title: 'Numbered', value: 'number'},
+              ],
+              marks: {
+                decorators: [
+                  {title: 'Strong', value: 'strong'},
+                  {title: 'Emphasis', value: 'em'},
+                ],
+                annotations: [
+                  {title: 'URL', name: 'link', type: 'object', fields: [{title: 'URL', name: 'href', type: 'url'}]},
+                ],
+              },
+            }),
+          ],
+        },
+      ],
+      preview: {
+        select: {title: 'title', level: 'level'},
+        prepare: ({title, level}) => ({title, subtitle: `Titel + tekst (${(level ?? 'h2').toUpperCase()})`}),
+      },
+    }),
+    // Uitgelichte zin ("Kernzin", "Toonregel" uit de copy-briefs).
+    defineArrayMember({
+      name: 'callout',
+      title: 'Uitgelichte zin',
+      type: 'object',
+      icon: BlockquoteIcon,
+      fields: [
+        {name: 'label', title: 'Label (optioneel)', type: 'string', description: 'Bijv. "Kernzin"'},
+        {name: 'text', title: 'Tekst', type: 'text', rows: 3, validation: (rule) => rule.required()},
+      ],
+      preview: {
+        select: {title: 'text', subtitle: 'label'},
+        prepare: ({title, subtitle}) => ({title, subtitle: subtitle || 'Uitgelichte zin'}),
+      },
+    }),
+    // Losse button (tekst + URL), overal in de tekst te plaatsen.
+    defineArrayMember({
+      name: 'button',
+      title: 'Button',
+      type: 'ctaLink',
+      icon: LinkIcon,
+    }),
     defineArrayMember({
       type: 'image',
       icon: ImageIcon,

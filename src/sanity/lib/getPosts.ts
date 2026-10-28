@@ -6,6 +6,16 @@ import { LANG_FILTER, TRANSLATIONS_PROJECTION, translatedSlugQuery, type Transla
 
 type PostImage = Image & { alt?: string };
 
+export interface CtaLink {
+  label: string;
+  href: string;
+}
+
+export interface PostFaqItem {
+  question: string;
+  answer: string;
+}
+
 // Query voor alle posts (zonder body — die is alleen nodig op de detailpagina)
 const POSTS_QUERY = `*[
   _type == "post"
@@ -36,9 +46,32 @@ const POST_QUERY = `*[
   publishedAt,
   language,
   categories[]->{_id, title},
-  author->{name},
+  author->{name, image},
   body,
+  heroCta,
+  faqTitle,
+  faq[]{question, answer},
+  serviceCta,
+  seoTitle,
+  seoDescription,
   ${TRANSLATIONS_PROJECTION}
+}`;
+
+// Max. 3 andere posts: eerst dezelfde categorie, daarna de nieuwste.
+const RELATED_POSTS_QUERY = `*[
+  _type == "post"
+  && ${LANG_FILTER}
+  && defined(slug.current)
+  && _id != $id
+] | order(count((categories[]._ref)[@ in $categoryIds]) desc, publishedAt desc, _createdAt desc)[0...3] {
+  _id,
+  title,
+  slug,
+  excerpt,
+  mainImage,
+  publishedAt,
+  categories[]->{_id, title},
+  author->{name}
 }`;
 
 const SLUGS_QUERY = `*[
@@ -69,8 +102,14 @@ export interface Post {
   publishedAt?: string;
   language?: Locale;
   categories?: { _id: string; title: string }[];
-  author?: { name: string };
+  author?: { name: string; image?: Image };
   body?: PortableTextBlock[];
+  heroCta?: CtaLink;
+  faqTitle?: string;
+  faq?: PostFaqItem[];
+  serviceCta?: { eyebrow?: string; heading?: string; body?: string; button?: CtaLink };
+  seoTitle?: string;
+  seoDescription?: string;
   _translations?: Translation[];
 }
 
@@ -82,6 +121,10 @@ export async function getPosts(locale: Locale): Promise<Post[]> {
 
 export async function getPostBySlug(slug: string, locale: Locale): Promise<Post | null> {
   return await client.fetch<Post | null>(POST_QUERY, { slug, locale });
+}
+
+export async function getRelatedPosts(id: string, categoryIds: string[], locale: Locale): Promise<Post[]> {
+  return await client.fetch<Post[]>(RELATED_POSTS_QUERY, { id, categoryIds, locale });
 }
 
 export async function getPostSlugs(locale: Locale): Promise<string[]> {

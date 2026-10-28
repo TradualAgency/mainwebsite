@@ -1,17 +1,24 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { notFound } from "next/navigation";
 import { redirect } from "@/i18n/navigation";
 import { PortableText } from "@portabletext/react";
-import PageHero from "@/components/marketing/page-hero";
 import { portableTextComponents } from "@/components/portable-text-components";
-import FinalCTA from "@/containers/home-page/final-cta-section";
-import { getPostBySlug, getPostSlugs, getTranslatedPostSlug } from "@/sanity/lib/getPosts";
+import { ArticleHero } from "@/components/insights/article-hero";
+import { ArticleBody } from "@/components/insights/article-body";
+import { ReadingProgress } from "@/components/insights/reading-progress";
+import { ShareButtons } from "@/components/insights/share-buttons";
+import { PostGrid } from "@/components/insights/post-grid";
+import { FaqSection } from "@/components/marketing/faq-section";
+import { CtaBand } from "@/components/marketing/cta-band";
+import { Section } from "@/components/marketing/section";
+import { SectionHeading } from "@/components/marketing/section-heading";
+import { getPostBySlug, getPostSlugs, getRelatedPosts, getTranslatedPostSlug } from "@/sanity/lib/getPosts";
 import { urlFor } from "@/sanity/lib/image";
 import { getFormatter, getTranslations, setRequestLocale } from "next-intl/server";
 import { toLocale, type Locale } from "@/i18n/routing";
-import { localizedAlternates } from "@/lib/seo";
+import { absoluteUrl, localizedAlternates } from "@/lib/seo";
+import { readingTimeMinutes } from "@/lib/reading-time";
 
 type Params = Promise<{ locale: Locale; slug: string }>;
 
@@ -30,18 +37,20 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   }
 
   const ogImage = post.mainImage ? urlFor(post.mainImage).width(1200).height(630).url() : undefined;
+  const title = post.seoTitle || post.title;
+  const description = post.seoDescription || post.excerpt;
 
   return {
-    title: post.title,
-    description: post.excerpt,
+    title,
+    description,
     alternates: localizedAlternates(locale, {
       [locale]: `/insights/${post.slug.current}`,
       ...Object.fromEntries((post._translations ?? []).map((t) => [t.language, `/insights/${t.slug}`])),
     }),
     openGraph: {
       type: "article",
-      title: post.title,
-      description: post.excerpt,
+      title,
+      description,
       publishedTime: post.publishedAt,
       images: ogImage ? [{ url: ogImage, alt: post.mainImage?.alt || post.title }] : undefined,
     },
@@ -68,31 +77,68 @@ export default async function InsightArticlePage({ params }: { params: Params })
   const date = post.publishedAt
     ? format.dateTime(new Date(post.publishedAt), { day: "numeric", month: "short", year: "numeric" })
     : null;
-  const byline = [post.author?.name, date].filter(Boolean).join(" · ");
+  const minutes = readingTimeMinutes(post.body);
+  const meta = [date, t("readingTime", { minutes })].filter((m): m is string => Boolean(m));
+  const url = absoluteUrl(locale, `/insights/${post.slug.current}`);
+  const imageUrl = post.mainImage ? urlFor(post.mainImage).width(1400).height(1050).url() : undefined;
+
+  const related = await getRelatedPosts(
+    post._id,
+    (post.categories ?? []).map((c) => c._id),
+    locale,
+  );
+
+  // CTA onderaan: per post te overschrijven, standaard naar het Revenue Leak Report
+  // (copy-brief: "elke blog en pillar (CTA onderaan)").
+  const cta = post.serviceCta;
+  const ctaButton = cta?.button?.href && cta.button.label
+    ? cta.button
+    : { label: t("serviceCta.button"), href: "/revenue-leak" };
+
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.seoDescription || post.excerpt,
+    datePublished: post.publishedAt,
+    image: post.mainImage ? urlFor(post.mainImage).width(1200).height(630).url() : undefined,
+    author: post.author ? { "@type": "Person", name: post.author.name } : undefined,
+    publisher: { "@type": "Organization", name: "Tradual" },
+    mainEntityOfPage: url,
+    inLanguage: locale,
+  };
 
   return (
     <>
-      <PageHero eyebrow={category ?? t("fallbackEyebrow")} title={post.title} intro={post.excerpt} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+      <ReadingProgress />
 
-      <div className="max-w-3xl mx-auto px-6 md:px-8">
-        {byline && <p className="text-primary/60 text-sm text-center mb-10">{byline}</p>}
+      <ArticleHero
+        eyebrow={category ?? t("fallbackEyebrow")}
+        title={post.title}
+        intro={post.excerpt}
+        author={
+          post.author
+            ? {
+                name: post.author.name,
+                imageUrl: post.author.image ? urlFor(post.author.image).width(96).height(96).url() : undefined,
+              }
+            : undefined
+        }
+        meta={meta}
+        cta={post.heroCta?.href && post.heroCta.label ? post.heroCta : undefined}
+        image={imageUrl ? { url: imageUrl, alt: post.mainImage?.alt || post.title } : undefined}
+      />
 
-        {post.mainImage && (
-          <div className="relative w-full max-w-5xl mx-auto aspect-[16/9] mb-12">
-            <Image
-              src={urlFor(post.mainImage).width(1600).height(900).url()}
-              alt={post.mainImage.alt || post.title}
-              fill
-              sizes="(max-width: 1024px) 100vw, 1024px"
-              className="object-cover"
-              priority
-            />
-          </div>
+      <div className="max-w-3xl mx-auto px-6 md:px-8 pb-16">
+        {post.body && (
+          <ArticleBody>
+            <PortableText value={post.body} components={portableTextComponents} />
+          </ArticleBody>
         )}
 
-        {post.body && <PortableText value={post.body} components={portableTextComponents} />}
-
-        <div className="pt-4 pb-16">
+        <div className="mt-12 flex flex-col gap-6 border-t border-primary/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
+          <ShareButtons url={url} />
           <Link
             href="/insights"
             className="text-primary underline decoration-accent decoration-2 underline-offset-4 hover:text-accent transition text-sm md:text-base"
@@ -102,7 +148,23 @@ export default async function InsightArticlePage({ params }: { params: Params })
         </div>
       </div>
 
-      <FinalCTA />
+      {post.faq && post.faq.length > 0 && (
+        <FaqSection items={post.faq} tone="muted" title={post.faqTitle || t("faqTitle")} />
+      )}
+
+      <CtaBand
+        eyebrow={cta?.eyebrow || t("serviceCta.eyebrow")}
+        heading={cta?.heading || t("serviceCta.heading")}
+        body={cta?.body || t("serviceCta.body")}
+        primary={ctaButton}
+      />
+
+      {related.length > 0 && (
+        <Section tone="muted">
+          <SectionHeading eyebrow={t("relatedEyebrow")} title={t("relatedTitle")} className="mb-10" />
+          <PostGrid posts={related} />
+        </Section>
+      )}
     </>
   );
 }

@@ -17,7 +17,20 @@
   "InsightDetail": {
     "notFound": "Article not found",
     "fallbackEyebrow": "Insights",
-    "backToAll": "← Back to all insights"
+    "backToAll": "← All insights",
+    "readingTime": "{minutes} min read",
+    "share": "Share",
+    "copyLink": "Copy link",
+    "copied": "Copied",
+    "faqTitle": "Frequently asked questions",
+    "relatedEyebrow": "Keep reading",
+    "relatedTitle": "More insights",
+    "serviceCta": {
+      "eyebrow": "Revenue Leak Report",
+      "heading": "How much revenue is your Shopify store leaving behind?",
+      "body": "We calculate what speed and tech are costing you, in euros per month, based on data from your own visitors.",
+      "button": "Request your Revenue Leak Report"
+    }
   },
   "OurWorkPage": {
     "metadata": {
