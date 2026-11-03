@@ -11,6 +11,9 @@ import { setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 import { staticAlternates } from "@/lib/seo";
 
+// ISR: Sanity-wijzigingen (o.a. nieuwe NL-vertalingen) staan binnen een minuut live.
+export const revalidate = 60;
+
 type Props = { params: Promise<{ locale: Locale }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

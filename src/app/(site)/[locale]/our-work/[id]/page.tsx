@@ -17,6 +17,9 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { toLocale, type Locale } from "@/i18n/routing";
 import { localizedAlternates } from "@/lib/seo";
 
+// ISR: Sanity-wijzigingen (o.a. nieuwe NL-vertalingen) staan binnen een minuut live.
+export const revalidate = 60;
+
 // Zelfde opzet als de Insights-detailpagina (app/insights/[slug]/page.tsx): statische
 // params uit Sanity, metadata met OG-image en notFound() op een onbekende slug.
 type Params = Promise<{ locale: Locale; id: string }>;
