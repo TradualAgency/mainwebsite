@@ -7,8 +7,8 @@ import { useGSAP } from "@gsap/react";
 import { Section } from "@/components/marketing/section";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { cn } from "@/lib/utils";
-import { useCountUp } from "@/hooks/use-count-up";
-import { useInView } from "@/hooks/use-in-view";
+import { useRef } from "react";
+import { useLocale } from "next-intl";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -30,17 +30,44 @@ interface StatBandProps {
   tone?: "dark" | "muted";
 }
 
-function AnimatedStat({ icon: Icon, value, display, prefix = "", suffix = "", label, trigger }: StatBandItem & { trigger: boolean }) {
-  // Hook altijd aanroepen (rules of hooks); bij een display-tekst wordt de teller genegeerd.
-  const count = useCountUp(value ?? 0, trigger && !display);
+function decimalsOf(value: number) {
+  return value % 1 === 0 ? 0 : Math.min(String(value).split(".")[1]?.length ?? 1, 2);
+}
+
+function formatValue(value: number, decimals: number, locale: string) {
+  return new Intl.NumberFormat(locale, { minimumFractionDigits: decimals, maximumFractionDigits: decimals }).format(value);
+}
+
+function Stat({ icon: Icon, value, display, prefix = "", suffix = "", label, locale }: StatBandItem & { locale: string }) {
+  const decimals = value != null ? decimalsOf(value) : 0;
+  const final = value != null ? formatValue(value, decimals, locale) : "";
+
   return (
     <div className="stat-cell flex flex-col items-center py-10 px-8 text-center">
       {Icon && <Icon className="text-accent mb-4" size={32} strokeWidth={1.5} />}
-      <p className="font-heading text-[56px] md:text-[72px] text-accent leading-none">
+      {/* Een lange weergavetekst ("2,6s → 0,8s") krijgt een kleinere maat en geen
+          regelafbreking, zodat alle tegels op één regel en de labels op één lijn blijven. */}
+      <p
+        className={cn(
+          "flex items-center justify-center h-[56px] md:h-[72px] font-heading text-accent leading-none tabular-nums whitespace-nowrap",
+          display && display.length > 7 ? "text-[40px] md:text-[48px] lg:text-[60px]" : "text-[56px] md:text-[72px]",
+        )}
+      >
         {display ?? (
           <>
             {prefix}
-            {count}
+            {/* Breedte vastzetten: het eindgetal staat onzichtbaar in dezelfde grid-cel, zodat
+                het optellende getal er niet omheen wiebelt terwijl de cijfers wisselen. */}
+            <span className="grid">
+              <span aria-hidden className="invisible [grid-area:1/1]">{final}</span>
+              <span
+                className="stat-num [grid-area:1/1]"
+                data-value={value}
+                data-decimals={decimals}
+              >
+                {final}
+              </span>
+            </span>
             {suffix}
           </>
         )}
@@ -53,16 +80,13 @@ function AnimatedStat({ icon: Icon, value, display, prefix = "", suffix = "", la
 // Alleen inzetten met écht onderbouwde cijfers (zie plan: de oude 45%/300%/2.5x-tegels
 // waren nergens onderbouwd en zijn bewust niet overgenomen).
 export function StatBand({ eyebrow, heading, intro, stats, tone = "dark" }: StatBandProps) {
-  const { ref, inView } = useInView<HTMLDivElement>();
+  const ref = useRef<HTMLDivElement>(null);
+  const locale = useLocale();
 
-  // De grid-ref doet dubbel dienst als useGSAP-scope, zodat er geen extra wrapper-div
-  // bij hoeft. Alleen onEnter/onEnterBack en nooit verbergen: de cijfers tellen op via
-  // useCountUp, en een cel die halverwege die 1,8 seconde weer wegfade laat een teller
-  // achter die al klaar is als je terugscrolt.
-  //
-  // Let op de samenloop: useCountUp hangt aan useInView (IntersectionObserver op 0.3) en
-  // die blijft gewoon vuren bij visibility: hidden, dus de teller start een fractie vóór
-  // de fade. Met 0,7s fade tegen 1,8s tellen is dat niet zichtbaar.
+  // Fade en optellen in één batch, zodat elk cijfer precies start op het moment dat zijn
+  // cel binnenkomt. De teller schrijft direct in textContent (geen React-render per frame).
+  // De server rendert het eindgetal, dus zonder JS of met reduced motion klopt alles meteen.
+  // Eenmalig (once): een teller die bij terugscrollen opnieuw vanaf nul begint, leidt af.
   useGSAP(
     () => {
       const mm = gsap.matchMedia();
@@ -70,32 +94,45 @@ export function StatBand({ eyebrow, heading, intro, stats, tone = "dark" }: Stat
         const cells = gsap.utils.toArray<HTMLElement>(".stat-cell", ref.current);
         if (cells.length === 0) return;
 
+        const nums = gsap.utils.toArray<HTMLElement>(".stat-num", ref.current);
         gsap.set(cells, { autoAlpha: 0, y: 24 });
+        nums.forEach((el) => {
+          el.textContent = formatValue(0, Number(el.dataset.decimals), locale);
+        });
 
         ScrollTrigger.batch(cells, {
           start: "top 85%",
-          onEnter: (batch) =>
-            gsap.to(batch, {
-              autoAlpha: 1,
-              y: 0,
-              duration: 0.7,
-              stagger: 0.12,
-              ease: "power3.out",
-              overwrite: true,
-            }),
-          onEnterBack: (batch) =>
-            gsap.to(batch, {
-              autoAlpha: 1,
-              y: 0,
-              duration: 0.7,
-              stagger: 0.12,
-              ease: "power3.out",
-              overwrite: true,
-            }),
+          once: true,
+          onEnter: (batch) => {
+            gsap.to(batch, { autoAlpha: 1, y: 0, duration: 0.7, stagger: 0.12, ease: "power3.out", overwrite: true });
+            batch.forEach((cell, i) => {
+              const el = cell.querySelector<HTMLElement>(".stat-num");
+              if (!el) return;
+              const target = Number(el.dataset.value);
+              const decimals = Number(el.dataset.decimals);
+              const counter = { v: 0 };
+              gsap.to(counter, {
+                v: target,
+                duration: 2,
+                delay: 0.1 + i * 0.12,
+                ease: "power2.out",
+                onUpdate: () => {
+                  el.textContent = formatValue(counter.v, decimals, locale);
+                },
+              });
+            });
+          },
         });
+
+        // Bij een revert (bijv. reduced motion aangezet) het eindgetal terugzetten.
+        return () => {
+          nums.forEach((el) => {
+            el.textContent = formatValue(Number(el.dataset.value), Number(el.dataset.decimals), locale);
+          });
+        };
       });
     },
-    { scope: ref },
+    { scope: ref, dependencies: [locale] },
   );
 
   return (
@@ -113,7 +150,7 @@ export function StatBand({ eyebrow, heading, intro, stats, tone = "dark" }: Stat
         )}
       >
         {stats.map((stat) => (
-          <AnimatedStat key={stat.label} {...stat} trigger={inView} />
+          <Stat key={stat.label} {...stat} locale={locale} />
         ))}
       </div>
     </Section>

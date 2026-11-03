@@ -157,7 +157,7 @@ export function CaseMetrics({ metrics, note }: CaseMetricsProps) {
             duration: 0.7,
             delay: 0.15,
             ease: "power3.out",
-            transformOrigin: "left bottom",
+            transformOrigin: "center center",
           },
         );
         placeIndicator(next, true);
@@ -228,10 +228,10 @@ export function CaseMetrics({ metrics, note }: CaseMetricsProps) {
         {stepper ? (
           <div className="py-4">
             <div className="flex items-baseline justify-between mb-10 border-b border-primary/10 pb-4">
-              <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent">
+              <p className="font-heading text-[12px] lg:text-[13px] tracking-[0.18em] uppercase text-accent">
                 {t("heading")}
               </p>
-              <p className="font-heading text-[13px] tracking-[0.18em] text-primary/50 tabular-nums">
+              <p className="font-heading text-[15px] lg:text-[17px] tracking-[0.18em] text-primary/50 tabular-nums">
                 <span className="text-primary">
                   {String(active + 1).padStart(2, "0")}
                 </span>{" "}
@@ -248,16 +248,16 @@ export function CaseMetrics({ metrics, note }: CaseMetricsProps) {
                       tabIndex={-1}
                       onClick={() => scrollToItem(i)}
                       className={cn(
-                        "flex w-full items-baseline gap-4 py-4 pl-6 text-left font-heading transition-colors duration-300",
+                        "flex w-full items-baseline gap-5 py-4 xl:py-5 pl-8 text-left font-heading transition-colors duration-300",
                         i === active
                           ? "text-primary"
                           : "text-primary/30 hover:text-primary/60",
                       )}
                     >
-                      <span className="text-[11px] tracking-[0.18em] text-accent">
+                      <span className="text-[12px] lg:text-[13px] tracking-[0.18em] text-accent">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <span className="text-[20px] lg:text-[24px] leading-tight">
+                      <span className="text-[22px] xl:text-[30px] leading-tight">
                         {m.label}
                       </span>
                     </button>
@@ -266,28 +266,30 @@ export function CaseMetrics({ metrics, note }: CaseMetricsProps) {
               </ol>
 
               {/* Alle panelen in dezelfde grid-cel, zodat de hoogte die van het hoogste is. */}
-              <div className="col-span-7 grid">
+              <div className="col-span-7 grid place-items-center">
                 {metrics.map((m) => (
                   <div
                     key={m._key}
-                    className="case-metric-panel [grid-area:1/1] self-center"
+                    className="case-metric-panel [grid-area:1/1] flex flex-col items-center text-center"
                   >
-                    <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-primary/50 mb-3">
-                      {t("before")}{" "}
-                      {m.before && (
-                        <span className="ml-2 text-primary/40 line-through decoration-accent/60">
+                    {m.before && (
+                      <>
+                        <p className="font-heading text-[12px] lg:text-[13px] tracking-[0.18em] uppercase text-primary/50 mb-2">
+                          {t("before")}
+                        </p>
+                        <p className="font-heading text-[28px] lg:text-[36px] leading-none text-primary/40 line-through decoration-accent/60 decoration-2 mb-8">
                           {m.before}
-                        </span>
-                      )}
-                    </p>
-                    <p className="font-heading text-[10px] tracking-[0.18em] uppercase text-accent mb-2">
+                        </p>
+                      </>
+                    )}
+                    <p className="font-heading text-[12px] lg:text-[13px] tracking-[0.18em] uppercase text-accent mb-3">
                       {t("after")}
                     </p>
-                    <p className="case-metric-after font-heading text-primary text-[64px] lg:text-[96px] leading-none">
+                    <p className="case-metric-after font-heading text-primary text-[80px] lg:text-[120px] leading-none whitespace-nowrap">
                       {m.after}
                     </p>
                     {m.change && (
-                      <ChangePill value={m.change} className="mt-6" />
+                      <ChangePill value={m.change} className="mt-8 text-[13px] lg:text-[15px] px-5 py-2" />
                     )}
                   </div>
                 ))}
