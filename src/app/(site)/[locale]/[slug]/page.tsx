@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     description,
     alternates: localizedAlternates(locale, {
       [locale]: `/${page.slug.current}`,
-      ...Object.fromEntries((page._translations ?? []).map((t) => [t.language, `/${t.slug}`])),
+      ...Object.fromEntries((page._translations ?? []).filter((t) => t?.slug && t.language).map((t) => [t.language, `/${t.slug}`])),
     }),
     robots: page.seo?.noIndex ? { index: false, follow: false } : undefined,
     openGraph: {

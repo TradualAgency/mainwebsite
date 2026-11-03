@@ -5,6 +5,9 @@ import { PortableText } from "@portabletext/react";
 import { CaseHero } from "@/components/our-work/case-hero";
 import { CaseQuote } from "@/components/our-work/case-quote";
 import { CaseGallery } from "@/components/our-work/case-gallery";
+import { CaseChapters } from "@/components/our-work/case-chapters";
+import { CaseMetrics } from "@/components/our-work/case-metrics";
+import { CaseClosing } from "@/components/our-work/case-closing";
 import { RelatedCases } from "@/components/our-work/related-cases";
 import { Section } from "@/components/marketing/section";
 import { ProseReveal } from "@/components/marketing/prose-reveal";
@@ -42,17 +45,22 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     ? urlFor(project.mainImage).width(1200).height(630).url()
     : undefined;
 
+  // seoTitle bevat zelf al "| Tradual"; absolute voorkomt dat het layout-template
+  // ("%s | Tradual") er nog een keer achter plakt.
+  const title = project.seoTitle ? { absolute: project.seoTitle } : project.title;
+  const description = project.seoDescription || project.description;
+
   return {
-    title: project.title,
-    description: project.description,
+    title,
+    description,
     alternates: localizedAlternates(locale, {
       [locale]: `/our-work/${project.slug.current}`,
-      ...Object.fromEntries((project._translations ?? []).map((t) => [t.language, `/our-work/${t.slug}`])),
+      ...Object.fromEntries((project._translations ?? []).filter((t) => t?.slug && t.language).map((t) => [t.language, `/our-work/${t.slug}`])),
     }),
     openGraph: {
       type: "article",
-      title: project.title,
-      description: project.description,
+      title: project.seoTitle || project.title,
+      description,
       images: ogImage
         ? [{ url: ogImage, alt: project.mainImage?.alt || project.title }]
         : undefined,
@@ -80,6 +88,8 @@ export default async function ProjectPage({ params }: { params: Params }) {
   const results = project.results ?? [];
   const gallery = project.gallery ?? [];
   const quote = project.quote?.text;
+  const sections = (project.sections ?? []).filter((s) => s.heading);
+  const metrics = project.metrics ?? [];
 
   return (
     <main>
@@ -88,13 +98,25 @@ export default async function ProjectPage({ params }: { params: Params }) {
           sentinel hem voorbij scrolt. Zelfde afspraak als op de homepage. */}
       <div id="header-dark-zone-end" />
 
-      {project.content && (
+      {sections.length > 0 ? (
+        <CaseChapters
+          chapters={sections.map((section) => ({
+            key: section._key,
+            heading: section.heading,
+            body: section.body ? <PortableText value={section.body} components={portableTextComponents} /> : undefined,
+          }))}
+        />
+      ) : project.content && (
         <Section tone="light" innerClassName="max-w-3xl">
           <ProseReveal>
             <PortableText value={project.content} components={portableTextComponents} />
           </ProseReveal>
         </Section>
       )}
+
+      {metrics.length > 0 && <CaseMetrics metrics={metrics} note={project.metricsNote} />}
+
+      {project.resultClosing && <CaseClosing text={project.resultClosing} />}
 
       {results.length > 0 && <StatBand eyebrow={t("resultEyebrow")} stats={results} tone="dark" />}
 

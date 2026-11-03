@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     description,
     alternates: localizedAlternates(locale, {
       [locale]: `/insights/${post.slug.current}`,
-      ...Object.fromEntries((post._translations ?? []).map((t) => [t.language, `/insights/${t.slug}`])),
+      ...Object.fromEntries((post._translations ?? []).filter((t) => t?.slug && t.language).map((t) => [t.language, `/insights/${t.slug}`])),
     }),
     openGraph: {
       type: "article",

@@ -24,6 +24,9 @@ const nextConfig: NextConfig = {
       { source: '/posts/:slug', destination: '/insights/:slug', permanent: true },
       { source: '/projects', destination: '/our-work', permanent: true },
       { source: '/projects/:slug', destination: '/our-work/:slug', permanent: true },
+      // Typfout in de oude case-slug (cioabella → ciaobella), in beide talen.
+      { source: '/our-work/cioabella-fashion', destination: '/our-work/ciaobella-fashion', permanent: true },
+      { source: '/nl/our-work/cioabella-fashion', destination: '/nl/our-work/ciaobella-fashion', permanent: true },
     ];
   },
 };

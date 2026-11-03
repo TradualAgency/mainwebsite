@@ -51,6 +51,13 @@
       "body": "The Revenue Leak Audit measures all five layers on your store and translates every finding into an amount per month and per year.",
       "primary": "Request a Revenue Leak Audit",
       "secondary": "View all work"
+    },
+    "metrics": {
+      "heading": "By the numbers",
+      "metric": "Metric",
+      "before": "Before",
+      "after": "After",
+      "change": "Change"
     }
   },
   "LandingPage": {
@@ -68,6 +75,7 @@
     "caseHero": {
       "eyebrow": "Case",
       "client": "Client",
+      "industry": "Industry",
       "services": "Services",
       "year": "Year",
       "live": "Live",

@@ -14,7 +14,9 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export interface StatBandItem {
   icon?: LucideIcon;
-  value: number;
+  value?: number;
+  // Vaste weergavetekst in plaats van een optellend getal (bijv. "2,8s → 1,2s").
+  display?: string;
   prefix?: string;
   suffix?: string;
   label: string;
@@ -28,15 +30,20 @@ interface StatBandProps {
   tone?: "dark" | "muted";
 }
 
-function AnimatedStat({ icon: Icon, value, prefix = "", suffix = "", label, trigger }: StatBandItem & { trigger: boolean }) {
-  const count = useCountUp(value, trigger);
+function AnimatedStat({ icon: Icon, value, display, prefix = "", suffix = "", label, trigger }: StatBandItem & { trigger: boolean }) {
+  // Hook altijd aanroepen (rules of hooks); bij een display-tekst wordt de teller genegeerd.
+  const count = useCountUp(value ?? 0, trigger && !display);
   return (
     <div className="stat-cell flex flex-col items-center py-10 px-8 text-center">
       {Icon && <Icon className="text-accent mb-4" size={32} strokeWidth={1.5} />}
       <p className="font-heading text-[56px] md:text-[72px] text-accent leading-none">
-        {prefix}
-        {count}
-        {suffix}
+        {display ?? (
+          <>
+            {prefix}
+            {count}
+            {suffix}
+          </>
+        )}
       </p>
       <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-surface/70 mt-3">{label}</p>
     </div>

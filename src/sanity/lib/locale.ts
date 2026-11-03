@@ -8,8 +8,10 @@ export const LANG_FILTER = `(language == $locale || (!defined(language) && $loca
 // Projectie van de vertalingen van het huidige document, via het metadata-document
 // van @sanity/document-internationalization. Levert per taal de slug op, zodat de
 // taalswitcher en hreflang naar het juiste document kunnen verwijzen.
-export const TRANSLATIONS_PROJECTION = `"_translations": *[_type == "translation.metadata" && references(^._id)][0]
-    .translations[].value->{ "slug": slug.current, language }[defined(slug)]`
+// Let op de haakjes: zonder past GROQ `[defined(slug)]` per object toe en levert dat null
+// op in plaats van het element weg te filteren.
+export const TRANSLATIONS_PROJECTION = `"_translations": (*[_type == "translation.metadata" && references(^._id)][0]
+    .translations[].value->{ "slug": slug.current, language })[defined(slug)]`
 
 // Zoekt, voor een slug die in $locale niet bestaat, het document in een andere taal en
 // geeft de slug van de vertaling in $locale terug (of null).

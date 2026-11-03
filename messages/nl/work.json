@@ -51,6 +51,13 @@
       "body": "De Revenue Leak Audit meet alle vijf de lagen van je webshop en vertaalt elke bevinding naar een bedrag per maand en per jaar.",
       "primary": "Vraag een Revenue Leak Audit aan",
       "secondary": "Bekijk al ons werk"
+    },
+    "metrics": {
+      "heading": "In cijfers",
+      "metric": "Meting",
+      "before": "Voor",
+      "after": "Na",
+      "change": "Verschil"
     }
   },
   "LandingPage": {
@@ -68,6 +75,7 @@
     "caseHero": {
       "eyebrow": "Case",
       "client": "Klant",
+      "industry": "Branche",
       "services": "Diensten",
       "year": "Jaar",
       "live": "Live",

@@ -45,10 +45,17 @@ const PROJECT_QUERY = `*[
   completedAt,
   client,
   projectUrl,
+  industry,
+  sections,
   content,
+  metrics,
+  metricsNote,
+  resultClosing,
   gallery,
   results,
   quote,
+  seoTitle,
+  seoDescription,
   language,
   ${TRANSLATIONS_PROJECTION}
 }`;
@@ -89,10 +96,26 @@ const TRANSLATED_SLUG_QUERY = translatedSlugQuery('project');
 
 // Gelijk aan StatBandItem, zodat results zonder mapping in StatBand kan.
 export interface ProjectResult {
-  value: number;
+  value?: number;
+  // Vervangt het getal als het ingevuld is (bijv. "2,8s → 1,2s"), zonder optel-animatie.
+  display?: string;
   prefix?: string;
   suffix?: string;
   label: string;
+}
+
+export interface CaseSection {
+  _key: string;
+  heading: string;
+  body?: PortableTextBlock[];
+}
+
+export interface CaseMetric {
+  _key: string;
+  label: string;
+  before?: string;
+  after: string;
+  change?: string;
 }
 
 export interface Project {
@@ -106,7 +129,14 @@ export interface Project {
   completedAt: string;
   client: string;
   projectUrl: string;
+  industry?: string;
+  sections?: CaseSection[];
   content?: PortableTextBlock[];
+  metrics?: CaseMetric[];
+  metricsNote?: string;
+  resultClosing?: string;
+  seoTitle?: string;
+  seoDescription?: string;
   gallery?: GalleryImage[];
   results?: ProjectResult[];
   quote?: { text?: string; attribution?: string };
