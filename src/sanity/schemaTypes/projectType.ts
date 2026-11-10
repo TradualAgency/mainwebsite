@@ -36,8 +36,38 @@ export const projectType = defineType({
     defineField({
       name: 'description',
       title: 'Description',
+      description: 'Korte platte tekst voor de kaarten en Google. Staat ook in de hero van de casepagina zolang het veld hieronder leeg is.',
       type: 'text',
       validation: Rule => Rule.required()
+    }),
+    defineField({
+      name: 'heroDescription',
+      title: 'Beschrijving in hero (met opmaak)',
+      description: 'Optioneel. Vervangt de beschrijving hierboven in de hero van de casepagina. Enter begint een nieuwe alinea, Shift+Enter een nieuwe regel; lege regels tellen mee.',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'block',
+          // Alleen lopende tekst: koppen en lijsten horen in de hoofdstukken, niet in de hero.
+          styles: [{title: 'Normal', value: 'normal'}],
+          lists: [],
+          marks: {
+            decorators: [
+              {title: 'Dikgedrukt', value: 'strong'},
+              {title: 'Cursief', value: 'em'},
+              {title: 'Onderstreept', value: 'underline'},
+            ],
+            annotations: [
+              {
+                title: 'Link',
+                name: 'link',
+                type: 'object',
+                fields: [{title: 'URL', name: 'href', type: 'url'}],
+              },
+            ],
+          },
+        }),
+      ],
     }),
     defineField({
       name: 'mainImage',

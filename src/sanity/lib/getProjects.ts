@@ -39,6 +39,7 @@ const PROJECT_QUERY = `*[
   title,
   slug,
   description,
+  heroDescription,
   mainImage,
   mainImageMobile,
   tags,
@@ -130,6 +131,8 @@ export interface Project {
   titleLines: string[];
   slug: { current: string };
   description: string;
+  // Opgemaakte variant voor de hero van de casepagina; leeg = description tonen.
+  heroDescription?: PortableTextBlock[];
   mainImage: ProjectImage;
   // Alleen op de casepagina: eigen hero-beeld voor telefoons. Ontbreekt het, dan toont
   // de hero ook daar de hoofdafbeelding.

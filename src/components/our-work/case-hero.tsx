@@ -7,6 +7,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { useTranslations } from "next-intl";
+import { PortableText, type PortableTextComponents } from "@portabletext/react";
 import { urlFor } from "@/sanity/lib/image";
 import type { Project } from "@/sanity/lib/getProjects";
 
@@ -20,6 +21,28 @@ interface MetaItem {
   label: string;
   value: React.ReactNode;
 }
+
+// Opmaak voor de beschrijving in de hero. Eigen set en niet portableTextComponents: die is
+// voor lopende tekst op een lichte achtergrond (text-body), hier staat de tekst op het
+// donkere beeld. min-h-[1lh] geeft een lege alinea de hoogte van één regel, zodat een
+// witregel in Studio ook op de pagina een witregel is.
+const heroDescriptionComponents: PortableTextComponents = {
+  block: {
+    normal: ({ children }) => <p className="min-h-[1lh]">{children}</p>,
+  },
+  marks: {
+    strong: ({ children }) => <strong className="font-semibold text-surface">{children}</strong>,
+    link: ({ value, children }) => (
+      <a
+        href={value?.href}
+        className="underline decoration-accent decoration-2 underline-offset-4 hover:text-accent transition"
+        rel="noreferrer"
+      >
+        {children}
+      </a>
+    ),
+  },
+};
 
 // Hero-beeld. Zonder mobiele variant blijft het één <Image>. Mét variant wordt het een
 // <picture>, zodat de browser zelf kiest en alleen het beeld downloadt dat bij het scherm
@@ -168,10 +191,17 @@ export function CaseHero({ project }: CaseHeroProps) {
               </span>
             ))}
           </h1>
-          {project.description && (
-            <p className="case-hero-el max-w-2xl text-surface/85 text-lg md:text-xl leading-relaxed">
-              {project.description}
-            </p>
+          {project.heroDescription?.length ? (
+            <div className="case-hero-el max-w-2xl text-surface/85 text-lg md:text-xl leading-relaxed space-y-4">
+              <PortableText value={project.heroDescription} components={heroDescriptionComponents} />
+            </div>
+          ) : (
+            project.description && (
+              // whitespace-pre-line: regelovergangen uit het platte tekstvak tellen ook mee.
+              <p className="case-hero-el max-w-2xl text-surface/85 text-lg md:text-xl leading-relaxed whitespace-pre-line">
+                {project.description}
+              </p>
+            )
           )}
 
           {meta.length > 0 && (
