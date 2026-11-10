@@ -157,7 +157,8 @@ const LANDING_PAGE_SLUGS_WITH_TRANSLATIONS_QUERY = `*[
 
 const TRANSLATED_SLUG_QUERY = translatedSlugQuery('landingPage')
 
-const options = { next: { revalidate: 60 } }
+// Vangnet; een publish in Sanity ververst de pagina direct via /api/revalidate.
+const options = { next: { revalidate: 3600 } }
 
 export async function getLandingPageBySlug(slug: string, locale: Locale): Promise<LandingPage | null> {
   return await client.fetch<LandingPage | null>(LANDING_PAGE_QUERY, { slug, locale }, options)

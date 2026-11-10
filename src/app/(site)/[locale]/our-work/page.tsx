@@ -7,8 +7,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 import { staticAlternates } from "@/lib/seo";
 
-// ISR: Sanity-wijzigingen (o.a. nieuwe NL-vertalingen) staan binnen een minuut live.
-export const revalidate = 60;
+// Vangnet; een publish in Sanity ververst de pagina direct via /api/revalidate.
+export const revalidate = 3600;
 
 type Props = { params: Promise<{ locale: Locale }> };
 

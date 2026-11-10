@@ -10,7 +10,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 import { staticAlternates } from "@/lib/seo";
 
-export const revalidate = 60;
+// Vangnet; een publish in Sanity ververst de pagina direct via /api/revalidate.
+export const revalidate = 3600;
 
 type Props = { params: Promise<{ locale: Locale }> };
 

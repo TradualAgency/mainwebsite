@@ -22,6 +22,9 @@ import { readingTimeMinutes } from "@/lib/reading-time";
 
 type Params = Promise<{ locale: Locale; slug: string }>;
 
+// Vangnet; een publish in Sanity ververst de pagina direct via /api/revalidate.
+export const revalidate = 3600;
+
 export async function generateStaticParams({ params }: { params: { locale: string } }) {
   const slugs = await getPostSlugs(toLocale(params.locale));
   return slugs.map((slug) => ({ slug }));
