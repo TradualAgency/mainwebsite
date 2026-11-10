@@ -55,6 +55,7 @@ export function CaseMetrics({ metrics, note }: CaseMetricsProps) {
   const [stepper, setStepper] = useState(false);
   const [active, setActive] = useState(0);
   const count = metrics.length;
+  const hasDescriptions = metrics.some((m) => m.description);
 
   useEffect(() => {
     const mq = window.matchMedia(STEPPER_QUERY);
@@ -210,6 +211,7 @@ export function CaseMetrics({ metrics, note }: CaseMetricsProps) {
             <th scope="col">{t("before")}</th>
             <th scope="col">{t("after")}</th>
             <th scope="col">{t("change")}</th>
+            {hasDescriptions && <th scope="col">{t("description")}</th>}
           </tr>
         </thead>
         <tbody>
@@ -219,6 +221,7 @@ export function CaseMetrics({ metrics, note }: CaseMetricsProps) {
               <td>{m.before}</td>
               <td>{m.after}</td>
               <td>{m.change}</td>
+              {hasDescriptions && <td>{m.description}</td>}
             </tr>
           ))}
         </tbody>
@@ -291,6 +294,11 @@ export function CaseMetrics({ metrics, note }: CaseMetricsProps) {
                     {m.change && (
                       <ChangePill value={m.change} className="mt-8 text-[13px] lg:text-[15px] px-5 py-2" />
                     )}
+                    {m.description && (
+                      <p className="mt-6 max-w-md text-[15px] lg:text-base leading-relaxed text-primary/70">
+                        {m.description}
+                      </p>
+                    )}
                   </div>
                 ))}
               </div>
@@ -328,6 +336,11 @@ export function CaseMetrics({ metrics, note }: CaseMetricsProps) {
                       <ChangePill value={m.change} className="mt-2" />
                     )}
                   </div>
+                  {m.description && (
+                    <p className="col-span-2 -mt-2 text-sm leading-relaxed text-primary/60">
+                      {m.description}
+                    </p>
+                  )}
                 </li>
               ))}
             </ul>

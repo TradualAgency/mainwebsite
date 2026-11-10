@@ -57,7 +57,8 @@
       "metric": "Metric",
       "before": "Before",
       "after": "After",
-      "change": "Change"
+      "change": "Change",
+      "description": "Explanation"
     }
   },
   "LandingPage": {

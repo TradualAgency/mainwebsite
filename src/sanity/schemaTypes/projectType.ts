@@ -132,6 +132,14 @@ export const projectType = defineType({
             defineField({name: 'before', title: 'Voor', type: 'string'}),
             defineField({name: 'after', title: 'Na', type: 'string', validation: Rule => Rule.required()}),
             defineField({name: 'change', title: 'Verschil', type: 'string'}),
+            defineField({
+              name: 'description',
+              title: 'Toelichting',
+              description: 'Kort verhaaltje onder het cijfer: wat is er gemeten en wat betekent het. Eén à twee zinnen.',
+              type: 'text',
+              rows: 2,
+              validation: Rule => Rule.max(200).warning('Houd het kort: langer dan 200 tekens maakt het cijferblok te hoog.'),
+            }),
           ],
           preview: {
             select: {label: 'label', before: 'before', after: 'after', change: 'change'},

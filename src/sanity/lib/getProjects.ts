@@ -116,6 +116,8 @@ export interface CaseMetric {
   before?: string;
   after: string;
   change?: string;
+  // Kort verhaaltje onder het cijfer; de titels zijn speels, dit zegt wat er gemeten is.
+  description?: string;
 }
 
 export interface Project {

@@ -57,7 +57,8 @@
       "metric": "Meting",
       "before": "Voor",
       "after": "Na",
-      "change": "Verschil"
+      "change": "Verschil",
+      "description": "Toelichting"
     }
   },
   "LandingPage": {
