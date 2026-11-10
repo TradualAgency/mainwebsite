@@ -124,6 +124,11 @@
 }
 
 body {
+  /* De fonts komen uit src/lib/fonts.ts als twee bestanden per familie. De ext-variant
+     staat voorop maar geldt door zijn unicode-range alleen voor tekens buiten "latin";
+     al het andere valt door naar de latin-variant. */
+  --font-heading: var(--font-heading-ext), var(--font-heading-latin);
+  --font-body: var(--font-body-ext), var(--font-body-latin);
   font-family: var(--font-body), sans-serif;
   background: var(--surface);
   color: var(--body);
