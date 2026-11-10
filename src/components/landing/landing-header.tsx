@@ -11,7 +11,7 @@ export async function LandingHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-primary/10 bg-surface/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-3 md:px-8">
-        <span className="text-lg font-bold uppercase text-primary">{site.name}</span>
+        <span className="font-heading text-lg font-bold uppercase text-primary">{site.name}</span>
         <CtaButton href="#plan" variant="gold" className="px-5 py-2 text-sm md:px-6">
           {t("cta")}
         </CtaButton>

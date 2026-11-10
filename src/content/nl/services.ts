@@ -22,6 +22,11 @@ export const servicesCopy: Record<ServiceId, ServiceCopy> = {
       "Je vermoedt dat er omzet weglekt, maar hebt de cijfers niet om het aan te tonen",
       "Je wilt een onderbouwde businesscase voordat je in een rebuild investeert",
     ],
+    notForWho: [
+      "Je shop heeft nog nauwelijks verkeer. Waar niemand komt, valt niets te lekken",
+      "Je zoekt alleen een nieuw design. Wij meten eerst, mooi komt daarna",
+      "Je wilt horen dat alles goed gaat. Daarvoor bel je je moeder",
+    ],
     deliverables: [
       "Totaal omzetverlies per maand en per jaar",
       "Uitsplitsing over de vijf lagen van het Revenue Leak-model",
@@ -65,12 +70,26 @@ export const servicesCopy: Record<ServiceId, ServiceCopy> = {
       {
         question: "Wat als jullie niets vinden?",
         answer:
-          "Dat komt zelden voor bij merken met substantieel verkeer, maar als het gebeurt hoor je dat ook, inclusief waarom je fundering al goed in orde is.",
+          "Dan ben je gezonder dan je dacht. Dat komt zelden voor bij merken met substantieel verkeer, maar als het gebeurt hoor je dat ook, inclusief waarom je fundering al goed in orde is.",
       },
       {
         question: "Moet ik daarna verder met Tradual?",
         answer:
           "Nee. Het rapport en de roadmap zijn van jou. Je kunt zelf uitvoeren, een ander bureau inschakelen of met ons verdergaan.",
+      },
+      {
+        question: "Wat kost een audit?",
+        answer:
+          "Dat hangt af van de scandiepte en de omvang van je shop. In het audit-gesprek hoor je wat hij in jouw situatie kost. Daarna beslis je pas.",
+      },
+      {
+        question: "Wat hebben jullie van mij nodig?",
+        answer:
+          "Voor de eerste scan niets: we meten je shop van buitenaf. Geef je toegang tot Shopify, analytics of je advertentieaccounts, dan gaan we dieper.",
+      },
+      {
+        question: "Gaat het pijn doen?",
+        answer: "De cijfers soms. De audit zelf niet: je shop blijft gewoon draaien terwijl wij meten.",
       },
     ],
   },

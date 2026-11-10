@@ -9,17 +9,19 @@ interface AuditBookingProps {
   eyebrow: string;
   heading: string;
   lede: string;
+  /** Titel van het zijpaneel van de kalender ("Audit-gesprek" i.p.v. de algemene kennismaking). */
+  panelTitle: string;
   /** Komt in de notificatiemail, zodat te zien is dat de boeking van deze pagina komt. */
   source: string;
 }
 
 // Het conversiepunt van de pagina: de kalender staat hier zelf, niemand hoeft door te
 // klikken naar /book-a-call. scroll-mt houdt de kop vrij van de plakkende header.
-export function AuditBooking({ id, eyebrow, heading, lede, source }: AuditBookingProps) {
+export function AuditBooking({ id, eyebrow, heading, lede, panelTitle, source }: AuditBookingProps) {
   return (
     <Section id={id} tone="dark" className="scroll-mt-16">
       <SectionHeading eyebrow={eyebrow} title={heading} intro={lede} align="center" tone="dark" className="mb-10 md:mb-12" />
-      <DeferredBookingWidget duration={booking.slotMinutes} source={source} />
+      <DeferredBookingWidget duration={booking.slotMinutes} source={source} title={panelTitle} />
     </Section>
   );
 }

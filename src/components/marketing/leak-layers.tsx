@@ -12,6 +12,8 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 interface LeakLayersProps {
   layers: LeakLayer[];
   variant?: "compact" | "expanded";
+  /** Zet de "leidt naar"-links uit op pagina's die maar één uitgang mogen hebben (landingspagina's). */
+  showLinks?: boolean;
 }
 
 // Dezelfde vijf-lagenlijst als in het scan-rapport (src/components/analyse/sections/
@@ -21,7 +23,7 @@ interface LeakLayersProps {
 // De scroll-reveal zit hier en niet in de aanroepende sectie, zodat elke pagina die de
 // lagen toont dezelfde animatie krijgt (homepage en /revenue-leak) zonder dat de
 // server-pagina's zelf client components hoeven te worden.
-export function LeakLayers({ layers, variant = "compact" }: LeakLayersProps) {
+export function LeakLayers({ layers, variant = "compact", showLinks = true }: LeakLayersProps) {
   const container = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
@@ -63,12 +65,14 @@ export function LeakLayers({ layers, variant = "compact" }: LeakLayersProps) {
           <div className="flex-1 min-w-0">
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
               <span className="font-heading text-primary text-xl">{layer.name}</span>
-              <Link
-                href={layer.leadsToHref}
-                className="font-heading text-[9px] uppercase tracking-[0.15em] text-accent/70 hover:text-accent transition"
-              >
-                → {layer.leadsTo}
-              </Link>
+              {showLinks && (
+                <Link
+                  href={layer.leadsToHref}
+                  className="font-heading text-[9px] uppercase tracking-[0.15em] text-accent/70 hover:text-accent transition"
+                >
+                  → {layer.leadsTo}
+                </Link>
+              )}
             </div>
             <p className="text-body text-sm md:text-base mb-3">{layer.coreQuestion}</p>
             {variant === "expanded" && layer.whatWeMeasure.length > 0 && (

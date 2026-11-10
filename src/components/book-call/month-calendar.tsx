@@ -44,7 +44,7 @@ export function MonthCalendar({ month, days, selectedDay, onSelectDay, onPrev, o
 
   return (
     <div aria-busy={loading}>
-      <p className="font-heading text-[10px] uppercase tracking-[0.14em] text-accent mb-3">{t("pickDay")}</p>
+      <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-3">{t("pickDay")}</p>
 
       <div className="mb-4 flex items-center justify-between gap-2">
         <button type="button" onClick={onPrev} disabled={!canPrev} aria-label={t("prevMonth")} className={navButton}>

@@ -11,6 +11,12 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 interface CaseQuoteProps {
   text: string;
   attribution?: string;
+  /**
+   * Zonder eigen sectie, gecentreerd en in lichte tekst: voor ín een donker blok, direct
+   * onder de cijfers van dezelfde case. De staande streep wordt dan een kort liggend
+   * streepje boven de quote.
+   */
+  embedded?: boolean;
 }
 
 // Losse component in plaats van de blockquote uit portable-text-components: die zit
@@ -22,7 +28,7 @@ interface CaseQuoteProps {
 // Het streepje leent het idioom van de middenlijn in lane-reveal.tsx: de lijn tekent
 // zichzelf van boven naar beneden, alsof de quote wordt aangestreept, en pas daarna
 // komt de tekst.
-export function CaseQuote({ text, attribution }: CaseQuoteProps) {
+export function CaseQuote({ text, attribution, embedded = false }: CaseQuoteProps) {
   const container = useRef<HTMLQuoteElement>(null);
 
   useGSAP(
@@ -35,8 +41,8 @@ export function CaseQuote({ text, attribution }: CaseQuoteProps) {
         // duration + power3.out in plaats van de scrub van lane-reveal: dit is één kort
         // streepje en geen volledige baan, dus meescrollen voelt daar traag.
         gsap.from(".case-quote-rule", {
-          scaleY: 0,
-          transformOrigin: "top center",
+          ...(embedded ? { scaleX: 0 } : { scaleY: 0 }),
+          transformOrigin: embedded ? "center center" : "top center",
           duration: 0.7,
           ease: "power3.out",
           scrollTrigger: track,
@@ -53,8 +59,25 @@ export function CaseQuote({ text, attribution }: CaseQuoteProps) {
         });
       });
     },
-    { scope: container },
+    { scope: container, dependencies: [embedded] },
   );
+
+  if (embedded) {
+    return (
+      <blockquote ref={container} className="relative mx-auto mt-6 max-w-3xl pt-10 text-center md:mt-10 md:pt-12">
+        {/* inset-x-0 + mx-auto centreert zonder translate, zodat GSAP alleen scale aanraakt. */}
+        <span aria-hidden className="case-quote-rule absolute inset-x-0 top-0 mx-auto h-0.5 w-16 bg-accent" />
+        <p className="case-quote-el font-heading text-surface text-[22px] md:text-[30px] leading-[1.25]">
+          {text}
+        </p>
+        {attribution && (
+          <footer className="case-quote-el font-heading text-[10px] tracking-[0.18em] uppercase text-accent mt-6">
+            {attribution}
+          </footer>
+        )}
+      </blockquote>
+    );
+  }
 
   return (
     <Section tone="muted">

@@ -34,7 +34,7 @@ interface BookingFormProps {
   submitError: string | null;
 }
 
-const labelClass = "font-heading text-[10px] uppercase tracking-[0.14em] text-accent";
+const labelClass = "font-heading text-[10px] uppercase tracking-[0.18em] text-accent";
 const inputClass = "h-12 border-primary/20 bg-surface text-primary placeholder:text-primary/40 focus-visible:border-accent focus-visible:ring-accent/30";
 
 export function BookingForm({ onSubmit, submitting, disabled = false, submitError }: BookingFormProps) {

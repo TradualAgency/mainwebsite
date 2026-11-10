@@ -11,7 +11,8 @@
       "eyebrow": "Voor wie het is"
     },
     "process": {
-      "eyebrow": "Hoe het werkt"
+      "eyebrow": "Hoe het werkt",
+      "stepOf": "Stap {n} van {total}"
     },
     "serviceCard": {
       "step": "Stap {n}"
@@ -137,24 +138,46 @@
       "cta": "Plan je audit-gesprek"
     },
     "hero": {
-      "eyebrow": "Revenue Leak Audit · voor webshops die al in verkeer investeren",
-      "title": "Je webshop lekt omzet. <gold>Wij laten zien hoeveel, en waar.</gold>",
+      "eyebrow": "Revenue Leak Audit · gecondoleerd met je conversie",
+      "title": "Je webshop lekt omzet. <gold>Wij doen de autopsie.</gold>",
       "lede": "We scannen je shop over vijf lagen, van laadtijd tot checkout tot vindbaarheid voor AI, en zetten op elk lek een bedrag per maand en per jaar. Geen lijst met verbeterpunten: een businesscase.",
-      "videoLabel": "Bekijk eerst de video",
+      "videoLabel": "Bekijk eerst de uitvaart",
       "videoTitle": "Zo werkt de Revenue Leak Audit",
       "play": "Video afspelen",
       "cta": "Plan je audit-gesprek",
-      "note": "{minutes} minuten via Google Meet · direct bevestigd"
+      "note": "{minutes} minuten via Google Meet · direct bevestigd · niemand gaat dood"
+    },
+    "qualifier": {
+      "eyebrow": "Voor wie dit is",
+      "title": "Herken je de symptomen?"
+    },
+    "layers": {
+      "eyebrow": "Vijf doodsoorzaken",
+      "title": "Vijf plekken waar omzet doodgaat.",
+      "intro": "Tussen de klik en de betaling zitten vijf lagen. Elke laag heeft zijn eigen lek. We meten ze allemaal en rekenen ze om naar euro's per maand.",
+      "footer": "Elke laag is meetbaar. Elke laag heeft een prijskaartje."
     },
     "proof": {
       "eyebrow": "Uit de praktijk: Ciao Bella Fashion",
-      "heading": "Wat er gebeurt als de lekken dicht zijn",
+      "heading": "Deze heeft het overleefd.",
       "intro": "Ciao Bella Fashion stapte over van een standaardthema naar een snellere webshop. Dit veranderde er."
+    },
+    "checklist": {
+      "eyebrow": "Wat je krijgt",
+      "title": "Het autopsierapport."
+    },
+    "faq": {
+      "eyebrow": "Vragen",
+      "title": "Nog laatste woorden?"
     },
     "booking": {
       "eyebrow": "Volgende stap",
-      "heading": "Plan je audit-gesprek",
-      "lede": "Kies een moment van {minutes} minuten. We bespreken je shop, wat de audit meet en wat hij in jouw situatie kost."
+      "heading": "Tijd voor de autopsie.",
+      "lede": "Kies een moment van {minutes} minuten. We bespreken je shop, wat de audit meet en wat hij in jouw situatie kost.",
+      "panelTitle": "Audit-gesprek"
+    },
+    "og": {
+      "title": "Je webshop lekt omzet. Wij doen de autopsie."
     }
   },
   "IndustriesPage": {

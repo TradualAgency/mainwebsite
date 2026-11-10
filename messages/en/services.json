@@ -11,7 +11,8 @@
       "eyebrow": "Who it's for"
     },
     "process": {
-      "eyebrow": "How it works"
+      "eyebrow": "How it works",
+      "stepOf": "Step {n} of {total}"
     },
     "serviceCard": {
       "step": "Step {n}"
@@ -137,24 +138,46 @@
       "cta": "Book your audit call"
     },
     "hero": {
-      "eyebrow": "Revenue Leak Audit · for stores already investing in traffic",
-      "title": "Your store is leaking revenue. <gold>We show how much, and where.</gold>",
+      "eyebrow": "Revenue Leak Audit · our condolences on your conversion rate",
+      "title": "Your store is leaking revenue. <gold>We do the autopsy.</gold>",
       "lede": "We scan your shop across five layers, from load time to checkout to AI findability, and put an amount per month and per year on every leak. Not a list of improvements: a business case.",
-      "videoLabel": "Watch the video first",
+      "videoLabel": "Watch the funeral first",
       "videoTitle": "How the Revenue Leak Audit works",
       "play": "Play video",
       "cta": "Book your audit call",
-      "note": "{minutes} minutes via Google Meet · confirmed instantly"
+      "note": "{minutes} minutes via Google Meet · confirmed instantly · nobody dies"
+    },
+    "qualifier": {
+      "eyebrow": "Who this is for",
+      "title": "Recognize the symptoms?"
+    },
+    "layers": {
+      "eyebrow": "Five causes of death",
+      "title": "Five places revenue goes to die.",
+      "intro": "Between the click and the payment sit five layers. Each layer has its own leak. We measure all of them and convert them into euros per month.",
+      "footer": "Every layer is measurable. Every layer has a price tag."
     },
     "proof": {
       "eyebrow": "From practice: Ciao Bella Fashion",
-      "heading": "What happens once the leaks are closed",
+      "heading": "This one made it.",
       "intro": "Ciao Bella Fashion moved from a standard theme to a faster storefront. This is what changed."
+    },
+    "checklist": {
+      "eyebrow": "What you get",
+      "title": "The autopsy report."
+    },
+    "faq": {
+      "eyebrow": "Questions",
+      "title": "Any last words?"
     },
     "booking": {
       "eyebrow": "Next step",
-      "heading": "Book your audit call",
-      "lede": "Pick a {minutes}-minute slot. We will discuss your shop, what the audit measures, and what it costs in your situation."
+      "heading": "Time for the autopsy.",
+      "lede": "Pick a {minutes}-minute slot. We will discuss your shop, what the audit measures, and what it costs in your situation.",
+      "panelTitle": "Audit call"
+    },
+    "og": {
+      "title": "Your store is leaking revenue. We do the autopsy."
     }
   },
   "IndustriesPage": {

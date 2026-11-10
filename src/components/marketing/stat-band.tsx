@@ -28,6 +28,8 @@ interface StatBandProps {
   intro?: string;
   stats: StatBandItem[];
   tone?: "dark" | "muted";
+  /** Optioneel blok onder de cijfers, binnen dezelfde sectie (bv. de quote van de case). */
+  children?: React.ReactNode;
 }
 
 function decimalsOf(value: number) {
@@ -79,7 +81,7 @@ function Stat({ icon: Icon, value, display, prefix = "", suffix = "", label, loc
 
 // Alleen inzetten met écht onderbouwde cijfers (zie plan: de oude 45%/300%/2.5x-tegels
 // waren nergens onderbouwd en zijn bewust niet overgenomen).
-export function StatBand({ eyebrow, heading, intro, stats, tone = "dark" }: StatBandProps) {
+export function StatBand({ eyebrow, heading, intro, stats, tone = "dark", children }: StatBandProps) {
   const ref = useRef<HTMLDivElement>(null);
   const locale = useLocale();
 
@@ -153,6 +155,7 @@ export function StatBand({ eyebrow, heading, intro, stats, tone = "dark" }: Stat
           <Stat key={stat.label} {...stat} locale={locale} />
         ))}
       </div>
+      {children}
     </Section>
   );
 }

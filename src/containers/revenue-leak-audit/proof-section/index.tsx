@@ -16,7 +16,8 @@ interface AuditProofProps {
 // Bewijs uit één echte case. Cijfers en quote komen rechtstreeks uit Sanity (`results`
 // en `quote` van de case), dus er staat hier geen enkel getal in de code en een wijziging
 // in de Studio werkt overal door. Zonder gepubliceerde cijfers valt het blok weg: liever
-// geen bewijs dan een lege of verzonnen tegel.
+// geen bewijs dan een lege of verzonnen tegel. De quote staat ín het cijferblok, zodat
+// het bewijs als één geheel leest in plaats van als twee losse secties.
 export async function AuditProof({ locale, eyebrow, heading, intro }: AuditProofProps) {
   const project = await getProjectBySlug(CASE_SLUG, locale);
   const stats = project?.results?.filter((r) => r.label && (r.value != null || r.display)) ?? [];
@@ -25,9 +26,8 @@ export async function AuditProof({ locale, eyebrow, heading, intro }: AuditProof
   const quote = project?.quote;
 
   return (
-    <>
-      <StatBand eyebrow={eyebrow} heading={heading} intro={intro} stats={stats} tone="dark" />
-      {quote?.text && <CaseQuote text={quote.text} attribution={quote.attribution} />}
-    </>
+    <StatBand eyebrow={eyebrow} heading={heading} intro={intro} stats={stats} tone="dark">
+      {quote?.text && <CaseQuote text={quote.text} attribution={quote.attribution} embedded />}
+    </StatBand>
   );
 }

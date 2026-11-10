@@ -48,7 +48,7 @@ export function AuditHero({ eyebrow, title, lede, video, cta, note }: AuditHeroP
         {/* Zachte gouden gloed achter de titel; puur decoratief. */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 h-[480px] bg-[radial-gradient(ellipse_at_top,rgba(197,169,111,0.16),transparent_65%)]"
+          className="pointer-events-none absolute inset-x-0 top-0 h-[480px] bg-[radial-gradient(ellipse_at_top,color-mix(in_srgb,var(--accent)_16%,transparent),transparent_65%)]"
         />
 
         <div className="relative mx-auto max-w-6xl">
@@ -57,7 +57,7 @@ export function AuditHero({ eyebrow, title, lede, video, cta, note }: AuditHeroP
           </p>
           {/* Vanaf xl staat elke zin op een eigen regel (de pagina zet de tweede in een
               xl:block-span); daaronder verdeelt text-balance de regels gelijkmatig. */}
-          <h1 className="audit-hero-el mx-auto mb-6 text-balance font-heading text-[38px] font-medium leading-[1.05] text-white md:text-[56px] xl:text-[68px]">
+          <h1 className="audit-hero-el mx-auto mb-6 text-balance font-heading text-[40px] leading-[1.05] text-white md:text-[56px] xl:text-[68px]">
             {title}
           </h1>
           <p className="audit-hero-el mx-auto max-w-2xl text-base leading-relaxed text-white/80 md:text-lg">

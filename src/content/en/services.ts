@@ -15,6 +15,11 @@ export const servicesCopy: Record<ServiceId, ServiceCopy> = {
       "You suspect revenue is leaking, but lack the numbers to prove it",
       "You want a substantiated business case before investing in a rebuild",
     ],
+    notForWho: [
+      "Your store barely has traffic yet. Where nobody shows up, nothing can leak",
+      "You only want a new design. We measure first, pretty comes after",
+      "You want to hear everything is fine. Call your mom for that",
+    ],
     deliverables: [
       "Total revenue loss per month and per year",
       "Breakdown across the five layers of the Revenue Leak model",
@@ -58,12 +63,26 @@ export const servicesCopy: Record<ServiceId, ServiceCopy> = {
       {
         question: "What if you find nothing?",
         answer:
-          "That's rare for brands with substantial traffic, but if it happens you'll hear that too, including why your foundation is already in good shape.",
+          "Then you're healthier than you thought. That's rare for brands with substantial traffic, but if it happens you'll hear that too, including why your foundation is already in good shape.",
       },
       {
         question: "Do I have to continue with Tradual afterwards?",
         answer:
           "No. The report and roadmap are yours. You can execute yourself, bring in another agency, or continue with us.",
+      },
+      {
+        question: "What does an audit cost?",
+        answer:
+          "That depends on the scan depth and the size of your store. In the audit call you'll hear what it costs in your situation. You decide after that.",
+      },
+      {
+        question: "What do you need from me?",
+        answer:
+          "For the first scan, nothing: we measure your store from the outside. Give us access to Shopify, analytics, or your ad accounts and we go deeper.",
+      },
+      {
+        question: "Will it hurt?",
+        answer: "The numbers, sometimes. The audit itself won't: your store keeps running while we measure.",
       },
     ],
   },

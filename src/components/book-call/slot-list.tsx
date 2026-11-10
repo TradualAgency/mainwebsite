@@ -49,7 +49,7 @@ export function SlotList({ day, slots, onSelect, loading }: SlotListProps) {
 
   return (
     <div>
-      <p className="font-heading text-[10px] uppercase tracking-[0.14em] text-accent mb-3">{t("pickTime")}</p>
+      <p className="font-heading text-[10px] uppercase tracking-[0.18em] text-accent mb-3">{t("pickTime")}</p>
       {dayLabel && <p className="mb-4 font-heading text-lg text-primary first-letter:uppercase">{dayLabel}</p>}
       {content}
     </div>

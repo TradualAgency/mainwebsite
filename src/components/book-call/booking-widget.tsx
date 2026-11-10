@@ -23,6 +23,8 @@ interface BookingWidgetProps {
   initialNow: string;
   /** Tag voor de notificatiemail, bv. de pagina waar vandaan geboekt is. */
   source?: string;
+  /** Titel van het zijpaneel; standaard de kennismaking van /book-a-call. */
+  title?: string;
 }
 
 const DAY = 86_400_000;
@@ -33,11 +35,11 @@ function shiftMonth(ym: string, delta: number): string {
   return `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, "0")}`;
 }
 
-const eyebrow = "font-heading text-[10px] uppercase tracking-[0.14em] text-accent";
+const eyebrow = "font-heading text-[10px] uppercase tracking-[0.18em] text-accent";
 
 // Kalender → tijdslot → kort formulier → bevestiging. Beschikbaarheid komt per maand van
 // /api/booking/availability; de boeking gaat naar /api/booking. Geen externe UI.
-export function BookingWidget({ duration, initialNow, source = "book-a-call" }: BookingWidgetProps) {
+export function BookingWidget({ duration, initialNow, source = "book-a-call", title }: BookingWidgetProps) {
   const t = useTranslations("BookCallPage.widget");
   const locale = useLocale();
   const format = useFormatter();
@@ -204,7 +206,7 @@ export function BookingWidget({ duration, initialNow, source = "book-a-call" }: 
       >
         <aside className="p-6 md:p-8">
           <p className={cn(eyebrow, "mb-3")}>{site.name}</p>
-          <h3 className="mb-5 font-heading text-2xl text-primary">{t("eyebrow")}</h3>
+          <h3 className="mb-5 font-heading text-2xl text-primary">{title ?? t("eyebrow")}</h3>
           <ul className="space-y-3 text-sm text-body">
             <li className="flex items-center gap-3">
               <Clock size={16} strokeWidth={1.5} className="shrink-0 text-accent" aria-hidden="true" />
