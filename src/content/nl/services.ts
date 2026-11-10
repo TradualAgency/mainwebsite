@@ -9,6 +9,11 @@ export const servicesCopy: Record<ServiceId, ServiceCopy> = {
     oneLiner:
       "We meten waar je omzet weglekt, over alle vijf de lagen, en vertalen dat naar euro's per maand en per jaar.",
     navDescription: "Meet het lek over vijf lagen en zet er een bedrag per maand op.",
+    // Video onder de titel van de landingspagina. De poster is een frame uit de video zelf.
+    video: {
+      src: "/videos/stock_video_rev_leak.mp4",
+      poster: "/videos/stock_video_rev_leak-poster.jpg",
+    },
     heroTitle: "Weet binnen een paar weken hoeveel omzet je webshop laat liggen.",
     heroLede:
       "We scannen je shop over vijf lagen, van laadtijd tot checkout tot vindbaarheid voor AI, en vertalen elk technisch probleem naar een bedrag per maand en per jaar. Geen lijst met verbeterpunten: een businesscase.",
