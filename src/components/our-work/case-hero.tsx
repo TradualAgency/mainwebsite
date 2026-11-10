@@ -182,7 +182,7 @@ export function CaseHero({ project }: CaseHeroProps) {
           <p className="case-hero-el font-heading text-[10px] tracking-[0.18em] uppercase text-accent mb-4">
             {eyebrow}
           </p>
-          <h1 className="case-hero-el font-heading text-surface text-[34px] leading-[1.05] md:text-[56px] max-w-4xl mb-6">
+          <h1 className="case-hero-el font-heading text-surface text-[32px] leading-[1.05] md:text-[54px] max-w-4xl mb-6">
             {/* De spatie na elke regel is onzichtbaar, maar houdt de titel voor
                 schermlezers en crawlers leesbaar in plaats van "klik.Ongevraagde". */}
             {project.titleLines.map((line, index) => (
