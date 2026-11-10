@@ -40,6 +40,7 @@ const PROJECT_QUERY = `*[
   slug,
   description,
   mainImage,
+  mainImageMobile,
   tags,
   featured,
   completedAt,
@@ -130,6 +131,9 @@ export interface Project {
   slug: { current: string };
   description: string;
   mainImage: ProjectImage;
+  // Alleen op de casepagina: eigen hero-beeld voor telefoons. Ontbreekt het, dan toont
+  // de hero ook daar de hoofdafbeelding.
+  mainImageMobile?: Image;
   tags: string[];
   featured: boolean;
   completedAt: string;

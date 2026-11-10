@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef } from "react";
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -19,6 +19,33 @@ interface CaseHeroProps {
 interface MetaItem {
   label: string;
   value: React.ReactNode;
+}
+
+// Hero-beeld. Zonder mobiele variant blijft het één <Image>. Mét variant wordt het een
+// <picture>, zodat de browser zelf kiest en alleen het beeld downloadt dat bij het scherm
+// past; twee <Image>'s met een hidden-klasse zouden allebei geladen worden. Het breekpunt
+// is md (768px), gelijk aan de overige md:-klassen in deze hero.
+function HeroImage({ project }: CaseHeroProps) {
+  const alt = project.mainImage.alt || project.title;
+  const desktopSrc = urlFor(project.mainImage).width(1920).url();
+
+  if (!project.mainImageMobile?.asset) {
+    return <Image src={desktopSrc} alt={alt} fill sizes="100vw" className="object-cover" priority />;
+  }
+
+  const shared = { alt, fill: true, sizes: "100vw", loading: "eager", fetchPriority: "high" } as const;
+  const { props: desktop } = getImageProps({ ...shared, src: desktopSrc });
+  const {
+    props: { srcSet: mobileSrcSet, ...img },
+  } = getImageProps({ ...shared, src: urlFor(project.mainImageMobile).width(1080).url() });
+
+  return (
+    <picture>
+      <source media="(min-width: 768px)" srcSet={desktop.srcSet} sizes="100vw" />
+      <source srcSet={mobileSrcSet} sizes="100vw" />
+      <img {...img} alt={alt} className="object-cover" />
+    </picture>
+  );
 }
 
 // Zelfde geometrie als de hero op de homepage: beeld absoluut op de achtergrond onder
@@ -120,14 +147,7 @@ export function CaseHero({ project }: CaseHeroProps) {
             // Eigen laag om het beeld heen, zodat de parallax alleen de foto verschuift en
             // niet het verloop erboven — anders schuift de donkere kant onder de copy mee weg.
             <div className="case-hero-media absolute inset-0">
-              <Image
-                src={urlFor(project.mainImage).width(1920).url()}
-                alt={project.mainImage.alt || project.title}
-                fill
-                sizes="100vw"
-                className="object-cover"
-                priority
-              />
+              <HeroImage project={project} />
             </div>
           )}
           {/* Donker waar de copy staat, opener naar rechts. Op mobiel loopt de tekst over

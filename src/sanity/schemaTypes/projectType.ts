@@ -56,6 +56,15 @@ export const projectType = defineType({
       validation: Rule => Rule.required()
     }),
     defineField({
+      name: 'mainImageMobile',
+      title: 'Hero-afbeelding mobiel (optioneel)',
+      description: 'Staand beeld voor de hero van de casepagina op telefoons. Leeg laten om overal de hoofdafbeelding te tonen. Kaarten en social previews gebruiken altijd de hoofdafbeelding.',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
       name: 'industry',
       title: 'Branche',
       description: 'Bijvoorbeeld Fashion. Hoort niet in de diensten-tags.',
