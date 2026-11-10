@@ -140,7 +140,13 @@ export function CaseHero({ project }: CaseHeroProps) {
             {eyebrow}
           </p>
           <h1 className="case-hero-el font-heading text-surface text-[34px] leading-[1.05] md:text-[56px] max-w-4xl mb-6">
-            {project.title}
+            {/* De spatie na elke regel is onzichtbaar, maar houdt de titel voor
+                schermlezers en crawlers leesbaar in plaats van "klik.Ongevraagde". */}
+            {project.titleLines.map((line, index) => (
+              <span key={index} className="block">
+                {line}{" "}
+              </span>
+            ))}
           </h1>
           {project.description && (
             <p className="case-hero-el max-w-2xl text-surface/85 text-lg md:text-xl leading-relaxed">

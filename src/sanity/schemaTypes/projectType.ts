@@ -17,7 +17,9 @@ export const projectType = defineType({
     defineField({
       name: 'title',
       title: 'Title',
-      type: 'string',
+      description: 'Enter begint een nieuwe regel in de hero van de casepagina. Op kaarten en in Google staat de titel op één regel.',
+      type: 'text',
+      rows: 2,
       validation: Rule => Rule.required()
     }),
     defineField({

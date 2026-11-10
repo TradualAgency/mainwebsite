@@ -122,7 +122,11 @@ export interface CaseMetric {
 
 export interface Project {
   _id: string;
+  // Altijd één regel: regelovergangen uit Studio zijn hier al door een spatie vervangen,
+  // zodat kaarten, alt-teksten en metadata er geen last van hebben.
   title: string;
+  // Dezelfde titel per regel, voor de hero die de afbreking wél toont.
+  titleLines: string[];
   slug: { current: string };
   description: string;
   mainImage: ProjectImage;
@@ -148,12 +152,25 @@ export interface Project {
 
 export type ProjectSitemapEntry = { slug: string; updatedAt: string; _translations?: Translation[] };
 
+// De titel mag in Studio over meerdere regels: met Enter, of met een getypte <br>.
+// Beide worden hier gesplitst; ruwe HTML komt dus nooit in de pagina terecht.
+const TITLE_BREAK = /\s*(?:<br\s*\/?>|\r?\n)\s*/i;
+
+type RawProject = Omit<Project, 'titleLines'>;
+
+function withTitleLines(project: RawProject): Project {
+  const titleLines = (project.title ?? '').split(TITLE_BREAK).map((line) => line.trim()).filter(Boolean);
+  return { ...project, title: titleLines.join(' '), titleLines };
+}
+
 export async function getProjects(locale: Locale): Promise<Project[]> {
-  return await client.fetch<Project[]>(PROJECTS_QUERY, { locale });
+  const projects = await client.fetch<RawProject[]>(PROJECTS_QUERY, { locale });
+  return projects.map(withTitleLines);
 }
 
 export async function getProjectBySlug(slug: string, locale: Locale): Promise<Project | null> {
-  return await client.fetch<Project | null>(PROJECT_QUERY, { slug, locale });
+  const project = await client.fetch<RawProject | null>(PROJECT_QUERY, { slug, locale });
+  return project ? withTitleLines(project) : null;
 }
 
 export async function getProjectSlugs(locale: Locale): Promise<string[]> {
@@ -165,11 +182,13 @@ export async function getProjectSlugsWithTranslations(locale: Locale): Promise<P
 }
 
 export async function getRelatedProjects(slug: string, locale: Locale, limit = 3): Promise<Project[]> {
-  return await client.fetch<Project[]>(RELATED_QUERY, { slug, locale, limit });
+  const projects = await client.fetch<RawProject[]>(RELATED_QUERY, { slug, locale, limit });
+  return projects.map(withTitleLines);
 }
 
 export async function getFeaturedProjects(locale: Locale): Promise<Project[]> {
-  return await client.fetch<Project[]>(FEATURED_QUERY, { locale });
+  const projects = await client.fetch<RawProject[]>(FEATURED_QUERY, { locale });
+  return projects.map(withTitleLines);
 }
 
 export async function getTranslatedProjectSlug(slug: string, locale: Locale): Promise<string | null> {
