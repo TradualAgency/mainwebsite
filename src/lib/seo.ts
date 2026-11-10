@@ -1,7 +1,35 @@
 import type { Metadata } from "next";
+import { hasLocale } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { getPathname } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import { site } from "@/content/site";
+
+// Basismetadata (titel-template, omschrijving, Open Graph) voor een root layout. Gedeeld
+// door (site) en (landing), zodat een pagina in beide groepen dezelfde defaults erft.
+export async function siteMetadata(requested: string): Promise<Metadata> {
+  const locale = hasLocale(routing.locales, requested) ? requested : routing.defaultLocale;
+  const t = await getTranslations({ locale, namespace: "Metadata.site" });
+  const tc = await getTranslations({ locale, namespace: "Common" });
+  const title = `${site.name} | ${t("tagline")}`;
+
+  return {
+    metadataBase: new URL(site.url),
+    title: {
+      default: title,
+      template: `%s | ${site.name}`,
+    },
+    description: t("description"),
+    openGraph: {
+      type: "website",
+      locale: locale === "nl" ? "nl_NL" : "en_US",
+      alternateLocale: locale === "nl" ? ["en_US"] : ["nl_NL"],
+      siteName: site.name,
+      title,
+      description: tc("promise"),
+    },
+  };
+}
 
 // Absolute URL voor een (ongeprefixt) pad in een locale, bv. ("nl", "/about") → https://tradual.com/nl/about
 export function absoluteUrl(locale: Locale, href: string): string {

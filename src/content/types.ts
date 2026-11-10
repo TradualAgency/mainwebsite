@@ -44,6 +44,10 @@ export type ServiceCopy = {
   process: { title: string; body: string; imageAlt: string }[];
   afterThisLabel: string;
   faq: Faq[];
+  // Video voor de landingspagina van de dienst. Per taal, omdat de opname gesproken is;
+  // zonder video toont de hero alleen titel en actie. `src` is een pad in /public of een
+  // volledige URL, `poster` een afbeelding in /public.
+  video?: { src: string; poster: string };
 };
 
 export type Service = Omit<ServiceMeta, "processImages"> &

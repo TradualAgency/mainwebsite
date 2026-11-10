@@ -23,15 +23,24 @@ interface CtaButtonProps {
 
 // Altijd een echte link — geen <button> zonder href/onClick meer (de homepage had er drie).
 export function CtaButton({ href, variant = "gold", className, children }: CtaButtonProps) {
+  const classes = cn(
+    "inline-flex items-center justify-center px-8 py-3 font-medium transition",
+    variantClasses[variant],
+    className
+  );
+
+  // Anker op dezelfde pagina ("#plan"): een gewone <a>, want de locale-Link zet er het
+  // pad van de taal voor en zou dan naar de homepage springen.
+  if (href.startsWith("#")) {
+    return (
+      <a href={href} className={classes}>
+        {children}
+      </a>
+    );
+  }
+
   return (
-    <Link
-      href={href}
-      className={cn(
-        "inline-flex items-center justify-center px-8 py-3 font-medium transition",
-        variantClasses[variant],
-        className
-      )}
-    >
+    <Link href={href} className={classes}>
       {children}
     </Link>
   );

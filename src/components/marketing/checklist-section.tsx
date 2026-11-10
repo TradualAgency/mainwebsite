@@ -9,9 +9,11 @@ interface ChecklistSectionProps {
   items: string[];
   tone?: "light" | "muted" | "dark";
   columns?: 1 | 2;
+  /** Optioneel blok onder de lijst, bv. een knop. */
+  children?: React.ReactNode;
 }
 
-export function ChecklistSection({ eyebrow, title, items, tone = "light", columns = 2 }: ChecklistSectionProps) {
+export function ChecklistSection({ eyebrow, title, items, tone = "light", columns = 2, children }: ChecklistSectionProps) {
   const t = useTranslations("Marketing.checklist");
   const isDark = tone === "dark";
   return (
@@ -25,6 +27,7 @@ export function ChecklistSection({ eyebrow, title, items, tone = "light", column
           </li>
         ))}
       </ul>
+      {children && <div className="mt-10">{children}</div>}
     </Section>
   );
 }

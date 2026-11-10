@@ -73,11 +73,6 @@
       "process": {
         "eyebrow": "Hoe het werkt",
         "title": "Van scan naar businesscase"
-      },
-      "cta": {
-        "heading": "Na de audit",
-        "primary": "Vraag een Revenue Leak Audit aan",
-        "secondary": "Bekijk Stack Rebuild"
       }
     },
     "stack-rebuild": {
@@ -135,6 +130,31 @@
         "body": "Nog geen audit gehad? De Revenue Leak Audit is het startpunt van de hele route.",
         "secondary": "Alle diensten"
       }
+    }
+  },
+  "AuditLanding": {
+    "header": {
+      "cta": "Plan je audit-gesprek"
+    },
+    "hero": {
+      "eyebrow": "Revenue Leak Audit · voor webshops die al in verkeer investeren",
+      "title": "Je webshop lekt omzet. <gold>Wij laten zien hoeveel, en waar.</gold>",
+      "lede": "We scannen je shop over vijf lagen, van laadtijd tot checkout tot vindbaarheid voor AI, en zetten op elk lek een bedrag per maand en per jaar. Geen lijst met verbeterpunten: een businesscase.",
+      "videoLabel": "Bekijk eerst de video",
+      "videoTitle": "Zo werkt de Revenue Leak Audit",
+      "play": "Video afspelen",
+      "cta": "Plan je audit-gesprek",
+      "note": "{minutes} minuten via Google Meet · direct bevestigd"
+    },
+    "proof": {
+      "eyebrow": "Uit de praktijk: Ciao Bella Fashion",
+      "heading": "Wat er gebeurt als de lekken dicht zijn",
+      "intro": "Ciao Bella Fashion stapte over van een standaardthema naar een snellere webshop. Dit veranderde er."
+    },
+    "booking": {
+      "eyebrow": "Volgende stap",
+      "heading": "Plan je audit-gesprek",
+      "lede": "Kies een moment van {minutes} minuten. We bespreken je shop, wat de audit meet en wat hij in jouw situatie kost."
     }
   },
   "IndustriesPage": {

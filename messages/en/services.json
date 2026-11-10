@@ -73,11 +73,6 @@
       "process": {
         "eyebrow": "How it works",
         "title": "From scan to business case"
-      },
-      "cta": {
-        "heading": "After the audit",
-        "primary": "Request a Revenue Leak Audit",
-        "secondary": "View Stack Rebuild"
       }
     },
     "stack-rebuild": {
@@ -135,6 +130,31 @@
         "body": "Haven't had an audit yet? The Revenue Leak Audit is the starting point of the entire route.",
         "secondary": "View all services"
       }
+    }
+  },
+  "AuditLanding": {
+    "header": {
+      "cta": "Book your audit call"
+    },
+    "hero": {
+      "eyebrow": "Revenue Leak Audit · for stores already investing in traffic",
+      "title": "Your store is leaking revenue. <gold>We show how much, and where.</gold>",
+      "lede": "We scan your shop across five layers, from load time to checkout to AI findability, and put an amount per month and per year on every leak. Not a list of improvements: a business case.",
+      "videoLabel": "Watch the video first",
+      "videoTitle": "How the Revenue Leak Audit works",
+      "play": "Play video",
+      "cta": "Book your audit call",
+      "note": "{minutes} minutes via Google Meet · confirmed instantly"
+    },
+    "proof": {
+      "eyebrow": "From practice: Ciao Bella Fashion",
+      "heading": "What happens once the leaks are closed",
+      "intro": "Ciao Bella Fashion moved from a standard theme to a faster storefront. This is what changed."
+    },
+    "booking": {
+      "eyebrow": "Next step",
+      "heading": "Book your audit call",
+      "lede": "Pick a {minutes}-minute slot. We will discuss your shop, what the audit measures, and what it costs in your situation."
     }
   },
   "IndustriesPage": {
