@@ -33,7 +33,9 @@ interface MetaItem {
 export function CaseHero({ project }: CaseHeroProps) {
   const container = useRef<HTMLDivElement>(null);
   const t = useTranslations("Work.caseHero");
-  const eyebrow = [t("eyebrow"), project.industry ?? project.tags?.[0]].filter(Boolean).join(" · ");
+  // Klantnaam achter "Case"; branche of eerste tag alleen als terugval voor een case
+  // zonder klant, zodat de eyebrow nooit kaal blijft.
+  const eyebrow = [t("eyebrow"), project.client ?? project.industry ?? project.tags?.[0]].filter(Boolean).join(" · ");
   const year = project.completedAt ? new Date(project.completedAt).getFullYear() : null;
 
   // Alleen gevulde velden worden een kolom, zodat een case zonder client of datum
@@ -137,11 +139,11 @@ export function CaseHero({ project }: CaseHeroProps) {
           <p className="case-hero-el font-heading text-[10px] tracking-[0.18em] uppercase text-accent mb-4">
             {eyebrow}
           </p>
-          <h1 className="case-hero-el font-heading text-surface text-[40px] leading-[1.05] md:text-[68px] max-w-4xl mb-6">
+          <h1 className="case-hero-el font-heading text-surface text-[34px] leading-[1.05] md:text-[56px] max-w-4xl mb-6">
             {project.title}
           </h1>
           {project.description && (
-            <p className="case-hero-el max-w-2xl text-surface/85 text-base md:text-lg leading-relaxed">
+            <p className="case-hero-el max-w-2xl text-surface/85 text-lg md:text-xl leading-relaxed">
               {project.description}
             </p>
           )}
