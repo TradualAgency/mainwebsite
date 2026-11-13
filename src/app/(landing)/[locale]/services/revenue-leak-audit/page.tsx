@@ -57,8 +57,7 @@ export default async function RevenueLeakAuditPage({ params }: Props) {
   return (
     <>
       <AuditHero
-        eyebrow={t("hero.eyebrow")}
-        title={t.rich("hero.title", { gold: (chunks) => <span className="text-accent xl:block">{chunks}</span> })}
+        title={t.rich("hero.title", { gold: (chunks) => <span className="text-accent">{chunks}</span> })}
         lede={t("hero.lede")}
         video={
           service.video && {

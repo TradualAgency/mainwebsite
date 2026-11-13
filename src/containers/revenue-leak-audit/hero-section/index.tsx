@@ -10,7 +10,6 @@ import { VideoPlayer } from "@/components/marketing/video-player";
 gsap.registerPlugin(useGSAP);
 
 interface AuditHeroProps {
-  eyebrow: string;
   title: React.ReactNode;
   lede: string;
   /** Zonder video (bv. een taal waarvoor nog geen opname is) blijft het titel + actie. */
@@ -22,7 +21,7 @@ interface AuditHeroProps {
 // Hero voor betaald verkeer: grote titel, subtekst, video en één actie, alles gecentreerd
 // in het donkere kader van de home-hero. Geen pin en geen vaste hoogte: het blok is zo
 // hoog als zijn inhoud, zodat titel én het begin van de video boven de vouw vallen.
-export function AuditHero({ eyebrow, title, lede, video, cta, note }: AuditHeroProps) {
+export function AuditHero({ title, lede, video, cta, note }: AuditHeroProps) {
   const container = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -52,11 +51,7 @@ export function AuditHero({ eyebrow, title, lede, video, cta, note }: AuditHeroP
         />
 
         <div className="relative mx-auto max-w-6xl">
-          <p className="audit-hero-el mb-5 font-heading text-[10px] uppercase tracking-[0.18em] text-accent">
-            {eyebrow}
-          </p>
-          {/* Vanaf xl staat elke zin op een eigen regel (de pagina zet de tweede in een
-              xl:block-span); daaronder verdeelt text-balance de regels gelijkmatig. */}
+          {/* Eén H1 zonder eyebrow; text-balance verdeelt de regels gelijkmatig. */}
           <h1 className="audit-hero-el mx-auto mb-6 text-balance font-heading text-[40px] leading-[1.05] text-white md:text-[56px] xl:text-[68px]">
             {title}
           </h1>

@@ -138,8 +138,7 @@
       "cta": "Book your audit call"
     },
     "hero": {
-      "eyebrow": "Revenue Leak Audit · our condolences on your conversion rate",
-      "title": "Your store is leaking revenue. <gold>We do the autopsy.</gold>",
+      "title": "<gold>Our condolences</gold> on your conversion rate.",
       "lede": "We scan your shop across five layers, from load time to checkout to AI findability, and put an amount per month and per year on every leak. Not a list of improvements: a business case.",
       "videoLabel": "Watch the funeral first",
       "videoTitle": "How the Revenue Leak Audit works",
