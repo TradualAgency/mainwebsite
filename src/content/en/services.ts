@@ -7,6 +7,11 @@ export const servicesCopy: Record<ServiceId, ServiceCopy> = {
     oneLiner:
       "We measure where your revenue leaks, across all five layers, and translate it into euros per month and per year.",
     navDescription: "Measure the leak across five layers and price it in euros per month.",
+    // Video below the landing page title. The poster is a frame from the video itself.
+    video: {
+      src: "/videos/stock_video_rev_leak.mp4",
+      poster: "/videos/stock_video_rev_leak-poster.jpg",
+    },
     heroTitle: "Know within weeks how much revenue your store is leaving on the table.",
     heroLede:
       "We scan your shop across five layers, from load time to checkout to AI findability, and translate every technical problem into an amount per month and per year. Not a list of improvements: a business case.",
