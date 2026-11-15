@@ -26,13 +26,27 @@ export const positioning: Positioning = {
   introExtended:
     "Tradual is not a CRO agency. We repair the technical foundation: speed, infrastructure, and the right stack. Think of building the fastest car on the grid. Who steers it is up to you.",
   left: {
-    title: "Tradual",
     items: [
-      "Core Web Vitals & speed",
-      "Plugin stack optimization",
-      "Tech stack architecture",
-      "Tracking & data infrastructure",
-      "Headless / Hydrogen migration",
+      {
+        title: "Core Web Vitals & speed",
+        body: "We get LCP, INP and CLS into the green, so pages load before visitors lose interest.",
+      },
+      {
+        title: "Plugin stack optimization",
+        body: "We go through every app and script on your store and remove what slows it down. Fewer plugins, same functionality.",
+      },
+      {
+        title: "Tech stack architecture",
+        body: "A stack that fits how you sell today and still holds up when you scale.",
+      },
+      {
+        title: "Tracking & data infrastructure",
+        body: "Server-side tracking and clean events, so every decision rests on data you can trust.",
+      },
+      {
+        title: "Headless / Hydrogen migration",
+        body: "When your theme hits its limits, we move you to a headless Hydrogen storefront step by step, with SEO and tracking carried over.",
+      },
     ],
   },
   right: {

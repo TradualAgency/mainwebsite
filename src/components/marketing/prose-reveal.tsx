@@ -12,7 +12,7 @@ interface ProseRevealProps {
   className?: string;
 }
 
-// Client wrapper om een PortableText-blok, in dezelfde geest als LaneReveal: de opmaak
+// Client wrapper om een PortableText-blok, in dezelfde geest als BentoScene: de opmaak
 // blijft server-side, alleen de animatie zit hier.
 //
 // Bewust niet opgelost in portable-text-components.tsx: die map is gedeeld met de

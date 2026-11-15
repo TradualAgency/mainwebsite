@@ -100,6 +100,9 @@ export type GiftVerdict = { minAnswered: number; label: string; body: string };
 
 export type Unique = { title: string; body: string };
 
+// Eén Tradual-punt in de positioning-bento: korte titel plus 1-2 zinnen uitleg.
+export type PositioningItem = { title: string; body: string };
+
 export type Positioning = {
   eyebrow: string;
   titleLine1: string;
@@ -107,7 +110,7 @@ export type Positioning = {
   intro: string;
   // Homepage-variant met een extra afsluitende zin.
   introExtended: string;
-  left: { title: string; items: string[] };
+  left: { items: PositioningItem[] };
   right: { title: string; items: string[] };
 };
 

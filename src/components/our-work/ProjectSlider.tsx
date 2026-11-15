@@ -33,8 +33,8 @@ export function ProjectSlider({ projects }: ProjectSliderProps) {
         }}
         onSwiper={setSwiper}
         onSlideChange={(instance) => setActiveIndex(instance.activeIndex)}
-        // Dezelfde gutter als de kop erboven, zodat de eerste kaart uitlijnt.
-        className="px-6 md:px-8 [&_.swiper-wrapper]:items-stretch"
+        // Links 20px op mobiel en 32px vanaf tablet; overschrijft Swipers padding-reset.
+        className="pl-[20px]! md:pl-8! [&_.swiper-wrapper]:items-stretch"
       >
         {projects.map((project, index) => (
           // Swiper zet slides op height: 100%. Een expliciete hoogte sluit

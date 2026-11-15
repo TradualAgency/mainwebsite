@@ -1,16 +1,26 @@
 'use client'
 import { Link } from "@/i18n/navigation";
 import {useEffect, useRef, useState} from "react";
+import { createPortal } from "react-dom";
 import { usePathname } from "@/i18n/navigation";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Facebook, Instagram, Linkedin } from "lucide-react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useLocale, useTranslations } from "next-intl";
 import { getNav, isMegaItem } from "@/content";
 import { NavMegaMenu } from "@/components/header/nav-mega-menu";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { site } from "@/content/site";
 
 gsap.registerPlugin(useGSAP);
+
+// Alleen platforms met een ingevulde URL in site.ts komen in het mobiele menu; zolang
+// alles null is verschijnt er geen icoonrij (liever niets dan een dode link).
+const SOCIAL_LINKS = [
+    { label: "LinkedIn", href: site.social.linkedin, Icon: Linkedin },
+    { label: "Instagram", href: site.social.instagram, Icon: Instagram },
+    { label: "Facebook", href: site.social.facebook, Icon: Facebook },
+].filter((s): s is typeof s & { href: string } => Boolean(s.href));
 
 // Genadetijd voordat een mega-paneel sluit. Tussen de onderkant van het nav-item en de
 // bovenkant van het paneel ligt ruimte die aan <header> toebehoort (de py-4 onderpadding),
@@ -89,7 +99,11 @@ export default function Header() {
 
     useEffect(() => {
         const checkScreenSize = () => {
-            setIsMobile(window.innerWidth < 1024);
+            const mobile = window.innerWidth < 1024;
+            setIsMobile(mobile);
+            // Draai je naar desktopbreedte terwijl het menu open is, dan verdwijnt de knop;
+            // zonder deze reset bleef de scroll-lock dan hangen.
+            if (!mobile) setIsOpen(false);
         }
         checkScreenSize();
 
@@ -97,6 +111,22 @@ export default function Header() {
 
         return () => window.removeEventListener('resize', checkScreenSize);
     }, []);
+
+    // Fullscreen menu: pagina eronder niet laten scrollen, en Escape sluit.
+    useEffect(() => {
+        if (!isOpen) return;
+        const root = document.documentElement;
+        const prevOverflow = root.style.overflow;
+        root.style.overflow = "hidden";
+        const onKeyDown = (e: KeyboardEvent) => {
+            if (e.key === "Escape") setIsOpen(false);
+        };
+        window.addEventListener("keydown", onKeyDown);
+        return () => {
+            root.style.overflow = prevOverflow;
+            window.removeEventListener("keydown", onKeyDown);
+        };
+    }, [isOpen]);
 
     // De header zweeft vast bovenaan. Op de homepage lopen de hero en het patroonblok
     // achter elkaar met een donkere achtergrond, en op een case-detail doet de hero
@@ -107,7 +137,9 @@ export default function Header() {
     const [overDarkState, setOverDark] = useState(startsOverDark);
     // Afgeleid i.p.v. via setState in het effect: op routes zonder donkere start is de
     // header sowieso licht, ongeacht de laatst gemeten scrollstand.
-    const overDark = startsOverDark && overDarkState;
+    // Met het (witte) fullscreen menu open moet de header donkere tekst krijgen, anders
+    // staat er wit op wit op de homepage en case-pagina's.
+    const overDark = startsOverDark && overDarkState && !isOpen;
 
     useEffect(() => {
         if (!startsOverDark) return;
@@ -226,6 +258,8 @@ export default function Header() {
                             onClick={() => setIsOpen(!isOpen)}
                             className="focus:outline-none relative w-6 h-6"
                             aria-label={t("menu")}
+                            aria-expanded={isOpen}
+                            aria-controls="mobile-menu"
                         >
                             {/* Hamburger icon die naar kruisje transformeert */}
                             <span
@@ -245,18 +279,27 @@ export default function Header() {
                             ></span>
                         </button>
 
-                        {/* Mobiel menu (verschijnt wanneer isOpen true is) */}
+                        {/* Fullscreen mobiel menu. Via een portal naar <body>: <header> heeft
+                            backdrop-blur en de wrapper een GSAP-transform, en beide maken zich
+                            de containing block voor position:fixed — inset-0 zou dan in de pill
+                            blijven steken. Kan veilig: isMobile wordt pas in een effect true,
+                            dus dit rendert nooit server-side. z-40 houdt het ónder de header
+                            (z-50), zodat de pill met het kruisje bovenop blijft als sluitknop. */}
+                        {createPortal(
                         <div
-                            className={`absolute top-20 right-8 left-8 bg-surface border border-primary/10 p-5 shadow-lg z-10 transform transition-all duration-300 ease-in-out max-h-[calc(100vh-6rem)] overflow-y-auto ${
-                                isOpen
-                                    ? 'opacity-100 translate-y-0'
-                                    : 'opacity-0 -translate-y-2 pointer-events-none'
+                            id="mobile-menu"
+                            role="dialog"
+                            aria-modal="true"
+                            aria-label={t("menu")}
+                            className={`fixed inset-0 z-40 bg-surface overflow-y-auto overscroll-contain transition-[opacity,visibility] duration-300 ease-in-out motion-reduce:transition-none ${
+                                isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none invisible'
                             }`}
                         >
-                            <nav className="flex flex-col gap-4 text-primary font-heading">
+                            <div className="min-h-full flex flex-col px-8 pt-36 pb-10">
+                            <nav className="flex flex-col text-primary font-heading">
                                 {mainNav.map((item) =>
                                     isMegaItem(item) ? (
-                                        <div key={item.href} className="border-b border-primary/10 pb-3">
+                                        <div key={item.href} className="border-b border-primary/10 py-4">
                                             <button
                                                 type="button"
                                                 // Eén open tegelijk, anders staan er acht sub-items
@@ -265,24 +308,24 @@ export default function Header() {
                                                     setOpenMobileMenu((cur) => (cur === item.href ? null : item.href))
                                                 }
                                                 aria-expanded={openMobileMenu === item.href}
-                                                className="flex items-center justify-between w-full hover:text-accent transition"
+                                                className="flex items-center justify-between w-full text-2xl hover:text-accent transition"
                                             >
                                                 {item.label}
                                                 <ChevronDown
-                                                    size={16}
+                                                    size={22}
                                                     strokeWidth={1.5}
                                                     className={`transition-transform ${openMobileMenu === item.href ? "rotate-180" : ""}`}
                                                 />
                                             </button>
                                             {openMobileMenu === item.href && (
-                                                <div className="mt-3 flex flex-col gap-2.5 pl-3">
+                                                <div className="mt-4 flex flex-col gap-3.5 pl-1">
                                                     {item.children.map((child) => (
                                                         <Link
                                                             key={child.href}
                                                             href={child.href}
-                                                            className="flex items-center gap-2.5 text-sm text-primary/80 hover:text-accent transition"
+                                                            className="flex items-center gap-3 text-base text-primary/80 hover:text-accent transition"
                                                         >
-                                                            <child.icon className="text-accent shrink-0" size={15} strokeWidth={1.5} />
+                                                            <child.icon className="text-accent shrink-0" size={17} strokeWidth={1.5} />
                                                             {child.label}
                                                         </Link>
                                                     ))}
@@ -290,20 +333,44 @@ export default function Header() {
                                             )}
                                         </div>
                                     ) : (
-                                        <Link key={item.href} href={item.href} className="border-b border-primary/10 pb-3 hover:text-accent transition">
+                                        <Link key={item.href} href={item.href} className="border-b border-primary/10 py-4 text-2xl hover:text-accent transition">
                                             {item.label}
                                         </Link>
                                     )
                                 )}
-                                <Link href="/contact" className="border-b border-primary/10 pb-3 hover:text-accent transition">
+                                <Link href="/contact" className="border-b border-primary/10 py-4 text-2xl hover:text-accent transition">
                                     {t("contact")}
                                 </Link>
-                                <Link href={headerCta.href} className="bg-primary text-surface px-4 py-3 font-medium text-center hover:bg-primary/90 transition">
+                            </nav>
+
+                            <div className="mt-auto pt-10 flex flex-col gap-6">
+                                <Link href={headerCta.href} className="bg-primary text-surface px-4 py-4 font-heading font-medium text-center hover:bg-primary/90 transition">
                                     {headerCta.label}
                                 </Link>
-                                <LanguageSwitcher className="justify-center pt-1 text-primary/80" />
-                            </nav>
-                        </div>
+                                <div className="flex items-center justify-between">
+                                    <LanguageSwitcher className="text-primary/80" />
+                                    {SOCIAL_LINKS.length > 0 && (
+                                        <div className="flex items-center gap-1 -mr-2">
+                                            {SOCIAL_LINKS.map(({ label, href, Icon }) => (
+                                                <a
+                                                    key={label}
+                                                    href={href}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                    aria-label={label}
+                                                    className="flex size-10 items-center justify-center text-primary/70 hover:text-accent transition"
+                                                >
+                                                    <Icon size={20} strokeWidth={1.5} />
+                                                </a>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                            </div>
+                        </div>,
+                        document.body
+                        )}
                     </div>
                 ) : (
                     <div className="hidden lg:flex items-center gap-6">

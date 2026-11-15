@@ -1,5 +1,5 @@
 import { getLocale } from "next-intl/server";
-import { Wrench, TrendingUp } from "lucide-react";
+import { TrendingUp } from "lucide-react";
 import { ComparisonTwoCol } from "@/components/marketing/comparison-two-col";
 import { getPositioning } from "@/content";
 
@@ -20,7 +20,7 @@ export default async function PositioningSection() {
         </>
       }
       intro={positioning.introExtended}
-      left={{ icon: Wrench, title: positioning.left.title, items: positioning.left.items, emphasis: true }}
+      left={positioning.left}
       right={{ icon: TrendingUp, title: positioning.right.title, items: positioning.right.items }}
     />
   );

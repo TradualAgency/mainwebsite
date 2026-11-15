@@ -25,7 +25,7 @@ interface CaseQuoteProps {
 //
 // De border-l-2 is een absolute span geworden: een border hoort bij de doos van de
 // blockquote, dus scaleY erop zou ook de tekst uitrekken. w-0.5 is exact dezelfde 2px.
-// Het streepje leent het idioom van de middenlijn in lane-reveal.tsx: de lijn tekent
+// Het streepje tekent
 // zichzelf van boven naar beneden, alsof de quote wordt aangestreept, en pas daarna
 // komt de tekst.
 export function CaseQuote({ text, attribution, embedded = false }: CaseQuoteProps) {
@@ -38,8 +38,8 @@ export function CaseQuote({ text, attribution, embedded = false }: CaseQuoteProp
         // Eén track voor lijn en tekst, zodat ze altijd in dezelfde volgorde starten.
         const track = { trigger: container.current, start: "top 80%" } as const;
 
-        // duration + power3.out in plaats van de scrub van lane-reveal: dit is één kort
-        // streepje en geen volledige baan, dus meescrollen voelt daar traag.
+        // duration + power3.out in plaats van een scrub: dit is één kort
+        // streepje, dus meescrollen voelt daar traag.
         gsap.from(".case-quote-rule", {
           ...(embedded ? { scaleX: 0 } : { scaleY: 0 }),
           transformOrigin: embedded ? "center center" : "top center",

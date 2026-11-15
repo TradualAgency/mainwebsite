@@ -24,13 +24,27 @@ export const positioning: Positioning = {
   introExtended:
     "Tradual is geen CRO-bureau. Wij herstellen de technische fundering: snelheid, infrastructuur en de juiste stack. Zie het als de snelste auto op de grid bouwen. Wie hem bestuurt, bepaal jij.",
   left: {
-    title: "Tradual",
     items: [
-      "Core Web Vitals & snelheid",
-      "Optimalisatie van de plugin-stack",
-      "Techstack-architectuur",
-      "Tracking & data-infrastructuur",
-      "Headless / Hydrogen-migratie",
+      {
+        title: "Core Web Vitals & snelheid",
+        body: "We krijgen LCP, INP en CLS in het groen, zodat pagina's laden voordat bezoekers afhaken.",
+      },
+      {
+        title: "Optimalisatie van de plugin-stack",
+        body: "We lopen elke app en elk script in je winkel na en halen weg wat vertraagt. Minder plugins, dezelfde functionaliteit.",
+      },
+      {
+        title: "Techstack-architectuur",
+        body: "Een stack die past bij hoe je nu verkoopt en overeind blijft als je opschaalt.",
+      },
+      {
+        title: "Tracking & data-infrastructuur",
+        body: "Server-side tracking en schone events, zodat elke beslissing rust op data die klopt.",
+      },
+      {
+        title: "Headless / Hydrogen-migratie",
+        body: "Loopt je theme tegen zijn grenzen aan, dan zetten we je stap voor stap over naar een headless Hydrogen-storefront, met SEO en tracking mee.",
+      },
     ],
   },
   right: {

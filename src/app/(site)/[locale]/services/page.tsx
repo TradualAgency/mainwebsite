@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Wrench, TrendingUp } from "lucide-react";
+import { TrendingUp } from "lucide-react";
 import { Section } from "@/components/marketing/section";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { FunnelStepper } from "@/components/marketing/funnel-stepper";
@@ -68,7 +68,7 @@ export default async function ServicesPage({ params }: Props) {
           </>
         }
         intro={positioning.intro}
-        left={{ icon: Wrench, title: positioning.left.title, items: positioning.left.items, emphasis: true }}
+        left={positioning.left}
         right={{ icon: TrendingUp, title: positioning.right.title, items: positioning.right.items }}
       />
 
