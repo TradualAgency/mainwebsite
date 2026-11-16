@@ -159,6 +159,71 @@ export const projectType = defineType({
       type: 'blockContent',
       group: 'content',
     }),
+    // Eén beeld of video op de casepagina, tussen de hoofdstukken en het cijferblok.
+    defineField({
+      name: 'showcase',
+      title: 'Showcase (tussen hoofdstukken en cijfers)',
+      description: 'Optioneel. Kies een afbeelding of een video; leeg laten = geen showcase op de pagina.',
+      type: 'object',
+      group: 'content',
+      fields: [
+        defineField({
+          name: 'mediaType',
+          title: 'Soort',
+          type: 'string',
+          options: {
+            list: [
+              {title: 'Video', value: 'video'},
+              {title: 'Afbeelding', value: 'image'},
+            ],
+            layout: 'radio',
+            direction: 'horizontal',
+          },
+          initialValue: 'video',
+        }),
+        defineField({
+          name: 'video',
+          title: 'Video',
+          description: 'MP4 (of WebM), liefst kleiner dan 10 MB. Speelt stil en in een loop af zolang hij in beeld is; geluid wordt niet afgespeeld.',
+          type: 'file',
+          options: {accept: 'video/mp4,video/webm'},
+          hidden: ({parent}) => parent?.mediaType === 'image',
+        }),
+        defineField({
+          name: 'poster',
+          title: 'Posterbeeld (optioneel)',
+          description: 'Stilstaand beeld dat zichtbaar is tot de video geladen is. Bij voorkeur een frame uit de video.',
+          type: 'image',
+          hidden: ({parent}) => parent?.mediaType === 'image',
+        }),
+        defineField({
+          name: 'image',
+          title: 'Afbeelding',
+          type: 'image',
+          options: {hotspot: true},
+          hidden: ({parent}) => parent?.mediaType !== 'image',
+        }),
+        defineField({
+          name: 'alt',
+          title: 'Omschrijving',
+          description: 'Wat er te zien is, voor schermlezers en Google. Bijvoorbeeld "Scroll door de nieuwe Ciao Bella-webshop op desktop".',
+          type: 'string',
+        }),
+        defineField({
+          name: 'caption',
+          title: 'Bijschrift (optioneel)',
+          description: 'Kleine regel tekst onder het beeld.',
+          type: 'string',
+        }),
+      ],
+      validation: Rule => Rule.custom((value: {mediaType?: string; video?: unknown; image?: unknown} | undefined) => {
+        if (!value) return true
+        if (value.mediaType === 'image' ? !value.image : !value.video) {
+          return {message: 'Er is nog geen bestand gekozen voor het geselecteerde soort; de showcase wordt dan niet getoond.', level: 'warning'}
+        }
+        return true
+      }),
+    }),
     defineField({
       name: 'metrics',
       title: 'Meetresultaten (voor / na)',

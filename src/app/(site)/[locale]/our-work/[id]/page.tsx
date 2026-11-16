@@ -7,6 +7,7 @@ import { CaseQuote } from "@/components/our-work/case-quote";
 import { CaseGallery } from "@/components/our-work/case-gallery";
 import { CaseChapters } from "@/components/our-work/case-chapters";
 import { CaseMetrics } from "@/components/our-work/case-metrics";
+import { CaseShowcase } from "@/components/our-work/case-showcase";
 import { CaseClosing } from "@/components/our-work/case-closing";
 import { RelatedCases } from "@/components/our-work/related-cases";
 import { Section } from "@/components/marketing/section";
@@ -113,6 +114,8 @@ export default async function ProjectPage({ params }: { params: Params }) {
           </ProseReveal>
         </Section>
       )}
+
+      {project.showcase && <CaseShowcase showcase={project.showcase} fallbackAlt={project.title} />}
 
       {metrics.length > 0 && <CaseMetrics metrics={metrics} note={project.metricsNote} />}
 

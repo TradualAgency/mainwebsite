@@ -50,6 +50,7 @@ const PROJECT_QUERY = `*[
   industry,
   sections,
   content,
+  showcase{ mediaType, alt, caption, image, "videoUrl": video.asset->url, "posterUrl": poster.asset->url },
   metrics,
   metricsNote,
   resultClosing,
@@ -122,6 +123,16 @@ export interface CaseMetric {
   description?: string;
 }
 
+// Showcase tussen de hoofdstukken en het cijferblok: een afbeelding of een stille video.
+export interface CaseShowcase {
+  mediaType?: 'image' | 'video';
+  alt?: string;
+  caption?: string;
+  image?: Image;
+  videoUrl?: string;
+  posterUrl?: string;
+}
+
 export interface Project {
   _id: string;
   // Altijd één regel: regelovergangen uit Studio zijn hier al door een spatie vervangen,
@@ -145,6 +156,7 @@ export interface Project {
   industry?: string;
   sections?: CaseSection[];
   content?: PortableTextBlock[];
+  showcase?: CaseShowcase;
   metrics?: CaseMetric[];
   metricsNote?: string;
   resultClosing?: string;
