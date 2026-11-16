@@ -8,6 +8,8 @@ import { LandingHeader } from "@/components/landing/landing-header";
 import { LandingFooter } from "@/components/landing/landing-footer";
 import { fontVariables } from "@/lib/fonts";
 import { siteMetadata } from "@/lib/seo";
+import { GoogleTagManager } from "@next/third-parties/google";
+import { GTM_ID } from "@/lib/analytics";
 
 type Props = {
   children: React.ReactNode;
@@ -36,6 +38,7 @@ export default async function LandingLayout({ children, params }: Props) {
 
   return (
     <html lang={locale} className="motion-safe:scroll-smooth">
+      <GoogleTagManager gtmId={GTM_ID} />
       <body className={`${fontVariables} antialiased`}>
         <NextIntlClientProvider>
           <LandingHeader />

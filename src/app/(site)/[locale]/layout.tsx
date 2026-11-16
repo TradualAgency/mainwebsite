@@ -8,6 +8,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { fontVariables } from "@/lib/fonts";
 import { siteMetadata } from "@/lib/seo";
+import { GoogleTagManager } from "@next/third-parties/google";
+import { GTM_ID } from "@/lib/analytics";
 
 type Props = {
   children: React.ReactNode;
@@ -36,6 +38,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <html lang={locale}>
+      <GoogleTagManager gtmId={GTM_ID} />
       <body
         className={`${fontVariables} antialiased`}
       >
