@@ -11,7 +11,8 @@ export async function siteMetadata(requested: string): Promise<Metadata> {
   const locale = hasLocale(routing.locales, requested) ? requested : routing.defaultLocale;
   const t = await getTranslations({ locale, namespace: "Metadata.site" });
   const tc = await getTranslations({ locale, namespace: "Common" });
-  const title = `${site.name} | ${t("tagline")}`;
+  // Homepage-/standaardtitel. Bevat bewust "Shopify": op de tagline zelf zoekt niemand.
+  const title = `${site.name} | ${t("title")}`;
 
   return {
     metadataBase: new URL(site.url),

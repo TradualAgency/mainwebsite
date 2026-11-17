@@ -6,6 +6,7 @@ import type { IndustryCopy, IndustryId } from "../types";
 export const industriesCopy: Record<IndustryId, IndustryCopy> = {
   "auto-parts": {
     name: "Auto & Parts",
+    seoTitle: "Shopify for Auto Parts Stores",
     navDescription: "Fitment data, huge catalogs and part numbers that have to be exactly right.",
     oneLiner:
       "Deep catalogs, fitment data and search behaviour make auto parts one of the most technically demanding stores you can run.",
@@ -64,6 +65,7 @@ export const industriesCopy: Record<IndustryId, IndustryCopy> = {
   },
   "b2b-wholesale": {
     name: "B2B & Wholesale",
+    seoTitle: "Wholesale Ecommerce on Shopify",
     navDescription: "Logins, price tiers and bulk orders on a storefront built for consumers.",
     oneLiner:
       "A B2B buyer places a different order than a consumer, on a storefront that was built for consumers.",
@@ -122,6 +124,7 @@ export const industriesCopy: Record<IndustryId, IndustryCopy> = {
   },
   "retail-homegoods": {
     name: "Retail & Homegoods",
+    seoTitle: "Shopify for Retail & Homegoods Brands",
     navDescription: "Large catalogs, variants and configurators, served fast enough to keep browsers buying.",
     oneLiner:
       "Wide catalogs, heavy imagery and a longer consideration cycle, all carried by a mobile page that has to stay fast.",
@@ -180,6 +183,7 @@ export const industriesCopy: Record<IndustryId, IndustryCopy> = {
   },
   "food-beverage": {
     name: "Food & Beverage",
+    seoTitle: "Shopify for Food & Beverage Brands",
     navDescription: "Subscriptions, repeat purchase and mobile traffic, where every extra second costs reorders.",
     oneLiner:
       "Repeat purchase is the whole model, and it runs through a checkout, a subscription layer and a data trail that all have to work every time.",

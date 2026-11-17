@@ -13,6 +13,7 @@ export const pageBuilderType = defineType({
     defineArrayMember({ type: 'faqs' }),
     defineArrayMember({ type: 'cta' }),
     defineArrayMember({ type: 'contactForm' }),
+    defineArrayMember({ type: 'booking' }),
     defineArrayMember({ type: 'richText' }),
   ],
 })

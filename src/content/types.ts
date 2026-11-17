@@ -32,6 +32,10 @@ export type ServiceMeta = {
 
 export type ServiceCopy = {
   name: string;
+  // Zoekmachine-titel/omschrijving. De merknaam (name) is waar niemand op zoekt, dus hier
+  // staan de termen die mensen wél typen ("Shopify audit", "webshop laten maken").
+  seoTitle?: string;
+  seoDescription?: string;
   shortName: string;
   oneLiner: string;
   // Kaart-copy voor het mega-menu in de header: kort genoeg voor een kolom van ~285px.
@@ -67,6 +71,9 @@ export type IndustryMeta = {
 
 export type IndustryCopy = {
   name: string;
+  // Zoekmachine-titel/omschrijving; valt terug op name en oneLiner.
+  seoTitle?: string;
+  seoDescription?: string;
   // Kaart-copy voor het mega-menu (~12-18 woorden).
   navDescription: string;
   // Overzichtskaart op /industries én de meta description van de sectorpagina.

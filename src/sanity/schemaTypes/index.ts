@@ -16,6 +16,7 @@ import {processType} from './blocks/processType'
 import {faqsType} from './blocks/faqsType'
 import {ctaType} from './blocks/ctaType'
 import {contactFormType} from './blocks/contactFormType'
+import {bookingType} from './blocks/bookingType'
 import {richTextType} from './blocks/richTextType'
 import {pageBuilderType} from './pageBuilderType'
 import {landingPageType} from './landingPageType'
@@ -38,6 +39,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     faqsType,
     ctaType,
     contactFormType,
+    bookingType,
     richTextType,
     pageBuilderType,
     landingPageType,

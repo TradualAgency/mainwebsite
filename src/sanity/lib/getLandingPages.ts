@@ -73,6 +73,15 @@ export type ContactFormBlock = {
   image?: SeoImage
 }
 
+export type BookingBlock = {
+  _type: 'booking'
+  _key: string
+  eyebrow?: string
+  heading: string
+  lede?: string
+  panelTitle?: string
+}
+
 export type RichTextBlock = {
   _type: 'richText'
   _key: string
@@ -99,6 +108,7 @@ export type PageBuilderBlock =
   | FaqsBlock
   | CtaBlock
   | ContactFormBlock
+  | BookingBlock
   | RichTextBlock
 
 export type LandingPage = {

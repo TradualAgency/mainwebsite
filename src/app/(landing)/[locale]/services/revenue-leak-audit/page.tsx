@@ -30,8 +30,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = getServiceById(locale, "revenue-leak-audit");
   const t = await getTranslations({ locale, namespace: "AuditLanding.og" });
   return {
-    title: service.name,
-    description: service.oneLiner,
+    title: service.seoTitle ?? service.name,
+    description: service.seoDescription ?? service.oneLiner,
     alternates: staticAlternates(locale, service.slug),
     // Eigen deel-preview: zonder dit erft de pagina de algemene titel van de site.
     openGraph: { title: t("title"), description: service.oneLiner },

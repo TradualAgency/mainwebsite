@@ -34,8 +34,8 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const industry = findIndustry(locale, slug);
   if (!industry) return {};
   return {
-    title: industry.name,
-    description: industry.oneLiner,
+    title: industry.seoTitle ?? industry.name,
+    description: industry.seoDescription ?? industry.oneLiner,
     alternates: staticAlternates(locale, industry.slug),
   };
 }

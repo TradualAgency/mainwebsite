@@ -3,6 +3,7 @@ import type { IndustryCopy, IndustryId } from "../types";
 export const industriesCopy: Record<IndustryId, IndustryCopy> = {
   "auto-parts": {
     name: "Auto & Onderdelen",
+    seoTitle: "Shopify voor auto-onderdelen webshops",
     navDescription: "Fitment-data, enorme catalogi en onderdeelnummers die precies moeten kloppen.",
     oneLiner:
       "Diepe catalogi, fitment-data en zoekgedrag maken auto-onderdelen tot een van de technisch meest veeleisende webshops die je kunt runnen.",
@@ -61,6 +62,7 @@ export const industriesCopy: Record<IndustryId, IndustryCopy> = {
   },
   "b2b-wholesale": {
     name: "B2B & Groothandel",
+    seoTitle: "Groothandel webshop op Shopify",
     navDescription: "Logins, prijsstaffels en bulkorders op een storefront die voor consumenten is gebouwd.",
     oneLiner:
       "Een B2B-koper plaatst een andere order dan een consument, op een storefront die voor consumenten is gebouwd.",
@@ -119,6 +121,7 @@ export const industriesCopy: Record<IndustryId, IndustryCopy> = {
   },
   "retail-homegoods": {
     name: "Retail & Wonen",
+    seoTitle: "Shopify voor retail- en woonwebshops",
     navDescription: "Grote catalogi, varianten en configurators, snel genoeg geserveerd om kijkers kopers te laten worden.",
     oneLiner:
       "Brede catalogi, zware beelden en een langere overwegingscyclus, allemaal gedragen door een mobiele pagina die snel moet blijven.",
@@ -177,6 +180,7 @@ export const industriesCopy: Record<IndustryId, IndustryCopy> = {
   },
   "food-beverage": {
     name: "Food & Beverage",
+    seoTitle: "Shopify voor food & beverage webshops",
     navDescription: "Abonnementen, herhaalaankopen en mobiel verkeer, waar elke extra seconde nabestellingen kost.",
     oneLiner:
       "Herhaalaankoop is het hele model, en dat loopt via een checkout, een abonnementslaag en een dataspoor die allemaal elke keer moeten werken.",

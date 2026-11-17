@@ -3,6 +3,9 @@ import type { ServiceCopy, ServiceId } from "../types";
 export const servicesCopy: Record<ServiceId, ServiceCopy> = {
   "revenue-leak-audit": {
     name: "Revenue Leak Audit",
+    seoTitle: "Shopify Store Audit: Find Your Revenue Leak",
+    seoDescription:
+      "A Shopify store audit that measures where you leak revenue across five layers, from load time to checkout, and puts a monthly figure on it.",
     shortName: "Audit",
     oneLiner:
       "We measure where your revenue leaks, across all five layers, and translate it into euros per month and per year.",
@@ -93,6 +96,9 @@ export const servicesCopy: Record<ServiceId, ServiceCopy> = {
   },
   "stack-rebuild": {
     name: "Stack Rebuild",
+    seoTitle: "Shopify Store Build & Replatforming",
+    seoDescription:
+      "Your Shopify store rebuilt on a fast, clean foundation: fewer apps, a better checkout and tracking, and a migration without downtime or lost revenue.",
     shortName: "Rebuild",
     oneLiner:
       "When optimizing inside your current stack is no longer enough. Focused on structural recovery of performance and conversion.",
@@ -170,6 +176,9 @@ export const servicesCopy: Record<ServiceId, ServiceCopy> = {
   },
   "performance-layer": {
     name: "Performance Layer",
+    seoTitle: "Shopify CRO & Ongoing Optimization",
+    seoDescription:
+      "Ongoing conversion optimization for your Shopify store: measure, prioritize by revenue impact, build, test and report, every month.",
     shortName: "Performance Layer",
     oneLiner:
       "Ongoing optimization layer after audit or rebuild: measure, prioritize, build, test, and improve.",
@@ -230,6 +239,9 @@ export const servicesCopy: Record<ServiceId, ServiceCopy> = {
   },
   "agentic-readiness": {
     name: "Agentic Readiness",
+    seoTitle: "Make Your Shopify Store Ready for AI Agents",
+    seoDescription:
+      "Make your Shopify store discoverable and buyable for AI assistants like ChatGPT Shopping: product data, structured data and a checkout agents understand.",
     shortName: "Agentic Readiness",
     oneLiner:
       "Preparing commerce infrastructure for AI agents and new buying interfaces: product data, structured data, feeds, APIs, and transactional readiness.",

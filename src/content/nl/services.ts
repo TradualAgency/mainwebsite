@@ -5,6 +5,9 @@ import type { ServiceCopy, ServiceId } from "../types";
 export const servicesCopy: Record<ServiceId, ServiceCopy> = {
   "revenue-leak-audit": {
     name: "Revenue Leak Audit",
+    seoTitle: "Shopify audit: zie waar je webshop omzet lekt",
+    seoDescription:
+      "Shopify audit van je webshop: we meten over vijf lagen waar je omzet weglekt, van laadtijd tot checkout, en zetten er een bedrag per maand op.",
     shortName: "Audit",
     oneLiner:
       "We meten waar je omzet weglekt, over alle vijf de lagen, en vertalen dat naar euro's per maand en per jaar.",
@@ -95,6 +98,9 @@ export const servicesCopy: Record<ServiceId, ServiceCopy> = {
   },
   "stack-rebuild": {
     name: "Stack Rebuild",
+    seoTitle: "Shopify webshop herbouwen op een snelle basis",
+    seoDescription:
+      "Je Shopify-webshop opnieuw gebouwd op een snelle, schone basis: minder apps, betere checkout en tracking, en een migratie zonder downtime of omzetverlies.",
     shortName: "Rebuild",
     oneLiner:
       "Wanneer optimaliseren binnen je huidige stack niet meer genoeg is. Gericht op structureel herstel van performance en conversie.",
@@ -172,6 +178,9 @@ export const servicesCopy: Record<ServiceId, ServiceCopy> = {
   },
   "performance-layer": {
     name: "Performance Layer",
+    seoTitle: "Doorlopende optimalisatie van je Shopify-webshop",
+    seoDescription:
+      "Doorlopende conversie-optimalisatie voor je Shopify-webshop: elke maand meten, prioriteren op euro-impact, bouwen, testen en rapporteren.",
     shortName: "Performance Layer",
     oneLiner:
       "Doorlopende optimalisatielaag na audit of rebuild: meten, prioriteren, bouwen, testen en verbeteren.",
@@ -232,6 +241,9 @@ export const servicesCopy: Record<ServiceId, ServiceCopy> = {
   },
   "agentic-readiness": {
     name: "Agentic Readiness",
+    seoTitle: "Shopify klaar voor ChatGPT Shopping en AI-agents",
+    seoDescription:
+      "Maak je Shopify-store vindbaar en koopbaar voor AI-assistenten zoals ChatGPT Shopping: productdata, structured data en checkout die agents begrijpen.",
     shortName: "Agentic Readiness",
     oneLiner:
       "Je commerce-infrastructuur klaarmaken voor AI-agents en nieuwe koopinterfaces: productdata, gestructureerde data, feeds, API's en transactionele gereedheid.",

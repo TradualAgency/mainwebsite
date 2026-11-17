@@ -10,7 +10,7 @@ interface AuditBookingProps {
   heading: string;
   lede: string;
   /** Titel van het zijpaneel van de kalender ("Audit-gesprek" i.p.v. de algemene kennismaking). */
-  panelTitle: string;
+  panelTitle?: string;
   /** Komt in de notificatiemail, zodat te zien is dat de boeking van deze pagina komt. */
   source: string;
 }

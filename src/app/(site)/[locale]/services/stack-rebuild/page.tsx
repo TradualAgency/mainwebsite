@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const service = getServiceById(locale, "stack-rebuild");
   return {
-    title: service.name,
-    description: service.oneLiner,
+    title: service.seoTitle ?? service.name,
+    description: service.seoDescription ?? service.oneLiner,
     alternates: staticAlternates(locale, service.slug),
   };
 }

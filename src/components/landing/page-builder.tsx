@@ -9,12 +9,14 @@ import { LandingHero } from "@/components/landing/hero";
 import { F1StorySection } from "@/components/landing/f1-story-section";
 import { LandingContactForm } from "@/components/landing/contact-form-section";
 import { LandingRichText } from "@/components/landing/rich-text-section";
+import { AuditBooking } from "@/containers/revenue-leak-audit/booking-section";
 
 const FIXED_TONES: Partial<Record<PageBuilderBlock["_type"], SectionTone>> = {
   hero: "light",
   f1Story: "dark",
   cta: "dark",
   contactForm: "dark",
+  booking: "dark",
 };
 
 function alternatingTones(blocks: PageBuilderBlock[]): SectionTone[] {
@@ -105,6 +107,18 @@ export function PageBuilder({
             );
           case "contactForm":
             return <LandingContactForm key={block._key} {...block} source={source} />;
+          case "booking":
+            return (
+              <AuditBooking
+                key={block._key}
+                id="book"
+                eyebrow={block.eyebrow ?? ""}
+                heading={block.heading}
+                lede={block.lede ?? ""}
+                panelTitle={block.panelTitle}
+                source={source ?? "landing-page"}
+              />
+            );
           case "richText":
             return <LandingRichText key={block._key} {...block} tone={tone} />;
           default:
