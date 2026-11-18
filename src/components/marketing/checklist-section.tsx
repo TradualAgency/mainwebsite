@@ -6,6 +6,8 @@ import { SectionHeading } from "@/components/marketing/section-heading";
 interface ChecklistSectionProps {
   eyebrow?: string;
   title: React.ReactNode;
+  /** Optionele lede onder de titel. */
+  intro?: React.ReactNode;
   items: string[];
   tone?: "light" | "muted" | "dark";
   columns?: 1 | 2;
@@ -13,12 +15,18 @@ interface ChecklistSectionProps {
   children?: React.ReactNode;
 }
 
-export function ChecklistSection({ eyebrow, title, items, tone = "light", columns = 2, children }: ChecklistSectionProps) {
+export function ChecklistSection({ eyebrow, title, intro, items, tone = "light", columns = 2, children }: ChecklistSectionProps) {
   const t = useTranslations("Marketing.checklist");
   const isDark = tone === "dark";
   return (
     <Section tone={tone}>
-      <SectionHeading eyebrow={eyebrow ?? t("eyebrow")} title={title} tone={isDark ? "dark" : "light"} className="mb-10" />
+      <SectionHeading
+        eyebrow={eyebrow ?? t("eyebrow")}
+        title={title}
+        intro={intro}
+        tone={isDark ? "dark" : "light"}
+        className="mb-10"
+      />
       <ul className={`grid grid-cols-1 ${columns === 2 ? "md:grid-cols-2" : ""} gap-x-8 gap-y-4`}>
         {items.map((item) => (
           <li key={item} className={`flex items-start gap-3 text-base leading-relaxed ${isDark ? "text-surface/85" : "text-body"}`}>

@@ -12,13 +12,16 @@ import type {
   LeakLayer,
   NavItem,
   NavLink,
+  Pillar,
+  PillarId,
   Positioning,
+  ProcessStep,
   Service,
   ServiceId,
   Unique,
   WorkStep,
 } from "./types";
-import { SERVICE_ORDER, serviceMeta } from "./shared/services";
+import { PILLAR_ORDER, SERVICE_ORDER, pillarMeta, serviceMeta } from "./shared/services";
 import { INDUSTRY_ORDER, industryMeta } from "./shared/industries";
 import { leakLayerMeta } from "./shared/revenue-leak";
 import * as en from "./en";
@@ -35,6 +38,21 @@ function copyFor(locale: Locale) {
 
 // ---------- Services ----------
 
+// Koppelt de beeldpaden uit de metadata op volgorde aan de processtappen uit de copy.
+function withProcessImages(
+  process: { title: string; body: string; imageAlt: string }[],
+  processImages: string[],
+): ProcessStep[] {
+  return process.map((step, index) => {
+    const src = processImages[index];
+    return {
+      title: step.title,
+      body: step.body,
+      image: src ? { src, alt: step.imageAlt } : undefined,
+    };
+  });
+}
+
 export function getServiceById(locale: Locale, id: ServiceId): Service {
   const meta = serviceMeta[id];
   const { process, ...text } = copyFor(locale).servicesCopy[id];
@@ -42,19 +60,35 @@ export function getServiceById(locale: Locale, id: ServiceId): Service {
   return {
     ...rest,
     ...text,
-    process: process.map((step, index) => {
-      const src = processImages[index];
-      return {
-        title: step.title,
-        body: step.body,
-        image: src ? { src, alt: step.imageAlt } : undefined,
-      };
-    }),
+    process: withProcessImages(process, processImages),
   };
 }
 
 export function getServices(locale: Locale): Service[] {
   return SERVICE_ORDER.map((id) => getServiceById(locale, id));
+}
+
+// ---------- Pijlers ----------
+
+export function getPillarById(locale: Locale, id: PillarId): Pillar {
+  const { processImages, agentIcons, ...meta } = pillarMeta[id];
+  const { process, agents, ...text } = copyFor(locale).pillarsCopy[id];
+  const parent = serviceMeta[meta.parent];
+  return {
+    ...meta,
+    ...text,
+    parentName: copyFor(locale).servicesCopy[meta.parent].name,
+    parentSlug: parent.slug,
+    process: withProcessImages(process, processImages),
+    agents: agents?.map((agent, index) => ({ ...agent, icon: agentIcons?.[index] })),
+  };
+}
+
+// Alle pijlers, optioneel alleen die van één dienst. Volgorde: PILLAR_ORDER.
+export function getPillars(locale: Locale, parent?: ServiceId): Pillar[] {
+  return PILLAR_ORDER.filter((id) => !parent || pillarMeta[id].parent === parent).map((id) =>
+    getPillarById(locale, id),
+  );
 }
 
 // ---------- Industries ----------

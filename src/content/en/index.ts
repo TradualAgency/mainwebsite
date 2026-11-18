@@ -1,4 +1,5 @@
 export * from "./services";
+export * from "./pillars";
 export * from "./industries";
 export * from "./revenue-leak";
 export * from "./faqs";

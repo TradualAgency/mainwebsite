@@ -113,23 +113,27 @@
       }
     },
     "agentic-readiness": {
-      "qualifier": {
-        "eyebrow": "Why now",
-        "title": "This becomes relevant faster than you think"
+      "pillars": {
+        "eyebrow": "Two pillars",
+        "title": "Two sides of the same shift",
+        "link": "View {name}"
       },
-      "checklist": {
-        "eyebrow": "What we assess",
-        "title": "Ready to be found, understood, and chosen"
+      "qualifier": {
+        "eyebrow": "Who this is for",
+        "title": "Does this sound familiar?"
+      },
+      "scan": {
+        "eyebrow": "How to start"
       },
       "process": {
         "eyebrow": "How it works",
-        "title": "From analysis to implementation"
+        "title": "Show first, then build small"
       },
       "cta": {
-        "eyebrow": "Starting point",
-        "heading": "Start at the beginning",
-        "body": "Haven't had an audit yet? The Revenue Leak Audit is the starting point of the entire route.",
-        "secondary": "View all services"
+        "eyebrow": "Where to start",
+        "heading": "Start with the Agentic Readiness Scan.",
+        "body": "You see where agents find you today and where they don't, and which processes suit an agent. Haven't had an audit yet? Then the Revenue Leak Audit is the starting point of the entire route.",
+        "secondary": "View the Revenue Leak Audit"
       }
     }
   },

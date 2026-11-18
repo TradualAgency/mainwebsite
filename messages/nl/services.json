@@ -113,23 +113,27 @@
       }
     },
     "agentic-readiness": {
-      "qualifier": {
-        "eyebrow": "Waarom nu",
-        "title": "Dit wordt sneller relevant dan je denkt"
+      "pillars": {
+        "eyebrow": "Twee pijlers",
+        "title": "Twee kanten van dezelfde verschuiving",
+        "link": "Bekijk {name}"
       },
-      "checklist": {
-        "eyebrow": "Wat we beoordelen",
-        "title": "Klaar om gevonden, begrepen en gekozen te worden"
+      "qualifier": {
+        "eyebrow": "Voor wie dit is",
+        "title": "Herken je dit?"
+      },
+      "scan": {
+        "eyebrow": "Zo begin je"
       },
       "process": {
         "eyebrow": "Hoe het werkt",
-        "title": "Van analyse naar implementatie"
+        "title": "Eerst laten zien, dan klein bouwen"
       },
       "cta": {
         "eyebrow": "Startpunt",
-        "heading": "Begin bij het begin",
-        "body": "Nog geen audit gehad? De Revenue Leak Audit is het startpunt van de hele route.",
-        "secondary": "Alle diensten"
+        "heading": "Begin met de Agentic Readiness Scan.",
+        "body": "Je ziet waar agents je nu wel en niet vinden, en welke processen geschikt zijn voor een agent. Nog geen audit gehad? Dan is de Revenue Leak Audit het startpunt van de hele route.",
+        "secondary": "Bekijk de Revenue Leak Audit"
       }
     }
   },

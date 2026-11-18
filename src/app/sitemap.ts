@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { routing, type Locale } from "@/i18n/routing";
 import { absoluteUrl } from "@/lib/seo";
 import { INDUSTRY_ORDER } from "@/content/shared/industries";
-import { SERVICE_ORDER } from "@/content/shared/services";
+import { PILLAR_ORDER, SERVICE_ORDER, pillarMeta } from "@/content/shared/services";
 import { getPostSlugsWithTranslations } from "@/sanity/lib/getPosts";
 import { getProjectSlugsWithTranslations } from "@/sanity/lib/getProjects";
 import { getLandingPageSlugsWithTranslations } from "@/sanity/lib/getLandingPages";
@@ -16,6 +16,7 @@ const STATIC_PATHS = [
   "/book-a-call",
   "/services",
   ...SERVICE_ORDER.map((id) => `/services/${id}`),
+  ...PILLAR_ORDER.map((id) => pillarMeta[id].slug),
   "/industries",
   ...INDUSTRY_ORDER.map((id) => `/industries/${id}`),
   "/revenue-leak",

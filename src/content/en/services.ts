@@ -224,7 +224,7 @@ export const servicesCopy: Record<ServiceId, ServiceCopy> = {
         imageAlt: "Monthly reporting in euros",
       },
     ],
-    afterThisLabel: "Ready for the next step? Agentic Readiness prepares you for AI agents as buyers.",
+    afterThisLabel: "Ready for the next step? Agentic Readiness gets you ready for AI agents, as buyers and as colleagues.",
     faq: [
       {
         question: "Why a retainer and not a one-off project?",
@@ -239,57 +239,99 @@ export const servicesCopy: Record<ServiceId, ServiceCopy> = {
   },
   "agentic-readiness": {
     name: "Agentic Readiness",
-    seoTitle: "Make Your Shopify Store Ready for AI Agents",
+    seoTitle: "Shopify & AI Agents: Get Found, Put Agents to Work",
     seoDescription:
-      "Make your Shopify store discoverable and buyable for AI assistants like ChatGPT Shopping: product data, structured data and a checkout agents understand.",
+      "Get your Shopify store ready for AI agents: findable and buyable for AI assistants, and agents that handle customer questions, orders and product data.",
     shortName: "Agentic Readiness",
     oneLiner:
-      "Preparing commerce infrastructure for AI agents and new buying interfaces: product data, structured data, feeds, APIs, and transactional readiness.",
-    navDescription: "Get found, understood and chosen by the buyer that isn't human.",
-    heroTitle: "Ready for the buyer who isn't human.",
+      "Getting your store ready for AI agents, on two sides: found and bought by outside agents, and agents that take work off your team.",
+    navDescription: "Get found by AI agents, and put agents to work for your team.",
+    heroTitle: "Ready for agents: as buyer and as colleague.",
     heroLede:
-      "More and more product discovery runs through AI assistants and agents. They don't read a pretty product page; they read your data. We make sure you're found, understood, and chosen.",
+      "AI agents search for products on behalf of buyers, and they can take work off your team. We make sure agents find you, understand you and choose you, and we build agents that handle customer questions, orders and product data for you.",
     forWho: [
       "You notice AI answers name your competitors and not you",
       "Your product data was never built with machines as the reader",
       "You don't want to be last in line when these channels mature",
+      "Your team answers the same customer questions by hand every day",
+      "Orders and requests arrive by email and get retyped",
     ],
     deliverables: [
-      "Assessment of product data quality and completeness",
-      "Structured data and schema.org audit",
-      "Assessment of feeds and exports",
-      "API and accessibility check for agents",
-      "Analysis of findability and citation in AI answers",
-      "Assessment of transactional readiness",
+      "Product data, structured data and feeds that agents can read",
+      "Analysis of your findability in AI answers",
+      "Transactional readiness for agents",
+      "AI agents for customer service, inbox and orders, product data, and sales",
+      "Management and expansion after the pilot",
     ],
+    entryOffer: {
+      name: "Agentic Readiness Scan",
+      intro:
+        "The starting point of Agentic Readiness. We look at both sides: how agents read your store, and which work on your team an agent can take over.",
+      items: [
+        "Where agents find you today and where they don't, and why",
+        "What AI assistants currently say about your brand and your category",
+        "Which processes on your team are suitable for an agent",
+        "A prioritized list of what to fix first",
+      ],
+    },
     process: [
       {
         title: "Analyze",
-        body: "We assess product data, structured data, feeds, and API accessibility against what AI agents need.",
-        imageAlt: "Assessing product data and feeds for AI agents",
+        body: "We map how agents read your store today, and which work on your team comes back every day. Afterwards you know where you stand, on both sides.",
+        imageAlt: "Analyzing how agents read a store and which work keeps coming back",
       },
       {
-        title: "Report",
-        body: "You get a concrete picture of where you stand now and what the biggest gaps are.",
-        imageAlt: "A concrete picture of the biggest gaps",
+        title: "Show",
+        body: "We ask AI assistants about your product category and show you which brands they name. Afterwards you have it in black and white: whether you're in there, and who is.",
+        imageAlt: "Showing which brands AI assistants name in a category",
       },
       {
-        title: "Implement",
-        body: "Separate from the analysis: we build the changes that make you findable and transactionally ready.",
-        imageAlt: "Implementing changes for agentic readiness",
+        title: "Choose",
+        body: "You start with one process or one collection, not everything at once. Afterwards you have a clearly scoped first step with a clear goal.",
+        imageAlt: "Choosing one process or one collection as the first step",
+      },
+      {
+        title: "Build",
+        body: "We build a pilot: the changes to your data, or an agent on your existing systems. A human stays in the loop. Afterwards you have something running on real work.",
+        imageAlt: "Building a pilot with a human in the loop",
+      },
+      {
+        title: "Manage",
+        body: "We keep it up to date and expand to the next collection or the next process. Afterwards you have data and agents that keep up, and you know what the next step is.",
+        imageAlt: "Managing and expanding agents and data",
       },
     ],
     afterThisLabel: "Back to the overview of all services.",
     faq: [
       {
-        question: "Isn't this too early?",
+        question: "What do you mean by Agentic Readiness?",
         answer:
-          "The brands that get this right first become the default answers. That's a position you can only take once: early is an advantage here, not a risk.",
+          "Being ready for AI agents, on two sides. Outside agents need to be able to find, understand and buy your products. And agents inside your business can take work off your team. We help with both.",
       },
       {
-        question: "How is this different from SEO?",
+        question: "Isn't this too early?",
         answer:
-          "SEO optimizes for a search engine that links to a page. Agentic Readiness optimizes for an agent that reads your data, interprets it, and makes a decision on the buyer's behalf.",
+          "The brands that get this right first become the default answers. That's a position you can only take once. And the work your team does by hand every day is already there.",
+      },
+      {
+        question: "Where do I start?",
+        answer:
+          "With the Agentic Readiness Scan. You see where agents find you today and where they don't, what AI assistants say about your brand and category, and which processes suit an agent. Then you choose one first step.",
+      },
+      {
+        question: "Do I have to work on both sides?",
+        answer:
+          "No. You can start with getting found by agents, with an agent for your team, or with both. The scan shows where you're best off starting.",
+      },
+      {
+        question: "Does a human stay in the loop?",
+        answer:
+          "Yes. Everything starts as a pilot on one process or one collection, and your team approves what happens. What an agent may do on its own after that is up to you.",
+      },
+      {
+        question: "Which systems do you work with?",
+        answer:
+          "With what you already have, such as Shopify, your helpdesk and your inbox. The scan shows which connections your situation needs.",
       },
     ],
   },

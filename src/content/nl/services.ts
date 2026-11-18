@@ -226,7 +226,7 @@ export const servicesCopy: Record<ServiceId, ServiceCopy> = {
         imageAlt: "Maandelijkse rapportage in euro's",
       },
     ],
-    afterThisLabel: "Klaar voor de volgende stap? Agentic Readiness bereidt je voor op AI-agents als kopers.",
+    afterThisLabel: "Klaar voor de volgende stap? Agentic Readiness maakt je klaar voor AI-agents, als koper en als collega.",
     faq: [
       {
         question: "Waarom een retainer en geen eenmalig project?",
@@ -241,57 +241,99 @@ export const servicesCopy: Record<ServiceId, ServiceCopy> = {
   },
   "agentic-readiness": {
     name: "Agentic Readiness",
-    seoTitle: "Shopify klaar voor ChatGPT Shopping en AI-agents",
+    seoTitle: "Shopify en AI-agents: gevonden worden én agents inzetten",
     seoDescription:
-      "Maak je Shopify-store vindbaar en koopbaar voor AI-assistenten zoals ChatGPT Shopping: productdata, structured data en checkout die agents begrijpen.",
+      "Maak je Shopify-webshop klaar voor AI-agents: vindbaar en koopbaar voor AI-assistenten, en agents die klantvragen, orders en productdata afhandelen.",
     shortName: "Agentic Readiness",
     oneLiner:
-      "Je commerce-infrastructuur klaarmaken voor AI-agents en nieuwe koopinterfaces: productdata, gestructureerde data, feeds, API's en transactionele gereedheid.",
-    navDescription: "Word gevonden, begrepen en gekozen door de koper die geen mens is.",
-    heroTitle: "Klaar voor de koper die geen mens is.",
+      "Je webshop klaarmaken voor AI-agents, aan twee kanten: gevonden en gekocht worden door agents van buitenaf, en agents die werk van je team overnemen.",
+    navDescription: "Word gevonden door AI-agents, en zet agents in voor je team.",
+    heroTitle: "Klaar voor agents: als koper én als collega.",
     heroLede:
-      "Steeds meer productontdekking loopt via AI-assistenten en agents. Die lezen geen mooie productpagina; die lezen je data. Wij zorgen dat je gevonden, begrepen en gekozen wordt.",
+      "AI-agents zoeken producten namens kopers, en ze kunnen werk van je team overnemen. Wij zorgen dat agents je vinden, begrijpen en kiezen, en we bouwen agents die klantvragen, orders en productdata voor je afhandelen.",
     forWho: [
       "Je merkt dat AI-antwoorden je concurrenten noemen en jou niet",
       "Je productdata is nooit gebouwd met machines als lezer",
       "Je wilt niet achteraan staan als deze kanalen volwassen worden",
+      "Je team beantwoordt elke dag met de hand dezelfde klantvragen",
+      "Orders en aanvragen komen per mail binnen en worden overgetypt",
     ],
     deliverables: [
-      "Beoordeling van kwaliteit en volledigheid van productdata",
-      "Audit van gestructureerde data en schema.org",
-      "Beoordeling van feeds en exports",
-      "API- en toegankelijkheidscheck voor agents",
-      "Analyse van vindbaarheid en vermelding in AI-antwoorden",
-      "Beoordeling van transactionele gereedheid",
+      "Productdata, gestructureerde data en feeds die agents kunnen lezen",
+      "Analyse van je vindbaarheid in AI-antwoorden",
+      "Transactionele gereedheid voor agents",
+      "AI-agents voor klantenservice, mailbox en orders, productdata en sales",
+      "Beheer en uitbreiding na de pilot",
     ],
+    entryOffer: {
+      name: "Agentic Readiness Scan",
+      intro:
+        "Het startpunt van Agentic Readiness. We kijken naar beide kanten: hoe agents je shop lezen, en welk werk in je team een agent kan overnemen.",
+      items: [
+        "Waar agents je nu wel en niet vinden, en waarom",
+        "Wat AI-assistenten nu antwoorden over je merk en je categorie",
+        "Welke processen in je team geschikt zijn voor een agent",
+        "Een geprioriteerde lijst met wat je als eerste oplost",
+      ],
+    },
     process: [
       {
         title: "Analyseren",
-        body: "We toetsen productdata, gestructureerde data, feeds en API-toegankelijkheid aan wat AI-agents nodig hebben.",
-        imageAlt: "Productdata en feeds beoordelen voor AI-agents",
+        body: "We brengen in kaart hoe agents je shop nu lezen, en welk werk in je team elke dag terugkomt. Daarna weet je waar je staat, aan beide kanten.",
+        imageAlt: "Analyseren hoe agents een webshop lezen en welk werk terugkomt",
       },
       {
-        title: "Rapporteren",
-        body: "Je krijgt een concreet beeld van waar je nu staat en wat de grootste gaten zijn.",
-        imageAlt: "Een concreet beeld van de grootste gaten",
+        title: "Laten zien",
+        body: "We vragen AI-assistenten naar jouw productcategorie en laten zien welke merken ze noemen. Daarna heb je zwart op wit of jij erbij zit, en wie wel.",
+        imageAlt: "Laten zien welke merken AI-assistenten noemen in een categorie",
       },
       {
-        title: "Implementeren",
-        body: "Los van de analyse: we bouwen de aanpassingen die je vindbaar en transactioneel gereed maken.",
-        imageAlt: "Aanpassingen implementeren voor agentic readiness",
+        title: "Kiezen",
+        body: "Je begint met één proces of één collectie, niet met alles tegelijk. Daarna heb je een afgebakende eerste stap met een duidelijk doel.",
+        imageAlt: "Kiezen voor één proces of één collectie als eerste stap",
+      },
+      {
+        title: "Bouwen",
+        body: "We bouwen een pilot: de aanpassingen aan je data, of een agent op je bestaande systemen. Een mens blijft meekijken. Daarna heb je iets dat draait op echt werk.",
+        imageAlt: "Een pilot bouwen waarbij een mens meekijkt",
+      },
+      {
+        title: "Beheren",
+        body: "We houden het bij en breiden uit naar de volgende collectie of het volgende proces. Daarna heb je data en agents die bijblijven, en weet je wat de volgende stap is.",
+        imageAlt: "Agents en data beheren en uitbreiden",
       },
     ],
     afterThisLabel: "Terug naar het overzicht van alle diensten.",
     faq: [
       {
-        question: "Is dit niet te vroeg?",
+        question: "Wat bedoelen jullie met Agentic Readiness?",
         answer:
-          "De merken die dit als eerste goed doen, worden de standaardantwoorden. Die positie kun je maar één keer innemen: vroeg zijn is hier een voordeel, geen risico.",
+          "Klaar zijn voor AI-agents, aan twee kanten. Agents van buitenaf moeten je producten kunnen vinden, begrijpen en kopen. En agents binnen je bedrijf kunnen werk van je team overnemen. We helpen met allebei.",
       },
       {
-        question: "Hoe verschilt dit van SEO?",
+        question: "Is dit niet te vroeg?",
         answer:
-          "SEO optimaliseert voor een zoekmachine die naar een pagina linkt. Agentic Readiness optimaliseert voor een agent die je data leest, interpreteert en namens de koper een beslissing neemt.",
+          "De merken die dit als eerste goed doen, worden de standaardantwoorden. Die positie kun je maar één keer innemen. En het werk dat je team elke dag met de hand doet, ligt er nu al.",
+      },
+      {
+        question: "Waar begin ik?",
+        answer:
+          "Met de Agentic Readiness Scan. Je ziet waar agents je nu wel en niet vinden, wat AI-assistenten over je merk en categorie antwoorden, en welke processen geschikt zijn voor een agent. Daarna kies je één eerste stap.",
+      },
+      {
+        question: "Moet ik met beide kanten aan de slag?",
+        answer:
+          "Nee. Je kunt beginnen met gevonden worden door agents, met een agent voor je team, of met allebei. De scan laat zien waar je het beste kunt beginnen.",
+      },
+      {
+        question: "Blijft er een mens meekijken?",
+        answer:
+          "Ja. Alles begint als pilot op één proces of één collectie, en je team keurt goed wat er gebeurt. Wat een agent daarna zelfstandig mag, bepaal jij.",
+      },
+      {
+        question: "Met welke systemen werken jullie?",
+        answer:
+          "Met wat je al hebt, zoals Shopify, je helpdesk en je mailbox. Welke koppelingen jouw situatie nodig heeft, zie je in de scan.",
       },
     ],
   },
